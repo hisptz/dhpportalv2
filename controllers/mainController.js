@@ -47,7 +47,7 @@
         $scope.message_class = null;
         $scope.progressPercent = '0%';
         main.orgUnitTable = [];
-        main.organisationUnitTree = []
+        main.organisationUnitTree = [];
         main.logedSuccessMessage = null;
         main.logedFailureMessage = null;
         main.profile = {};
@@ -62,7 +62,6 @@
             main.logedIn = true;
             main.logedOut = false;
         }
-
         main.showChart = function(){
             main.showChD = "active";
             main.showTabD = "";
@@ -152,9 +151,7 @@
             main.openPdfFile(file);
         }
         main.getHealthProfileFromMap = function(row){
-            console.log(row);
-            //var file = {name:row.facility+" Health Profile",id:row.id};
-            //main.openPdfFile(file);
+
         }
 
         main.processView = function(orgUnit,name,id){

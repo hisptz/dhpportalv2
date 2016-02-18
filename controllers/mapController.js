@@ -13,6 +13,12 @@
         .config(function($httpProvider) {
             $httpProvider.defaults.withCredentials = true;
         })
+        .factory('shared',  function(){
+            var shared = {
+                "facility":0
+                         };
+            return shared;
+        })
         .controller('mapController', mapController);
 
     mapController.$inject   = ['$scope', '$http','$timeout', 'olData','olHelpers','portalService','profileService','utilityService','shared'];
@@ -23,6 +29,7 @@
          * THE BEGINNING OF THE FUNCTION THAT HANDLES HOME PAGE FUNCTIONALITY OF MAP
          * */
 
+        console.log(map.baseUrl);
 
         $scope.drawMap = function(){
             $scope.shared = shared;
