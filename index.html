@@ -222,11 +222,11 @@
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="./#home">Dashboard</a></li>
-                <li><a href="./#login">Login</a></li>
+                <li><a modal href="#login_modal">Login</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="./#home">Dashboard</a></li>
-                <li><a href="./#login">Login</a></li>
+                <li><a modal href="#login_modal">Login</a></li>
                  </ul>
         </div>
     </nav>
@@ -281,6 +281,22 @@
 <three-bounce-spinner ng-show="showLoader"></three-bounce-spinner>
 <div ng-if="!showLoader" ng-view></div>
 
+<footer class="page-footer" style="background-color: #00796B!important;margin-top: 110px;"> <div class="footer-copyright"> <div class="row">
+            <div class="col l6 s6">
+                &copy; 2015 Copyright <a target="_blank" href="http://www.moh.go.tz/"><b style="color:#ffffff;">Ministry Of Health and Social Welfare</b></a>
+            </div>
+            <div class="col l6 s6">
+                <table>
+                    <tbody><tr>
+                        <td><a class="grey-text text-lighten-3" target="_blank" href="https://dhis.moh.go.tz/">DHIS/HMIS</a></td>
+                        <td><a class="grey-text text-lighten-3" target="_blank" href="http://hmisportal.moh.go.tz/">HMIS Web portal</a></td>
+                        <td><a class="grey-text text-lighten-3" target="_blank" href="http://www.moh.go.tz/">MOH</a></td>
+                    </tr>
+                    </tbody></table>
+            </div>
+        </div>
+    </div>
+</footer>
 <!--import pace for visualization-->
 <script src='assets/libs/pace/pace.min.js'></script>
 <!--Import jQuery before materialize.js-->

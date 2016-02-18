@@ -341,3 +341,51 @@
         </div>
     </div>
 </div>
+
+
+<div id="login_modal" class="modal" style="border-radius: 10px;width: 60%;max-height: 100%">
+    <div class="modal-content">
+        <h4 style="text-align: center"></h4>
+        <div style="width: 100%">
+            <p style="font-weight: bolder;font-size: 14px;">DHP Login (DHIS2 users only)</p>
+            <p style="color:red;font-weight: bolder;" ng-if="main.logedFailureMessage">{{main.logedFailureMessage}}</p>
+            <p style="color:green;font-weight: bolder;" ng-if="main.logedSuccessMessage">{{main.logedSuccessMessage}}</p>
+            <div class="row">
+                <div class="preloader-wrapper small active" ng-if="progressLogin">
+                    <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <form class="col s12" style="margin-top: 100px;">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="text" class="validate" ng-model="login.dhis_login_username">
+                        <label for="email">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate" ng-model="login.dhis_login_password">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12"><!--modal-close-->
+                        <a class="waves-effect modal-action  waves-light btn  col s12 m12" style="background-color:#82b1ff" ng-click="main.login(login)">Login</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class=" modal-action modal-close waves-effect waves-green btn-flat">Close</button>
+    </div>
+</div>
