@@ -133,9 +133,9 @@
                 <div class="card-image waves-effect waves-block waves-light" style="overflow: scroll">
                     <div style="width: 100%" >
                         <!--<p ng-if="card.chartObject.loading" class="center"><img src="assets/img/loading.gif">Loading ....</p>-->
-                        <p ng-if="!$scope.layers" class="center">Loading ....</p>
-                        <openlayers ng-if="card.layers" ol-center="$scope.Africa" ol-defaults="$scope.defaults" custom-layers="true"  height="400px" >
-                            <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in $scope.layers"></ol-layer>
+                        <p ng-if="!layers" class="center">Loading ....</p>
+                        <openlayers ng-if="card.layers" ol-center="Africa" ol-defaults="defaults" custom-layers="true"  height="400px" >
+                            <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in layers"></ol-layer>
                         </openlayers>
                         <div id="districtboxz"  class="infoh district ">
                             <table>
@@ -143,7 +143,7 @@
                                 <tr ng-repeat="leg in card.legend"><td style="background-color: {{leg.color}}">&nbsp;</td><td  style="text-align: left;">{{leg.set}}</td><td> ({{leg.members}})</td></tr>
                             </table>
                         </div>
-                        <div id="districtbox"  class="infopop district " ng-if="card.selectedDistrictHover">
+                        <div id="districtbox"  class="infopop district " ng-if="selectedDistrictHover">
                             <table>
                                 <tr><td>{{card.selectedDistrictHover.name}}</td></tr>
                                 <tr><td>{{card.selectedDistrictHover.indicatorValue}}</td></tr>

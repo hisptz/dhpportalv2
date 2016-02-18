@@ -70,7 +70,7 @@
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="124.333336" vertical-offset="3357" max-vertical-offset="7218">
+            <state vertical-scroll-proportion="120.333336" vertical-offset="3249" max-vertical-offset="7218">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -80,8 +80,8 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7027027" vertical-offset="2286" max-vertical-offset="7020">
-              <caret line="140" column="33" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.8108108" vertical-offset="2340" max-vertical-offset="7020">
+              <caret line="145" column="80" selection-start-line="145" selection-start-column="80" selection-end-line="145" selection-end-column="80" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#h6#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#h6#0;n#div#0;n#!!top" expanded="true" />
@@ -141,8 +141,8 @@
       <file leaf-file-name="mapController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/mapController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.52" vertical-offset="3067" max-vertical-offset="7254">
-              <caret line="185" column="49" selection-start-line="185" selection-start-column="43" selection-end-line="185" selection-end-column="49" />
+            <state vertical-scroll-proportion="-2.6" vertical-offset="3283" max-vertical-offset="7254">
+              <caret line="186" column="38" selection-start-line="186" selection-start-column="32" selection-end-line="186" selection-end-column="38" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -373,7 +373,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37333333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14823529" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -580,14 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="124.333336" vertical-offset="3357" max-vertical-offset="7218">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/chartService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
@@ -649,18 +641,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/mapController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.52" vertical-offset="3067" max-vertical-offset="7254">
-          <caret line="185" column="49" selection-start-line="185" selection-start-column="43" selection-end-line="185" selection-end-column="49" />
+        <state vertical-scroll-proportion="-2.6" vertical-offset="3283" max-vertical-offset="7254">
+          <caret line="186" column="38" selection-start-line="186" selection-start-column="32" selection-end-line="186" selection-end-column="38" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="120.333336" vertical-offset="3249" max-vertical-offset="7218">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7027027" vertical-offset="2286" max-vertical-offset="7020">
-          <caret line="140" column="33" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.8108108" vertical-offset="2340" max-vertical-offset="7020">
+          <caret line="145" column="80" selection-start-line="145" selection-start-column="80" selection-end-line="145" selection-end-column="80" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#h6#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#h6#0;n#div#0;n#!!top" expanded="true" />
