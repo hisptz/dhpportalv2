@@ -56,10 +56,6 @@
         main.totalMales = 0;
         main.totalFemales = 0;
 
-        profileService.listProfileByYear('2016').then(function(data){
-            console.log("TEST IF FILES PULLS");
-            console.log(data);
-        });
 
         if(localStorage.getItem("seriesObject")||localStorage.getItem("seriesObject")!=null){
             localStorage.removeItem("seriesObject");

@@ -163,18 +163,18 @@
                         <openlayers ng-if="layers" ol-center="Africa" ol-defaults="defaults" custom-layers="true"  height="400px" >
                             <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in layers"></ol-layer>
                         </openlayers>
-                        <div id="districtboxz"  class="infoh district ">
-                            <table>
-                                <caption>Key</caption>
-                                <tr ng-repeat="leg in card.legend"><td style="background-color: {{leg.color}}">&nbsp;</td><td  style="text-align: left;">{{leg.set}}</td><td> ({{leg.members}})</td></tr>
-                            </table>
-                        </div>
-                        <div id="districtbox"  class="infopop district " ng-if="selectedDistrictHover">
-                            <table>
-                                <tr><td>{{card.selectedDistrictHover.name}}</td></tr>
-                                <tr><td>{{card.selectedDistrictHover.indicatorValue}}</td></tr>
-                            </table>
-                        </div>
+                        <!--<div id="districtboxz"  class="infoh district ">-->
+                            <!--<table>-->
+                                <!--<caption>Key</caption>-->
+                                <!--<tr ng-repeat="leg in card.legend"><td style="background-color: {{leg.color}}">&nbsp;</td><td  style="text-align: left;">{{leg.set}}</td><td> ({{leg.members}})</td></tr>-->
+                            <!--</table>-->
+                        <!--</div>-->
+                        <!--<div id="districtbox"  class="infopop district " ng-if="selectedDistrictHover">-->
+                            <!--<table>-->
+                                <!--<tr><td>{{card.selectedDistrictHover.name}}</td></tr>-->
+                                <!--<tr><td>{{card.selectedDistrictHover.indicatorValue}}</td></tr>-->
+                            <!--</table>-->
+                        <!--</div>-->
 
                     </div>
 
