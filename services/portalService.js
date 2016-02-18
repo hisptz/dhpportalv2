@@ -23,7 +23,7 @@ angular.module("dhpportal")
         self.authenticateDHIS = function () {
             var deferred = $q.defer();
             $.post( self.base + "dhis-web-commons-security/login.action?authOnly=true", {
-                j_username: "Demo", j_password: "HMISDEMO2016"
+                j_username: "Demo", j_password: "DEMO2016"
             },function(response){
                 deferred.resolve(response);
             },function(){

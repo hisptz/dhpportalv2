@@ -29,8 +29,6 @@
          * THE BEGINNING OF THE FUNCTION THAT HANDLES HOME PAGE FUNCTIONALITY OF MAP
          * */
 
-        console.log(map.baseUrl);
-
         $scope.drawMap = function(){
             $scope.shared = shared;
             shared.facility =3029;
@@ -381,12 +379,14 @@
 
 
 
-        portalService.authenticateDHIS().then(function(){
+        portalService.authenticateDHIS().then(function(dhpuser){
+            console.log(dhpuser);
+            $scope.drawMap();
             utilityService.getDataElements().then(function(data){
                 utilityService.prepareDataElementUid(data);
                 utilityService.prepareDataElementNames(data);
             });
-            $scope.drawMap();
+
         });
 
 
