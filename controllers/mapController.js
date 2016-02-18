@@ -368,8 +368,20 @@
             if($scope.Africa){
                 $scope.Africa = null;
             }
-            portalService.authenticateDHIS().then(function(){
+            portalService.authenticateDHIS().then(function(dhpuser){
+                console.log(dhpuser);
                 $scope.drawMap();
+                utilityService.getDataElements().then(function(data){
+                    utilityService.prepareDataElementUid(data);
+                    utilityService.prepareDataElementNames(data);
+                },function(response){
+                    console.log("failed to pull dataelement");
+                    console.log(response);
+                });
+
+            },function(response){
+                console.log("login failed");
+                console.log(response);
             });
         });
 
@@ -385,8 +397,14 @@
             utilityService.getDataElements().then(function(data){
                 utilityService.prepareDataElementUid(data);
                 utilityService.prepareDataElementNames(data);
+            },function(response){
+                console.log("failed to pull dataelement");
+                console.log(response);
             });
 
+        },function(response){
+            console.log("login failed");
+            console.log(response);
         });
 
 
