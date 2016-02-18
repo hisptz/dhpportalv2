@@ -382,11 +382,11 @@
 
 
         portalService.authenticateDHIS().then(function(){
+            console.log('After authentication');
             utilityService.getDataElements().then(function(data){
                 utilityService.prepareDataElementUid(data);
                 utilityService.prepareDataElementNames(data);
             });
-            $scope.$parent.main.Logout();
             $scope.drawMap();
         });
 
