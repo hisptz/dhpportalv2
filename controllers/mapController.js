@@ -15,7 +15,7 @@
         })
         .controller('mapController', mapController);
 
-    mapController.$inject   = ['$scope', '$http','$timeout', 'olData','olHelpers','profileService','utilityService','shared'];
+    mapController.$inject   = ['$scope', '$http','$timeout', 'olData','olHelpers','portalService','profileService','utilityService','shared'];
     function mapController($scope, $http,$timeout, olData,olHelpers,portalService,profileService,utilityService,shared) {
         var map = this;
         map.baseUrl = portalService.base;
@@ -363,7 +363,7 @@
             if($scope.Africa){
                 $scope.Africa = null;
             }
-            map.authenticateDHIS().then(function(){
+            portalService.authenticateDHIS().then(function(){
                 $scope.drawMap();
             });
         });
@@ -372,21 +372,14 @@
          *  THE END
          * */
 
-        map.authenticateDHIS = function () {
-            var promise = $.post( map.baseUrl + "dhis-web-commons-security/login.action?authOnly=true", {
-                j_username: "Demo", j_password: "HMISDEMO2016"
-            },function(response){
-                utilityService.getDataElements().then(function(data){
-                    utilityService.prepareDataElementUid(data);
-                    utilityService.prepareDataElementNames(data);
-                });
-                $scope.$parent.main.Logout();
+
+
+        portalService.authenticateDHIS().then(function(){
+            utilityService.getDataElements().then(function(data){
+                utilityService.prepareDataElementUid(data);
+                utilityService.prepareDataElementNames(data);
             });
-
-            return promise;
-        }
-
-        map.authenticateDHIS().then(function(){
+            $scope.$parent.main.Logout();
             $scope.drawMap();
         });
 
