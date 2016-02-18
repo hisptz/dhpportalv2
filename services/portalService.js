@@ -2,7 +2,7 @@
  * Created by kelvin on 11/16/15.
  */
 angular.module("dhpportal")
-   .service('portalService',function($http,$resource,$q) {
+   .service('portalService',function($http,$resource,utilityService,$q) {
 
         var self = this;
         //initializing shared data
@@ -21,16 +21,7 @@ angular.module("dhpportal")
             {name: 'map', image: 'map.jpg', action: ''}
         ];
         self.authenticateDHIS = function () {
-            var deferred = $q.defer();
-            $.post( self.base + "dhis-web-commons-security/login.action?authOnly=true", {
-                j_username: "Demo", j_password: "DEMO2016"
-            },function(response){
-                deferred.resolve(response);
-            },function(){
-                deferred.reject();
-            });
-
-            return deferred.promise;
+            return utilityService.login("Demo","DEMO2016");
         };
 
         return self;
