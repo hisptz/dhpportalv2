@@ -51,17 +51,5 @@ bower_components/highcharts-ng/src/highcharts-custom.js
 bower_components/highcharts-ng/src/highcharts-ng.js
 bower_components/angular-sanitize/angular-sanitize.min.js
 
-indicators/ancIntegration.json
-indicators/antenatalCare.json
-indicators/cervicalCancer.json
-indicators/gbvVac.json
-indicators/hivaids.json
-indicators/laborDelivery.json
-indicators/malaria.json
-indicators/mortalities.json
-indicators/newbornCare.json
-indicators/nutrition.json
-indicators/postnatalCare.json
-indicators/tb.json
-indicators/tracer_medicine.json
+
 
