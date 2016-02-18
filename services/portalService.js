@@ -6,11 +6,11 @@ angular.module("dhpportal")
 
         var self = this;
         //initializing shared data
-        this.period = '';
-        this.orgUnitId = '';
-        this.header='';
-        this.base = "https://hmisportal.moh.go.tz/training/";
-        this.icons = [
+        self.period = '';
+        self.orgUnitId = '';
+        self.header='';
+        self.base = "https://hmisportal.moh.go.tz/training/";
+        self.icons = [
             {name: 'table', image: 'table.jpg', action: ''},
             {name: 'bar', image: 'bar.png', action: ''},
             {name: 'line', image: 'line.png', action: ''},
@@ -20,7 +20,7 @@ angular.module("dhpportal")
             {name: 'pie', image: 'pie.png', action: ''},
             {name: 'map', image: 'map.jpg', action: ''}
         ];
-        this.authenticateDHIS = function () {
+        self.authenticateDHIS = function () {
             var deferred = $q.defer();
             $.post( self.base + "dhis-web-commons-security/login.action?authOnly=true", {
                 j_username: "Demo", j_password: "HMISDEMO2016"
@@ -32,4 +32,6 @@ angular.module("dhpportal")
 
             return deferred.promise;
         };
+
+        return self;
     })
