@@ -1,0 +1,41 @@
+
+<div class="card z-depth-2 white lighten-5 hide-on-med-and-down" style="overflow: visible;height: 250px">
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">FILTERS<i class="material-icons right small">keyboard_arrow_left</i></span>
+        <div class="section">
+            <div class="input-field col s12">
+                <select ng-model="$root.selectedPeriod" ng-change="$root.firstClick()">
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                </select>
+                <label>Period</label>
+            </div>
+        </div>
+        <div class="section">
+            <div class="input-field col s12"  id="orgDropdown" >
+
+                <label>Regions</label>
+            </div>
+        </div>
+    </div>
+    <!--<div class="card-reveal">-->
+        <!--<span class="card-title grey-text text-darken-4">FILTERS<i class="material-icons right">close</i></span>-->
+        <!--<p class="flow-text">Use This section to filter the results</p>-->
+    <!--</div>-->
+</div>
+    <script>
+    $(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+        $(".dropdown-button").dropdown();
+        var orgUnits=[{"id":"YtVMnut7Foe","name":"Arusha Region"},{"id":"acZHYslyJLt","name":"Dar Es Salaam Region"},{"id":"Cpd5l15XxwA","name":"Dodoma Region"},{"id":"MAL4cfZoFhJ","name":"Geita Region"},{"id":"sWOWPBvwNY2","name":"Iringa Region"},{"id":"Crkg9BoUo5w","name":"Kagera Region"},{"id":"DWSo42hunXH","name":"Katavi Region"},{"id":"RD96nI1JXVV","name":"Kigoma Region"},{"id":"lnOyHhoLzre","name":"Kilimanjaro Region"},{"id":"VMgrQWSVIYn","name":"Lindi Region"},{"id":"qg5ySBw9X5l","name":"Manyara Region"},{"id":"vYT08q7Wo33","name":"Mara Region"},{"id":"A3b5mw8DJYC","name":"Mbeya Region"},{"id":"Sj50oz9EHvD","name":"Morogoro Region"},{"id":"bN5q5k5DgLA","name":"Mtwara Region"},{"id":"hAFRrgDK0fy","name":"Mwanza Region"},{"id":"qarQhOt2OEh","name":"Njombe Region"},{"id":"yyW17iCz9As","name":"Pwani Region"},{"id":"vAtZ8a924Lx","name":"Rukwa Region"},{"id":"ZYYX8Q9SGoV","name":"Ruvuma Region"},{"id":"EO3Ps3ny0Nr","name":"Shinyanga Region"},{"id":"IgTAEKMqKRe","name":"Simiyu Region"},{"id":"LGTVRhKSn1V","name":"Singida Region"},{"id":"kZ6RlMnt2bp","name":"Tabora Region"},{"id":"vU0Qt1A5IDz","name":"Tanga Region"}];
+        var dropdown = "<select class='changeOrgUnit' ng-model='$root.selectedOrgUnit'  ng-change='$root.firstClick()'>"
+        dropdown += "<option value='m0frOspS7JY'>MOH Tanzania</option>"
+        $.each(orgUnits,function(key,orgUnit){
+            dropdown += "<option value='"+orgUnit.id+"'> "+orgUnit.name+"</option>";
+        });
+        dropdown += "</select>";
+        $("#orgDropdown").html(dropdown);
+        $('select').material_select();
+    })
+</script>

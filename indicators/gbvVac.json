@@ -1,0 +1,153 @@
+[
+  {
+    "title":"GBV Idadi ya wateja wote",
+    "description":"GBV Idadi ya wateja wote",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col s12 m6",
+    "data":"DoUU3CT1A07"
+  },
+  {
+    "title":"GBV Idadi ya wateja wapya",
+    "description":"GBV Idadi ya wateja wapya",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"x2UGbITvfI8",
+    "displayTable":false,
+    "displayMap":false,
+    "chart":"line"
+
+  },
+  {
+    "title":"GBV Idadi ya wateja waliokuja kwa ufuatiliaji (Follow up visit)",
+    "description":"GBV Idadi ya wateja waliokuja kwa ufuatiliaji (Follow up visit)",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m12 s12",
+    "data":"sYUZyts1MMT",
+    "chart":"combined"
+
+  },
+  {
+    "title":"GBV Wateja Waliofanyiwa unasihi (Counseling)",
+    "description":"GBV Wateja Waliofanyiwa unasihi (Counseling)",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"H1J48AbjszO"
+
+  },
+  {
+    "title":"GBV Idadi ya waliopatwa na ukatili wa kimwili (Physical Violence)",
+    "description":"GBV Idadi ya waliopatwa na ukatili wa kimwili (Physical Violence)",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"CifISChGCYR"
+  },
+  {
+    "title":"GBV Idadi ya waliopatwa na ukatili wa kingono (Sexual Violence)",
+    "description":"GBV Idadi ya waliopatwa na ukatili wa kingono (Sexual Violence)",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"Lf8xT5PZToo"
+  },
+  {
+    "title":"GBV Idadi ya waliopatwa na ukatili wa kihisia (Emotional Violence)",
+    "description":"GBV Idadi ya waliopatwa na ukatili wa kihisia (Emotional Violence)",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"T1K7yVgE4kd"
+  },
+  {
+    "title":"GBV Idadi ya watoto waliotelekezwa (Neglect)",
+    "description":"GBV Idadi ya watoto waliotelekezwa (Neglect)",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"WMP9qQJXRiY"
+  },
+  {
+    "title":"GBV Idadi ya waliopata ukatili kwa kulawitiwa",
+    "description":"GBV Idadi ya waliopata ukatili kwa kulawitiwa",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"XOGHJegdR50"
+  },
+  {
+    "title":"GBV Idadi ya waliofika kituoni ndani ya saa 72 baada ya tukio",
+    "description":"GBV Idadi ya waliofika kituoni ndani ya saa 72 baada ya tukio",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"vKdJGP5FCOi"
+  },
+  {
+    "title":"GBV Walipimwa Virusi vya UKIMWI (HIV testing)",
+    "description":"GBV Walipimwa Virusi vya UKIMWI (HIV testing)",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"YObV7hMSedk"
+  },
+  {
+    "title":"GBV Waliopewa njia ya uzazi wa mpango wa dharura (Emergency Contraceptive)",
+    "description":"GBV Waliopewa njia ya uzazi wa mpango wa dharura (Emergency Contraceptive)",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"p9eTsPP1aRG"
+  },
+  {
+    "title":"GBV Wateja waliopata rufaa kutoka nje ya kituo",
+    "description":"GBV Wateja waliopata rufaa kutoka nje ya kituo",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"qJbkDpJoZlN"
+  },
+  {
+    "title":"GBV Waliopewa matibabu ya kinga (Post Exposure Prophylaxis)",
+    "description":"GBV Waliopewa matibabu ya kinga (Post Exposure Prophylaxis)",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"wZ0mfD4QRAZ"
+  },
+  {
+    "title":"GBV Wateja waliopata rufaa kwenda nje ya kituo",
+    "description":"GBV Wateja waliopata rufaa kwenda nje ya kituo",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"ZwYZZG8v7wX"
+  },
+  {
+    "title":"GBV Wateja waliopata rufaa ndani ya kituo",
+    "description":"GBV Wateja waliopata rufaa ndani ya kituo",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"x8BqhbTBKyr"
+  }
+]

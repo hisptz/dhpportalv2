@@ -1,0 +1,84 @@
+
+[
+  {
+    "title":"ANC Partners Syphilis +VE prevalance",
+    "description":"Description of ANC Partners Syphilis +VE prevalance",
+    "cardClass":"col s12 m6",
+    "data":"BqowH5E3ytQ",
+    "displayTable":false,
+    "displayMap":false,
+    "chart":"bar"
+  },
+  {
+    "title":"ANC Malaria testing rate",
+    "description":"Description of ANC Malaria testing rate",
+    "cardClass":"col m6 s12",
+    "cardSize":"medium",
+    "data":"FaooqUblXag"
+
+  },
+  {
+    "title":"ANC Anaemia Prevalance",
+    "description":"Description of ANC Anaemia Prevalance",
+    "cardClass":"col m12 s12",
+    "data":"JT9AlIbDl1H",
+    "chart":"combined"
+
+  },
+  {
+    "title":"ANC Coverage for Women of Under 20 years",
+    "description":"ANC Coverage for Women of Under 20 years",
+    "cardClass":"col m6 s12",
+    "data":"JeIe5FgaGTX"
+
+  },
+  {
+    "title":"ANC 4th visits Coverage",
+    "description":"ANC 4th visits Coverage",
+    "cardClass":"col m6 s12",
+    "data":"QiA9L6tNHFy"
+  },
+  {
+    "title":"ANC Partners Syphilis testing rate",
+    "description":"ANC Partners Syphilis testing rate",
+    "cardClass":"col m6 s12",
+    "data":"Wqdkddpf9fB"
+  },
+  {
+    "title":"ANC IPT 2 coverage",
+    "description":"ANC IPT 2 coverage",
+    "cardClass":"col m6 s12",
+    "data":"i47jm4Pkkq6"
+  },
+  {
+    "title":"ANC Iron supplementation rate",
+    "description":"ANC Iron supplementation rate",
+    "cardClass":"col m6 s12",
+    "data":"iGbAQJ0V68E"
+    
+  },
+  {
+    "title":"ANC Partner Syphilis treatment rate",
+    "description":"ANC Partner Syphilis treatment rate",
+    "cardClass":"col m6 s12",
+    "data":"mb7EIJYVFWg"
+  },
+  {
+    "title":"ANC 1st visit coverage",
+    "description":"ANC 1st visit coverage",
+    "cardClass":"col m6 s12",
+    "data":"oazOp512ShT"
+  },
+  {
+    "title":"ANC Partner Syphilis treatment rate",
+    "description":"ANC Partner Syphilis treatment rate",
+    "cardClass":"col m6 s12",
+    "data":"ovRcOHNO7qZ"
+  },
+  {
+    "title":"ANC Malaria prevalence",
+    "description":"ANC Malaria prevalence",
+    "cardClass":"col m6 s12",
+    "data":"vfaY7k6TINl"
+  }
+]

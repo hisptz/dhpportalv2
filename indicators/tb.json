@@ -1,0 +1,123 @@
+[
+  {
+    "title":"TB Notification Rate",
+    "description":"TB Notification Rate",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"xywPYBGDsS6"
+  },
+  {
+    "title":"Proportion of children < 15  years diagnozed with TB",
+    "description":"Proportion of children < 15  years diagnozed with TB",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"ELPxKQDTgK2"
+  },
+  {
+    "title":"MDR TB notified cases",
+    "description":"MDR TB notified cases",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m12 s12",
+    "data":"qdXiY9RSR56",
+    "chart":"combined"
+  },
+  {
+    "title":"TB Treatment Success Rate",
+    "description":"TB Treatment Success Rate",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"IpgVkyzQ7k3"
+  },
+  {
+    "title":"Percentage of TB cases with Known HIV Status",
+    "description":"Percentage of TB cases with Known HIV Status",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"vzrKvd50poy"
+  },
+  {
+    "title":"Percentage of TB patients with documented HIV ve+ status",
+    "description":"Percentage of TB patients with documented HIV ve+ status",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"WQjdDOZzsR1"
+  },
+  {
+    "title":"Percentage of TB patients registered for HIV care",
+    "description":"Percentage of TB patients registered for HIV care",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"HWTJx1tWZRh"
+  },
+  {
+    "title":"Percentage of TB patients initiated ART",
+    "description":"Percentage of TB Cases initiated ART",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"mQtop3xku9h"
+  },
+  {
+    "title":"Percentage of TB patients put on CPT",
+    "description":"Percentage of TB patients put on CPT",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"acT7x7XHryb"
+  },
+  {
+    "title":"Leprosy Notification Rate",
+    "description":"Maelezo ya Leprosy Notification Rate",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col s12 m6",
+    "data":"sNv74FNkYcN"
+  },
+  {
+    "title":"Proportion of children < 15  years diagnozed with Leprosy",
+    "description":"Proportion of children < 15  years diagnozed with Leprosy",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"AnvTxls2pzS"
+  },
+
+
+  {
+    "title":"MB Leprosy treatment Success Rate",
+    "description":"Maelezo ya MB Leprosy Success Rate",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"w0ro7kL3sJA"
+  },
+
+  {
+    "title":"PB Leprosy treatment Success Rate",
+    "description":"PB Leprosy Success Rate",
+    "indicatorType":"",
+    "numerator":"",
+    "denominator":"",
+    "cardClass":"col m6 s12",
+    "data":"nbKyhwUcYj6"
+  }
+]

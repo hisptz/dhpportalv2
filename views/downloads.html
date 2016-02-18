@@ -1,0 +1,241 @@
+<div class="row">
+    <div class="col s12 m12">
+        <div class="col s2" style="padding-top: 1%">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header active"><i class="mdi-editor-format-align-justify"></i>Census</div>
+                    <div class="collapsible-body">
+
+                             <p style="cursor: pointer" ng-click="activateLink('census')" ng-class="{'hoverable z-index-5' : linkValue == 'census'}">
+                                 <a href="" ng-click="activateLink('census')">&nbsp;&nbsp;Census
+                                     <i class="material-icons right">send</i>
+                                 </a>
+                             </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>Community Surveys</div>
+                    <div class="collapsible-body">
+                          <p style="cursor: pointer" ng-click="activateLink('Community')" ng-class="{'active' : linkValue == 'Community'}">
+                           <a  href="">&nbsp;&nbsp;Community Surveys
+                               <i class="material-icons right">send</i>
+                           </a>
+
+                          </p>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>Facility Surveys</div>
+                            <div class="collapsible-body">
+                                <p style="cursor: pointer" ng-click="activateLink('Facility')" ng-class="{'active' : linkValue == 'Facility'}">
+                                    <a  href="" ng-click="activateLink('Facility')" >&nbsp;&nbsp;Facility Surveys
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>Health Program Reports</div>
+                            <div class="collapsible-body">
+                                <p ng-click="activateLink('HIV')" ng-class="{'active' : linkValue == 'HIV'}">
+                                    <a  href="" ng-click="activateLink('HIV')" >&nbsp;&nbsp;HIV &amp; AIDS
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                 </p>
+                                <p ng-click="activateLink('HMIS')" ng-class="{'active' : linkValue == 'HMIS'}">
+                                    <a  href="" ng-click="activateLink('HMIS')" >&nbsp;&nbsp;HMIS
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('IVD')" ng-class="{'active' : linkValue == 'IVD'}">
+                                    <a  href="" ng-click="activateLink('IVD')" >&nbsp;&nbsp;IVD
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('Malaria')" ng-class="{'active' : linkValue == 'Malaria'}">
+                                    <a  href="" ng-click="activateLink('Malaria')" >&nbsp;&nbsp;Malaria
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('TB')" ng-class="{'active' : linkValue == 'TB'}">
+                                    <a  href="" ng-click="activateLink('TB')" >&nbsp;&nbsp;TB &amp; LP
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('TFNC')" ng-class="{'active' : linkValue == 'TFNC'}">
+                                    <a  href="" ng-click="activateLink('TFNC')" >&nbsp;&nbsp;TFNC
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                             </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>HMIS Annual Reports</div>
+                            <div class="collapsible-body">
+                                <p ng-click="activateLink('Performance')" ng-class="{'active' : linkValue == 'Performance'}">
+                                <a  href="" ng-click="activateLink('Performance')" >&nbsp;&nbsp;Performance Profile Report
+                                    <i class="material-icons right">send</i></a>
+                                </a>
+                                </p>
+                                <p ng-click="activateLink('Statistics')" ng-class="{'active' : linkValue == 'Statistics'}">
+                                    <a  href="" ng-click="activateLink('Statistics')" >&nbsp;&nbsp;Statistics table &amp; Figures
+                                        <i class="material-icons right">send</i></a>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>Policies,Guidelines and Strategies</div>
+                            <div class="collapsible-body">
+                                <p ng-click="activateLink('Guidelines')" ng-class="{'active' : linkValue == 'Guidelines'}">
+                                    <a  href="" ng-click="activateLink('Guidelines')" >&nbsp;&nbsp;Guidelines
+                                        <i class="material-icons right">send</i></a>
+                                </p>
+                                <p ng-click="activateLink('Policies')" ng-class="{'active' : linkValue == 'Policies'}">
+                                    <a  href="" ng-click="activateLink('Policies')" >&nbsp;&nbsp;Policies
+                                        <i class="material-icons right">send</i></a>
+                                </p>
+                                <p ng-click="activateLink('Strategies')" ng-class="{'active' : linkValue == 'Strategies'}">
+                                    <a  href="" ng-click="activateLink('Strategies')" >&nbsp;&nbsp;Strategies
+                                        <i class="material-icons right">send</i></a>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>Registry</div>
+                            <div class="collapsible-body">
+                                <p ng-click="activateLink('Death')" ng-class="{'active' : linkValue == 'Death'}">
+                                    <a  href="" ng-click="activateLink('Death')" >&nbsp;&nbsp;Death
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('MTUHA')" ng-class="{'active' : linkValue == 'MTUHA'}">
+                                    <a  href="" ng-click="activateLink('MTUHA')" >&nbsp;&nbsp;Kitabu Namba 1 Mwongozo wa MTUHA
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('Kituo')" ng-class="{'active' : linkValue == 'Kituo'}">
+                                    <a  href="" ng-click="activateLink('Kituo')" >&nbsp;&nbsp;Kitabu Namba 2 Form Kitabu cha Takwimu za Kituo
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('jamii')" ng-class="{'active' : linkValue == 'jamii'}">
+                                    <a  href="" ng-click="activateLink('jamii')" >&nbsp;&nbsp;Kitabu Namba 3 Kitabu cha Takwimu za jamii
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('tiba')" ng-class="{'active' : linkValue == 'tiba'}">
+                                    <a  href="" ng-click="activateLink('tiba')" >&nbsp;&nbsp;Kitabu Namba 4 cha kumbukumbu za dawa na vifaa tiba
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('nje')" ng-class="{'active' : linkValue == 'nje'}">
+                                    <a  href="" ng-click="activateLink('nje')" >&nbsp;&nbsp;Kitabu Namba 5 Rejesta ya Wagonjwa wa nje
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('wajawazito')" ng-class="{'active' : linkValue == 'wajawazito'}">
+                                    <a  href="" ng-click="activateLink('wajawazito')" >&nbsp;&nbsp;Kitabu Namba 6 Rejesta ya wajawazito
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('watoto')" ng-class="{'active' : linkValue == 'watoto'}">
+                                    <a  href="" ng-click="activateLink('watoto')" >&nbsp;&nbsp;Kitabu Namba 7 Rejesta ya watoto
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('Mpango')" ng-class="{'active' : linkValue == 'Mpango'}">
+                                    <a  href="" ng-click="activateLink('Mpango')" >&nbsp;&nbsp;Kitabu Namba 8 Rejesta ya Uzazi wa Mpango
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('Kuhara')" ng-class="{'active' : linkValue == 'Kuhara'}">
+                                    <a  href="" ng-click="activateLink('Kuhara')" >&nbsp;&nbsp;Kitabu Namba 9 Rejesta ya Magonjwa ya Kuhara
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('Afya')" ng-class="{'active' : linkValue == 'Afya'}">
+                                    <a  href="" ng-click="activateLink('Afya')" >&nbsp;&nbsp;Kitabu Namba 10 Report ya Kutoa vituo vya huduma ya Afya
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('Meno')" ng-class="{'active' : linkValue == 'Meno'}">
+                                    <a  href="" ng-click="activateLink('Meno')" >&nbsp;&nbsp;Kitabu Namba 11 Rejesta ya Magonjwa ya kinywa na Meno
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('Wazazi')" ng-class="{'active' : linkValue == 'Wazazi'}">
+                                    <a  href="" ng-click="activateLink('Wazazi')" >&nbsp;&nbsp;Kitabu Namba 12 Rejesta ya Wazazi
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('kujifungua')" ng-class="{'active' : linkValue == 'kujifungua'}">
+                                    <a  href="" ng-click="activateLink('kujifungua')" >&nbsp;&nbsp;Kitabu Namba 13 Rejesta ya mtoto na Mama baada ya kujifungua
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('waliolazwa')" ng-class="{'active' : linkValue == 'waliolazwa'}">
+                                    <a  href="" ng-click="activateLink('waliolazwa')" >&nbsp;&nbsp;Kitabu Namba 14 Rejesta ya Wagonjwa waliolazwa
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                                <p ng-click="activateLink('Ustawi')" ng-class="{'active' : linkValue == 'Ustawi'}">
+                                    <a  href="" ng-click="activateLink('Ustawi')" >&nbsp;&nbsp;Kitabu Namba 15 Rejesta ya Watumishi wa Sekta ya Afya na Ustawi wa Jamii
+
+                                        <i class="material-icons right">send</i></a>
+                                </p>
+                                <p ng-click="activateLink('Tracer')" ng-class="{'active' : linkValue == 'Tracer'}">
+                                    <a  href="" ng-click="activateLink('Tracer')" >&nbsp;&nbsp;Tracer book
+                                        <i class="material-icons right">send</i>
+                                    </a>
+                                </p>
+                             </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s10">
+                    <iframe ng-if="linkValue =='census'" ng-init="linkValue =='census'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNZlBuNWJxU3NnblE&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Community'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNTXU0YWVHZjBXcDg&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Facility'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNV1VncXlQQUdkTGc&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='HIV'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNcDU0ZkMxMVBfLW8&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='HMIS'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNLUIzOFBYN0RZMk0&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='IVD'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNX0FJT1VXRE9uTnM&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Malaria'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNQlNHTng0LWt0ZzQ&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='TB'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNSkpqX3c4NHNSVTA&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='TFNC'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNcUFreV9rLVdUM3c&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Performance'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNcjY0cXJUZnZ3cEk&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Statistics'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNY1hodzliUFVKOEk&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Guidelines'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNaWQwWHNuUDBnMXM&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Policies'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNWTRpRGo4VkNBWDA&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Strategies'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNTW9XQnJxM0dVT1k&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Death'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNTWlEaVptRmFSMXc&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='MTUHA'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNamFnOTBhODB2ZU0&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Kituo'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNTThBWnJLdGU5YmM&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='jamii'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNXzJLVC10NWpielE&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='tiba'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNb0ZlaVh5ODhOZGM&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='nje'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNVlQ2ZkozdGczY3M&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='wajawazito'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNMmNvd1dsOFlYbGM&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='watoto'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNem5nLVFCQUJxTmM&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Mpango'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNTnRPVU1aYlk5QVk&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Kuhara'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNMkNUckFNNy1va1E&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Afya'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNMHF4MGhfR2ZwdTA&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Meno'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNRzdlVHlYLTlyR2M&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Wazazi'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNTGExVGdHdkNyVkk&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='kujifungua'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNNjM2QUZfdzlnNVE&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='waliolazwa'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNUzV4aE1yYzNsVzQ&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Ustawi'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNSGNWV3k4bHZHd1E&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+                    <iframe ng-if="linkValue =='Tracer'" src="https://drive.google.com/embeddedfolderview?id=0B3-ZWCM6ZEvNUXRaem1kR3htbVU&usp=drive_web#grid" width="100%" height="800" frameborder="0"></iframe>
+               </div>
+            </div>
+        </div>
+
+<style>
+    p {
+        padding: 0.6rem !important;
+        cursor: pointer;
+    }
+</style>
+        <script>
+            $(document).ready(function(){
+                $('.collapsible').collapsible();
+            });
+        </script>

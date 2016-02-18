@@ -1,0 +1,132 @@
+<div class="row" >
+    <h5 class="center">{{ CurrentSection }} : {{ getOrgUnitName($root.selectedOrgUnit) }} - {{ getPeriodName($root.selectedPeriod) }}</h5>
+    <div class="col s2 hide-on-med-and-down" >
+        <div class="section">
+            <div>
+                <div class=" card z-depth-2 white lighten-5 hide-on-med-and-down" style="overflow: visible;height: 320px">
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">FILTERS<i class="material-icons right small">keyboard_arrow_left</i></span>
+                        <div class="section">
+                            <div class="input-field col s12 grey lighten-5">
+                                <select ng-model="$root.periodType" material-select watch ng-change="$root.changePeriodType()">
+                                    <option value="years">Yearly</option>
+                                    <option value="quarters">Quarterly</option>
+                                </select>
+                                <label>Period Type</label>
+                            </div>
+                            <div class="input-field col s12 grey lighten-5" ng-if="$root.periodType == 'years'">
+                                <select ng-model="$root.selectedPeriod" ng-change="$root.firstClick()" material-select watch>
+                                    <option value="2014">2014</option>
+                                    <!--<option value="2015">2015</option>-->
+                                </select>
+                                <label>Period</label>
+                            </div>
+                            <div class="input-field col s12 grey lighten-5" ng-if="$root.periodType == 'quarters'">
+                                <select ng-model="$root.selectedPeriod" ng-change="$root.firstClick()" material-select watch>
+                                    <option value="2014Q1">Jan - Mar 2014</option>
+                                    <option value="2014Q2">Apr - Jun 2014</option>
+                                    <option value="2014Q3">Jul - Sep 2014</option>
+                                    <option value="2014Q4">Oct - Dec 2014</option>
+                                </select>
+                                <label>Period</label>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="input-field col s12 orgDropdown1" >
+
+                                <label>Regions</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">FILTERS<i class="material-icons right">close</i></span>
+                        <p class="flow-text">Use This section to filter the results</p>
+                    </div>
+                </div>
+                <script>
+                    var orgUnits1=[{"id":"YtVMnut7Foe","name":"Arusha Region"},{"id":"acZHYslyJLt","name":"Dar Es Salaam Region"},{"id":"Cpd5l15XxwA","name":"Dodoma Region"},{"id":"MAL4cfZoFhJ","name":"Geita Region"},{"id":"sWOWPBvwNY2","name":"Iringa Region"},{"id":"Crkg9BoUo5w","name":"Kagera Region"},{"id":"DWSo42hunXH","name":"Katavi Region"},{"id":"RD96nI1JXVV","name":"Kigoma Region"},{"id":"lnOyHhoLzre","name":"Kilimanjaro Region"},{"id":"VMgrQWSVIYn","name":"Lindi Region"},{"id":"qg5ySBw9X5l","name":"Manyara Region"},{"id":"vYT08q7Wo33","name":"Mara Region"},{"id":"A3b5mw8DJYC","name":"Mbeya Region"},{"id":"Sj50oz9EHvD","name":"Morogoro Region"},{"id":"bN5q5k5DgLA","name":"Mtwara Region"},{"id":"hAFRrgDK0fy","name":"Mwanza Region"},{"id":"qarQhOt2OEh","name":"Njombe Region"},{"id":"yyW17iCz9As","name":"Pwani Region"},{"id":"vAtZ8a924Lx","name":"Rukwa Region"},{"id":"ZYYX8Q9SGoV","name":"Ruvuma Region"},{"id":"EO3Ps3ny0Nr","name":"Shinyanga Region"},{"id":"IgTAEKMqKRe","name":"Simiyu Region"},{"id":"LGTVRhKSn1V","name":"Singida Region"},{"id":"kZ6RlMnt2bp","name":"Tabora Region"},{"id":"vU0Qt1A5IDz","name":"Tanga Region"}];
+                    var dropdown1 = "<select  material-select watch class='changeOrgUnit' ng-model='$root.selectedOrgUnit'  ng-change='$root.firstClick()'>"
+                    dropdown1 += "<option value='m0frOspS7JY'>MOH Tanzania</option>"
+                    $.each(orgUnits1,function(key,orgUnit){
+                        dropdown1 += "<option value='"+orgUnit.id+"'> "+orgUnit.name+"</option>";
+                    });
+                    dropdown1 += "</select>";
+                    $(".orgDropdown1").html(dropdown1);
+                </script>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 hide-on-large-only" >
+        <div class="section">
+            <div class="input-field col s4 grey lighten-5">
+                <select ng-model="$root.periodType" material-select watch ng-change="$root.changePeriodType()">
+                    <option value="years">Yearly</option>
+                    <option value="quarters">Quarterly</option>
+                </select>
+                <label>Period Type</label>
+            </div>
+            <div class="input-field col s4 grey lighten-5" ng-if="$root.periodType == 'years'">
+                <select ng-model="$root.selectedPeriod" ng-change="$root.firstClick1()" material-select watch>
+                    <option value="2014">2014</option>
+                    <!--<option value="2015">2015</option>-->
+                </select>
+                <label>Period</label>
+            </div>
+            <div class="input-field col s4 grey lighten-5" ng-if="$root.periodType == 'quarters'">
+                <select ng-model="$root.selectedPeriod" ng-change="$root.firstClick1()" material-select watch>
+                    <option value="2014Q1">Jan - Mar 2014</option>
+                    <option value="2014Q2">Apr - Jun 2014</option>
+                    <option value="2014Q3">Jul - Sep 2014</option>
+                    <option value="2014Q4">Oct - Dec 2014</option>
+                </select>
+                <label>Period</label>
+            </div>
+            <div class="input-field col s4 orgDropdown grey lighten-5"  id="orgDropdown" >
+                <label>Regions</label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var orgUnits=[{"id":"YtVMnut7Foe","name":"Arusha Region"},{"id":"acZHYslyJLt","name":"Dar Es Salaam Region"},{"id":"Cpd5l15XxwA","name":"Dodoma Region"},{"id":"MAL4cfZoFhJ","name":"Geita Region"},{"id":"sWOWPBvwNY2","name":"Iringa Region"},{"id":"Crkg9BoUo5w","name":"Kagera Region"},{"id":"DWSo42hunXH","name":"Katavi Region"},{"id":"RD96nI1JXVV","name":"Kigoma Region"},{"id":"lnOyHhoLzre","name":"Kilimanjaro Region"},{"id":"VMgrQWSVIYn","name":"Lindi Region"},{"id":"qg5ySBw9X5l","name":"Manyara Region"},{"id":"vYT08q7Wo33","name":"Mara Region"},{"id":"A3b5mw8DJYC","name":"Mbeya Region"},{"id":"Sj50oz9EHvD","name":"Morogoro Region"},{"id":"bN5q5k5DgLA","name":"Mtwara Region"},{"id":"hAFRrgDK0fy","name":"Mwanza Region"},{"id":"qarQhOt2OEh","name":"Njombe Region"},{"id":"yyW17iCz9As","name":"Pwani Region"},{"id":"vAtZ8a924Lx","name":"Rukwa Region"},{"id":"ZYYX8Q9SGoV","name":"Ruvuma Region"},{"id":"EO3Ps3ny0Nr","name":"Shinyanga Region"},{"id":"IgTAEKMqKRe","name":"Simiyu Region"},{"id":"LGTVRhKSn1V","name":"Singida Region"},{"id":"kZ6RlMnt2bp","name":"Tabora Region"},{"id":"vU0Qt1A5IDz","name":"Tanga Region"}];
+        var dropdown = "<select  material-select watch class='changeOrgUnit' ng-model='$root.selectedOrgUnit'  ng-change='$root.firstClick()'>"
+        dropdown += "<option value='m0frOspS7JY'>MOH Tanzania</option>"
+        $.each(orgUnits,function(key,orgUnit){
+            dropdown += "<option value='"+orgUnit.id+"'> "+orgUnit.name+"</option>";
+        });
+        dropdown += "</select>";
+        $(".orgDropdown").html(dropdown);
+    </script>
+
+    <div class="col s12 m12 l10">
+        <div class="section">
+            <div class="col s12 m12">
+
+                <div class="card z-depth-2 teal lighten-5" >
+                    <div id="tableDrawer" class="card-image waves-effect waves-block waves-light" style="height:700px;overflow:scroll">
+
+                        <p ng-if="loadingImage" class="center"><img src="assets/img/loading.gif" style="width:40%;height: 40%"></p>
+                        <div ng-if="!loadingImage" ng-bind-html="table"></div>
+
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><i class="material-icons mdi-navigation-more-vert right"></i></span>
+
+                        <p>
+                            <a class="btn btn-link right" ng-click="switchRows()" target="_blank">
+                                <span class="glyphicon glyphicon-share"></span> Switch
+                            </a>
+                            <a class="btn btn-link right" ng-click="downloadExcelTotal()" target="_blank">
+                                <span class="glyphicon glyphicon-share"></span> Export to Excel
+                            </a>
+                        </p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p class="flow-text">maelezo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
