@@ -141,6 +141,8 @@
             main.processViewPdf(orgUnit,name,id);
             main.current_id = id;
         }
+
+
         main.getHealthProfileFromTable = function(row){
             main.openPdfFile(row);
         }

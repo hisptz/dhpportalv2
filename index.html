@@ -70,6 +70,7 @@
     <link rel="stylesheet" type="text/css" href="bower_components/openlayers3/build/ol.css">
     <link rel="stylesheet" type="text/css" href="bower_components/angular-openlayers-directive/dist/angular-openlayers-directive.css">
     <link rel="stylesheet" type="text/css" href="assets/spinkit/angular-spinkit.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-multi-select-tree/dist/angular-multi-select-tree-0.1.0.min.css">
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -320,6 +321,8 @@
 <script type="text/javascript" src="bower_components/angular-ivh-treeview/dist/ivh-treeview.js"></script>
 <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
 <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-multi-select-tree/dist/angular-multi-select-tree-0.1.0.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-multi-select-tree/dist/angular-multi-select-tree-0.1.0.tpl.js"></script>
 <script src="services/dhis-highchart-angular-service.js"></script>
 <script src="assets/spinkit/angular-spinkit.min.js"></script>
 <!--<script src="https://maps.google.com/maps/api/js?sensor=false"></script>-->
@@ -327,7 +330,7 @@
 <script src="bower_components/angular-openlayers-directive/dist/angular-openlayers-directive.js"></script>
 
 <script>
-    var mainModule = angular.module('dhpportal', ['openlayers-directive','ivh.treeview','highcharts-ng','ngFileUpload','datatables',"ngRoute",'ui.materialize','ngCookies','ngResource','ngAnimate','ngSanitize','dhisHighchartAngularService','angular-spinkit']);
+    var mainModule = angular.module('dhpportal', ['openlayers-directive','multi-select-tree','ivh.treeview','highcharts-ng','ngFileUpload','datatables',"ngRoute",'ui.materialize','ngCookies','ngResource','ngAnimate','ngSanitize','dhisHighchartAngularService','angular-spinkit']);
 </script>
 <script src="assets/js/routes.js"></script>
 <script src="controllers/mainController.js"></script>
