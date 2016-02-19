@@ -5,7 +5,7 @@ angular.module("dhpportal")
         map.renderMap = function(selectedYear,orgunitStrings){
             var maplayer = {};
             map.geoLayer= {"type":"FeatureCollection","features":[]};
-            var geoUrl = portalService.base+"api/geoFeatures.json?ou=ou:LEVEL-4;"+orgunitStrings;
+            var geoUrl = portalService.base+"api/geoFeatures.json?ou=ou:LEVEL-3;"+orgunitStrings;
 
             var response = $http({method:'GET',url:geoUrl,dataType:'json',catche:true,isModified:true});
 
