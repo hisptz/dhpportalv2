@@ -382,7 +382,7 @@
 
                 $scope.$watch('orgunitString',function(newValue,oldvalue){
                     console.log(newValue);
-                    $scope.dashboardObject.map = mapService.renderMap($scope.selectedYear,$scope.orgunitString);
+                    $scope.dashboardObject.map = mapService.renderMap($scope.selectedYear,newValue);
                 });
 
 
