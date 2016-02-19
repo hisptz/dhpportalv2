@@ -410,6 +410,7 @@
 
                             var url=profileService.baseDHIS+ default_url;
                             if(newvalue.length==1&&newvalue[0].id=="m0frOspS7JY"){
+
                             }else{
                                 url = profileService.baseDHIS+selective_url;
                             }
