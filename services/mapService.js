@@ -348,8 +348,8 @@ angular.module("dhpportal")
 
             var boundaries =  {
                 Africa: {
-                    lat: -6.45,
-                    lon: 35,
+                    lat: -7.1386969960428,
+                    lon: 3883486.189299,
                     zoom: 6
                 },
                 layers:[
