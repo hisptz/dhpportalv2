@@ -71,6 +71,33 @@
         $scope.totalFemales = 0;
 
 
+
+        //// front page UX functions
+        $scope.showMaps = function(){
+            $scope.dashboardObject.displayMap = true;
+            $scope.dashboardObject.displayChart = false;
+            $scope.dashboardObject.displayTable = false;
+        }
+        $scope.showCharts = function(){
+            $scope.dashboardObject.displayMap = false;
+            $scope.dashboardObject.displayChart = true;
+            $scope.dashboardObject.displayTable = false;
+        }
+        $scope.showTables = function(){
+            $scope.dashboardObject.displayMap = true;
+            $scope.dashboardObject.displayChart = false;
+            $scope.dashboardObject.displayTable = true;
+        }
+        $scope.downloadExcel = function(){
+//            $scope.dashboardObject.displayMap = true;
+//            $scope.dashboardObject.displayChart = false;
+//            $scope.dashboardObject.displayTable = false;
+        }
+
+
+
+
+
         if(localStorage.getItem("seriesObject")||localStorage.getItem("seriesObject")!=null){
             localStorage.removeItem("seriesObject");
         }
