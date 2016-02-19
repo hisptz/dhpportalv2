@@ -381,7 +381,13 @@
                 });
 
                 $scope.$watch('orgunitString',function(newValue,oldvalue){
-                    $scope.dashboardObject.map = mapService.renderMap($scope.selectedYear,newValue);
+                    mapService.renderMap($scope.selectedYear,newValue).then(function(data){
+                        angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(data));
+                        console.log($scope.dashboardObject.map)
+
+                    },function(response){
+                        console.warn("GEOJSON FAILURE "+ response);
+                    });
                 });
 
 
