@@ -350,14 +350,14 @@ angular.module("dhpportal")
                 Africa: {
                     lat: -6.45,
                     lon: 35,
-                    zoom: 5.6
+                    zoom: 6
                 },
                 layers:[
                     {
                         name:'OpenStreetMap',
                         source: {
                             type: 'OSM',
-                            url:"http://tile.openstreetmap.org/#map=5.6/35/-6.45"
+                            url:"http://tile.openstreetmap.org/#map=6/35/-6.45"
                         }
                     }
                     ,
