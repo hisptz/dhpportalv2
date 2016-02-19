@@ -13,113 +13,114 @@
         var main  = this;
         var date = new Date();
         $scope.custome_height    ="default";
-        main.begginingOfthePeriod = 2011;
+        $scope.begginingOfthePeriod = 2011;
         $scope.viewOpen          = false;
-        main.csv_menu            = false;
-        main.facilityUid         = null;
-        main.current_year = date.getFullYear();
-        main.selectedYear = main.current_year;
+        $scope.csv_menu            = false;
+        $scope.facilityUid         = null;
+        $scope.current_year = date.getFullYear();
+        $scope.selected = date.getFullYear();
+        $scope.selectedYear = $scope.current_year;
 
-        main.current_id          = "m0frOspS7JY";
+        $scope.current_id          = "m0frOspS7JY";
         $scope.data              = {};
-        main.Documents = null;
-        main.current_pdf_link = null;
-        main.clickedDistrict = "";
+        $scope.Documents = null;
+        $scope.current_pdf_link = null;
+        $scope.clickedDistrict = "";
         $scope.viewOpen = false;
-        main.chart_shown = true;
-        main.available_files_this_year = null;
+        $scope.chart_shown = true;
+        $scope.available_files_this_year = null;
         $scope.submitted = 0;
         $scope.total_facilities = 166;
         $scope.submitted = 0;
-        main.form_period = null;
-        main.orgunit = null;
-        main.org_unit_selected = null;
-        main.regions = [];
-        $scope.form={form_period:main.current_year,org_unit_selected:""};
+        $scope.form_period = null;
+        $scope.orgunit = null;
+        $scope.org_unit_selected = null;
+        $scope.regions = [];
+        $scope.form={form_period:$scope.current_year,org_unit_selected:""};
         $scope.showProgress = false;
-        main.logedIn = false;
+        $scope.logedIn = false;
         $scope.progressLogin = false;
-        main.logedOut = true;
-        main.shownHtml = true;
-        main.shownPdf = false;
+        $scope.logedOut = true;
+        $scope.shownHtml = true;
+        $scope.shownPdf = false;
         $scope.currentLogedUser = $cookies.get('current_user');
         $scope.selectedDistrictName = "";
         $scope.message_class = null;
         $scope.progressPercent = '0%';
-        main.orgUnitTable = [];
-        main.organisationUnitTree = [];
-        main.logedSuccessMessage = null;
-        main.logedFailureMessage = null;
-        main.profile = {};
-        main.chartConfig = false;
-        main.netfailure = null;
-        main.totalMales = 0;
-        main.totalFemales = 0;
+        $scope.orgUnitTable = [];
+        $scope.organisationUnitTree = [];
+        $scope.logedSuccessMessage = null;
+        $scope.logedFailureMessage = null;
+        $scope.profile = {};
+        $scope.chartConfig = false;
+        $scope.netfailure = null;
+        $scope.totalMales = 0;
+        $scope.totalFemales = 0;
 
 
         if(localStorage.getItem("seriesObject")||localStorage.getItem("seriesObject")!=null){
             localStorage.removeItem("seriesObject");
         }
         if($cookies.get('dhis_enabled')){
-            main.logedIn = true;
-            main.logedOut = false;
+            $scope.logedIn = true;
+            $scope.logedOut = false;
         }
-        main.showChart = function(){
-            main.showChD = "active";
-            main.showTabD = "";
-            main.showChartD = "display:block;";
-            main.showTableD = "display:none;";
+        $scope.showChart = function(){
+            $scope.showChD = "active";
+            $scope.showTabD = "";
+            $scope.showChartD = "display:block;";
+            $scope.showTableD = "display:none;";
         }
 
-        main.showTable = function(){
-            main.showTabD = "active";
-            main.showChD = "";
-            main.showChartD = "display:none;";
-            main.showTableD = "display:block;";
+        $scope.showTable = function(){
+            $scope.showTabD = "active";
+            $scope.showChD = "";
+            $scope.showChartD = "display:none;";
+            $scope.showTableD = "display:block;";
         }
-        main.backToChart = function(){
+        $scope.backToChart = function(){
             $scope.viewOpen = false;
-            main.chart_shown = true;
+            $scope.chart_shown = true;
         }
 
-        main.drawTable = function(){
+        $scope.drawTable = function(){
 
         }
 
-        main.showHtml = function(){
-            main.shownHtml = true;
-            main.shownPdf = false;
+        $scope.showHtml = function(){
+            $scope.shownHtml = true;
+            $scope.shownPdf = false;
         }
 
-        main.showPdf = function(filename,year){
-            main.prepareDocumentFile();
-            main.shownHtml = false;
-            main.shownPdf = true;
+        $scope.showPdf = function(filename,year){
+            $scope.prepareDocumentFile();
+            $scope.shownHtml = false;
+            $scope.shownPdf = true;
         }
 
         //broadcast event that year has changed
-        $scope.$watch("main.selectedYear",function(oldOne,newOne){
-            main.chart_shown = true;
-            main.netfailure = null;
-            $scope.$watch("main.available_files_this_year",function(oldOneI,newOneI){
+        $scope.$watch("selectedYear",function(oldOne,newOne){
+            $scope.chart_shown = true;
+            $scope.netfailure = null;
+            $scope.$watch("$scope.available_files_this_year",function(oldOneI,newOneI){
                 $scope.$broadcast ('yearChangedEvent');
             });
 
-            main.drawChart();
+            $scope.drawChart();
         });
 
-        main.drawChart = function(){
-            main.chartConfig = null;
+        $scope.drawChart = function(){
+            $scope.chartConfig = null;
             $scope.$on("drawChartNow", function(e, data) {
                 var chartobject = chartService.getChartObject();
-                main.chartConfig = chartobject;
+                $scope.chartConfig = chartobject;
             });
         }
 
             $scope.$on('netfailure',function(){
-                main.netfailure = true;
+                $scope.netfailure = true;
             });
-        main.getChildren = function(children){
+        $scope.getChildren = function(children){
             var childrens = [];
             angular.forEach(children,function(value,index){
                 childrens.push({name:value.name,id:value.id});
@@ -128,38 +129,38 @@
             return childrens;
         }
 
-        main.treeCallback = function(attributes){
-            main.chart_shown = false;
-            main.backToGrid();
+        $scope.treeCallback = function(attributes){
+            $scope.chart_shown = false;
+            $scope.backToGrid();
             // deselect by node reference
-            ivhTreeviewMgr.deselect($scope.data.organisationUnits, main.current_id);
+            ivhTreeviewMgr.deselect($scope.data.organisationUnits, $scope.current_id);
 
             var orgUnit = attributes.ivhNode;
             var name = orgUnit.name;
             $scope.selectedDistrictName = name;
             var id = orgUnit.id;
-            //main.processView(orgUnit,name,id);
-            main.processViewPdf(orgUnit,name,id);
-            main.current_id = id;
+            //$scope.processView(orgUnit,name,id);
+            $scope.processViewPdf(orgUnit,name,id);
+            $scope.current_id = id;
         }
 
 
-        main.getHealthProfileFromTable = function(row){
-            main.openPdfFile(row);
+        $scope.getHealthProfileFromTable = function(row){
+            $scope.openPdfFile(row);
         }
 
-        main.getHealthProfileFromView = function(row){
+        $scope.getHealthProfileFromView = function(row){
             var file = {name:row.facility,id:row.id};
-            main.openPdfFile(file);
+            $scope.openPdfFile(file);
         }
-        main.getHealthProfileFromMap = function(row){
+        $scope.getHealthProfileFromMap = function(row){
 
         }
 
-        main.processView = function(orgUnit,name,id){
+        $scope.processView = function(orgUnit,name,id){
             var orgUnitWithFiles = JSON.parse(localStorage.getItem('widataset'));
             if(orgUnit.children!=null){
-                var children = main.getChildren(orgUnit.children);
+                var children = $scope.getChildren(orgUnit.children);
 
             }else{
                 var children = [];
@@ -171,24 +172,24 @@
                     var proposed_files= [];
                     angular.forEach(children,function(value,index){
                         if(orgUnitWithFiles.indexOf(value.id)>=0){
-                            proposed_files.push({id:value.id,facility:value.name,file:value.name+"_"+value+"_"+main.selectedYear+".pdf"});
+                            proposed_files.push({id:value.id,facility:value.name,file:value.name+"_"+value+"_"+$scope.selectedYear+".pdf"});
                         }
                     });
                     var correct_names=[];
-                        main.Documents = proposed_files;
+                        $scope.Documents = proposed_files;
                 }
 
                 if(name.indexOf("Council")>=0){
                     var proposed_files= [];
                     if(orgUnitWithFiles.indexOf(orgUnit.id)>=0||orgUnitWithFiles.indexOf(id)>=0){
                         if(orgUnit==null){
-                            proposed_files.push({id:orgUnit.id,facility:orgUnit.name,file:orgUnit.name+"_"+main.selectedYear+".pdf"});
+                            proposed_files.push({id:orgUnit.id,facility:orgUnit.name,file:orgUnit.name+"_"+$scope.selectedYear+".pdf"});
 
                         }else{
-                            proposed_files.push({id:id,facility:name,file:name+"_"+main.selectedYear+".pdf"});
+                            proposed_files.push({id:id,facility:name,file:name+"_"+$scope.selectedYear+".pdf"});
                         }
                     }
-                        main.Documents = proposed_files;
+                        $scope.Documents = proposed_files;
 
 
                 }
@@ -200,81 +201,81 @@
 
 
 
-        main.processViewPdf = function(orgUnit,name,id){
+        $scope.processViewPdf = function(orgUnit,name,id){
             var proposed_files = [];
             var orgUnitWithFiles = JSON.parse(localStorage.getItem('widataset'));
             if(orgUnit.children!=null){
                 if(orgUnit.name.indexOf('Tanzania')>=0){
                     angular.forEach(orgUnit.children,function(chValue,chIndex){
-                        var grandChildren = main.getChildren(chValue.children);
-                        proposed_files    = main.getOrgunitProposesdFiles(grandChildren,main.selectedYear,orgUnitWithFiles,proposed_files);
+                        var grandChildren = $scope.getChildren(chValue.children);
+                        proposed_files    = $scope.getOrgunitProposesdFiles(grandChildren,$scope.selectedYear,orgUnitWithFiles,proposed_files);
 
                     });
                 }else{
-                        var Children      = main.getChildren(orgUnit.children);
-                        proposed_files    = main.getOrgunitProposesdFiles(Children,main.selectedYear,orgUnitWithFiles,proposed_files);
+                        var Children      = $scope.getChildren(orgUnit.children);
+                        proposed_files    = $scope.getOrgunitProposesdFiles(Children,$scope.selectedYear,orgUnitWithFiles,proposed_files);
                 }
 
             }else{
                 var children = [];
                 if(orgUnitWithFiles.indexOf(orgUnit.id)){
-                proposed_files.push({id:id,facility:name,file:name+"_"+main.selectedYear+".pdf"});
+                proposed_files.push({id:id,facility:name,file:name+"_"+$scope.selectedYear+".pdf"});
                 }
             }
 
-            main.Documents = proposed_files;
+            $scope.Documents = proposed_files;
         }
 
-        main.getOrgunitProposesdFiles = function(children,selectedYear,orgUnitWithFiles,proposed_files){
+        $scope.getOrgunitProposesdFiles = function(children,selectedYear,orgUnitWithFiles,proposed_files){
             angular.forEach(children,function(value,index){
                 if(orgUnitWithFiles.indexOf(value.id)>=0){
-                    proposed_files.push({id:value.id,facility:value.name,file:value.name+"_"+main.selectedYear+".pdf"});
+                    proposed_files.push({id:value.id,facility:value.name,file:value.name+"_"+$scope.selectedYear+".pdf"});
                 }
             });
             return proposed_files;
         }
-        main.prepareDocumentFile = function(){
+        $scope.prepareDocumentFile = function(){
 
 
         }
 
-        main.backToGrid = function(){
+        $scope.backToGrid = function(){
             $scope.viewOpen = false;
         }
-        main.openPdfFile = function(row){
-            var form = {org_unit_selected:row.id,form_period:main.selectedYear};
-            main.profileTitle = row.name;
+        $scope.openPdfFile = function(row){
+            var form = {org_unit_selected:row.id,form_period:$scope.selectedYear};
+            $scope.profileTitle = row.name;
 
-            main.current_pdf_link = "uploads/"+row.name+"_"+main.selectedYear+".pdf";
-            main.clickedDistrict = row.name+" "+main.selectedYear;
+            $scope.current_pdf_link = "uploads/"+row.name+"_"+$scope.selectedYear+".pdf";
+            $scope.clickedDistrict = row.name+" "+$scope.selectedYear;
             $scope.viewOpen = true;
             $scope.custome_height ="not_found";
 
-            main.previewData(form);
+            $scope.previewData(form);
 
         }
 
-        main.filterProfiles = function(data){
+        $scope.filterProfiles = function(data){
 
             var dataElement  = localStorage.getItem('dataElementNames');
             dataElement = JSON.parse(dataElement);
             angular.forEach(dataElement,function(valueOfDataEl,indexOfDataEl){
-                main.profile[valueOfDataEl] = "";
+                $scope.profile[valueOfDataEl] = "";
             });
 
         }
 
-        main.previewData = function(form){
+        $scope.previewData = function(form){
             var profiledata = {};
 
             utilityService.getDataPreview(form).then(function(data){
-                main.filterProfiles(data);
+                $scope.filterProfiles(data);
 
                 utilityService.prepareTabledata(data).then(function(){
                     profiledata = utilityService.tableDatas;
                     angular.forEach(profiledata,function(profileValue,profileIndex){
-                        if(main.profile[profileValue.name] !="undefined"){
-                            main.profile[profileValue.name] = profileValue.value;
+                        if($scope.profile[profileValue.name] !="undefined"){
+                            $scope.profile[profileValue.name] = profileValue.value;
                             console.log(profileValue.name+"   =>   "+profileValue.value);
                         }
                     });
@@ -288,10 +289,10 @@
 
 
 
-        main.getOrgunitFileStatistics = function(facility_name){
+        $scope.getOrgunitFileStatistics = function(facility_name){
             var file_counts = 0;
             var total = 0;
-            angular.forEach(main.available_files_this_year,function(value,index){
+            angular.forEach($scope.available_files_this_year,function(value,index){
                 if(value.indexOf(facility_name)>=0){
                     file_counts++;
                 }
@@ -300,49 +301,101 @@
             return {orgUnit:facility_name,count:file_counts,total:total};
         }
   
-        main.getOrgUnitWithAvailableFilesThisYear = function(){
+        $scope.getOrgUnitWithAvailableFilesThisYear = function(){
             $scope.$on("drawChartNow", function(e, data) {
                 var objectSeries = JSON.parse(localStorage.getItem("seriesObject"));
-                main.orgUnitTable = [];
+                $scope.orgUnitTable = [];
                 angular.forEach(objectSeries,function(valueObject,indexObject){
                         if(valueObject.count>0){
-                            main.orgUnitTable.push({name:valueObject.orgUnit,id:valueObject.id});
+                            $scope.orgUnitTable.push({name:valueObject.orgUnit,id:valueObject.id});
                         }
                 });
             });
         };
-        main.getOrgUnitWithAvailableFilesThisYear();
+        $scope.getOrgUnitWithAvailableFilesThisYear();
 
 
-        // load org unit for tree
-        $scope.customOpts = {
-            onCbChange:main.treeCallback,
-            defaultSelectedState:false
-        }
+        /// get organisation unit string for map
+        $scope.orgunitString = "";
+        function prepareOrgUnitStrings(){
+            var orgString = "";
 
-        main.loadOrganisationUnit = function(){
-            utilityService.loadOrganisationUnits().then(function(data){
-                main.organisationUnitTree = data.organisationUnits;
-                $scope.modifedOrgunits = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
+//            $scope.$watch($scope.objectsselected,function(value1,value2){
+            angular.forEach($scope.objectsselected,function(value,index){
+                orgString+=value.id+";";
+//                });
 
-            },function(status){
-
+                if(orgString.length>0){
+                    $scope.orgunitString = orgString.substring(0, orgString.length - 1);
+                }
             });
-        }
-        main.loadOrganisationUnit();
 
-        main.getOrganisationUnit = function(){
+        }
+
+        // load organisation unit fro tree
+        $scope.loadOrganisationUnit = function(){
+
+            // login to dhis server for pulling authenticated resources
+            utilityService.login('Demo','HMISDEMO2016').then(function(success){
+
+                // load organisation units
+                utilityService.loadOrganisationUnits().then(function(data){
+
+                    /// initialize tree varaibale after safe login
+                    $scope.organisationUnitTree = data.organisationUnits;
+                    $scope.modifedOrgunits = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
+                    $scope.selectedItems = $scope.organisationUnitTree;
+
+
+                    // callback for organisation unit selection from tree
+                    $scope.selectedCallback = function(item, selectedItems) {
+
+                        if(!selectedItems||selectedItems.length==0){
+                            portalService.districts = [];
+                            selectedItems = $scope.organisationUnitTree;
+                            $scope.objectsselected = portalService.getProjects(selectedItems);
+                        }else{
+                            portalService.districts = [];
+                            $scope.objectsselected = portalService.getProjects(selectedItems);
+                        }
+
+                        prepareOrgUnitStrings();
+
+
+                    }
+                    $scope.selectedCallback();
+
+
+
+                },function(status){
+
+                    console.warn("organisation unit can't load internal server or network error")
+                });
+
+
+
+            },function(failure){
+                console.warn("login failure con't load organisation units")
+            })
+
+
+        }
+        $scope.loadOrganisationUnit();
+
+
+
+        $scope.getOrganisationUnit = function(){
             utilityService.getOrgUnits().then(function(data){
                 $scope.data.organisationUnits = data.organisationUnits;
-                main.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
+                $scope.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
             },function(status){
 
             });
         }
-        main.getOrganisationUnit();
+        $scope.getOrganisationUnit();
 
 
-        main.modifyOrgUnits = function(rawOrgUnits){
+        $scope.modifyOrgUnits = function(rawOrgUnits){
             var Regions = [];
 
             angular.forEach(rawOrgUnits,function(value,index){
@@ -357,7 +410,7 @@
             return Regions;
         }
 
-        main.getPeriod = function(start_period){
+        $scope.getPeriod = function(start_period){
             var date = new Date();
             var periods = [];
             var thisyear = date.getFullYear();
@@ -366,38 +419,39 @@
             }
             return periods;
         };
-        main.periods	=	main.getPeriod(main.begginingOfthePeriod);// the beggining of the period
+        $scope.periods	=	$scope.getPeriod($scope.begginingOfthePeriod);// the beggining of the period
 
 
-        main.getLeftNav = function(){
+        $scope.getLeftNav = function(){
             $scope.message = null;
-            if(main.csv_menu){
-                main.csv_menu = false;
+            if($scope.csv_menu){
+                $scope.csv_menu = false;
             }else{
-                main.csv_menu = true;
+                $scope.csv_menu = true;
             }
 
         }
-        main.getDashboard = function(){
-            //main.csv_menu = false;
+        $scope.getDashboard = function(){
+            //$scope.csv_menu = false;
 
 
         }
-        main.Logout = function(){
+        $scope.Logout = function(){
             if($cookies.get('dhis_enabled')){
                 $cookies.remove('dhis_enabled');
                 $cookies.remove('current_user');
             }
             $cookies.remove('dhis_enabled');
             $scope.currentLogedUser = "";
-            main.logedIn = false;
-            main.logedOut = true;
-            main.csv_menu = false;
-            main.logedSuccessMessage = null;
-            main.logedFailureMessage = null;
+            $scope.logedIn = false;
+            $scope.logedOut = true;
+            $scope.csv_menu = false;
+            $scope.logedSuccessMessage = null;
+            $scope.logedFailureMessage = null;
             $location.path("/");
         }
-        main.login = function(login){
+
+        $scope.login = function(login){
 
             $scope.progressLogin = true;
             var username = login.dhis_login_username;
@@ -410,10 +464,10 @@
                                 $cookies.put('current_user', userdata.displayName);
                                 $scope.currentLogedUser = $cookies.get('current_user');
                                 $scope.progressLogin = false;
-                                main.logedIn = true;
-                                main.logedOut = false;
-                                main.logedSuccessMessage = "LoggedIn as "+userdata.displayName+": Connected to DHIS2.";
-                                main.closeLoginForm();
+                                $scope.logedIn = true;
+                                $scope.logedOut = false;
+                                $scope.logedSuccessMessage = "LoggedIn as "+userdata.displayName+": Connected to DHIS2.";
+                                $scope.closeLoginForm();
                             utilityService.getDataElements().then(function(data){
                                 utilityService.prepareDataElementUid(data);
                                 utilityService.prepareDataElementNames(data);
@@ -421,9 +475,9 @@
                             }else{
                                 $cookies.remove('dhis_enabled');
                                 $cookies.remove('current_user');
-                                main.logedIn = false;
-                                main.logedOut = true;
-                                main.logedFailureMessage = "Login Failed : invalid user name or password";
+                                $scope.logedIn = false;
+                                $scope.logedOut = true;
+                                $scope.logedFailureMessage = "Login Failed : invalid user name or password";
                                 $scope.progressLogin = false;
                             }
 
@@ -431,17 +485,17 @@
                         },function(response){
                                 $cookies.remove('dhis_enabled');
                                 $cookies.remove('current_user');
-                                main.logedIn = false;
-                                main.logedOut = true;
-                                main.logedFailureMessage = "Login Failed: check network connection";
+                                $scope.logedIn = false;
+                                $scope.logedOut = true;
+                                $scope.logedFailureMessage = "Login Failed: check network connection";
                                 $scope.progressLogin = false;
                         });
                 },function(response){
                                 $cookies.remove('dhis_enabled');
                                 $cookies.remove('current_user');
-                                main.logedIn = false;
-                                main.logedOut = true;
-                                main.logedFailureMessage = "Login Failed: check network connection";
+                                $scope.logedIn = false;
+                                $scope.logedOut = true;
+                                $scope.logedFailureMessage = "Login Failed: check network connection";
                                 $scope.progressLogin = false;
                 });
 
@@ -449,13 +503,13 @@
         }
 
 
-        main.getLoginForm = function(){
-            main.logedSuccessMessage = null;
-            main.logedFailureMessage = null;
+        $scope.getLoginForm = function(){
+            $scope.logedSuccessMessage = null;
+            $scope.logedFailureMessage = null;
             $('#modal1').openModal();
 
         }
-        main.closeLoginForm = function(){
+        $scope.closeLoginForm = function(){
             $('#modal1').closeModal();
 
         }
@@ -478,7 +532,6 @@
                 url: 'server/process.php?file=1&new_file_name='+new_file_name,
                 data: {file: file}
             }).then(function (resp) {
-                console.log(resp);
                 $scope.showProgress = false;
                 if(resp.data=="UPLOAD_FAILED"){
                     $scope.message = "upload failed";
@@ -486,7 +539,7 @@
                 }
 
                 if(resp.data=="UPLOAD_SUCCESS"){
-                    main.getAvailableFilesThisYear();
+                    $scope.getAvailableFilesThisYear();
                     $scope.message = "uploaded successful";
                     $scope.message_class = "success";
                 }
@@ -502,7 +555,6 @@
                 }
 
             }, function (resp) {
-                console.log(resp);
                 $scope.showProgress = false;
                 console.log('Error status: ' + resp.status);
             }, function (evt) {

@@ -129,21 +129,20 @@
         <div class="section grey lighten-5 " >
 
             <div class="input-field col s6 grey lighten-5" >
-                <select  multi-select watch>
-                    <option value="2014">2014</option>
-                    <!--<option value="2015">2015</option>-->
+                {{selected}}
+                <select  ng-model="$root.selectedYear"  material-select watch>
+                    <option ng-selected="selected" value="{{selectedYear}}">{{selectedYear}}</option>
+                    <option ng-repeat="period in periods" ng-show="selectedYear!=period.name">{{period.name}}</option>
                 </select>
                 <label>Period</label>
             </div>
+            <div class="input-field col s6 orgDropdown grey lighten-5"  >
+                <multi-select-tree data-input-model="organisationUnitTree" multi-select="true"
+                                   data-output-model="selectedItems" data-default-label="Organisation Units"
+                                   data-callback="selectedCallback(item, selectedItems)"
+                                   data-select-only-leafs="false"
+                                   ></multi-select-tree>
 
-            <div class="input-field col s6 orgDropdown grey lighten-5"  id="orgDropdown" >
-                <multi-select-tree data-input-model="main.organisationUnitTree" multi-select="true"
-                                   data-output-model="selectedItem2" data-default-label="Click here to Select..."
-                                   data-callback="selectOnly1Or2(item, selectedItems)"
-                                   data-select-only-leafs="true" data-switch-view-callback="switchViewCallback(scopeObj)"
-                                   data-switch-view-label="test1" data-switch-view="true"></multi-select-tree>
-
-                <label>Regions</label>
             </div>
         </div>
     </div>
@@ -158,24 +157,10 @@
             <div class="card z-depth-2 teal lighten-5 large">
                 <div class="card-image waves-effect waves-block waves-light" style="overflow: scroll">
                     <div style="width: 100%" >
-                        <!--<p ng-if="card.chartObject.loading" class="center"><img src="assets/img/loading.gif">Loading ....</p>-->
-                        <p ng-if="!layers" class="center">Loading ....</p>
+                         <p ng-if="!layers" class="center">Loading ....</p>
                         <openlayers ng-if="layers" ol-center="Africa" ol-defaults="defaults" custom-layers="true"  height="400px" >
                             <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in layers"></ol-layer>
                         </openlayers>
-                        <!--<div id="districtboxz"  class="infoh district ">-->
-                            <!--<table>-->
-                                <!--<caption>Key</caption>-->
-                                <!--<tr ng-repeat="leg in card.legend"><td style="background-color: {{leg.color}}">&nbsp;</td><td  style="text-align: left;">{{leg.set}}</td><td> ({{leg.members}})</td></tr>-->
-                            <!--</table>-->
-                        <!--</div>-->
-                        <!--<div id="districtbox"  class="infopop district " ng-if="selectedDistrictHover">-->
-                            <!--<table>-->
-                                <!--<tr><td>{{card.selectedDistrictHover.name}}</td></tr>-->
-                                <!--<tr><td>{{card.selectedDistrictHover.indicatorValue}}</td></tr>-->
-                            <!--</table>-->
-                        <!--</div>-->
-
                     </div>
 
                 </div>
