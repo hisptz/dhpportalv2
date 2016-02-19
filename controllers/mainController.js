@@ -373,11 +373,20 @@
 
                             mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                                 console.info("DATA FROM RENDER MAP");
-                                console.log(orgunits.data)
-                                angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data));
-                                console.log($scope.dashboardObject.map)
+                                if(typeof orgunits.data == "object" ){
+
+                                    console.info(orgunits.data)
+                                    angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data));
+                                    console.log($scope.dashboardObject.map)
+                                }else{
+                                    console.warn(orgunits.data);
+                                    Materialize.toast("GEOJSON FAILURE "+ response, 3000)
+                                }
+
+
                             },function(response){
                                 console.warn("GEOJSON FAILURE "+ response);
+                                Materialize.toast("GEOJSON FAILURE "+ response, 3000)
                             });
 //
 
