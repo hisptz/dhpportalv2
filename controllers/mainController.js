@@ -380,7 +380,7 @@
                                     console.log($scope.dashboardObject.map)
                                 }else{
                                     console.warn(orgunits.data);
-                                    Materialize.toast("GEOJSON FAILURE "+ response, 3000)
+                                    Materialize.toast("User is loged out", 3000)
                                 }
 
 
