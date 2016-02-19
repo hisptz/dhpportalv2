@@ -434,7 +434,8 @@
 
 
                             },function(failure){
-                                console.warn("ANALYTICS FAILURE: "+failure);
+                                console.warn("ANALYTICS FAILURE: ");
+                                console.warn(failure);
                             });
 
 
