@@ -84,7 +84,7 @@
             $scope.dashboardObject.displayTable = false;
         }
         $scope.showTables = function(){
-            $scope.dashboardObject.displayMap = true;
+            $scope.dashboardObject.displayMap = false;
             $scope.dashboardObject.displayChart = false;
             $scope.dashboardObject.displayTable = true;
         }
