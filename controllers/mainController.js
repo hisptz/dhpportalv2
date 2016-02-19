@@ -407,21 +407,16 @@
                                 console.info("DATA FROM RENDER MAP");
                                 if(typeof orgunits.data == "object" ){
 
-                                    console.info(orgunits.data)
                                     angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data));
-                                    console.log($scope.dashboardObject.map)
                                 }else{
-                                    console.warn(orgunits.data);
                                     Materialize.toast("User is loged out", 3000)
                                 }
 
 
                             },function(response){
-                                console.warn("GEOJSON FAILURE "+ response);
                                 Materialize.toast("GEOJSON FAILURE "+ response, 3000)
                             });
-//
-
+                        console.log(newvalue);
                         });
 
 
