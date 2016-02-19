@@ -28,23 +28,6 @@ angular.module("dhpportal")
             return utilityService.login("Demo","DEMO2016");
         };
 
-        self.prepareOrgunitUidsFromTree = function(treeobjects){
-            var orgunitstring = "";
-            var parentsnames = "";
-            var object = [];
-                angular.forEach(treeobjects,function(value){
-                    parentsnames+=" "+value.name;
-                    object.push(getChildren(value));
-                })
-
-                angular.forEach(object,function(value){
-                    console.log(object);
-//                    orgunitstring+=value.id+";";
-                });
-
-
-            return [parentsnames,orgunitstring];
-        }
 
         self.getProjects = function(orgUnits){
             angular.forEach(orgUnits,function(orgUnit){
@@ -58,25 +41,6 @@ angular.module("dhpportal")
             return self.districts;
         }
 
-        var refresh = 0;
-        var childresn = []
-        function getChildren(objects){
-            if(childresn.length>166){
-                childresn = [];
-            }
-            if(objects.children!=null){
-                angular.forEach(objects.children,function(value){
-                    if(value.children!=null){
-                        return getChildren(value);
-                    }else{
-                        childresn.push({id:value.id,name:value.name});
-                    }
-                })
-            }else{
-                childresn.push({id:objects.id,name:objects.name});
-            }
-            return childresn;
-        }
 
         return self;
     })

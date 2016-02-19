@@ -7,9 +7,9 @@ angular.module("dhpportal")
             map.geoLayer= {"type":"FeatureCollection","features":[]};
             var geoUrl = portalService.base+"api/geoFeatures.json?ou=ou:LEVEL-3;"+orgunitStrings;
 
-            var response = $http({method:'GET',url:geoUrl,dataType:'json',catche:true,isModified:true});
+            return $http({method:'GET',url:geoUrl,dataType:'json',catche:true,isModified:true});
 
-            return response;
+
 //            $scope.netfailure = null;
 //            var tempo = data.features;
 //            angular.forEach(tempo,function(value,index){

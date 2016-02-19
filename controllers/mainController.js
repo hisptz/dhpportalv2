@@ -358,6 +358,7 @@
                     // callback for organisation unit selection from tree
 
                         $scope.$watch('selectedItems',function(newvalue,oldvalue){
+
                             if(!newvalue||newvalue.length==0){
                                 portalService.districts = [];
                                 newvalue = $scope.organisationUnitTree;
@@ -366,6 +367,9 @@
                                 portalService.districts = [];
                                 $scope.objectsselected = portalService.getProjects(newvalue);
                             }
+
+                            console.log(newvalue);
+                            console.log($scope.objectsselected);
 
                             prepareOrgUnitStrings();
 
