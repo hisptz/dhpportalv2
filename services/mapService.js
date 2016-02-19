@@ -6,6 +6,8 @@ angular.module("dhpportal")
             var maplayer = {};
 console.log(selectedYear);
 console.log(orgunitStrings);
+
+
 //            $scope.netfailure = null;
 //            var tempo = data.features;
 //            angular.forEach(tempo,function(value,index){
