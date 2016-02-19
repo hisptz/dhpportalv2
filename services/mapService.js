@@ -386,6 +386,7 @@ angular.module("dhpportal")
         }
 
         map.getStyle = function(feature){
+            console.log(feature);
             var color = "";
             var featureId = "";
 

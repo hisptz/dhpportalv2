@@ -356,22 +356,28 @@
 
 
                     // callback for organisation unit selection from tree
-                    $scope.selectedCallback = function(item, selectedItems) {
 
-                        if(!selectedItems||selectedItems.length==0){
-                            portalService.districts = [];
-                            selectedItems = $scope.organisationUnitTree;
-                            $scope.objectsselected = portalService.getProjects(selectedItems);
-                        }else{
-                            portalService.districts = [];
-                            $scope.objectsselected = portalService.getProjects(selectedItems);
-                        }
+                        $scope.$watch('selectedItems',function(newvalue,oldvalue){
+                            if(!newvalue||newvalue.length==0){
+                                portalService.districts = [];
+                                newvalue = $scope.organisationUnitTree;
+                                $scope.objectsselected = portalService.getProjects(newvalue);
+                            }else{
+                                portalService.districts = [];
+                                $scope.objectsselected = portalService.getProjects(newvalue);
+                            }
 
-                        prepareOrgUnitStrings();
+                            prepareOrgUnitStrings();
 
+                            mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(data){
+                                angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(data));
+                                console.log($scope.dashboardObject.map)
+                            },function(response){
+                                console.warn("GEOJSON FAILURE "+ response);
+                            });
+//
 
-                    }
-                    $scope.selectedCallback();
+                        });
 
 
 
@@ -381,16 +387,8 @@
                 });
 
 
-                $scope.$watch('orgunitString',function(newValue,oldvalue){
-                    mapService.renderMap($scope.selectedYear,newValue).then(function(data){
-                        angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(data));
-                        console.log($scope.dashboardObject.map)
-                    },function(response){
-                        console.warn("GEOJSON FAILURE "+ response);
-                    });
-                });
 
-
+//
 
             },function(failure){
                 console.warn("login failure can't load organisation units")
