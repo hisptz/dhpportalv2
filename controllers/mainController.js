@@ -371,10 +371,10 @@
 
                             prepareOrgUnitStrings();
 
-                            mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(data){
-                                console.info("DATA FROM RENDER MAPA")
-                                console.log(data)
-                                angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(data));
+                            mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
+                                console.info("DATA FROM RENDER MAP");
+                                console.log(orgunits)
+                                angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits));
                                 console.log($scope.dashboardObject.map)
                             },function(response){
                                 console.warn("GEOJSON FAILURE "+ response);
