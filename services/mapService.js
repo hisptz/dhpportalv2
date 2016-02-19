@@ -357,7 +357,7 @@ angular.module("dhpportal")
                         name:'OpenStreetMap',
                         source: {
                             type: 'OSM',
-                            url:"http://tile.openstreetmap.org/#map=6/35/-6.45"
+                            url:"http://tile.openstreetmap.org/#map=" + 5.6 + "/" + 35 + "/" + (-6.45)
                         }
                     }
                     ,
