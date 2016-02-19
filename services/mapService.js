@@ -330,7 +330,7 @@ angular.module("dhpportal")
                 feature.type = "Feature";
                 feature.geometry.type = "MultiPolygon";
 
-                feature.geometry.coordinates    = value.co;
+                feature.geometry.coordinates    = JSON.parse(value.co);
                 feature.properties.code         = null;
                 feature.properties.name         = value.na;
                 feature.properties.level        = value.le;
