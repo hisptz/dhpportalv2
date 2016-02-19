@@ -405,9 +405,16 @@
 
 
                             /// load data from the dhis server
-                             var default_url = "api/analytics.json?dimension=dx:Pc2t6Tq5era;Qs4ECuPQAnx&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:2015&displayProperty=NAME";
+                            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:"+$scope.selectedYear+";
+                            var selective_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;"+$scope.orgunitString+"&filter=pe:"+$scope.selectedYear+"";
 
-                            $http({method:'GET',url:default_url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
+                            var url=profileService.base+ default_url;
+                            if(newvalue.length==1&&newvalue[0].id=="m0frOspS7JY"){
+                                console.info(newvalue);
+                            }else{
+                                url = profileService.base+ selective_url;
+                            }
+                            $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
                                 console.info("ANALYTICS SUCCEDED")
                                 console.log(analytics);
 
