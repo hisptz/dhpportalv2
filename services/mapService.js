@@ -4,15 +4,10 @@ angular.module("dhpportal")
         var map = this;
         map.renderMap = function(selectedYear,orgunitStrings){
             var maplayer = {};
-console.log(selectedYear);
-console.log(orgunitStrings);
-            var geoUrl = portalService.base+"api/geoFeatures.json?ou=ou:LEVEL-3;"+orgunitStrings;
+            var geoUrl = portalService.base+"api/geoFeatures.json?ou=ou:LEVEL-4;"+orgunitStrings;
 
             $http({method:'GET',url:geoUrl,dataType:'json',catche:true,isModified:true}).then(function(data){
-
                 console.log(data);
-
-
             },function(response){
                 console.warn("GEOJSON FAILURE "+ response);
             })
