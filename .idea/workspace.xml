@@ -36,8 +36,8 @@
       <file leaf-file-name="mainController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6710875" vertical-offset="5777" max-vertical-offset="9072">
-              <caret line="376" column="32" selection-start-line="376" selection-start-column="32" selection-end-line="376" selection-end-column="32" />
+            <state vertical-scroll-proportion="-0.23607427" vertical-offset="5939" max-vertical-offset="9072">
+              <caret line="338" column="79" selection-start-line="338" selection-start-column="79" selection-end-line="338" selection-end-column="79" />
               <folding>
                 <element signature="e#11774#12196#0" expanded="false" />
                 <element signature="e#12562#13691#0" expanded="false" />
@@ -553,8 +553,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6710875" vertical-offset="5777" max-vertical-offset="9072">
-          <caret line="376" column="32" selection-start-line="376" selection-start-column="32" selection-end-line="376" selection-end-column="32" />
+        <state vertical-scroll-proportion="-0.23607427" vertical-offset="5939" max-vertical-offset="9072">
+          <caret line="338" column="79" selection-start-line="338" selection-start-column="79" selection-end-line="338" selection-end-column="79" />
           <folding>
             <element signature="e#11774#12196#0" expanded="false" />
             <element signature="e#12562#13691#0" expanded="false" />
