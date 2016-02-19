@@ -129,10 +129,10 @@
         <div class="section grey lighten-5 " >
 
             <div class="input-field col s6 grey lighten-5" >
-                {{selected}}
-                <select  ng-model="$root.selectedYear"  material-select watch>
-                    <option ng-selected="selected" value="{{selectedYear}}">{{selectedYear}}</option>
-                    <option ng-repeat="period in periods" ng-show="selectedYear!=period.name">{{period.name}}</option>
+
+                <select  ng-model="selectedYear"  material-select watch>
+                    <option ng-selected="selectedYear" value="{{selectedYear}}">{{selectedYear}}</option>
+                    <option ng-repeat="period in periods" ng-if="selectedYear!=period.name">{{period.name}}</option>
                 </select>
                 <label>Period</label>
             </div>
