@@ -117,15 +117,15 @@
       <file leaf-file-name="mainController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62334216" vertical-offset="7037" max-vertical-offset="10692">
-              <caret line="418" column="46" selection-start-line="418" selection-start-column="46" selection-end-line="418" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.7188329" vertical-offset="7037" max-vertical-offset="10746">
+              <caret line="420" column="32" selection-start-line="420" selection-start-column="32" selection-end-line="420" selection-end-column="32" />
               <folding>
                 <element signature="e#14380#14639#0" expanded="false" />
                 <element signature="e#15001#15453#0" expanded="false" />
-                <element signature="e#16445#16959#0" expanded="false" />
-                <element signature="e#17010#17291#0" expanded="false" />
-                <element signature="e#17435#17629#0" expanded="false" />
-                <element signature="e#17670#17722#0" expanded="false" />
+                <element signature="e#16534#17048#0" expanded="false" />
+                <element signature="e#17099#17380#0" expanded="false" />
+                <element signature="e#17524#17718#0" expanded="false" />
+                <element signature="e#17759#17811#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -289,7 +289,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="-4" width="1319" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41280866" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -298,7 +298,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -332,7 +332,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>489</line>
+          <line>492</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -375,10 +375,10 @@
           <folding>
             <element signature="e#14380#14639#0" expanded="false" />
             <element signature="e#15001#15453#0" expanded="false" />
-            <element signature="e#16445#16959#0" expanded="false" />
-            <element signature="e#17010#17291#0" expanded="false" />
-            <element signature="e#17435#17629#0" expanded="false" />
-            <element signature="e#17670#17722#0" expanded="false" />
+            <element signature="e#16534#17048#0" expanded="false" />
+            <element signature="e#17099#17380#0" expanded="false" />
+            <element signature="e#17524#17718#0" expanded="false" />
+            <element signature="e#17759#17811#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -459,10 +459,10 @@
           <folding>
             <element signature="e#14380#14639#0" expanded="false" />
             <element signature="e#15001#15453#0" expanded="false" />
-            <element signature="e#16445#16959#0" expanded="false" />
-            <element signature="e#17010#17291#0" expanded="false" />
-            <element signature="e#17435#17629#0" expanded="false" />
-            <element signature="e#17670#17722#0" expanded="false" />
+            <element signature="e#16534#17048#0" expanded="false" />
+            <element signature="e#17099#17380#0" expanded="false" />
+            <element signature="e#17524#17718#0" expanded="false" />
+            <element signature="e#17759#17811#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -630,15 +630,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62334216" vertical-offset="7037" max-vertical-offset="10692">
-          <caret line="418" column="46" selection-start-line="418" selection-start-column="46" selection-end-line="418" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.7188329" vertical-offset="7037" max-vertical-offset="10746">
+          <caret line="420" column="32" selection-start-line="420" selection-start-column="32" selection-end-line="420" selection-end-column="32" />
           <folding>
             <element signature="e#14380#14639#0" expanded="false" />
             <element signature="e#15001#15453#0" expanded="false" />
-            <element signature="e#16445#16959#0" expanded="false" />
-            <element signature="e#17010#17291#0" expanded="false" />
-            <element signature="e#17435#17629#0" expanded="false" />
-            <element signature="e#17670#17722#0" expanded="false" />
+            <element signature="e#16534#17048#0" expanded="false" />
+            <element signature="e#17099#17380#0" expanded="false" />
+            <element signature="e#17524#17718#0" expanded="false" />
+            <element signature="e#17759#17811#0" expanded="false" />
           </folding>
         </state>
       </provider>

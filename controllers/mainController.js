@@ -416,7 +416,12 @@
                             },function(response){
                                 Materialize.toast("GEOJSON FAILURE "+ response, 3000)
                             });
-                        console.log(newvalue);
+                            var orgNames = ""
+                            angular.forEach(newvalue,function(value){
+                                orgNames = value.name+", ";
+                            });
+
+                            $scope.orgUnitNames = orgNames.substring(0, orgNames.length - 1);
                         });
 
 
