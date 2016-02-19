@@ -350,7 +350,7 @@ angular.module("dhpportal")
                 Africa: {
                     lat: -7.1386969960428,
                     lon: 38.83486189299,
-                    zoom: 6
+                    zoom: 5.6
                 },
                 layers:[
                     {
