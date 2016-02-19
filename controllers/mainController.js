@@ -373,8 +373,8 @@
 
                             mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                                 console.info("DATA FROM RENDER MAP");
-                                console.log(orgunits)
-                                angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits));
+                                console.log(orgunits.data)
+                                angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data));
                                 console.log($scope.dashboardObject.map)
                             },function(response){
                                 console.warn("GEOJSON FAILURE "+ response);
