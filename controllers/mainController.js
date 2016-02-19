@@ -14,7 +14,7 @@
         var date = new Date();
          // this is the main object do not delete this variable
         $scope.dashboardObject = {};
-
+        $scope.dashboardObject.map = {};
         // set current year
         $scope.current_year = date.getFullYear();
 
