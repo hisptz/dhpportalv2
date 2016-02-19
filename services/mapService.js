@@ -6,6 +6,16 @@ angular.module("dhpportal")
             var maplayer = {};
 console.log(selectedYear);
 console.log(orgunitStrings);
+            var geoUrl = portalService.base+"api/geoFeatures.json?ou=ou:LEVEL-3;"+orgunitStrings;
+
+            $http({method:'GET',url:geoUrl,dataType:'json',catche:true,isModified:true}).then(function(data){
+
+                console.log(data);
+
+
+            },function(response){
+                console.warn("GEOJSON FAILURE "+ response);
+            })
 
 
 //            $scope.netfailure = null;
