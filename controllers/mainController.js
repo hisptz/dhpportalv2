@@ -405,12 +405,11 @@
 
 
                             /// load data from the dhis server
-                            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:"+$scope.selectedYear
+                            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:"+$scope.selectedYear;
                             var selective_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;"+$scope.orgunitString+"&filter=pe:"+$scope.selectedYear+"";
 
                             var url=profileService.base+ default_url;
                             if(newvalue.length==1&&newvalue[0].id=="m0frOspS7JY"){
-                                console.info(newvalue);
                             }else{
                                 url = profileService.base+ selective_url;
                             }
