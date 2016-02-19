@@ -106,13 +106,13 @@
       <file leaf-file-name="mainController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.04509284" vertical-offset="6445" max-vertical-offset="10224">
-              <caret line="359" column="82" selection-start-line="359" selection-start-column="82" selection-end-line="359" selection-end-column="82" />
+            <state vertical-scroll-proportion="0.42705572" vertical-offset="6877" max-vertical-offset="10224">
+              <caret line="391" column="0" selection-start-line="391" selection-start-column="0" selection-end-line="394" selection-end-column="14" />
               <folding>
-                <element signature="e#15053#15567#0" expanded="false" />
-                <element signature="e#15618#15899#0" expanded="false" />
-                <element signature="e#16043#16237#0" expanded="false" />
-                <element signature="e#16278#16330#0" expanded="false" />
+                <element signature="e#15043#15557#0" expanded="false" />
+                <element signature="e#15608#15889#0" expanded="false" />
+                <element signature="e#16033#16227#0" expanded="false" />
+                <element signature="e#16268#16320#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -344,7 +344,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="-4" width="1319" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41280866" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -353,7 +353,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -415,10 +415,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9990">
           <caret line="337" column="41" selection-start-line="337" selection-start-column="41" selection-end-line="337" selection-end-column="41" />
           <folding>
-            <element signature="e#15053#15567#0" expanded="false" />
-            <element signature="e#15618#15899#0" expanded="false" />
-            <element signature="e#16043#16237#0" expanded="false" />
-            <element signature="e#16278#16330#0" expanded="false" />
+            <element signature="e#15043#15557#0" expanded="false" />
+            <element signature="e#15608#15889#0" expanded="false" />
+            <element signature="e#16033#16227#0" expanded="false" />
+            <element signature="e#16268#16320#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -484,10 +484,10 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2916">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15053#15567#0" expanded="false" />
-            <element signature="e#15618#15899#0" expanded="false" />
-            <element signature="e#16043#16237#0" expanded="false" />
-            <element signature="e#16278#16330#0" expanded="false" />
+            <element signature="e#15043#15557#0" expanded="false" />
+            <element signature="e#15608#15889#0" expanded="false" />
+            <element signature="e#16033#16227#0" expanded="false" />
+            <element signature="e#16268#16320#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -644,13 +644,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04509284" vertical-offset="6445" max-vertical-offset="10224">
-          <caret line="359" column="82" selection-start-line="359" selection-start-column="82" selection-end-line="359" selection-end-column="82" />
+        <state vertical-scroll-proportion="0.42705572" vertical-offset="6877" max-vertical-offset="10224">
+          <caret line="391" column="0" selection-start-line="391" selection-start-column="0" selection-end-line="394" selection-end-column="14" />
           <folding>
-            <element signature="e#15053#15567#0" expanded="false" />
-            <element signature="e#15618#15899#0" expanded="false" />
-            <element signature="e#16043#16237#0" expanded="false" />
-            <element signature="e#16278#16330#0" expanded="false" />
+            <element signature="e#15043#15557#0" expanded="false" />
+            <element signature="e#15608#15889#0" expanded="false" />
+            <element signature="e#16033#16227#0" expanded="false" />
+            <element signature="e#16268#16320#0" expanded="false" />
           </folding>
         </state>
       </provider>
