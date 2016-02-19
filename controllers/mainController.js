@@ -380,6 +380,7 @@
                     console.warn("organisation unit can't load internal server or network error")
                 });
 
+
                 $scope.$watch('orgunitString',function(newValue,oldvalue){
                     mapService.renderMap($scope.selectedYear,newValue).then(function(data){
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(data));

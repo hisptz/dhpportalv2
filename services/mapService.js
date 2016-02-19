@@ -4,7 +4,7 @@ angular.module("dhpportal")
         var map = this;
         map.renderMap = function(selectedYear,orgunitStrings){
             var maplayer = {};
-            var geoLayer = {"type":"FeatureCollection","features":[]};
+            map.geoLayer= {"type":"FeatureCollection","features":[]};
             var geoUrl = portalService.base+"api/geoFeatures.json?ou=ou:LEVEL-4;"+orgunitStrings;
 
             var response = $http({method:'GET',url:geoUrl,dataType:'json',catche:true,isModified:true});
@@ -338,7 +338,7 @@ angular.module("dhpportal")
                 feature.properties.parentGraph  = value.pg;
                 feature.id  = value.id;
                 feature.style  = map.getStyle(feature);
-                geoLayer.features.push(feature);
+                map.geoLayer.features.push(feature);
 
 
 
@@ -368,7 +368,7 @@ angular.module("dhpportal")
                         source: {
                             type: 'GeoJSON',
                             geojson: {
-                                object: geoLayer
+                                object: map.geoLayer
                             }
                         },
                         style: map.getStyle
