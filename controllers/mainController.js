@@ -8,8 +8,8 @@
         })
         .controller('mainController', mainController);
 
-    mainController.$inject   = ['$scope','$cookies','$http','$timeout','$location','ivhTreeviewMgr','DTOptionsBuilder', 'DTColumnDefBuilder','profileService','utilityService','portalService','chartService'];
-    function mainController($scope,$cookies,$http,$timeout,$location,ivhTreeviewMgr,DTOptionsBuilder, DTColumnDefBuilder,profileService,utilityService,portalService,chartService) {
+    mainController.$inject   = ['$scope','$cookies','$http','$timeout','$location','ivhTreeviewMgr','DTOptionsBuilder', 'DTColumnDefBuilder','profileService','utilityService','portalService','chartService','mapService'];
+    function mainController($scope,$cookies,$http,$timeout,$location,ivhTreeviewMgr,DTOptionsBuilder, DTColumnDefBuilder,profileService,utilityService,portalService,chartService,mapService) {
         var main  = this;
         var date = new Date();
         $scope.custome_height    ="default";
@@ -373,6 +373,7 @@
                 });
 
 
+                portalService.mainObject.map = mapService.renderMap();
 
             },function(failure){
                 console.warn("login failure can't load organisation units")

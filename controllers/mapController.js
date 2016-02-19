@@ -33,7 +33,6 @@
             $scope.shared = shared;
             shared.facility =3029;
 
-            console.log($rootScope.orgunitString)
 //            var url = map.baseUrl+'api/organisationUnits.geojson?parent=m0frOspS7JY&level=3';
             var url = 'server/organisationUnits.geojson';
                 $http({

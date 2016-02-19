@@ -21,6 +21,7 @@ angular.module("dhpportal")
             {name: 'map', image: 'map.jpg', action: ''}
         ];
 
+        self.mainObject = {};
         self.districts = [];
 
         self.authenticateDHIS = function () {
