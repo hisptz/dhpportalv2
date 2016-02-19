@@ -380,7 +380,7 @@
                     console.warn("organisation unit can't load internal server or network error")
                 });
 
-                $scope.$watch($scope.orgunitString,function(){
+                $scope.$watch($scope.orgunitString,function(newValue,oldvalue){
                     $scope.dashboardObject.map = mapService.renderMap($scope.selectedYear,$scope.orgunitString);
                 });
 
