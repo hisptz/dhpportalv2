@@ -158,6 +158,7 @@
                                 return color;
                             }
                             var getStyle = function(feature){
+                                console.log(feature);
                                 var style = olHelpers.createStyle({
                                     fill:{
                                         color:getColor($scope.districts[feature.getId()]),
