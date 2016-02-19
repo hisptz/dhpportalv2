@@ -12,14 +12,22 @@
     function mainController($scope,$cookies,$http,$timeout,$location,ivhTreeviewMgr,DTOptionsBuilder, DTColumnDefBuilder,profileService,utilityService,portalService,chartService,mapService) {
         var main  = this;
         var date = new Date();
+         // this is the main object do not delete this variable
+        $scope.dashboardObject = {};
+
+        // set current year
+        $scope.current_year = date.getFullYear();
+
+        // set default selected period
+        $scope.selectedYear = $scope.current_year;
+        $scope.selected = date.getFullYear();
+
+
         $scope.custome_height    ="default";
         $scope.begginingOfthePeriod = 2011;
         $scope.viewOpen          = false;
         $scope.csv_menu            = false;
         $scope.facilityUid         = null;
-        $scope.current_year = date.getFullYear();
-        $scope.selected = date.getFullYear();
-        $scope.selectedYear = $scope.current_year;
 
         $scope.current_id          = "m0frOspS7JY";
         $scope.data              = {};
@@ -372,8 +380,11 @@
                     console.warn("organisation unit can't load internal server or network error")
                 });
 
+                $scope.$watch($scope.orgunitString,function(){
+                    $scope.dashboardObject.map = mapService.renderMap($scope.selectedYear,$scope.orgunitString);
+                });
 
-                portalService.mainObject.map = mapService.renderMap();
+
 
             },function(failure){
                 console.warn("login failure can't load organisation units")

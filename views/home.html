@@ -157,9 +157,9 @@
             <div class="card z-depth-2 teal lighten-5 large">
                 <div class="card-image waves-effect waves-block waves-light" style="overflow: scroll">
                     <div style="width: 100%" >
-                         <p ng-if="!layers" class="center">Loading ....</p>
-                        <openlayers ng-if="layers" ol-center="Africa" ol-defaults="defaults" custom-layers="true"  height="400px" >
-                            <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in layers"></ol-layer>
+                         <p ng-if="!dashboardObject.map.layers" class="center">Loading ....</p>
+                        <openlayers ng-if="dashboardObject.map.layers" ol-center="dashboardObject.Africa" ol-defaults="dashboardObject.map.defaults" custom-layers="true"  height="400px" >
+                            <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in dashboardObject.map.layers"></ol-layer>
                         </openlayers>
                     </div>
 

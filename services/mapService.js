@@ -2,9 +2,10 @@ angular.module("dhpportal")
     .service('mapService',['$rootScope','$http','olData','olHelpers','$timeout','portalService','profileService','utilityService','shared',function($scope,$http,olData,olHelpers,$timeout,portalService,profileService,utilityService,shared){
 
         var map = this;
-        map.renderMap = function(){
+        map.renderMap = function(selectedYear,orgunitStrings){
             var maplayer = {};
-
+console.log(selectedYear);
+console.log(orgunitStrings);
 //            $scope.netfailure = null;
 //            var tempo = data.features;
 //            angular.forEach(tempo,function(value,index){
