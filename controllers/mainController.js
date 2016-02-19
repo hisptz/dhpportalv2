@@ -405,7 +405,7 @@
 
 
                             /// load data from the dhis server
-                            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=pe:"+$scope.selectedYear+"&filter=ou:LEVEL-3;;m0frOspS7JY";
+                            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=pe:"+$scope.selectedYear+"&filter=ou:LEVEL-3;m0frOspS7JY";
                             var selective_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;"+$scope.orgunitString+"&filter=pe:"+$scope.selectedYear+"";
 
                             var url=default_url;
