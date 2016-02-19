@@ -403,19 +403,39 @@
 
                             prepareOrgUnitStrings();
 
-                            mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
-                                console.info("DATA FROM RENDER MAP");
-                                if(typeof orgunits.data == "object" ){
 
-                                    angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data));
-                                }else{
-                                    Materialize.toast("User is loged out", 3000)
-                                }
+                            /// load data from the dhis server
+                            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=pe:"+$scope.selectedYear+"&filter=ou:LEVEL-3;"+$scope.orgunitString+"";
+                            var selective_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;"+$scope.orgunitString+"&filter=pe:"+$scope.selectedYear+"";
+
+                            var url=default_url;
+                            if(newvalue.length>1){
+                                url = selective_url;
+                            }
+                            $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
+                                console.info("ANALYTICS SUCCEDED")
+                                console.log(analytics);
+
+                                mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
+                                    console.info("DATA FROM RENDER MAP");
+                                    if(typeof orgunits.data == "object" ){
+
+                                        angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data));
+                                    }else{
+                                        Materialize.toast("User is loged out", 3000)
+                                    }
 
 
-                            },function(response){
-                                Materialize.toast("GEOJSON FAILURE "+ response, 3000)
+                                },function(response){
+                                    Materialize.toast("GEOJSON FAILURE "+ response, 3000)
+                                });
+
+
+                            },function(failure){
+                                console.warn("ANALYTICS FAILURE: "+failure);
                             });
+
+
                             var orgNames = ""
                             angular.forEach(newvalue,function(value){
                                 orgNames += value.name+",";
