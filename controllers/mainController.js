@@ -415,7 +415,7 @@
 //                            }else{
 //                                url = selective_url;
 //                            }
-                            $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
+                            $http({method:'GET',url:default_url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
                                 console.info("ANALYTICS SUCCEDED")
                                 console.log(analytics);
 
