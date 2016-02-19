@@ -384,7 +384,6 @@
                     mapService.renderMap($scope.selectedYear,newValue).then(function(data){
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(data));
                         console.log($scope.dashboardObject.map)
-
                     },function(response){
                         console.warn("GEOJSON FAILURE "+ response);
                     });
