@@ -406,7 +406,7 @@
 
                             /// load data from the dhis server
 //                            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:"+$scope.selectedYear
-                            var default_url = "/api/analytics.json?dimension=dx:Pc2t6Tq5era;Qs4ECuPQAnx&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:"+$scope.selectedYear+"&displayProperty=NAME";
+                            var default_url = "api/analytics.json?dimension=dx:Pc2t6Tq5era;Qs4ECuPQAnx&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:2015&displayProperty=NAME";
 //                            var selective_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;"+$scope.orgunitString+"&filter=pe:"+$scope.selectedYear+"";
 //
 //                            var url=default_url;
