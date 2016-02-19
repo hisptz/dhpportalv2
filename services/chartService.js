@@ -10,7 +10,7 @@
     chartService.$inject = ['$http'];
     function chartService($http) {
         var chartService = {};
-        chartService.totalFacilities = 166;
+        chartService.totalFacilities = 0;
 
         chartService.prepareSeries = function(){
             var submitted = 0;

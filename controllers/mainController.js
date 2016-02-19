@@ -431,10 +431,6 @@
                     console.warn("organisation unit can't load internal server or network error")
                 });
 
-
-
-//
-
             },function(failure){
                 console.warn("login failure can't load organisation units")
             })
