@@ -368,12 +368,12 @@
                                 $scope.objectsselected = portalService.getProjects(newvalue);
                             }
 
-                            console.log(newvalue);
-                            console.log($scope.objectsselected);
 
                             prepareOrgUnitStrings();
 
                             mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(data){
+                                console.info("DATA FROM RENDER MAPA")
+                                console.log(data)
                                 angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(data));
                                 console.log($scope.dashboardObject.map)
                             },function(response){
