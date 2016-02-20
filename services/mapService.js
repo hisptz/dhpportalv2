@@ -136,8 +136,13 @@ angular.module("dhpportal")
         }
 
         map.isCompleted = function(rows,value,completenes){
+            console.log(value);
             var theIndex = null;
             angular.forEach(rows,function(valuex,index){
+                console.log(valuex);
+                console.log(completenes);
+                console.log(value);
+                console.log("100.0");
                 if(valuex[0]==completenes && valuex[1]==value && valuex[2]=="100.0"){
                     theIndex = index;
 
