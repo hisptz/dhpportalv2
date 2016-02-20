@@ -120,14 +120,14 @@ angular.module("dhpportal")
             var completenes = "Pc2t6Tq5era";
             var color = "red";
             var orgunits = nalaytics_data.metaData.ou;
-            var rows = nalaytics_data.metaData.rows;
+            var rows = nalaytics_data.rows;
             var names = nalaytics_data.metaData.names;
 
             if(rows.length<=0){
                 return color;
             }else if(rows.length>0){
                 if(map.isCompleted(rows,value,completenes)){
-                    return 'green';
+                    color = 'green';
                 }
 
             }
