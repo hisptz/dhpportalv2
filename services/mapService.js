@@ -107,7 +107,7 @@ angular.module("dhpportal")
                 name:value.na,
 //                value:value.na,
                 opacity:0.8,
-                "color":map.decideOnColor(value,nalaytics_data),
+                "color":map.decideOnColor(value.id,nalaytics_data),
                 "facility":Math.floor(Math.random() * 256)
             };
             });
