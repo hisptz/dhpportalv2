@@ -97,27 +97,59 @@ angular.module("dhpportal")
 
         }
         map.prepareFeatures = function(data,nalaytics_data){
-            var completenes = "Pc2t6Tq5era";
-
-            var orgunits = nalaytics_data.metaData.ou;
-            var rows = nalaytics_data.metaData.rows;
-            var names = nalaytics_data.metaData.names;
 
             console.info("anlysis");
             console.info(nalaytics_data);
             angular.forEach(data,function(value){
                 console.log(value)
-//                map.features[value] = {
-//                facility_id:value,
-//                name:names[value],
-//                value:,
-//                opacity:0.8,
-//                "color":,
-//                "facility":Math.floor(Math.random() * 256)
-//            };
+                map.features[value.id] = {
+                facility_id:value.id,
+                name:names[value.id],
+                value:value.na,
+                opacity:0.8,
+                "color":map.decideOnColor(value,nalaytics_data),
+                "facility":Math.floor(Math.random() * 256)
+            };
             });
 
 
+
+        }
+
+        map.decideOnColor = function(value,nalaytics_data){
+            var completenes = "Pc2t6Tq5era";
+            var color = "red";
+            var orgunits = nalaytics_data.metaData.ou;
+            var rows = nalaytics_data.metaData.rows;
+            var names = nalaytics_data.metaData.names;
+
+            if(rows.length<=0){
+                return color;
+            }else if(rows.length>0){
+                if(map.isCompleted(rows,value,completenes)){
+                    return 'green';
+                }
+
+            }
+
+
+        }
+
+        map.isCompleted = function(rows,value,completenes){
+            var theIndex = null;
+            angular.forEach(rows,function(valuex,index){
+                if(valuex[completenes][value]=="100"){
+                    theIndex = index;
+
+                    return false;
+                }
+            })
+
+            if(theIndex!=null){
+                return true;
+            }
+
+            return false;
 
         }
         map.getStyle = function(feature){
