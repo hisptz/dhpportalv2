@@ -163,7 +163,7 @@ angular.module("dhpportal")
 
             var style = olHelpers.createStyle({
                 fill:{
-                    color:map.features[featureId],
+                    color:map.features[featureId].color,
                     opacity:0.8
                 },
                 stroke:{
