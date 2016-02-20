@@ -415,14 +415,15 @@
                                 url = profileService.baseDHIS+selective_url;
                             }
                             $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
-                                console.info("ANALYTICS SUCCEDED")
-                                console.log(analytics);
+
+                                var analytics_data = analytics.data;
+
 
                                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                                     console.info("DATA FROM RENDER MAP");
                                     if(typeof orgunits.data == "object" ){
 
-                                        angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data));
+                                        angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
                                     }else{
                                         Materialize.toast("User is loged out", 3000)
                                     }
