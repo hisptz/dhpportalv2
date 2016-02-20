@@ -144,7 +144,7 @@ angular.module("dhpportal")
                     return false;
                 }
             })
-
+            console.log(theIndex);
             if(theIndex!=null){
                 return true;
             }
