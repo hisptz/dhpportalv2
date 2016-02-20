@@ -36,8 +36,8 @@
       <file leaf-file-name="mapService.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/mapService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1" vertical-offset="1864" max-vertical-offset="3096">
-              <caret line="140" column="44" selection-start-line="140" selection-start-column="44" selection-end-line="140" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.6318182" vertical-offset="1054" max-vertical-offset="3096">
+              <caret line="108" column="28" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
               <folding>
                 <element signature="e#932#2048#0" expanded="false" />
               </folding>
@@ -634,8 +634,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/mapService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1" vertical-offset="1864" max-vertical-offset="3096">
-          <caret line="140" column="44" selection-start-line="140" selection-start-column="44" selection-end-line="140" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.6318182" vertical-offset="1054" max-vertical-offset="3096">
+          <caret line="108" column="28" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
           <folding>
             <element signature="e#932#2048#0" expanded="false" />
           </folding>
