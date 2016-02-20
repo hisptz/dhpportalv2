@@ -98,8 +98,6 @@ angular.module("dhpportal")
         }
         map.prepareFeatures = function(data,nalaytics_data){
 
-            console.info("anlysis");
-            console.info(nalaytics_data);
             angular.forEach(data,function(value){
 
                 map.features[value.id] = {
@@ -110,10 +108,9 @@ angular.module("dhpportal")
                 "color":map.decideOnColor(value.id,nalaytics_data),
                 "facility":Math.floor(Math.random() * 256)
             };
-                console.log(value);
             });
 
-
+            console.log(map.features);
 
         }
 
@@ -137,20 +134,14 @@ angular.module("dhpportal")
         }
 
         map.isCompleted = function(rows,value,completenes){
-            console.log(value);
             var theIndex = null;
             angular.forEach(rows,function(valuex,index){
-                console.log(valuex);
-                console.log(completenes);
-                console.log(value);
-                console.log("100.0");
-                if(valuex[0]==completenes && valuex[1]==value && valuex[2]=="100.0"){
+                if(valuex[0]==completenes && valuex[1]==value){
                     theIndex = index;
-
                     return false;
                 }
             })
-            console.log(theIndex);
+
             if(theIndex!=null){
                 return true;
             }
@@ -159,7 +150,6 @@ angular.module("dhpportal")
 
         }
         map.getStyle = function(feature){
-            console.log(feature);
             var color = "";
             var featureId = "";
 
