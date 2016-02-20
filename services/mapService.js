@@ -124,14 +124,14 @@ angular.module("dhpportal")
             var names = nalaytics_data.metaData.names;
 
             if(rows.length<=0){
-                return color;
+//                return color;
             }else if(rows.length>0){
                 if(map.isCompleted(rows,value,completenes)){
                     color = 'green';
                 }
 
             }
-
+            return color;
 
         }
 
