@@ -104,8 +104,8 @@ angular.module("dhpportal")
                 console.log(value)
                 map.features[value.id] = {
                 facility_id:value.id,
-                name:names[value.id],
-                value:value.na,
+                name:value.na,
+//                value:value.na,
                 opacity:0.8,
                 "color":map.decideOnColor(value,nalaytics_data),
                 "facility":Math.floor(Math.random() * 256)
