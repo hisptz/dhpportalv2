@@ -101,7 +101,7 @@ angular.module("dhpportal")
             console.info("anlysis");
             console.info(nalaytics_data);
             angular.forEach(data,function(value){
-                console.log(value)
+
                 map.features[value.id] = {
                 facility_id:value.id,
                 name:value.na,
@@ -110,6 +110,7 @@ angular.module("dhpportal")
                 "color":map.decideOnColor(value.id,nalaytics_data),
                 "facility":Math.floor(Math.random() * 256)
             };
+                console.log(value);
             });
 
 
@@ -169,11 +170,10 @@ angular.module("dhpportal")
                 featureId = feature.getId();
             }
 
-            color = "red";
 
             var style = olHelpers.createStyle({
                 fill:{
-                    color:color,
+                    color:map.features[featureId],
                     opacity:0.8
                 },
                 stroke:{
