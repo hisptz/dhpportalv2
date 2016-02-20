@@ -387,65 +387,15 @@
                     $scope.selectedItems = $scope.organisationUnitTree;
 
 
+                    $scope.$watch('selectedYear',function(newperiod,oldperiod){
+                        $scope.registerChanges(newperiod,$scope.selectedItems);
+                    });
+
                     // callback for organisation unit selection from tree
 
                         $scope.$watch('selectedItems',function(newvalue,oldvalue){
 
-                            if(!newvalue||newvalue.length==0){
-                                portalService.districts = [];
-                                newvalue = $scope.organisationUnitTree;
-                                $scope.objectsselected = portalService.getProjects(newvalue);
-                            }else{
-                                portalService.districts = [];
-                                $scope.objectsselected = portalService.getProjects(newvalue);
-                            }
-
-
-                            prepareOrgUnitStrings();
-
-
-                            /// load data from the dhis server
-                            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:"+$scope.selectedYear;
-                            var selective_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;"+$scope.orgunitString+"&filter=pe:"+$scope.selectedYear+"";
-
-                            var url=profileService.baseDHIS+ default_url;
-                            if(newvalue.length==1&&newvalue[0].id=="m0frOspS7JY"){
-
-                            }else{
-                                url = profileService.baseDHIS+selective_url;
-                            }
-                            $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
-
-                                var analytics_data = analytics.data;
-
-
-                                mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
-                                    console.info("DATA FROM RENDER MAP");
-                                    if(typeof orgunits.data == "object" ){
-
-                                        angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
-                                    }else{
-                                        Materialize.toast("User is loged out", 3000)
-                                    }
-
-
-                                },function(response){
-                                    Materialize.toast("GEOJSON FAILURE "+ response, 3000)
-                                });
-
-
-                            },function(failure){
-                                console.warn("ANALYTICS FAILURE: ");
-                                console.warn(failure);
-                            });
-
-
-                            var orgNames = ""
-                            angular.forEach(newvalue,function(value){
-                                orgNames += value.name+",";
-                            });
-
-                            $scope.orgUnitNames = orgNames.substring(0, orgNames.length - 1);
+                            $scope.registerChanges($scope.selectedYear,newvalue);
                         });
 
 
@@ -464,6 +414,66 @@
         $scope.loadOrganisationUnit();
 
 
+        $scope.registerChanges = function(newperiod,newvalue){
+            if(!newvalue||newvalue.length==0){
+                portalService.districts = [];
+                newvalue = $scope.organisationUnitTree;
+                $scope.objectsselected = portalService.getProjects(newvalue);
+            }else{
+                portalService.districts = [];
+                $scope.objectsselected = portalService.getProjects(newvalue);
+            }
+
+
+            prepareOrgUnitStrings();
+
+
+            /// load data from the dhis server
+            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:"+newperiod;
+            var selective_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;"+$scope.orgunitString+"&filter=pe:"+newperiod;
+
+            var url=profileService.baseDHIS+ default_url;
+            if(newvalue.length==1&&newvalue[0].id=="m0frOspS7JY"){
+
+            }else{
+                url = profileService.baseDHIS+selective_url;
+            }
+            $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
+
+                var analytics_data = analytics.data;
+
+
+                mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
+                    console.info("DATA FROM RENDER MAP");
+                    if(typeof orgunits.data == "object" ){
+
+                        angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
+                    }else{
+                        Materialize.toast("User is loged out", 3000)
+                    }
+
+
+                },function(response){
+                    Materialize.toast("GEOJSON FAILURE "+ response, 3000)
+                });
+
+
+            },function(failure){
+                console.warn("ANALYTICS FAILURE: ");
+                console.warn(failure);
+            });
+
+
+            var orgNames = ""
+            angular.forEach(newvalue,function(value){
+                orgNames += value.name+",";
+            });
+
+            $scope.orgUnitNames = orgNames.substring(0, orgNames.length - 1);
+
+
+
+        }
 
         $scope.getOrganisationUnit = function(){
             utilityService.getOrgUnits().then(function(data){
