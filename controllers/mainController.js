@@ -452,8 +452,8 @@
                         Materialize.toast("User is loged out", 3000)
                     }
 
-                    $scope.dashboardObject.chart.chartObject = map.chartObject;
-                    $scope.dashboardObject.displayChart = false;
+                    $scope.dashboardObject.chart.chartObject = mapService.chartObject;
+//                    $scope.dashboardObject.displayChart = true;
 
                 },function(response){
                     Materialize.toast("GEOJSON FAILURE "+ response, 3000)
