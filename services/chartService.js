@@ -30,7 +30,7 @@
             return {submitted:greenfacility,notsubmmitted:greenfacility};
         }
 
-        chartService.getChartObject = function(){
+        chartService.getChartObject = function(features,districts){
             var series = chartService.prepareSeries(features,districts);
             return  {
                 options: {
