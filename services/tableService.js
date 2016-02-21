@@ -16,7 +16,7 @@
 
             angular.forEach(data,function(value){
                 if(features[value.id].color=="green"){
-                    tableobject.push({name:features[value.id].name,url:'/uploads/'+features[value.id].name+'_'+selectedYear+'.pdf'});
+                    tableobject.push({name:features[value.id].name,url:'uploads/'+features[value.id].name+'_'+selectedYear+'.pdf'});
                 }
             })
 
