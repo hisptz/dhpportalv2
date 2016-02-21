@@ -458,7 +458,7 @@
                     }
 
                     $scope.dashboardObject.chart.chartObject = mapService.chartObject;
-                    console.log($scope.dashboardObject.chart.chartObject);
+                    $scope.dashboardObject.table.tableObject = mapService.tableObject;
 //                    $scope.dashboardObject.displayChart = true;
 
                 },function(response){

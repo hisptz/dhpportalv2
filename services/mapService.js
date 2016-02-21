@@ -1,12 +1,15 @@
 angular.module("dhpportal")
-    .service('mapService',['$rootScope','$http','olData','olHelpers','$timeout','portalService','profileService','utilityService','chartService','shared',function($scope,$http,olData,olHelpers,$timeout,portalService,profileService,utilityService,chartService,shared){
-
+    .service('mapService',['$rootScope','$http','olData','olHelpers','$timeout','portalService','profileService','utilityService','chartService','tableService','shared',function($scope,$http,olData,olHelpers,$timeout,portalService,profileService,utilityService,chartService,tableService,shared){
+        var date = new Date();
         var map = this;
         map.features = [];
         map.chartObject = {};
+        map.tableObject = [];
+        map.selectedYear = date.getFullYear();
         map.renderMap = function(selectedYear,orgunitStrings){
             var maplayer = {};
             map.geoLayer= {"type":"FeatureCollection","features":[]};
+            map.selectedYear = selectedYear;
             var geoUrl = portalService.base+"api/geoFeatures.json?ou=ou:"+orgunitStrings;
 
             return $http({method:'GET',url:geoUrl,dataType:'json',catche:true,isModified:true});
@@ -112,7 +115,7 @@ angular.module("dhpportal")
             });
 
             map.chartObject = chartService.getChartObject(map.features,data);
-//            map.prepareTable(map.features);
+            map.tableObject = tableService.getTableObject(map.features,data,map.selectedYear);
 
         }
 

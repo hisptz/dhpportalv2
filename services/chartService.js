@@ -25,7 +25,6 @@
 
             });
 
-
             return {submitted:greenfacility,notsubmmitted:redfacility};
         }
 
