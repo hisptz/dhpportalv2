@@ -5,10 +5,10 @@
         .module('dhpportal')
         .directive('summaryTable', summaryTable);
 
-    summaryTable.$inject = ['renderItLikeHTML'];
+    summaryTable.$inject = ['$filter'];
 
     /* @ngInject */
-    function summaryTable(renderItLikeHTML) {
+    function summaryTable($filter) {
        return {
             link: function (scope, element, attrs) {
 
