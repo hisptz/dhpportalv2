@@ -17,18 +17,16 @@
           var greenfacility = 0;
             console.log(districts);
             angular.forEach(districts,function(value){
-                console.log(features[value.id]);
-                if(features[value.id].color=="red"){
-                    redfacility++;
-                }
 
                 if(features[value.id].color=="green"){
                     greenfacility++;
+                    redfacility = redfacility-greenfacility;
                 }
+
             });
 
 
-            return {submitted:greenfacility,notsubmmitted:greenfacility};
+            return {submitted:greenfacility,notsubmmitted:redfacility};
         }
 
         chartService.getChartObject = function(features,districts){
