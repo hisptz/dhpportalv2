@@ -392,10 +392,12 @@
                     }
 
                     // callback for organisation unit selection from tree
-
+                        var monitor = 0;
                         $scope.$watch('selectedItems',function(newvalue,oldvalue){
-
-                            $scope.registerChanges($scope.selectedYear,newvalue);
+                            if(monitor<1){
+                                $scope.registerChanges($scope.selectedYear,newvalue);
+                            }
+                            monitor++
                         });
 
 
