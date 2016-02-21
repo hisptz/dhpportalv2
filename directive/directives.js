@@ -5,7 +5,7 @@
         .module('dhpportal')
         .directive('summaryTable', summaryTable);
 
-    summaryTable.$inject = [renderItLikeHTML'];
+    summaryTable.$inject = ['renderItLikeHTML'];
 
     /* @ngInject */
     function summaryTable(renderItLikeHTML) {
