@@ -5,15 +5,15 @@
         .module('dhpportal')
         .directive('summaryTable', summaryTable);
 
-    summaryTable.$inject = ['$window'];
+//    summaryTable.$inject = ['$scope'];
 
     /* @ngInject */
-    function summaryTable($window) {
+    function summaryTable() {
        return {
             link: function (scope, element, attrs) {
 
             },
-            restrict: 'AE',
+            restrict: 'E',
            templateUrl:"partials/summarytable.html"
         };
 
