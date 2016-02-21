@@ -75,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/directive/directives.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.37157106" vertical-offset="31" max-vertical-offset="468">
-              <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -874,7 +874,7 @@
     <entry file="file://$PROJECT_DIR$/directive/directives.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37157106" vertical-offset="31" max-vertical-offset="468">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding />
         </state>
       </provider>
