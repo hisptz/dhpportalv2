@@ -1,8 +1,9 @@
 angular.module("dhpportal")
-    .service('mapService',['$rootScope','$http','olData','olHelpers','$timeout','portalService','profileService','utilityService','shared',function($scope,$http,olData,olHelpers,$timeout,portalService,profileService,utilityService,shared){
+    .service('mapService',['$rootScope','$http','olData','olHelpers','$timeout','portalService','profileService','utilityService','chartService','shared',function($scope,$http,olData,olHelpers,$timeout,portalService,profileService,utilityService,chartService,shared){
 
         var map = this;
         map.features = [];
+        map.chartObject = {};
         map.renderMap = function(selectedYear,orgunitStrings){
             var maplayer = {};
             map.geoLayer= {"type":"FeatureCollection","features":[]};
@@ -110,7 +111,8 @@ angular.module("dhpportal")
             };
             });
 
-            console.log(map.features);
+            map.chartObject = chartService.getChartObject(map.features,data);
+//            map.prepareTable(map.features);
 
         }
 
@@ -122,8 +124,7 @@ angular.module("dhpportal")
             var names = nalaytics_data.metaData.names;
 
             if(rows.length<=0){
-            }else if(rows.length>0){
-                if(map.isCompleted(rows,value,completenes)){
+            }else if(rows.length>0){ if (map.isCompleted(rows,value,completenes)){
                     color = 'green';
                 }
 

@@ -12,20 +12,26 @@
         var chartService = {};
         chartService.totalFacilities = 0;
 
-        chartService.prepareSeries = function(){
-            var submitted = 0;
-            var objectSeries = JSON.parse(localStorage.getItem("seriesObject"));
-            angular.forEach(objectSeries,function(valueObject,indexObject){
-                submitted+=valueObject.count;
+        chartService.prepareSeries = function(features,districts){
+          var redfacility = 0;
+          var greenfacility = 0;
+
+            angular.forEach(districts,function(value){
+                if(features[value.id].color=="red"){
+                    redfacility++;
+                }
+
+                if(features[value.id].color=="green"){
+                    greenfacility++;
+                }
             });
 
-            var notSubmitted = chartService.totalFacilities - submitted;
 
-            return {submitted:submitted,notSubmitted:notSubmitted};
+            return {submitted:greenfacility,notsubmmitted:greenfacility};
         }
 
         chartService.getChartObject = function(){
-            var series = chartService.prepareSeries();
+            var series = chartService.prepareSeries(features,districts);
             return  {
                 options: {
                     chart: {
@@ -41,7 +47,7 @@
                     type: 'pie',
                     name: 'Distribution',
                     data: [
-                        ['Not Submitted',series.notSubmitted],
+                        ['Not Submitted',series.notsubmmitted],
                         ['Submitted',  series.submitted]
 
                     ]
