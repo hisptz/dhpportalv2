@@ -453,6 +453,7 @@
                     }
 
                     $scope.dashboardObject.chart.chartObject = mapService.chartObject;
+                    console.log($scope.dashboardObject.chart.chartObject);
 //                    $scope.dashboardObject.displayChart = true;
 
                 },function(response){
