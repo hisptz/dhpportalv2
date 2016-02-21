@@ -15,8 +15,9 @@
         chartService.prepareSeries = function(features,districts){
           var redfacility = districts.length;
           var greenfacility = 0;
-
+            console.log(districts);
             angular.forEach(districts,function(value){
+                console.log(features[value.id]);
                 if(features[value.id].color=="red"){
                     redfacility++;
                 }
@@ -31,6 +32,7 @@
         }
 
         chartService.getChartObject = function(features,districts){
+
             var series = chartService.prepareSeries(features,districts);
             return  {
                 options: {
