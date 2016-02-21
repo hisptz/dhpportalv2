@@ -8,7 +8,7 @@
     summaryTable.$inject = ['$scope','renderItLikeHTML'];
 
     /* @ngInject */
-    function summaryTable($$scope,renderItLikeHTML) {
+    function summaryTable($scope,renderItLikeHTML) {
        return {
             link: function (scope, element, attrs) {
 
