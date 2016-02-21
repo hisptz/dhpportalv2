@@ -387,9 +387,9 @@
                     $scope.selectedItems = $scope.organisationUnitTree;
 
 
-                    $scope.$watch('selectedYear',function(newperiod,oldperiod){
-                        $scope.registerChanges(newperiod,$scope.selectedItems);
-                    });
+                    $scope.selectPeriod = function(){
+                        $scope.registerChanges($scope.selectedYear,$scope.selectedItems);
+                    }
 
                     // callback for organisation unit selection from tree
 
