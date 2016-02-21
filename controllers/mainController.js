@@ -88,11 +88,21 @@
             $scope.dashboardObject.displayChart = false;
             $scope.dashboardObject.displayTable = true;
         }
-        $scope.downloadExcel = function(){
-//            $scope.dashboardObject.displayMap = true;
-//            $scope.dashboardObject.displayChart = false;
-//            $scope.dashboardObject.displayTable = false;
+        $scope.downloadCSV = function(){
+            var array = []
+            angular.forEach($scope.dashboardObject.table.tableObject,function(value){
+                array.push({profile:value.name});
+            });
+            return array;
         }
+
+        $scope.getCSVHeader = function(){
+            return ["Submitted District Health Profile - "+$scope.selectedYear]
+        }
+
+
+
+
 
 
 
