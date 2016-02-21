@@ -396,8 +396,11 @@
                         $scope.$watch('selectedItems',function(newvalue,oldvalue){
                             if(monitor<1){
                                 $scope.registerChanges($scope.selectedYear,newvalue);
+                                monitor++
+                            }else{
+                                monitor = 0;
                             }
-                            monitor++
+
                         });
 
 
