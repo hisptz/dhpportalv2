@@ -502,7 +502,8 @@
                             if (feature) {
                                 feature.setStyle(olHelpers.createStyle({
                                     fill: {
-                                        color: mapService.features[feature.getId()].color
+                                        color: mapService.features[feature.getId()].color,
+                                        opacity:0.4
                                     },
                                     stroke: {
                                         color: '#A3CEC5',
