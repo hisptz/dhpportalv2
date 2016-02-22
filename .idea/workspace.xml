@@ -89,8 +89,8 @@
       <file leaf-file-name="portalService.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/portalService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.31" vertical-offset="88" max-vertical-offset="972">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state vertical-scroll-proportion="1.0584615" vertical-offset="88" max-vertical-offset="972">
+              <caret line="24" column="830" selection-start-line="24" selection-start-column="830" selection-end-line="24" selection-end-column="830" />
               <folding />
             </state>
           </provider>
@@ -159,7 +159,6 @@
         <option value="$PROJECT_DIR$/services/service.js" />
         <option value="$PROJECT_DIR$/bower_components/angular-multi-select-tree/dist/angular-multi-select-tree-0.1.0.js" />
         <option value="$PROJECT_DIR$/controllers/mapController.js" />
-        <option value="$PROJECT_DIR$/services/portalService.js" />
         <option value="$PROJECT_DIR$/services/chartService.js" />
         <option value="$PROJECT_DIR$/services/tableService.js" />
         <option value="$PROJECT_DIR$/controllers/mainController.js" />
@@ -169,6 +168,7 @@
         <option value="$PROJECT_DIR$/partials/summarytable.html" />
         <option value="$PROJECT_DIR$/views/home.html" />
         <option value="$PROJECT_DIR$/services/mapService.js" />
+        <option value="$PROJECT_DIR$/services/portalService.js" />
       </list>
     </option>
   </component>
@@ -353,7 +353,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1365" y="-16" width="1368" height="785" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24758364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -362,7 +362,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31634182" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4287856" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -896,8 +896,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/services/portalService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.31" vertical-offset="88" max-vertical-offset="972">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state vertical-scroll-proportion="1.0584615" vertical-offset="88" max-vertical-offset="972">
+          <caret line="24" column="830" selection-start-line="24" selection-start-column="830" selection-end-line="24" selection-end-column="830" />
           <folding />
         </state>
       </provider>
