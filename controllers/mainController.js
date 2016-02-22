@@ -461,7 +461,6 @@
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");
                     if(typeof orgunits.data == "object" ){
-
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
                     }else{
                         Materialize.toast("User is loged out", 3000)
@@ -481,12 +480,13 @@
                         var overlayHidden = true;
                         // Mouse click function, called from the Leaflet Map Events
                         $scope.$on('openlayers.layers.geojson.mousemove', function(event, feature, olEvent) {
-                            $scope.$apply(function(scope) {
+                            $scope.$apply(function($scope) {
 
-                                scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
+                                $scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
                                 if(feature) {
-                                    scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
+                                    $scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
                                 }
+                                console.log($scope.selectedDistrictHover);
 
                             });
 
@@ -526,7 +526,6 @@
                                     // looping throught indicator types
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
                                     $scope.selectedDistrictName = $scope.selectedDistrict.name;
-                                    console.log($scope.selectedDistrict);
 
                                 }
                             });
