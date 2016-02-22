@@ -502,7 +502,7 @@
                             if (feature) {
                                 feature.setStyle(olHelpers.createStyle({
                                     fill: {
-                                        color: getColor(mapService.features[feature.getId()])
+                                        color: mapService.features[feature.getId()].color
                                     },
                                     stroke: {
                                         color: '#A3CEC5',
@@ -511,7 +511,7 @@
                                     }
                                 }));
                                 if (previousFeature && feature !== previousFeature) {
-                                    previousFeature.setStyle(getStyle(previousFeature));
+                                    previousFeature.setStyle(mapService.getStyle(previousFeature));
                                 }
                                 previousFeature = feature;
                             }
