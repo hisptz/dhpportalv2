@@ -63,25 +63,25 @@ angular.module("dhpportal")
 
 
 
-            var tileLayer = new ol.layer.Tile({source: new ol.source.OSM()});
+            var latitude =  -6.45;
+            var longitude = 35;
+            var zoom = 5.6;
 
             var boundaries =  {
                 Africa: {
-                    lat: -6.45,
-                    lon: 35,
-                    zoom: 5.6
+                    lat:latitude,
+                    lon: longitude,
+                    zoom:zoom
                 },
                 layers:[
-                    tileLayer
-//                    {
-//                        name:'OpenStreetMap',
-//                        source: {
-//                            type: 'OSM',
-//                            url:"https://maps.wikimedia.org/#6/-6.446/34.980"
-////                            url:"https://openstreetmap.org/#map=" + 5.6  + "/" + (-6.45)+ "/" + 35
-//                        }
-//                    }
-                    ,
+                    {
+                        name:'OpenStreetMap',
+                        source: {
+                            type: 'OSM',
+                            url:"https://maps.wikimedia.org/#"+zoom+"/"+latitude+"/"+longitude
+//                            url:"https://openstreetmap.org/#map=" + 5.6  + "/" + (-6.45)+ "/" + 35
+                        }
+                    },
                     {
                         name:'geojson',
                         visible: true,
