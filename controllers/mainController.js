@@ -519,9 +519,7 @@
                         });
 
                         $scope.$on('openlayers.layers.geojson.click', function(event, feature, olEvent) {
-                            //$scope.$parent.main.chart_shown = false;
-                            //$scope.$parent.main.backToGrid()
-                            //$scope.closeTootipHover();
+
                             $scope.$apply(function(scope) {
                                 $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
                                 if(feature) {
@@ -529,9 +527,6 @@
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
                                     $scope.selectedDistrictName = $scope.selectedDistrict.name;
                                     console.log($scope.selectedDistrict);
-                                    //var orgUnit = {children:null};
-                                    //$scope.$parent.main.processView(orgUnit,scope.selectedDistrict.name,scope.selectedDistrict.district_id)
-
 
                                 }
                             });
@@ -545,17 +540,17 @@
                                 overlayHidden = false;
                             }
                             overlay.setPosition(map.getEventCoordinate(olEvent));
-                            //if (feature) {
-                            //    feature.setStyle(olHelpers.createStyle({
-                            //        fill: {
-                            //            color: '#FFF'
-                            //        }
-                            //    }));
-                            //    if (previousFeature && feature !== previousFeature) {
-                            //        previousFeature.setStyle(getStyle(previousFeature));
-                            //    }
-                            //    previousFeature = feature;
-                            //}
+                            if (feature) {
+                                feature.setStyle(olHelpers.createStyle({
+                                    fill: {
+                                        color: '#FFF'
+                                    }
+                                }));
+                                if (previousFeature && feature !== previousFeature) {
+                                    previousFeature.setStyle(getStyle(previousFeature));
+                                }
+                                previousFeature = feature;
+                            }
                         });
 
                         $scope.$on('openlayers.layers.geojson.featuresadded', function(event, feature, olEvent) {
