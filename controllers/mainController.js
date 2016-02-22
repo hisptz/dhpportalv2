@@ -469,7 +469,6 @@
 
                     $scope.dashboardObject.chart.chartObject = mapService.chartObject;
                     $scope.dashboardObject.table.tableObject = mapService.tableObject;
-//                    $scope.dashboardObject.displayChart = true;
 
                     olData.getMap().then(function(map) {
                         var previousFeature;
@@ -484,9 +483,9 @@
                         $scope.$on('openlayers.layers.geojson.mousemove', function(event, feature, olEvent) {
                             $scope.$apply(function(scope) {
 
-                                scope.selectedDistrictHover = feature ? $scope.districts[feature.getId()] : '';
+                                scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
                                 if(feature) {
-                                    scope.selectedDistrictHover = feature ? $scope.districts[feature.getId()] : '';
+                                    scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
                                 }
 
                             });
@@ -503,7 +502,7 @@
                             if (feature) {
                                 feature.setStyle(olHelpers.createStyle({
                                     fill: {
-                                        color: getColor($scope.districts[feature.getId()])
+                                        color: getColor(mapService.features[feature.getId()])
                                     },
                                     stroke: {
                                         color: '#A3CEC5',
@@ -519,18 +518,18 @@
                         });
 
                         $scope.$on('openlayers.layers.geojson.click', function(event, feature, olEvent) {
-                            $scope.$parent.main.chart_shown = false;
-                            $scope.$parent.main.backToGrid()
+                            //$scope.$parent.main.chart_shown = false;
+                            //$scope.$parent.main.backToGrid()
                             //$scope.closeTootipHover();
                             $scope.$apply(function(scope) {
-                                scope.selectedDistrict = feature ? $scope.districts[feature.getId()] : '';
-                                $scope.$parent.main.org_unit_selected = scope.selectedDistrict.district_id;
+                                $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
                                 if(feature) {
                                     // looping throught indicator types
-                                    scope.selectedDistrict = feature ? $scope.districts[feature.getId()] : '';
-                                    $scope.selectedDistrictName = scope.selectedDistrict.name;
-                                    var orgUnit = {children:null};
-                                    $scope.$parent.main.processView(orgUnit,scope.selectedDistrict.name,scope.selectedDistrict.district_id)
+                                    $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
+                                    $scope.selectedDistrictName = $scope.selectedDistrict.name;
+                                    console.log($scope.selectedDistrict);
+                                    //var orgUnit = {children:null};
+                                    //$scope.$parent.main.processView(orgUnit,scope.selectedDistrict.name,scope.selectedDistrict.district_id)
 
 
                                 }
@@ -545,23 +544,24 @@
                                 overlayHidden = false;
                             }
                             overlay.setPosition(map.getEventCoordinate(olEvent));
-                            if (feature) {
-                                feature.setStyle(olHelpers.createStyle({
-                                    fill: {
-                                        color: '#FFF'
-                                    }
-                                }));
-                                if (previousFeature && feature !== previousFeature) {
-                                    previousFeature.setStyle(getStyle(previousFeature));
-                                }
-                                previousFeature = feature;
-                            }
+                            //if (feature) {
+                            //    feature.setStyle(olHelpers.createStyle({
+                            //        fill: {
+                            //            color: '#FFF'
+                            //        }
+                            //    }));
+                            //    if (previousFeature && feature !== previousFeature) {
+                            //        previousFeature.setStyle(getStyle(previousFeature));
+                            //    }
+                            //    previousFeature = feature;
+                            //}
                         });
+
                         $scope.$on('openlayers.layers.geojson.featuresadded', function(event, feature, olEvent) {
                             $scope.$apply(function(scope) {
                                 if(feature) {
                                     $scope.id = feature.getId();
-                                    scope.selectedDistrict = feature ? $scope.districts[feature.getId()]: '';
+                                    $scope.selectedDistrict = feature ? mapService.features[feature.getId()]: '';
                                 }
                             });
 
