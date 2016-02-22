@@ -128,7 +128,7 @@
     <div class="col s12 z-depth-1" style="">
         <div class="section grey lighten-5 " >
 
-            <div class="input-field col s6 grey lighten-5" >
+            <div class="input-field col s12 m6 l6 grey lighten-5" >
 
                 <select ng-change="selectPeriod()" ng-model="selectedYear"  material-select watch>
                     <option ng-selected="selectedYear" value="{{selectedYear}}">{{selectedYear}}</option>
@@ -136,7 +136,7 @@
                 </select>
                 <label>Period</label>
             </div>
-            <div class="input-field col s6 orgDropdown grey lighten-5"  >
+            <div class="input-field col s12 m6 l6 orgDropdown grey lighten-5"  >
                 <multi-select-tree data-input-model="organisationUnitTree" multi-select="true"
                                    data-output-model="selectedItems" data-default-label="Organisation Units"
                                    data-callback="selectedCallback(item, selectedItems)"
@@ -153,7 +153,7 @@
 
     <div class="col s12 m12 l12" >
         <div class="">
-        <div class="col s4 m4 l4"  >
+        <div class="col s12 m12 l4"  >
             <div class="card z-depth-2 teal lighten-5 large">
                 <div class="card-image waves-effect waves-block waves-light" style="overflow: scroll">
                     <div style="width: 100%" >
@@ -234,7 +234,7 @@
             </div>
             <!--end of model object-->
         </div>
-            <div class="col s12 m8 l8" >
+            <div class="col s12 m12 l8" >
                 <div class="card z-depth-2 white lighten-5 large">
                     <p style="text-align: center;">HEALTH PROFILE SUMMARY TABLE</p>
                     <div class="card-image waves-effect waves-block waves-light" style="overflow: scroll">

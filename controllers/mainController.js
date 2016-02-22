@@ -8,8 +8,8 @@
         })
         .controller('mainController', mainController);
 
-    mainController.$inject   = ['$scope','$cookies','$http','$timeout','$location','DTOptionsBuilder', 'DTColumnDefBuilder','profileService','utilityService','portalService','chartService','mapService'];
-    function mainController($scope,$cookies,$http,$timeout,$location,DTOptionsBuilder, DTColumnDefBuilder,profileService,utilityService,portalService,chartService,mapService) {
+    mainController.$inject   = ['$scope','$cookies','$http','$timeout','$location','DTOptionsBuilder', 'DTColumnDefBuilder','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
+    function mainController($scope,$cookies,$http,$timeout,$location,DTOptionsBuilder, DTColumnDefBuilder,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
         var main  = this;
         var date = new Date();
          // this is the main object do not delete this variable
@@ -471,6 +471,104 @@
                     $scope.dashboardObject.table.tableObject = mapService.tableObject;
 //                    $scope.dashboardObject.displayChart = true;
 
+                    olData.getMap().then(function(map) {
+                        var previousFeature;
+                        var overlay = new ol.Overlay({
+                            element: document.getElementById('districtbox'),
+                            positioning: 'top-right',
+                            offset: [100, -100],
+                            position: [100, -100]
+                        });
+                        var overlayHidden = true;
+                        // Mouse click function, called from the Leaflet Map Events
+                        $scope.$on('openlayers.layers.geojson.mousemove', function(event, feature, olEvent) {
+                            $scope.$apply(function(scope) {
+
+                                scope.selectedDistrictHover = feature ? $scope.districts[feature.getId()] : '';
+                                if(feature) {
+                                    scope.selectedDistrictHover = feature ? $scope.districts[feature.getId()] : '';
+                                }
+
+                            });
+
+                            if (!feature) {
+                                map.removeOverlay(overlay);
+                                overlayHidden = true;
+                                return;
+                            } else if (overlayHidden) {
+                                map.addOverlay(overlay);
+                                overlayHidden = false;
+                            }
+                            overlay.setPosition(map.getEventCoordinate(olEvent));
+                            if (feature) {
+                                feature.setStyle(olHelpers.createStyle({
+                                    fill: {
+                                        color: getColor($scope.districts[feature.getId()])
+                                    },
+                                    stroke: {
+                                        color: '#A3CEC5',
+                                        width:2
+
+                                    }
+                                }));
+                                if (previousFeature && feature !== previousFeature) {
+                                    previousFeature.setStyle(getStyle(previousFeature));
+                                }
+                                previousFeature = feature;
+                            }
+                        });
+
+                        $scope.$on('openlayers.layers.geojson.click', function(event, feature, olEvent) {
+                            $scope.$parent.main.chart_shown = false;
+                            $scope.$parent.main.backToGrid()
+                            //$scope.closeTootipHover();
+                            $scope.$apply(function(scope) {
+                                scope.selectedDistrict = feature ? $scope.districts[feature.getId()] : '';
+                                $scope.$parent.main.org_unit_selected = scope.selectedDistrict.district_id;
+                                if(feature) {
+                                    // looping throught indicator types
+                                    scope.selectedDistrict = feature ? $scope.districts[feature.getId()] : '';
+                                    $scope.selectedDistrictName = scope.selectedDistrict.name;
+                                    var orgUnit = {children:null};
+                                    $scope.$parent.main.processView(orgUnit,scope.selectedDistrict.name,scope.selectedDistrict.district_id)
+
+
+                                }
+                            });
+
+                            if (!feature) {
+                                map.removeOverlay(overlay);
+                                overlayHidden = true;
+                                return;
+                            } else if (overlayHidden) {
+                                map.addOverlay(overlay);
+                                overlayHidden = false;
+                            }
+                            overlay.setPosition(map.getEventCoordinate(olEvent));
+                            if (feature) {
+                                feature.setStyle(olHelpers.createStyle({
+                                    fill: {
+                                        color: '#FFF'
+                                    }
+                                }));
+                                if (previousFeature && feature !== previousFeature) {
+                                    previousFeature.setStyle(getStyle(previousFeature));
+                                }
+                                previousFeature = feature;
+                            }
+                        });
+                        $scope.$on('openlayers.layers.geojson.featuresadded', function(event, feature, olEvent) {
+                            $scope.$apply(function(scope) {
+                                if(feature) {
+                                    $scope.id = feature.getId();
+                                    scope.selectedDistrict = feature ? $scope.districts[feature.getId()]: '';
+                                }
+                            });
+
+                        });
+
+
+                    });
                 },function(response){
                     Materialize.toast("GEOJSON FAILURE "+ response, 3000)
                 });
