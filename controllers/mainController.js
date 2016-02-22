@@ -520,7 +520,7 @@
 
                         $scope.$on('openlayers.layers.geojson.click', function(event, feature, olEvent) {
 
-                            $scope.$apply(function(scope) {
+                            $scope.$apply(function($scope) {
                                 $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
                                 if(feature) {
                                     // looping throught indicator types
@@ -553,7 +553,7 @@
                         });
 
                         $scope.$on('openlayers.layers.geojson.featuresadded', function(event, feature, olEvent) {
-                            $scope.$apply(function(scope) {
+                            $scope.$apply(function($scope) {
                                 if(feature) {
                                     $scope.id = feature.getId();
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()]: '';
