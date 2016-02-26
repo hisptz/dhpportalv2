@@ -74,13 +74,21 @@ angular.module("dhpportal")
                     zoom:zoom
                 },
                 layers:[
+//                    {
+//                        name:'OpenStreetMap',
+//                        source: {
+//                            type: 'OSM',
+//                            url:"https://maps.wikimedia.org/#"+zoom+"/"+latitude+"/"+longitude
+////                            url:"https://openstreetmap.org/#map=" + 5.6  + "/" + (-6.45)+ "/" + 35
+//                        }
+//                    },
                     {
-                        name:'OpenStreetMap',
+                    mapquest: {
                         source: {
-                            type: 'OSM',
-                            url:"https://maps.wikimedia.org/#"+zoom+"/"+latitude+"/"+longitude
-//                            url:"https://openstreetmap.org/#map=" + 5.6  + "/" + (-6.45)+ "/" + 35
+                            type: 'MapQuest',
+                                layer: 'sat'
                         }
+                    }
                     },
                     {
                         name:'geojson',
