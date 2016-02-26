@@ -19,6 +19,9 @@
         $scope.dashboardObject.chart = {};
         $scope.dashboardObject.table = {};
 
+        $scope.submitted = 0;
+        $scope.allAvailable = mapService.features.length;
+
 
         // set current year
         $scope.current_year = date.getFullYear();
@@ -461,7 +464,7 @@
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");
                     console.log(map.features);
-                    if(typeof orgunits.data == "object" ){
+                    if (typeof orgunits.data == "object" ){
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
                     }else{
                         Materialize.toast("User is loged out", 3000)
@@ -566,6 +569,7 @@
 
 
                     });
+
                 },function(response){
                     Materialize.toast("GEOJSON FAILURE "+ response, 3000)
                 });
