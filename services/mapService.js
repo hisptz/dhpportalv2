@@ -86,7 +86,7 @@ angular.module("dhpportal")
                     mapquest: {
                         source: {
                             type: 'MapQuest',
-                                layer: 'sat'
+                                layer: 'osm'
                         }
                     }
                     },
