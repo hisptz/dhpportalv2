@@ -460,6 +460,7 @@
 
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");
+                    console.log(map.features);
                     if(typeof orgunits.data == "object" ){
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
                     }else{
@@ -486,7 +487,7 @@
                                 if(feature) {
                                     $scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
                                 }
-                                console.log($scope.selectedDistrictHover);
+
 
                             });
 
@@ -542,6 +543,7 @@
                             if (feature) {
                                 feature.setStyle(olHelpers.createStyle({
                                     fill: {
+                                        color:mapService.features[feature.getId()].color,
                                         opacity:0.5
                                     }
                                 }));
