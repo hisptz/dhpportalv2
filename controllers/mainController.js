@@ -542,7 +542,7 @@
                             if (feature) {
                                 feature.setStyle(olHelpers.createStyle({
                                     fill: {
-                                        color: '#FFF'
+                                        opacity:0.5
                                     }
                                 }));
                                 if (previousFeature && feature !== previousFeature) {
