@@ -163,10 +163,10 @@
                             <openlayers ng-if="dashboardObject.map.layers" ol-center="dashboardObject.map.Africa" ol-defaults="dashboardObject.map.defaults" custom-layers="true"  height="400px" >
                                 <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in dashboardObject.map.layers"></ol-layer>
                             </openlayers>
-                            <div id="districtboxz" ng-if="selectedDistrictHover" class="infoh district ">
-                                <table style="text-align: left;">
-                                    <tr><td style="background-color: #2D9630"></td><td>6</td><td>uploaded</td></tr>
-                                    <tr><td style="background-color: #F93030;"></td><td>163</td><td>Not Uploaded</td></tr>
+                            <div id="districtboxz"  class="infoh district ">
+                                <table >
+                                    <tr><td style="background-color: #2D9630"></td><td  style="text-align: left;">6</td><td style="text-align: left;">uploaded</td></tr>
+                                    <tr><td style="background-color: #F93030;"></td><td style="text-align: left;">163</td><td style="text-align: left;">Not Uploaded</td></tr>
                                     <tr ng-if="selectedDistrictHover"><td colspan="2"><br/>{{selectedDistrictHover.name}}</td></tr>
                                 </table>
 
