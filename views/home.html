@@ -163,6 +163,10 @@
                             <openlayers ng-if="dashboardObject.map.layers" ol-center="dashboardObject.map.Africa" ol-defaults="dashboardObject.map.defaults" custom-layers="true"  height="400px" >
                                 <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in dashboardObject.map.layers"></ol-layer>
                             </openlayers>
+                            <div id="districtboxz"  class="infoh district ">
+                                {{selectedDistrict.name}}
+                            </div>
+
                         </div>
 
 
