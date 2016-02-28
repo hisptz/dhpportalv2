@@ -8,6 +8,7 @@ angular.module("dhpportal")
         map.selectedYear = date.getFullYear();
         map.submitted = 0;
         map.totalDistricts = 0;
+
         map.renderMap = function(selectedYear,orgunitStrings){
             var maplayer = {};
             map.geoLayer= {"type":"FeatureCollection","features":[]};
@@ -17,19 +18,6 @@ angular.module("dhpportal")
             return $http({method:'GET',url:geoUrl,dataType:'json',catche:true,isModified:true});
 
             return maplayer;
-        }
-
-        map.getSubmitted = function(features,distrits){
-            var submitted = 0;
-
-            angular.forEach(distrits,function(value){
-                if(features[value.id].color=="green"){
-                    submitted++;
-                }
-            });
-
-
-            return submitted;
         }
 
         map.prepareMapObject = function(data,analytics_data){

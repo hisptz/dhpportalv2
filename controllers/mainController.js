@@ -468,11 +468,12 @@
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");
 
-                    $scope.submitted = mapService.submitted;
-                    $scope.notsubmitted = mapService.totalDistricts - mapService.submitted;
+
 
                     if (typeof orgunits.data == "object" ){
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
+                        $scope.submitted = mapService.submitted;
+                        $scope.notsubmitted = mapService.totalDistricts - mapService.submitted;
                     }else{
                         Materialize.toast("User is loged out", 3000)
                     }
