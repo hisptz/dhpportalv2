@@ -469,7 +469,8 @@
                     console.info("DATA FROM RENDER MAP");
                     $scope.submitted = mapService.submitted;
                     $scope.nosubmitted = $scope.allAvailable - mapService.submitted;
-
+                    console.log("SUBMITTED : "+$scope.submitted);
+                    console.log("NOT SUBMITTED : "+$scope.nosubmitted);
                     if (typeof orgunits.data == "object" ){
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
                     }else{
