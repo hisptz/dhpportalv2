@@ -100,8 +100,8 @@
       <file leaf-file-name="mainController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.9567723" vertical-offset="7452" max-vertical-offset="14274">
-              <caret line="471" column="0" selection-start-line="471" selection-start-column="0" selection-end-line="471" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33229813" vertical-offset="8263" max-vertical-offset="14274">
+              <caret line="465" column="42" selection-start-line="465" selection-start-column="42" selection-end-line="465" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -140,9 +140,9 @@
         <option value="$PROJECT_DIR$/directive/directives.js" />
         <option value="$PROJECT_DIR$/partials/summarytable.html" />
         <option value="$PROJECT_DIR$/services/portalService.js" />
-        <option value="$PROJECT_DIR$/controllers/mainController.js" />
         <option value="$PROJECT_DIR$/services/mapService.js" />
         <option value="$PROJECT_DIR$/views/home.html" />
+        <option value="$PROJECT_DIR$/controllers/mainController.js" />
       </list>
     </option>
   </component>
@@ -770,8 +770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9567723" vertical-offset="7452" max-vertical-offset="14274">
-          <caret line="471" column="0" selection-start-line="471" selection-start-column="0" selection-end-line="471" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33229813" vertical-offset="8263" max-vertical-offset="14274">
+          <caret line="465" column="42" selection-start-line="465" selection-start-column="42" selection-end-line="465" selection-end-column="42" />
           <folding />
         </state>
       </provider>

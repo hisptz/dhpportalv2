@@ -401,6 +401,7 @@
 
 
                     $scope.selectPeriod = function(){
+
                         $scope.registerChanges($scope.selectedYear,$scope.selectedItems);
                     }
 
@@ -433,6 +434,8 @@
 
 
         $scope.registerChanges = function(newperiod,newvalue){
+            // hide all views and show loading image
+            $scope.dashboardObject.map.layers = null;
             if(!newvalue||newvalue.length==0){
                 portalService.districts = [];
                 newvalue = $scope.organisationUnitTree;
