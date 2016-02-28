@@ -30,7 +30,6 @@ angular.module('ngCsv.directives').
         '$transclude',
         function ($scope, $element, $attrs, $transclude) {
           $scope.csv = '';
-
           if (!angular.isDefined($scope.lazyLoad) || $scope.lazyLoad != "true") {
             if (angular.isArray($scope.data)) {
               $scope.$watch("data", function (newValue) {
