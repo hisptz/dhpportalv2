@@ -22,7 +22,7 @@ angular.module("dhpportal")
             map.submitted = 0;
 
             angular.forEach(distrits,function(value){
-                if(features[value.id].color="green"){
+                if(features[value.id].color=="green"){
                     map.submitted++;
                 }
             });
