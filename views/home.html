@@ -230,10 +230,11 @@
                     <h4 style="text-align: center"></h4>
                     <div style="width: 100%">
                         <div style="width: 100%" >
-                            <p ng-if="!dashboardObject.map.layers && !dashboardObject.chart.chartObject && !dashboardObject.table.tableObject" class="center" style="text-align: center;">
-                                <img src="assets/img/preloader.gif" style="height:15px;width:45px">
-                            </p>
+
                             <div ng-show="dashboardObject.displayMap">
+                                <p ng-if="!dashboardObject.map.layers" class="center" style="text-align: center;">
+                                    <img src="assets/img/preloader.gif" style="height:15px;width:45px">
+                                </p>
 
                                 <openlayers ng-if="dashboardObject.map.layers" ol-center="dashboardObject.map.Africa" ol-defaults="dashboardObject.map.defaults" custom-layers="true"  height="400px" >
                                     <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in dashboardObject.map.layers"></ol-layer>
@@ -251,10 +252,15 @@
 
 
                             <div style="width: 100%" ng-if="dashboardObject.displayChart">
+                                <p ng-if="!dashboardObject.chart.chartObject" class="center" style="text-align: center;">
+                                    <img src="assets/img/preloader.gif" style="height:15px;width:45px">
+                                </p>
                                 <highchart ng-if="dashboardObject.chart.chartObject" config="dashboardObject.chart.chartObject"></highchart>
                             </div>
                             <div style="width: 100%" ng-if="dashboardObject.displayTable" >
-                                <!--<p ng-if="dashboardObject.table.loading" class="center"><img src="assets/img/preloader.gif" style="height:15px;width:45px;margin-top: 50%;margin-left: 50%">-->
+                                <p ng-if="!dashboardObject.table.tableObject" class="center" style="text-align: center;">
+                                    <img src="assets/img/preloader.gif" style="height:15px;width:45px">
+                                </p>
                                 <table ng-if="dashboardObject.table.tableObject" class="bordered striped centered" id="jinsi">
                                     <thead>
                                     <tr>
