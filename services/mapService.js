@@ -7,6 +7,7 @@ angular.module("dhpportal")
         map.tableObject = [];
         map.selectedYear = date.getFullYear();
         map.submitted = 0;
+        map.totalDistricts = 0;
         map.renderMap = function(selectedYear,orgunitStrings){
             var maplayer = {};
             map.geoLayer= {"type":"FeatureCollection","features":[]};
@@ -143,6 +144,7 @@ angular.module("dhpportal")
 
 
             map.totalDistricts = map.features.length;
+            console.log(map.totalDistricts);
             map.submitted = map.getSubmitted(map.features,data);
 
             map.chartObject = chartService.getChartObject(map.features,data);
