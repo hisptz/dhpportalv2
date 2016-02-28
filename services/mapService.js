@@ -66,13 +66,8 @@ angular.module("dhpportal")
             var latitude =  -6.45;
             var longitude = 35;
             var zoom = 5.6;
-            mapboxgl.accessToken = 'pk.eyJ1IjoiaGlzcCIsImEiOiJjaWw2OGk5czYwMDBqdndrdXVjOXpuMHV4In0.eaA241vQuHNJZsnA_isB3Q';
-            var layer = new mapboxgl.Map({
-                container: 'map', // container id
-                style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
-                center: [latitude, longitude], // starting position
-                zoom: zoom // starting zoom
-            });
+            var accessToken = 'pk.eyJ1IjoiaGlzcCIsImEiOiJjaWw2OGk5czYwMDBqdndrdXVjOXpuMHV4In0.eaA241vQuHNJZsnA_isB3Q';
+
 
             var boundaries =  {
                 Africa: {
@@ -80,8 +75,19 @@ angular.module("dhpportal")
                     lon: longitude,
                     zoom:zoom
                 },
+                mapquest: {
+                    source: {
+                        type: 'MapQuest',
+                        layer: 'sat'
+                    }
+                },
                 layers:[
-                    layer
+//                    {
+//                        name:'mapbox',
+//                        source:{
+//                            style:"https://api.mapbox.com/styles/v1/hisp/mapbox/streets-v8/tiles/5.6/-6.45/35@2x"
+//                        }
+//                    }
 //                    {
 //                        name:'OpenStreetMap',
 //                        source: {
