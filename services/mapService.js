@@ -66,6 +66,13 @@ angular.module("dhpportal")
             var latitude =  -6.45;
             var longitude = 35;
             var zoom = 5.6;
+            mapboxgl.accessToken = 'pk.eyJ1IjoiaGlzcCIsImEiOiJjaWw2OGk5czYwMDBqdndrdXVjOXpuMHV4In0.eaA241vQuHNJZsnA_isB3Q';
+            var layer = new mapboxgl.Map({
+                container: 'map', // container id
+                style: 'mapbox://styles/mapbox/streets-v8', //stylesheet location
+                center: [latitude, longitude], // starting position
+                zoom: zoom // starting zoom
+            });
 
             var boundaries =  {
                 Africa: {
@@ -74,6 +81,7 @@ angular.module("dhpportal")
                     zoom:zoom
                 },
                 layers:[
+                    layer
 //                    {
 //                        name:'OpenStreetMap',
 //                        source: {
@@ -81,15 +89,9 @@ angular.module("dhpportal")
 //                            url:"https://maps.wikimedia.org/#"+zoom+"/"+latitude+"/"+longitude
 ////                            url:"https://openstreetmap.org/#map=" + 5.6  + "/" + (-6.45)+ "/" + 35
 //                        }
-//                    },
-                    {
-                    mapquest: {
-                        source: {
-                            type: 'MapQuest',
-                                layer: 'osm'
-                        }
-                    }
-                    },
+//                    }
+                    ,
+
                     {
                         name:'geojson',
                         visible: true,
