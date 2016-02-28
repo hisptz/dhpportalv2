@@ -182,7 +182,7 @@
                         </div>
 
                         <div style="width: 100%" ng-if="dashboardObject.displayTable" >
-                            <p ng-if="dashboardObject.table.loading" class="center"><img src="assets/img/loading.gif">Loading ....</p>
+                            <p ng-if="dashboardObject.table.loading" class="center"><img src="assets/img/preloader.gif" style="height:15px;width:45px;margin-top: 50%;margin-left: 50%">
                             <table ng-if="!dashboardObject.table.loading" class="bordered striped centered" id="jinsi">
                                 <thead>
                                 <tr>
@@ -233,7 +233,7 @@
                         <highchart style="width: 86%" ng-if="!card.displayTable && !card.displayMap && !card.displayColumn" config="card.chartObject"></highchart>
                         <div id="c{{ card.data }}" ng-show="card.displayColumn" style="margin: 0 auto;width: 86%"></div>
                         <div style="width: 100%" ng-if="card.displayTable" >
-                            <p ng-if="card.chartObject.loading" class="center"><img src="assets/img/loading.gif">Loading ....</p>
+                            <p ng-if="card.chartObject.loading" class="center"><img src="assets/img/preloader.gif" style="height:15px;width:45px;margin-top: 50%;margin-left: 50%"></p>
                             <h5 class="center">{{ card.title }}</h5>
                             <div ng-bind-html="card.table"></div>
                         </div>
