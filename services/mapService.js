@@ -117,12 +117,11 @@ angular.module("dhpportal")
 
         }
         map.prepareFeatures = function(data,nalaytics_data){
-            map.totalDistricts = 0;
+            map.totalDistricts = map.features.length;
             map.submitted = 0;
             angular.forEach(data,function(value){
-
                 var featureColor = map.decideOnColor(value.id,nalaytics_data);
-                map.totalDistricts++;
+
                 map.features[value.id] = {
                 facility_id:value.id,
                 name:value.na,
@@ -131,7 +130,7 @@ angular.module("dhpportal")
                 "color":featureColor,
                 "facility":Math.floor(Math.random() * 256)
             };
-                console.log(featureColor);
+
                 if(featureColor=="green"){
                     map.submitted++;
                 }
