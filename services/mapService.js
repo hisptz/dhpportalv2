@@ -129,23 +129,27 @@ angular.module("dhpportal")
 
         }
         map.prepareFeatures = function(data,nalaytics_data){
-
+            map.totalDistricts = 0;
             angular.forEach(data,function(value){
 
+                var featureColor = map.decideOnColor(value.id,nalaytics_data);
+                map.totalDistricts++;
                 map.features[value.id] = {
                 facility_id:value.id,
                 name:value.na,
 //                value:value.na,
                 opacity:0.8,
-                "color":map.decideOnColor(value.id,nalaytics_data),
+                "color":featureColor,
                 "facility":Math.floor(Math.random() * 256)
             };
+
+                if(featureColor=="green"){
+                    map.submitted++;
+                }
             });
 
-
-            map.totalDistricts = map.features.length;
             console.log(map.totalDistricts);
-            map.submitted = map.getSubmitted(map.features,data);
+            console.log(map.submitted);
 
             map.chartObject = chartService.getChartObject(map.features,data);
             map.tableObject = tableService.getTableObject(map.features,data,map.selectedYear);
