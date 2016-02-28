@@ -20,6 +20,7 @@
         $scope.dashboardObject.table = {};
 
         $scope.submitted = 0;
+        $scope.notsubmitted = 0;
         $scope.allAvailable = mapService.features.length;
 
 
@@ -466,7 +467,9 @@
 
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");
-                    console.log(mapService.features);
+                    $scope.submitted = $scope.getSubmitted(mapService.features);
+                    $scope.nosubmitted = $scope.allAvailable - $scope.submitted;
+
                     if (typeof orgunits.data == "object" ){
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
                     }else{
@@ -593,6 +596,10 @@
 
 
 
+        }
+
+        $scope.getSubmitted = function(features){
+            console.log(features);
         }
 
         $scope.getOrganisationUnit = function(){
