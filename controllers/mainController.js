@@ -23,6 +23,9 @@
         $scope.notsubmitted = 0;
         $scope.allAvailable = mapService.features.length;
 
+        // page failure message dialogue
+        $scope.failureMessage = null;
+
 
         $scope.datos = [{
             id: 1,
@@ -389,7 +392,7 @@
                 });
 
             },function(response){
-                console.log(data);
+                $scope.failureMessage = " Loading failed check network connection";
             });
         }
 
@@ -440,7 +443,7 @@
 
         // load organisation unit fro tree
         $scope.loadOrganisationUnit = function(){
-
+            $scope.failureMessage = null;
             // login to dhis server for pulling authenticated resources
             utilityService.login('Demo','HMISDEMO2016').then(function(success){
 
@@ -478,7 +481,8 @@
                 });
 
             },function(failure){
-                console.warn("login failure can't load organisation units")
+
+                $scope.failureMessage = " login failure can't load organisation units ,check network connection";
             })
 
 
@@ -512,7 +516,8 @@
             }else{
                 url = profileService.baseDHIS+selective_url;
             }
-            $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
+            $scope.failureMessage = null;
+                $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
 
                 var analytics_data = analytics.data;
 
@@ -631,13 +636,12 @@
                     });
 
                 },function(response){
-                    Materialize.toast("GEOJSON FAILURE "+ response, 3000)
+                    $scope.failureMessage = "failed to load resources, check network connection";
                 });
 
 
             },function(failure){
-                console.warn("ANALYTICS FAILURE: ");
-                console.warn(failure);
+                  $scope.failureMessage = "failed to load resources, check network connection";
             });
 
 
@@ -655,11 +659,12 @@
 
 
         $scope.getOrganisationUnit = function(){
+            $scope.failureMessage = null;
             utilityService.getOrgUnits().then(function(data){
                 $scope.data.organisationUnits = data.organisationUnits;
                 $scope.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
             },function(status){
-
+                $scope.failureMessage = "failed to load resources, check network connection";
             });
         }
         $scope.getOrganisationUnit();
@@ -726,6 +731,7 @@
             $scope.progressLogin = true;
             var username = login.dhis_login_username;
             var password = login.dhis_login_password;
+            $scope.failureMessage = null;
                 utilityService.login(username,password).then(function(data){
                     $scope.progressLogin = false;
                         utilityService.getUserDetails().then(function(userdata){
@@ -759,8 +765,10 @@
                                 $scope.logedOut = true;
                                 $scope.logedFailureMessage = "Login Failed: check network connection";
                                 $scope.progressLogin = false;
+                            $scope.failureMessage = "failed to login, check network connection";
                         });
                 },function(response){
+                    $scope.failureMessage = "failed to login, check network connection";
                                 $cookies.remove('dhis_enabled');
                                 $cookies.remove('current_user');
                                 $scope.logedIn = false;
