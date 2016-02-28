@@ -138,6 +138,7 @@ angular.module("dhpportal")
             });
 
             map.totalDistricts = map.features.length;
+            console.log(map.totalDistricts);
             map.chartObject = chartService.getChartObject(map.features,data);
             map.tableObject = tableService.getTableObject(map.features,data,map.selectedYear);
 
