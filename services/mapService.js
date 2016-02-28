@@ -19,16 +19,16 @@ angular.module("dhpportal")
         }
 
         map.getSubmitted = function(features,distrits){
-            map.submitted = 0;
+            var submitted = 0;
 
             angular.forEach(distrits,function(value){
                 if(features[value.id].color=="green"){
-                    map.submitted++;
+                    submitted++;
                 }
             });
 
 
-            return map.submitted;
+            return submitted;
         }
 
         map.prepareMapObject = function(data,analytics_data){
@@ -74,8 +74,8 @@ angular.module("dhpportal")
 
             });
 
-
-            map.getSubmitted(map.features,data);
+            map.totalDistricts = map.features.length;
+            map.submitted = map.getSubmitted(map.features,data);
 
             var latitude =  -6.45;
             var longitude = 35;

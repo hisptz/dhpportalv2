@@ -468,7 +468,7 @@
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");
                     $scope.submitted = mapService.submitted;
-                    $scope.nosubmitted = $scope.allAvailable - mapService.submitted;
+                    $scope.nosubmitted = mapService.totalDistricts - mapService.submitted;
                     console.log("SUBMITTED : "+$scope.submitted);
                     console.log("NOT SUBMITTED : "+$scope.nosubmitted);
                     if (typeof orgunits.data == "object" ){
