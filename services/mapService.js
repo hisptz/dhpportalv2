@@ -82,20 +82,15 @@ angular.module("dhpportal")
                     }
                 },
                 layers:[
-//                    {
-//                        name:'mapbox',
-//                        source:{
-//                            style:"https://api.mapbox.com/styles/v1/hisp/mapbox/streets-v8/tiles/5.6/-6.45/35@2x"
-//                        }
-//                    }
-//                    {
-//                        name:'OpenStreetMap',
-//                        source: {
-//                            type: 'OSM',
-//                            url:"https://maps.wikimedia.org/#"+zoom+"/"+latitude+"/"+longitude
-////                            url:"https://openstreetmap.org/#map=" + 5.6  + "/" + (-6.45)+ "/" + 35
-//                        }
-//                    }
+                    {
+                        "name": "OpenStreetMap",
+                        "active": false,
+                        "source": {
+                            "type": "OSM"
+                        },
+                        "visible": true,
+                        "opacity": 1
+                    }
                     ,
 
                     {
