@@ -117,7 +117,7 @@ angular.module("dhpportal")
 
         }
         map.prepareFeatures = function(data,nalaytics_data){
-            map.totalDistricts = map.features.length;
+
             map.submitted = 0;
             angular.forEach(data,function(value){
                 var featureColor = map.decideOnColor(value.id,nalaytics_data);
@@ -137,7 +137,7 @@ angular.module("dhpportal")
 
             });
 
-
+            map.totalDistricts = map.features.length;
             map.chartObject = chartService.getChartObject(map.features,data);
             map.tableObject = tableService.getTableObject(map.features,data,map.selectedYear);
 
