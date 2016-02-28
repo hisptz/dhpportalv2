@@ -83,10 +83,12 @@ angular.module("dhpportal")
                 },
                 layers:[
                     {
-                        "name": "OpenStreetMap",
-                        "active": false,
+                        "name": "OpenCycleMap",
+                        "active": true,
                         "source": {
-                            "type": "OSM"
+                            "type": "OSM",
+                            "url": "http://{a-c}.tile.opencyclemap.org/cycle/"+zoom+"/"+latitude+"/"+longitude+".png",
+                            "attribution": "All maps &copy; <a href=\"http://www.opencyclemap.org/\">OpenCycleMap</a>"
                         },
                         "visible": true,
                         "opacity": 1
