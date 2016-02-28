@@ -74,10 +74,6 @@ angular.module("dhpportal")
 
             });
 
-            map.totalDistricts = map.features.length;
-            map.submitted = map.getSubmitted(map.features,data);
-            console.log(map.totalDistricts);
-            console.log(map.submitted);
             var latitude =  -6.45;
             var longitude = 35;
             var zoom = 5.6;
@@ -144,6 +140,10 @@ angular.module("dhpportal")
                 "facility":Math.floor(Math.random() * 256)
             };
             });
+
+
+            map.totalDistricts = map.features.length;
+            map.submitted = map.getSubmitted(map.features,data);
 
             map.chartObject = chartService.getChartObject(map.features,data);
             map.tableObject = tableService.getTableObject(map.features,data,map.selectedYear);
