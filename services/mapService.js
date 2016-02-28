@@ -143,10 +143,11 @@ angular.module("dhpportal")
                 "color":featureColor,
                 "facility":Math.floor(Math.random() * 256)
             };
-
+                console.log(featureColor);
                 if(featureColor=="green"){
                     map.submitted++;
                 }
+
             });
 
 
