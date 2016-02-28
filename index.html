@@ -3,6 +3,31 @@
 <head>
     <title>DHP Web Portal</title>
     <style>
+
+        * {
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        .page-wrap {
+            min-height: 100%;
+            /* equal to footer height */
+            margin-bottom: -50px;
+        }
+        .page-wrap:after {
+            content: "";
+            display: block;
+        }
+        .page-footer, .page-wrap:after {
+            height: 50px;
+        }
+        .page-footer {
+            background: #00796B;
+        }
+
+
+
         @font-face {
             font-family: 'Material Icons';
             font-style: normal;
@@ -77,7 +102,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
-<body>
+<body style="height:100%">
+<div class="page-wrap">
 <!--information toast-->
 <div id="toast-container" ng-show="$root.showProgressMessage" ng-if="!showLoader">
     <div class="toast ng-cloak" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 121, 107, 0); top: 0px; opacity: 1;" > {{ $root.progressMessage }}</div>
@@ -233,56 +259,14 @@
         </div>
     </nav>
 </div>
-<!--<form class="col s12" name="messageForm" novalidate >-->
-    <!--<div id="modal1" class="modal modal-fixed-footer">-->
-        <!--<div class="modal-content">-->
-            <!--<div class="row" ng-if="messageSend">-->
-                <!--<div class="card-panel amber-text center">Comments Saved</div>-->
-            <!--</div>-->
-            <!--<div class="progress" ng-if="showLoading">-->
-                <!--<div class="indeterminate"></div>-->
-            <!--</div>-->
-            <!--<div class="row"><h5 class="center">Leave your Comments here..!</h5><hr></div>-->
-            <!--<div class="row">-->
-                <!--<div class="row">-->
-                    <!--<div class="input-field col s6">-->
-                        <!--<input placeholder="Placeholder" id="mail" ng-model="mail" type="text" phone="mail">-->
-                        <!--<label for="mail">Email</label>-->
-                    <!--</div>-->
-                    <!--<div class="input-field col s6">-->
-                        <!--<input placeholder="Placeholder" id="phone" type="text" ng-model="phone" name="phone">-->
-                        <!--<label for="phone">Contacts phone</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="row"><strong>Option: Please provide contacts above for return feedback on the comment section</strong></div>-->
-                <!--<div class="row">-->
-                    <!--<div class="input-field col s12">-->
-                        <!--<input id="subject" type="text" name="subject" ng-model="subject" required>-->
-                        <!--<label for="subject" class="center-align">Subject</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="row">-->
-                    <!--<div class="input-field col s12">-->
-                        <!--<textarea id="textMessage" name="textMessage" class="materialize-textarea" ng-model="textMessage" required ></textarea>-->
-                        <!--<label for="textMessage">Message</label>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="modal-footer">-->
-            <!--<button ng-click="sendMessage(subject,textMessage,mail,phone)"-->
-                    <!--ng-disabled="messageForm.$invalid" id="modelClose" class="modal-action btn cyan waves-effect waves-light right" type="submit" >Submit-->
-                <!--<i class="mdi-content-send right"></i>-->
-            <!--</button>-->
-            <!--<a style="cursor:pointer" class="modal-action modal-close waves-effect waves-green btn-flat ">Discard</a>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</form>-->
+
 <!--file views will stay here-->
 <div ng-if="showLoader"><img src="assets/img/preloader.gif" style="height:15px;width:45px;margin-left: 50%"></div>
 <div ng-if="!showLoader" ng-view></div>
-
-<footer class="page-footer" style="background-color: #00796B!important;margin-top: 110px;"> <div class="footer-copyright"> <div class="row">
+</div>
+<footer class="page-footer" style="background-color: #00796B!important;">
+    <div class="footer-copyright">
+        <div class="row">
             <div class="col l6 s6">
                 &copy; 2015 Copyright <a target="_blank" href="http://www.moh.go.tz/"><b style="color:#ffffff;">Ministry Of Health and Social Welfare</b></a>
             </div>
@@ -298,6 +282,7 @@
         </div>
     </div>
 </footer>
+
 <!--import pace for visualization-->
 <script src='assets/libs/pace/pace.min.js'></script>
 <!--Import jQuery before materialize.js-->
