@@ -210,7 +210,7 @@
                         <a ng-click="showTables()" target="_blank"  title="Display Table" class="btn-floating btn-small waves-effect waves-light teal darken-2" style="padding-top: 5px;padding-left: 8px"><img src="assets/img/table.jpg" style="height: 20px;width: 20px"/></i></a>
                         <button ng-csv="downloadCSV()" csv-header="getCSVHeader()" filename="submittedhealthprofile.csv" target="_blank"  title="Download CSV" class="btn-floating btn-small waves-effect waves-light teal darken-2" style="padding-top: 5px;padding-left: 8px"><img src="assets/img/cvs.jpg" style="height: 20px;width: 20px"/></i></button>
 
-                        <a class="btn-floating btn-small waves-effect waves-light teal darken-2 right" modal href="#link{{ card.data }}"><i class="mdi-action-open-in-new"></i></a>
+                        <a class="btn-floating btn-small waves-effect waves-light teal darken-2 right" modal href="#link_left_panel"><i class="mdi-action-open-in-new"></i></a>
                     </p>
                 </div>
                 <div class="card-reveal">
@@ -225,16 +225,53 @@
             </div>
 
             <!--Model object for the card-->
-            <div id="link{{ card.data }}" class="modal" style="border-radius: 10px;width: 90%;max-height: 100%">
+            <div id="link_left_panel" class="modal" style="border-radius: 10px;width: 90%;max-height: 100%">
                 <div class="modal-content">
-                    <h4 style="text-align: center">{{ card.title }}</h4>
+                    <h4 style="text-align: center"></h4>
                     <div style="width: 100%">
-                        <highchart style="width: 86%" ng-if="!card.displayTable && !card.displayMap && !card.displayColumn" config="card.chartObject"></highchart>
-                        <div id="c{{ card.data }}" ng-show="card.displayColumn" style="margin: 0 auto;width: 86%"></div>
-                        <div style="width: 100%" ng-if="card.displayTable" >
-                            <p ng-if="card.chartObject.loading" class="center"><img src="assets/img/preloader.gif" style="height:15px;width:45px;margin-top: 50%;margin-left: 50%"></p>
-                            <h5 class="center">{{ card.title }}</h5>
-                            <div ng-bind-html="card.table"></div>
+                        <div style="width: 100%" >
+                            <p ng-if="!dashboardObject.map.layers && !dashboardObject.chart.chartObject && !dashboardObject.table.tableObject" class="center" style="text-align: center;">
+                                <img src="assets/img/preloader.gif" style="height:15px;width:45px">
+                            </p>
+                            <div ng-show="dashboardObject.displayMap">
+
+                                <openlayers ng-if="dashboardObject.map.layers" ol-center="dashboardObject.map.Africa" ol-defaults="dashboardObject.map.defaults" custom-layers="true"  height="400px" >
+                                    <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in dashboardObject.map.layers"></ol-layer>
+                                </openlayers>
+                                <div id="districtboxz"   class="infoh district " ng-if="dashboardObject.map.layers">
+                                    <table >
+                                        <tr><td style="background-color: #2D9630">&nbsp;</td><td style="text-align: left;">Uploaded</td><td  style="text-align: left;">{{submitted}}</td></tr>
+                                        <tr><td style="background-color: #F93030;">&nbsp;</td><td style="text-align: left;">Not Uploaded</td><td style="text-align: left;">{{notsubmitted}}</td></tr>
+                                        <tr ng-if="selectedDistrictHover"><td colspan="3"><br/>{{selectedDistrictHover.name}}</td></tr>
+                                    </table>
+
+                                </div>
+
+                            </div>
+
+
+                            <div style="width: 100%" ng-if="dashboardObject.displayChart">
+                                <highchart ng-if="dashboardObject.chart.chartObject" config="dashboardObject.chart.chartObject"></highchart>
+                            </div>
+                            <div style="width: 100%" ng-if="dashboardObject.displayTable" >
+                                <!--<p ng-if="dashboardObject.table.loading" class="center"><img src="assets/img/preloader.gif" style="height:15px;width:45px;margin-top: 50%;margin-left: 50%">-->
+                                <table ng-if="dashboardObject.table.tableObject" class="bordered striped centered" id="jinsi">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Submitted District Health Profile - {{selectedYear}}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr data-ng-repeat="column in dashboardObject.table.tableObject">
+                                        <td>{{ $index+1 }}</td>
+                                        <td style="text-align: left;">{{ column.name }}</td>
+                                        <td><a href="{{column.url}}" target="_blank"><img style="width:30px!important;" src="assets/img/download.png"> </a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
                     </div>
                 </div>
