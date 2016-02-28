@@ -467,7 +467,7 @@
 
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");
-                    $scope.submitted = $scope.getSubmitted(mapService.features);
+                    $scope.submitted = mapService.getSubmitted();
                     $scope.nosubmitted = $scope.allAvailable - $scope.submitted;
 
                     if (typeof orgunits.data == "object" ){
@@ -598,9 +598,7 @@
 
         }
 
-        $scope.getSubmitted = function(features){
-            console.log(features);
-        }
+
 
         $scope.getOrganisationUnit = function(){
             utilityService.getOrgUnits().then(function(data){

@@ -6,6 +6,7 @@ angular.module("dhpportal")
         map.chartObject = {};
         map.tableObject = [];
         map.selectedYear = date.getFullYear();
+        map.submitted = 0;
         map.renderMap = function(selectedYear,orgunitStrings){
             var maplayer = {};
             map.geoLayer= {"type":"FeatureCollection","features":[]};
@@ -15,6 +16,19 @@ angular.module("dhpportal")
             return $http({method:'GET',url:geoUrl,dataType:'json',catche:true,isModified:true});
 
             return maplayer;
+        }
+
+        map.getSubmitted = function(features,distrits){
+            map.submitted = 0;
+
+            angular.forEach(distrits,function(value){
+                if(features[value.id].color="green"){
+                    map.submitted++;
+                }
+            });
+
+
+            return map.submitted;
         }
 
         map.prepareMapObject = function(data,analytics_data){
@@ -58,16 +72,14 @@ angular.module("dhpportal")
 
 
 
-
             });
 
 
+            map.getSubmitted(map.features,data);
 
             var latitude =  -6.45;
             var longitude = 35;
             var zoom = 5.6;
-            var accessToken = 'pk.eyJ1IjoiaGlzcCIsImEiOiJjaWw2OGk5czYwMDBqdndrdXVjOXpuMHV4In0.eaA241vQuHNJZsnA_isB3Q';
-
 
             var boundaries =  {
                 Africa: {
@@ -87,7 +99,7 @@ angular.module("dhpportal")
                         "active": true,
                         "source": {
                             "type": "OSM",
-                            "url": "https://{a-c}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
+                            "url": "http://{a-c}.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png",
                             "attribution": "All maps &copy; <a href=\"http://www.opencyclemap.org/\">OpenCycleMap</a>"
                         },
                         "visible": true,
