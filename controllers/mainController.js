@@ -14,7 +14,7 @@
         var date = new Date();
          // this is the main object do not delete this variable
         $scope.dashboardObject = {displayMap:true,displayChart:false,displayTable:false};
-
+        $scope.display_block = "display_block";
         $scope.dashboardObject.map = {};
         $scope.dashboardObject.chart = {};
         $scope.dashboardObject.table = {};

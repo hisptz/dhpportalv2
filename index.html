@@ -104,7 +104,11 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+<style>
+    .display_block{
+        display: block!important;
+    }
+</style>
 </head>
 <body style="height:100%">
 <div class="page-wrap">
@@ -114,11 +118,18 @@
 </div>
 
 <!--excel download message-->
-<div class="col s12 m5" style="position: absolute;bottom: 5px;right: 5px;z-index: 203200" ng-if="failureMessage">
-    <div class="card-panel white">
-        <span class="" style="display: block">{{failureMessage}}</span>
+<!--<div class="col s12 m5" style="position: absolute;bottom: 5px;right: 5px;z-index: 203200" ng-if="failureMessage">-->
+    <!--<div class="card-panel white">-->
+        <!--<span class="{{display_block}}" style="display: none">{{failureMessage}}</span>-->
+    <!--</div>-->
+<!--</div>-->
+
+    <div class="col s12 m5 {{display_block}}"  style="position: absolute;bottom: 5px;right: 5px;z-index: 203200;display: none"  ng-show="failureMessage">
+        <div class="card-panel white" ng-show="failureMessage" >
+            <span class="{{display_block}}" style="display: none">{{failureMessage}}</span>
+        </div>
     </div>
-</div>
+
 <div class="navbar-fixed z-depth-2">
     <nav class="teal darken-2">
         <div class="nav-wrapper">
