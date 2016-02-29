@@ -408,6 +408,13 @@
 
                     /// initialize tree varaibale after safe login
                     $scope.organisationUnitTree = data.organisationUnits;
+
+                    $scope.organisationUnitTree[0].isExpanded = false;
+                    $scope.organisationUnitTree[0].isActive = true;
+                    $scope.organisationUnitTree[0].isFiltered = false;
+                    $scope.organisationUnitTree[0].selected = true;
+
+
                     $scope.modifedOrgunits = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
                     $scope.selectedItems = $scope.organisationUnitTree;
 
