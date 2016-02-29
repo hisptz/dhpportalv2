@@ -93,7 +93,7 @@
         $scope.message_class = null;
         $scope.progressPercent = '0%';
         $scope.orgUnitTable = [];
-        $scope.organisationUnitTree = [];
+        $scope.organisationUnitTree = [{name:'Tanzania',id:'m0frOspS7JY','children':[],'isExpanded':false,'isActive':true,'isFiltered':false,'selected':true}];
         $scope.logedSuccessMessage = null;
         $scope.logedFailureMessage = null;
         $scope.profile = {};
