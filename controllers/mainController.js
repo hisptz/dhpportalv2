@@ -121,7 +121,6 @@
             $scope.dashboardObject.displayTable = true;
         }
         $scope.downloadCSV = function(){
-            console.log("abcd");
             var array = []
             angular.forEach($scope.dashboardObject.table.tableObject,function(value){
                 array.push({profile:value.name});
@@ -206,7 +205,7 @@
         }
 
         $scope.selectedCallback = function(item, selectedItems){
-            console.log(item);
+            ;
         }
 
 
@@ -341,7 +340,6 @@
                     angular.forEach(profiledata,function(profileValue,profileIndex){
                         if($scope.profile[profileValue.name] !="undefined"){
                             $scope.profile[profileValue.name] = profileValue.value;
-                            console.log(profileValue.name+"   =>   "+profileValue.value);
                         }
                     });
 
@@ -802,7 +800,6 @@
                 $scope.showProgress = false;
                 $scope.failureMessage = "Upload failure";
             }, function (evt) {
-                console.log(evt);
                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                 if(!evt.config.data.file){
                     $scope.message = "no file specified";
