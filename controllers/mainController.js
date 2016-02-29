@@ -485,7 +485,7 @@
                 $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
 
                 var analytics_data = analytics.data;
-
+                console.log(analytics_data);
 
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");
@@ -771,6 +771,7 @@
 
         // upload on file select or drop
         $scope.upload = function (file,new_file_name) {
+            $scope.failureMessage = null;
             Upload.upload({
                 url: 'server/process.php?file=1&new_file_name='+new_file_name,
                 data: {file: file}
@@ -799,7 +800,7 @@
 
             }, function (resp) {
                 $scope.showProgress = false;
-                console.log('Error status: ' + resp.status);
+                $scope.failureMessage = "Upload failure";
             }, function (evt) {
                 console.log(evt);
                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
