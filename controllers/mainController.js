@@ -205,7 +205,7 @@
         }
 
         $scope.selectedCallback = function(item, selectedItems){
-            ;
+            console.log(selectedItems);
         }
 
 
