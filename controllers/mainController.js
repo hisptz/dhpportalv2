@@ -132,6 +132,18 @@
             return ["Submitted District Health Profile - "+$scope.selectedYear]
         }
 
+        /**
+         * There comes leonard
+         * */
+
+        $scope.filename = "test";
+        $scope.getArray = [{a: 1, b:2}, {a:3, b:4}];
+
+
+        $scope.getHeader = function () {return ["A", "B"]};
+
+
+
 
         if(localStorage.getItem("seriesObject")||localStorage.getItem("seriesObject")!=null){
             localStorage.removeItem("seriesObject");
