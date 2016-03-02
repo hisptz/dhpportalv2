@@ -529,6 +529,8 @@
                                 $scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
                                 if(feature) {
                                     $scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
+                                }else{
+                                    $scope.selectedDistrictHover = null;
                                 }
 
 
