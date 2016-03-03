@@ -15,7 +15,7 @@
             },
             restrict: 'E',
            scope:{
-               summaryData:'=data'
+               profile:'=data'
            },
            templateUrl:"partials/summarytable.html"
         };

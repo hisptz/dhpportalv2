@@ -655,7 +655,22 @@
         }
 
         $scope.prepareTabledataFromAnalytics = function(data){
-            console.log(data);
+            var dataelements = data.metaData.dx;
+            var names        = data.metaData.names;
+            var ou           = data.metaData.ou;
+            var rows         = data.rows;
+
+            angular.forEach(dataelements,function(value,index){
+                angular.forEach(rows,function(rowValue,rowIndex){
+                    if(rowValue[0] == value){
+                        $scope.profile[names[value]] = rowValue[2];
+                    }
+                })
+
+
+
+            });
+
         }
 
         $scope.getOrganisationUnit = function(){
