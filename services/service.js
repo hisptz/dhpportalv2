@@ -42,7 +42,6 @@
         }
 
         profile.saveProfile = function(data){
-            console.log(data);
             return Upload.upload({
                 url: 'server/process.php?file=1&new_file_name='+data.file_name,
                 data: {file: data.file_object}

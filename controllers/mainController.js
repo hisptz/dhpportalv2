@@ -217,7 +217,6 @@
         }
 
         $scope.selectedCallback = function(item, selectedItems){
-            console.log(selectedItems);
         }
 
 
@@ -499,7 +498,6 @@
                 $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
 
                 var analytics_data = analytics.data;
-                console.log(analytics_data);
 
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");

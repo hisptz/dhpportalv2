@@ -370,7 +370,6 @@
                 $scope.Africa = null;
             }
             portalService.authenticateDHIS().then(function(dhpuser){
-                console.log(dhpuser);
                 $scope.drawMap();
                 utilityService.getDataElements().then(function(data){
                     utilityService.prepareDataElementUid(data);
