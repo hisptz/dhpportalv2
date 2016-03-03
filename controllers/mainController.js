@@ -352,6 +352,8 @@
                     angular.forEach(profiledata,function(profileValue,profileIndex){
                         if($scope.profile[profileValue.name] !="undefined"){
                             $scope.profile[profileValue.name] = profileValue.value;
+                            console.log("Profile");
+                            console.log($scope.profile);
                         }
                     });
 
