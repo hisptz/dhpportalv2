@@ -352,7 +352,7 @@
                         if($scope.profile[profileValue.name] !="undefined"){
                             $scope.profile[profileValue.name] = profileValue.value;
                             console.log("Profile");
-                            console.log($scope.profile);
+                            console.log(profileValue);
                         }
                     });
 
