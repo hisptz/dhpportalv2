@@ -364,6 +364,8 @@
             });
         }
 
+        $scope.previewData({org_unit_selected:"m0frOspS7JY",form_period:2015});
+
 
 
         $scope.getOrgunitFileStatistics = function(facility_name){
