@@ -51,8 +51,8 @@
       <file leaf-file-name="summarytable.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/partials/summarytable.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2583732" vertical-offset="1422" max-vertical-offset="9504">
-              <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.6028708" vertical-offset="1512" max-vertical-offset="9504">
+              <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
               <folding>
                 <element signature="n#style#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tr#1;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -854,8 +854,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/partials/summarytable.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2583732" vertical-offset="1422" max-vertical-offset="9504">
-          <caret line="85" column="4" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.6028708" vertical-offset="1512" max-vertical-offset="9504">
+          <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
           <folding>
             <element signature="n#style#0;n#tr#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tr#1;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
