@@ -3,7 +3,11 @@
 
     angular
         .module('dhpportal')
-        .directive('summaryTable', summaryTable);
+        .directive('summaryTable', summaryTable)
+        .controller('summaryController',function($scope){
+
+
+        });
 
     summaryTable.$inject = ['$filter'];
 
@@ -11,13 +15,11 @@
     function summaryTable($filter) {
        return {
             link: function (scope, element, attrs) {
-                scope.profile = JSON.parse(scope.profile);
-                console.log(scope.profile);
-                console.log(scope.data)
+
             },
             restrict: 'E',
            scope:{
-               profile:'&data'
+               profile:'=data'
            },
            templateUrl:"partials/summarytable.html"
         };
