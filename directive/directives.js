@@ -12,6 +12,8 @@
        return {
             link: function (scope, element, attrs) {
                 scope.profile = JSON.parse(scope.profile);
+                console.log(scope.profile);
+                console.log(scope.data)
             },
             restrict: 'E',
            scope:{
