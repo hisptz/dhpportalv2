@@ -851,8 +851,534 @@
                     <div class="modal-content">
                         <h4 style="text-align: center">HEALTH PROFILE SUMMARY TABLE</h4>
                         <div style="width: 100%;overflow: scroll">
-                            {{main.profile}}
-                            <summary-table ></summary-table>
+
+                            <!--<summary-table ></summary-table>-->
+
+                            <!--  REMOVE THIS NON STANDARD PROGRAMMING SCHEME USE DIRECTIVE INSTEAD-->
+
+
+                            <style>
+                                table.profile_table {
+                                    border:1px solid #ccc;
+                                    color:#000000!important;
+                                    margin-bottom:20px;
+                                }
+                                table.profile_table tr{
+                                    border:1px solid #ccc;
+                                }
+                                table.profile_table tr td{
+                                    border:1px solid #ccc;
+                                    padding:5px;
+                                }
+
+                                .primary_header{
+                                    font-weight:bolder;
+                                    color:#369B36!important;
+                                    font-size:25px;
+                                }
+
+                                .secondary_header{
+                                    font-weight:bolder;
+                                }
+
+                                .align_left{
+                                    text-align:left;
+                                }
+                                .header_one{
+                                    background-color:#D2E1B5!important;
+                                    font-weight:bold;
+                                }
+
+                                .header_two{
+                                    background-color:#FCC48C!important;
+                                    font-weight:bold;
+                                }
+
+                                .preview_profile{
+                                    /*overflow: -moz-scrollbars-vertical;*/
+                                    /*overflow-y: scroll;*/
+                                    max-height:1000px;
+                                }
+                                .paragraph-style{
+                                    /*padding-left:40px;*/
+                                    white-space: pre-wrap;
+
+                                }
+
+                                .subpage {
+                                    margin-left: 8cm;
+                                    margin-top: 10cm;
+                                }
+
+                                .profile-pages{
+                                    /*width: 21cm;*/
+                                    /*min-height: 29.7cm;*/
+                                    /*padding: 1cm;*/
+                                    /*margin: 1cm auto;*/
+                                    /*border: 1px #D3D3D3 solid;*/
+                                    /*border-radius: 5px;*/
+                                    /*background: white;*/
+                                    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);*/
+                                }
+
+                                .subheader{
+                                    background-color:#E1E1E1;
+                                    text-align:left!important;
+                                }
+
+                                span.top_green{
+                                    font-weight:bolder;
+                                    color:#339966!important;
+                                    /*font-size:23px;*/
+                                }
+
+                                span.top_grey{
+                                    font-weight:bolder;
+                                    color:#7F7F7F!important;
+                                    /*font-size:23px;*/
+                                }
+                            </style>
+                            <div class="col s12 m12 preview_profile"  >
+
+                                <div class="row profile-pages" style="color:#000000;">
+                                    <p class="secondary_header">Table 0-1. {{selectedYear}} DHP Results Summary Table</p>
+                                    <br/>
+                                    <table class="profile_table">
+                                        <tr style="background-color:#CEE4B3;"><td colspan="8">DISTRICT POPULATION AND FACILITY STATISTICS</td></tr>
+                                        <tr style="background-color:#DCB081;"><td style="text-align: left">Demographics</td><td><1</td><td>1-4</td><td>5-14</td><td>15-49</td><td>50-60</td><td>>60</td><td>Total</td></tr>
+                                        <tr><td style="text-align: left">Female</td>
+                                            <td>{{profile['DHP_Population_Female1']}}</td>
+                                            <td>{{profile['DHP_Population_Female2']}}</td>
+                                            <td>{{profile['DHP_Population_Female3']}}</td>
+                                            <td>{{profile['DHP_Population_Female4']}}</td>
+                                            <td>{{profile['DHP_Population_Female5']}}</td>
+                                            <td>{{profile['DHP_Population_Female6']}}</td>
+                                            <td>{{profile['DHP_Population_Female1']+profile['DHP_Population_Female2']+profile['DHP_Population_Female3']+profile['DHP_Population_Female4']+profile['DHP_Population_Female5']+profile['DHP_Population_Female6']}}</td>
+                                        </tr>
+                                        <tr><td style="text-align: left">Male</td>
+                                            <td>{{profile['DHP_Population_Male1']}}</td>
+                                            <td>{{profile['DHP_Population_Male2']}}</td>
+                                            <td>{{profile['DHP_Population_Male3']}}</td>
+                                            <td>{{profile['DHP_Population_Male4']}}</td>
+                                            <td>{{profile['DHP_Population_Male5']}}</td>
+                                            <td>{{profile['DHP_Population_Male6']}}</td>
+                                            <td>{{profile['DHP_Population_Male1']+profile['DHP_Population_Male2']+profile['DHP_Population_Male3']+profile['DHP_Population_Male4']+profile['DHP_Population_Male5']+profile['DHP_Population_Male6']}}</td>
+                                        </tr>
+                                    </table>
+
+                                    <br/>
+                                    <p> Facility Distribution</p>
+                                    <br/>
+                                    <p class="paragraph-style" ng-bind-html=" profile['DHP_Population_Population'] | renderItLikeHTML "></p>
+
+                                </div>
+
+                                <div class="row profile-pages">
+                                    <table class="profile_table">
+                                        <tr class="header_one">
+                                            <td class="align_left ">
+                                                HEALTH STATUS OF THE DISTRICT POPULATION
+                                            </td>
+                                            <td>TARGET</td>
+                                            <td>{{profile['DHP_Year_Year1']}}</td>
+                                            <td>{{profile['DHP_Year_Year2']}}</td>
+                                            <td>{{profile['DHP_Year_Year3']}}</td>
+                                            <td>OVERALL PROGRESS (+/-)</td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Marternal,Newborn and Child Health</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Maternal mortality ratio</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityTarget']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityYear1']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityYear2']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityYear3']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityProgress']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Nutritional Status: Incidence of low birth weight among humans</td>
+                                            <td></td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthLowBWYear1']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthLowBWYear2']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthLowBWYear3']}}</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Neonatal mortality rates (per 1,000)</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthNeonatalMortalityTarget']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthNeonatalMortalityYear1']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthNeonatalMortalityYear2']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthNeonatalMortalityYear3']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthNeonatalMortalityProgress']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Infant mortality rates (per 1,000)</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityTarget']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityYear1']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityYear2']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityYear3']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityProgress']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Under 5 mortality rates (per 1,000)</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthUnder5MortalityTarget']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthUnder5MortalityYear1']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthUnder5MortalityYear2']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthUnder5MortalityYear3']}}</td>
+                                            <td>{{profile['DHP_Maternal_MaternalNCHealthUnder5MortalityProgress']}}</td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Morbidity</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Incidence of malaria/laboratory confirmed cases</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaTarget']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaYear1']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaYear2']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaYear3']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaProgress']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">HIV prevalence in 15 to 24 years age group</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityHIVAIDSTarget']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityHIVAIDSYear1']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityHIVAIDSYear2']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityHIVAIDSYear3']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityHIVAIDSProgress']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Top 10 cases of admission (List #1 cause)</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionTarget']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionYear1']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionYear2']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionYear3']}}</td>
+                                            <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionProgress']}}</td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Mortality</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Top 10 causes of death (List # cause)</td>
+                                            <td></td>
+                                            <td>{{profile['DHP_Mortality_MortalityTopTenDeathYear1']}}</td>
+                                            <td>{{profile['DHP_Mortality_MortalityTopTenDeathYear2']}}</td>
+                                            <td>{{profile['DHP_Mortality_MortalityTopTenDeathYear3']}}</td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="row profile-pages">
+                                    <table class="profile_table">
+                                        <tr class="header_one">
+                                            <td>DISTRICT HEALTH SERVICE DELIVERY</td>
+                                            <td>TARGET</td>
+                                            <td>{{profile['DHP_Year_Year1']}}</td>
+                                            <td>{{profile['DHP_Year_Year2']}}</td>
+                                            <td>{{profile['DHP_Year_Year3']}}</td>
+                                            <td>OVERALL PROGRESS (+/-)</td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">General</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">OPD attention</td>
+                                            <td>{{profile['DHP_General_GeneralOPDAttendanceTarget']}}</td>
+                                            <td>{{profile['DHP_General_GeneralOPDAttendanceYear1']}}</td>
+                                            <td>{{profile['DHP_General_GeneralOPDAttendanceYear2']}}</td>
+                                            <td>{{profile['DHP_General_GeneralOPDAttendanceYear3']}}</td>
+                                            <td>{{profile['DHP_General_GeneralOPDAttendanceProgress']}}</td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Vaccination</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Proportion of children under 1 year vaccinated against measles</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesTarget']}}</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesYear1']}}</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesYear2']}}</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesYear3']}}</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesProgress']}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Proportion of under 1 year 3rd polio (OPV3)</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Year1']}}</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Year2']}}</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Year3']}}</td>
+                                            <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="row profile-pages">
+                                    <table class="profile_table">
+                                        <tr class="header_one">
+                                            <td>DISTRICT HEALTH SYSTEM</td>
+                                            <td>TARGET</td>
+                                            <td>{{profile['DHP_Year_Year1']}}</td>
+                                            <td>{{profile['DHP_Year_Year2']}}</td>
+                                            <td>{{profile['DHP_Year_Year3']}}</td>
+                                            <td>OVERALL PROGRESS (+/-)</td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Health Financing</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">
+                                                Total GOT and donor (budget and off-budget allocation to health per capita
+                                            </td>
+                                            <td>{{profile['DHP_HealthFinancing_HealthFinancingTotalGOTDonorAllocationTarget']}}</td>
+                                            <td>{{profile['DHP_HealthFinancing_HealthFinancingTotalGOTDonorAllocationYear1']}}</td>
+                                            <td>{{profile['DHP_HealthFinancing_HealthFinancingTotalGOTDonorAllocationYear1']}}</td>
+                                            <td>{{profile['DHP_HealthFinancing_HealthFinancingTotalGOTDonorAllocationYear1']}}</td>
+                                            <td>{{profile['DHP_HealthFinancing_HealthFinancingTotalGOTDonorAllocationProgress']}}</td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Human Resouce for Health</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Number of training institutions with full NACTE accredition</td>
+                                            <td>{{profile['DHP_HumanResource_HumanResourcesHealthTrainingInstitutionsFullNACTETarget']}}</td>
+                                            <td>{{profile['DHP_HumanResource_HumanResourcesHealthTrainingInstitutionsFullNACTEYear1']}}</td>
+                                            <td>{{profile['DHP_HumanResource_HumanResourcesHealthTrainingInstitutionsFullNACTEYear2']}}</td>
+                                            <td>{{profile['DHP_HumanResource_HumanResourcesHealthTrainingInstitutionsFullNACTEYear3']}}</td>
+                                            <td>{{profile['DHP_Infectious_InfectiousNCDiseasesProportionLabConfirmedMalariaProgress']}}</td>
+                                        </tr><tr>
+                                        <td class="align_left">Number of MO and AMO per 10,000 population</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthMOAMOPer10000Target']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthMOAMOPer10000Year1']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthMOAMOPer10000Year2']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthMOAMOPer10000Year3']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthNurseMidwivesPer10000Progress']}}</td>
+                                    </tr><tr>
+                                        <td class="align_left">Number of clinicians per 10,000 population</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthCliniciansPer10000Target']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthCliniciansPer10000Year1']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthCliniciansPer10000Year2']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthCliniciansPer10000Year3']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthCliniciansPer10000Progress']}}</td>
+                                    </tr><tr>
+                                        <td class="align_left">NUmber of nurse-miwives per 10,000 polpulation</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthNurseMidwivesPer10000Target']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthNurseMidwivesPer10000Year1']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthNurseMidwivesPer10000Year2']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthNurseMidwivesPer10000Year3']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthPharmacistsPharmTechPer10000Progress']}}</td>
+                                    </tr><tr>
+                                        <td class="align_left">NUmber of Pharmacists and pharm tech per 10,000 population</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthPharmacistsPharmTechPer10000Target']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthPharmacistsPharmTechPer10000Year1']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthPharmacistsPharmTechPer10000Year2']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthPharmacistsPharmTechPer10000Year3']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthPharmacistsPharmTechPer10000Progress']}}</td>
+                                    </tr><tr>
+                                        <td class="align_left">Number of HO,AHO and EHO per 10,0000 population</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthHOAHOEHOPer10000Target']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthHOAHOEHOPer10000Year1']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthHOAHOEHOPer10000Year2']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthHOAHOEHOPer10000Year3']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthHOAHOEHOPer10000Progress']}}</td>
+                                    </tr><tr>
+                                        <td class="align_left">Number of laboratory staff per 10,000 population</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthLabStaffPer10000Target']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthLabStaffPer10000Year1']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthLabStaffPer10000Year2']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthLabStaffPer10000Year3']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthLabStaffPer10000Progress']}}</td>
+                                    </tr><tr>
+                                        <td class="align_left">Density of skilled HRH in country</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthDensitySkilledHRHTarget']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthDensitySkilledHRHYear1']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthDensitySkilledHRHYear2']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthDensitySkilledHRHYear3']}}</td>
+                                        <td>{{profile['DHP_HumanResource_HumanResourcesHealthDensitySkilledHRHProgress']}}</td>
+                                    </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Medicines</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Continous availability of 10 tracers (medicines,vaccines and medical devices) for essential health intervention in facility for a reporting month</td>
+                                            <td>{{profile['DHP_Medicines_MedicinesContinuous10TracersEssentialInterventionTarget']}}</td>
+                                            <td>{{profile['DHP_Medicines_MedicinesContinuous10TracersEssentialInterventionYear1']}}</td>
+                                            <td>{{profile['DHP_Medicines_MedicinesContinuous10TracersEssentialInterventionYear2']}}</td>
+                                            <td>{{profile['DHP_Medicines_MedicinesContinuous10TracersEssentialInterventionYear3']}}</td>
+                                            <td>{{profile['DHP_Medicines_MedicinesContinuous10TracersEssentialInterventionProgress']}}</td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Infrastructure</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align_left">Distribution of Health facilities</td>
+                                            <td>{{profile['DHP_Infrastructure_InfrastructureHealthIndicatorStillBeingDeterminedTarget']}}</td>
+                                            <td>{{profile['DHP_Infrastructure_InfrastructureHealthIndicatorStillBeingDeterminedYear1']}}</td>
+                                            <td>{{profile['DHP_Infrastructure_InfrastructureHealthIndicatorStillBeingDeterminedYear2']}}</td>
+                                            <td>{{profile['DHP_Infrastructure_InfrastructureHealthIndicatorStillBeingDeterminedYear3']}}</td>
+                                            <td>{{profile['DHP_Infrastructure_InfrastructureHealthIndicatorStillBeingDeterminedProgress']}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="row profile-pages">
+
+                                    <table class="profile_table">
+                                        <tr class="header_one">
+                                            <td colspan="6">PROGRESS IN THE HEALTH DISTRICT FACTOR</td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Progress in District Health Financing</td>
+                                        </tr>
+                                        <tr class="subheader ">
+                                            <td colspan="6" class="align_left">Overall health financing</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_OverallHealthFinancingKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Expansion in health spending</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ExpansionsInHealthSpendingKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Progress in District Human Resources</td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Increases in skilled health workers</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_IncreasesSkilledHealthWorkersKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Improvement in martenal mortality ratio</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ImprovementMaternalMortalityRatioKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Progress in District Maternal Child Health</td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Decreases in low birth weight</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_DecreasesLowBirthWeightKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">progress in human resources availability by cadre over a period of time</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ProgressHumanResourcesByCadreKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Progress in District Health Facility Performance</td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Expansions in critical health services</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ExpansionsCriticalHealthServicesKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Improvement in referral hospital performance</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ImprovementsReferralHospitalPerformanceKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr><tr class="subheader">
+                                        <td colspan="6" class="align_left">Progress in ANC attendance</td>
+                                    </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ProgressANCAttendanceKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr><tr class="subheader">
+                                        <td colspan="6" class="align_left">Progress in health facility reporting rates (completenes) </td>
+                                    </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ProgressHealthFacilityCompletenessKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr><tr class="subheader">
+                                        <td colspan="6" class="align_left">Progress in health facility timeliness of reporting</td>
+                                    </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ProgressHealthFacilityTimelinessKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Progress in District Health Services</td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Progress in social welfare and protection for vulnerable populations</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ProgressSocialWelfareAndProtectionKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Improvements in vaccination coverage</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ImprovementsVaccinationCoverageKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Progress in environmental health service safe water initiatives</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ProgressEnvironmentalHealthSafeWaterKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Progress Against Milestones</td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Progress against milestones set by the technical review of the joint annual health sector review from previous year</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_ProgressMilestonesTechReviewOfHSReviewKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+                                        <tr class="header_two">
+                                            <td colspan="6" class="align_left">Best Pactices/Case Studies</td>
+                                        </tr>
+                                        <tr class="subheader">
+                                            <td colspan="6" class="align_left">Best Pactices/Case Studies</td>
+                                        </tr>
+                                        <tr >
+                                            <td colspan="6">
+                                                <p class="paragraph-style" ng-bind-html=" profile['DHP_Progress_BestPracticesCaseStudiesKeyFactors'] | renderItLikeHTML "></p>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
+
+
+                            </div>
+
+                            <!-- END OF REMOVE BLOCK-->
+
                         </div>
                     </div>
                     <div class="modal-footer">
