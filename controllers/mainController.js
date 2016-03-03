@@ -344,26 +344,28 @@
             var profiledata = {};
 
             utilityService.getDataPreview(form).then(function(data){
-                $scope.filterProfiles(data);
 
-                utilityService.prepareTabledata(data).then(function(){
-                    profiledata = utilityService.tableDatas;
-                    angular.forEach(profiledata,function(profileValue,profileIndex){
-                        if($scope.profile[profileValue.name] !="undefined"){
-                            $scope.profile[profileValue.name] = profileValue.value;
-                            console.log("Profile");
-                            console.log(profileValue);
-                        }
-                    });
-
-                });
+                console.log(data);
+                //$scope.filterProfiles(data);
+                //
+                //utilityService.prepareTabledata(data).then(function(){
+                //    profiledata = utilityService.tableDatas;
+                //    angular.forEach(profiledata,function(profileValue,profileIndex){
+                //        if($scope.profile[profileValue.name] !="undefined"){
+                //            $scope.profile[profileValue.name] = profileValue.value;
+                //            console.log("Profile");
+                //            console.log(profileValue);
+                //        }
+                //    });
+                //
+                //});
 
             },function(response){
                 $scope.failureMessage = " Loading failed check network connection";
             });
         }
 
-        $scope.previewData({org_unit_selected:"m0frOspS7JY",form_period:2015});
+
 
 
 
@@ -482,6 +484,9 @@
 
 
             prepareOrgUnitStrings();
+
+            // load the profile tables
+            $scope.previewData({org_unit_selected:"m0frOspS7JY",form_period:2015});
 
 
             /// load data from the dhis server
