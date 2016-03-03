@@ -339,32 +339,32 @@
             });
 
         }
-
-        $scope.previewData = function(form){
-            var profiledata = {};
-
-            utilityService.getDataPreview(form).then(function(data){
-
-                console.log(data);
-                //$scope.filterProfiles(data);
-                //
-                //utilityService.prepareTabledata(data).then(function(){
-                //    profiledata = utilityService.tableDatas;
-                //    angular.forEach(profiledata,function(profileValue,profileIndex){
-                //        if($scope.profile[profileValue.name] !="undefined"){
-                //            $scope.profile[profileValue.name] = profileValue.value;
-                //            console.log("Profile");
-                //            console.log(profileValue);
-                //        }
-                //    });
-                //
-                //});
-
-            },function(response){
-                $scope.failureMessage = " Loading failed check network connection";
-            });
-        }
-
+        //
+        //$scope.previewData = function(form){
+        //    var profiledata = {};
+        //
+        //    utilityService.getDataPreview(form).then(function(data){
+        //
+        //        console.log(data);
+        //        $scope.filterProfiles(data);
+        //
+        //        utilityService.prepareTabledata(data).then(function(){
+        //            profiledata = utilityService.tableDatas;
+        //            angular.forEach(profiledata,function(profileValue,profileIndex){
+        //                if($scope.profile[profileValue.name] !="undefined"){
+        //                    $scope.profile[profileValue.name] = profileValue.value;
+        //                    console.log("Profile");
+        //                    console.log(profileValue);
+        //                }
+        //            });
+        //
+        //        });
+        //
+        //    },function(response){
+        //        $scope.failureMessage = " Loading failed check network connection";
+        //    });
+        //}
+        //
 
 
 
@@ -470,39 +470,40 @@
         $scope.loadOrganisationUnit();
 
 
-        $scope.registerChanges = function(newperiod,newvalue){
-            // hide all views and show loading image
-            $scope.dashboardObject.map.layers = null;
-            if(!newvalue||newvalue.length==0){
-                portalService.districts = [];
-                newvalue = $scope.organisationUnitTree;
-                $scope.objectsselected = portalService.getProjects(newvalue);
-            }else{
-                portalService.districts = [];
-                $scope.objectsselected = portalService.getProjects(newvalue);
-            }
+            $scope.registerChanges = function(newperiod,newvalue){
+                // hide all views and show loading image
+                $scope.dashboardObject.map.layers = null;
+                if(!newvalue||newvalue.length==0){
+                    portalService.districts = [];
+                    newvalue = $scope.organisationUnitTree;
+                    $scope.objectsselected = portalService.getProjects(newvalue);
+                }else{
+                    portalService.districts = [];
+                    $scope.objectsselected = portalService.getProjects(newvalue);
+                }
 
 
             prepareOrgUnitStrings();
 
-            // load the profile tables
-            $scope.previewData({org_unit_selected:"m0frOspS7JY",form_period:2015});
 
 
-            /// load data from the dhis server
-            var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:"+newperiod;
-            var selective_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;"+$scope.orgunitString+"&filter=pe:"+newperiod;
+                /// load data from the dhis server
+                var default_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;m0frOspS7JY&filter=pe:"+newperiod;
+                var selective_url = "api/analytics.json?dimension=dx:"+portalService.dataelements+"&dimension=ou:LEVEL-3;"+$scope.orgunitString+"&filter=pe:"+newperiod;
 
-            var url=profileService.baseDHIS+ default_url;
-            if(newvalue.length==1&&newvalue[0].id=="m0frOspS7JY"){
+                var url=profileService.baseDHIS+ default_url;
+                if(newvalue.length==1&&newvalue[0].id=="m0frOspS7JY"){
 
-            }else{
-                url = profileService.baseDHIS+selective_url;
-            }
-            $scope.failureMessage = null;
+                }else{
+                    url = profileService.baseDHIS+selective_url;
+                }
+
+                $scope.failureMessage = null;
                 $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
 
                 var analytics_data = analytics.data;
+
+                /// Dealing with map
 
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
                     console.info("DATA FROM RENDER MAP");
@@ -623,23 +624,39 @@
                 });
 
 
-            },function(failure){
+                /// Dealing with profile data
+                    $scope.prepareTabledataFromAnalytics(analytics_data);
+                    //var profiledata = utilityService.tableDatas;
+                    //angular.forEach(profiledata,function(profileValue,profileIndex){
+                    //    if($scope.profile[profileValue.name] !="undefined"){
+                    //        $scope.profile[profileValue.name] = profileValue.value;
+                    //        console.log("Profile");
+                    //        console.log(profileValue);
+                    //    }
+                    //});
+
+
+
+
+                },function(failure){
                   $scope.failureMessage = "failed to load resources, check network connection";
             });
 
 
-            var orgNames = ""
-            angular.forEach(newvalue,function(value){
-                orgNames += value.name+",";
-            });
+                var orgNames = ""
+                angular.forEach(newvalue,function(value){
+                    orgNames += value.name+",";
+                });
 
-            $scope.orgUnitNames = orgNames.substring(0, orgNames.length - 1);
+                $scope.orgUnitNames = orgNames.substring(0, orgNames.length - 1);
 
 
 
         }
 
-
+        $scope.prepareTabledataFromAnalytics = function(data){
+            console.log(data);
+        }
 
         $scope.getOrganisationUnit = function(){
             $scope.failureMessage = null;
@@ -650,6 +667,7 @@
                 $scope.failureMessage = "failed to load resources, check network connection";
             });
         }
+
         $scope.getOrganisationUnit();
 
 
