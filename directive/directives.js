@@ -11,7 +11,7 @@
     function summaryTable($filter) {
        return {
             link: function (scope, element, attrs) {
-                console.log(scope.profile);
+                scope.profile = JSON.parse(scope.profile);
             },
             restrict: 'E',
            scope:{
