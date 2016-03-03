@@ -87,65 +87,74 @@
 
     <p class="secondary_header">Table 0-1. {{selectedYear}} DHP Results Summary Table</p>
     <br/>
+
     <table class="profile_table">
-        <tr class="header_one">
-            <td class="align_left ">
-                AGE RANGE
-            </td>
-            <td>FEMALE</td>
-            <td>MALE</td>
-        </tr>
-        <tr>
-            <th class="align_left "><1 YEAR</th>
-            <td ng-if="main.profile.DHP_Population_Female1">{{main.profile.DHP_Population_Female1}}</td>
-            <td ng-if="!main.profile.DHP_Population_Female1">0</td>
-            <td ng-if="main.profile.DHP_Population_Male1">{{main.profile.DHP_Population_Male1}}</td>
-            <td ng-if="!main.profile.DHP_Population_Male1">0</td>
-
-        </tr>
-        <tr>
-            <th  class="align_left ">1-4</th>
-            <td ng-if="main.profile.DHP_Population_Female2">{{main.profile.DHP_Population_Female2}}</td>
-            <td ng-if="!main.profile.DHP_Population_Female2">0</td>
-            <td ng-if="main.profile.DHP_Population_Male2">{{main.profile.DHP_Population_Male2}}</td>
-            <td ng-if="!main.profile.DHP_Population_Male2">0</td>
-        </tr>
-        <tr>
-            <th>5-14</th>
-            <td ng-if="main.profile.DHP_Population_Female3">{{main.profile.DHP_Population_Female3}}</td>
-            <td ng-if="!main.profile.DHP_Population_Female3">0</td>
-            <td ng-if="main.profile.DHP_Population_Male3">{{main.profile.DHP_Population_Male3}}</td>
-            <td ng-if="!main.profile.DHP_Population_Male3">0</td>
-        </tr>
-        <tr>
-            <th  class="align_left ">15-49</th>
-            <td ng-if="main.profile.DHP_Population_Female4">{{main.profile.DHP_Population_Female4}}</td>
-            <td ng-if="!main.profile.DHP_Population_Female4">0</td>
-            <td ng-if="main.profile.DHP_Population_Male4">{{main.profile.DHP_Population_Male4}}</td>
-            <td ng-if="!main.profile.DHP_Population_Male4">0</td>
-        </tr>
-        <tr>
-            <th>50-60</th>
-            <td ng-if="main.profile.DHP_Population_Female5">{{main.profile.DHP_Population_Female5}}</td>
-            <td ng-if="!main.profile.DHP_Population_Female5">0</td>
-            <td ng-if="main.profile.DHP_Population_Male5">{{main.profile.DHP_Population_Male5}}</td>
-            <td ng-if="!main.profile.DHP_Population_Male5">0</td>
-        </tr>
-        <tr>
-            <th>>60</th>
-            <td ng-if="main.profile.DHP_Population_Female6">{{main.profile.DHP_Population_Female6}}</td>
-            <td ng-if="!main.profile.DHP_Population_Female6">0</td>
-            <td ng-if="main.profile.DHP_Population_Male6">{{main.profile.DHP_Population_Male6}}</td>
-            <td ng-if="!main.profile.DHP_Population_Male6">0</td>
-
-        </tr>
-        <tr>
-            <th>TOTAL</th>
-            <td><b>{{main.profile.DHP_Population_Female_Total}}</b></td>
-            <td><b>{{main.profile.DHP_Population_Male_Total}}</b></td>
-
-        </tr>
+        <tr style="background-color:#CEE4B3;"><td colspan="8">DISTRICT POPULATION AND FACILITY STATISTICS</td></tr>
+        <tr style="background-color:#DCB081;"><td>Demogaphics</td><td><1</td><td>1-4</td><td>5-14</td><td>15-49</td><td>50-60</td><td>>60</td><td>Total</td></tr>
+        <tr><td>Female</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Male</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
     </table>
+
+
+    <!--<table class="profile_table">-->
+        <!--<tr class="header_one">-->
+            <!--<td class="align_left ">-->
+                <!--AGE RANGE-->
+            <!--</td>-->
+            <!--<td>FEMALE</td>-->
+            <!--<td>MALE</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th class="align_left "><1 YEAR</th>-->
+            <!--<td ng-if="main.profile.DHP_Population_Female1">{{main.profile.DHP_Population_Female1}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Female1">0</td>-->
+            <!--<td ng-if="main.profile.DHP_Population_Male1">{{main.profile.DHP_Population_Male1}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Male1">0</td>-->
+
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th  class="align_left ">1-4</th>-->
+            <!--<td ng-if="main.profile.DHP_Population_Female2">{{main.profile.DHP_Population_Female2}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Female2">0</td>-->
+            <!--<td ng-if="main.profile.DHP_Population_Male2">{{main.profile.DHP_Population_Male2}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Male2">0</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th>5-14</th>-->
+            <!--<td ng-if="main.profile.DHP_Population_Female3">{{main.profile.DHP_Population_Female3}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Female3">0</td>-->
+            <!--<td ng-if="main.profile.DHP_Population_Male3">{{main.profile.DHP_Population_Male3}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Male3">0</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th  class="align_left ">15-49</th>-->
+            <!--<td ng-if="main.profile.DHP_Population_Female4">{{main.profile.DHP_Population_Female4}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Female4">0</td>-->
+            <!--<td ng-if="main.profile.DHP_Population_Male4">{{main.profile.DHP_Population_Male4}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Male4">0</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th>50-60</th>-->
+            <!--<td ng-if="main.profile.DHP_Population_Female5">{{main.profile.DHP_Population_Female5}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Female5">0</td>-->
+            <!--<td ng-if="main.profile.DHP_Population_Male5">{{main.profile.DHP_Population_Male5}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Male5">0</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th>>60</th>-->
+            <!--<td ng-if="main.profile.DHP_Population_Female6">{{main.profile.DHP_Population_Female6}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Female6">0</td>-->
+            <!--<td ng-if="main.profile.DHP_Population_Male6">{{main.profile.DHP_Population_Male6}}</td>-->
+            <!--<td ng-if="!main.profile.DHP_Population_Male6">0</td>-->
+
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<th>TOTAL</th>-->
+            <!--<td><b>{{main.profile.DHP_Population_Female_Total}}</b></td>-->
+            <!--<td><b>{{main.profile.DHP_Population_Male_Total}}</b></td>-->
+
+        <!--</tr>-->
+    <!--</table>-->
     <br/>
     <p> Facility Distribution</p>
     <br/>
