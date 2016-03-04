@@ -348,10 +348,7 @@
                     angular.forEach($scope.organisationUnitTree[0].children,function(chValue,chIndex){
                         console.log(chValue);
                         angular.forEach(chValue.children,function(value,index){
-                            console.log(value.id)
-                            console.log(uid)
                             if(value.id==uid){
-
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].isActive     = true;
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].isExpanded   = true;
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].isFiltered   = false;
