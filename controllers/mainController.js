@@ -584,6 +584,8 @@
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
                                     console.log($scope.selectedDistrict);
                                     console.log($scope.selectedItems);
+                                    $scope.selectedItems = [{id:$scope.selectedDistrict.id,isActive:true,name:$scope.selectedDistrict.name,selected:true}];
+                                    console.log($scope.selectedItems);
                                     $scope.selectedDistrictName = $scope.selectedDistrict.name;
                                     //$scope.selectedItems =
                                     $scope.registerChanges($scope.selectedYear,feature.getId())
