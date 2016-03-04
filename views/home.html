@@ -402,7 +402,7 @@
                                         <td>{{profile['DHP_Population_Female4']}}</td>
                                         <td>{{profile['DHP_Population_Female5']}}</td>
                                         <td>{{profile['DHP_Population_Female6']}}</td>
-                                        <td>{{profile['DHP_Population_Female1']+profile['DHP_Population_Female2']+profile['DHP_Population_Female3']+profile['DHP_Population_Female4']+profile['DHP_Population_Female5']+profile['DHP_Population_Female6']}}</td>
+                                        <td>{{0 | addElements:profile['DHP_Population_Female1']:profile['DHP_Population_Female2']:profile['DHP_Population_Female3']:profile['DHP_Population_Female4']:profile['DHP_Population_Female5']:profile['DHP_Population_Female6']}}</td>
                                     </tr>
                                     <tr><td style="text-align: left">Male</td>
                                         <td>{{profile['DHP_Population_Male1']}}</td>
@@ -411,7 +411,7 @@
                                         <td>{{profile['DHP_Population_Male4']}}</td>
                                         <td>{{profile['DHP_Population_Male5']}}</td>
                                         <td>{{profile['DHP_Population_Male6']}}</td>
-                                        <td>{{profile['DHP_Population_Male1']+profile['DHP_Population_Male2']+profile['DHP_Population_Male3']+profile['DHP_Population_Male4']+profile['DHP_Population_Male5']+profile['DHP_Population_Male6']}}</td>
+                                        <td>{{0 | addElements:profile['DHP_Population_Male1']:profile['DHP_Population_Male2']:profile['DHP_Population_Male3']:profile['DHP_Population_Male4']:profile['DHP_Population_Male5']:profile['DHP_Population_Male6']}}</td>
                                     </tr>
                                 </table>
 
