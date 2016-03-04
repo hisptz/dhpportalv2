@@ -15,9 +15,10 @@
     )
     .filter('addElements', function (){
 
-            var sum = 0;
+
             return function(input,param1)
             {
+                var sum = 0;
                 var args = Array.prototype.slice.call(arguments);
                 angular.forEach(args,function(value,index){
 
