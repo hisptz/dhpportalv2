@@ -600,7 +600,7 @@
                                     // looping throught indicator types
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
 
-                                    $scope.selectedItems = [{id:$scope.selectedDistrict.facility_id,isActive:true,isExpanded: false,isFiltered: false,name:$scope.selectedDistrict.name,selected:true}];
+                                    //$scope.selectedItems = [{id:$scope.selectedDistrict.facility_id,isActive:true,isExpanded: false,isFiltered: false,name:$scope.selectedDistrict.name,selected:true}];
                                     $scope.treeWithSelectedDistrict(feature.getId());
                                     var indicators = [
                                         {id:"zIAxcoxZ3Pl",name:"EAC: BCG dose given under one year"},
