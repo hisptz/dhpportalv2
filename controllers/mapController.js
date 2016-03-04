@@ -280,7 +280,7 @@
                                     $scope.$parent.main.backToGrid()
                                     //$scope.closeTootipHover();
                                     $scope.$apply(function(scope) {
-                                        scope.selectedDistrict = feature ? $scope.districts[feature.getId()] : '';
+                                        $scope.selectedDistrict = feature ? $scope.districts[feature.getId()] : '';
                                         $scope.$parent.main.org_unit_selected = scope.selectedDistrict.district_id;
                                         if(feature) {
                                             // looping throught indicator types

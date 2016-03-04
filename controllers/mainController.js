@@ -583,7 +583,7 @@
                                     // looping throught indicator types
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
                                     $scope.selectedDistrictName = $scope.selectedDistrict.name;
-
+                                    $scope.registerChanges($scope.selectedYear,feature.getId())
                                 }
                             });
 
