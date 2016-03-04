@@ -32,7 +32,7 @@
                 });
 
                 if(sum==0){
-                    return 0;
+                    return "";
                 }
                 return sum;
             }
