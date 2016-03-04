@@ -341,8 +341,9 @@
         }
 
         $scope.treeWithSelectedDistrict = function(uid){
+            console.log($scope.organisationUnitTree);
             if($scope.organisationUnitTree.children!=null){
-                console.log($scope.organisationUnitTree);
+
                 //if($scope.organisationUnitTree.name.indexOf('Tanzania')>=0){
                     angular.forEach($scope.organisationUnitTree.children,function(chValue,chIndex){
                         console.log(chValue);
