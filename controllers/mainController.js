@@ -630,14 +630,7 @@
 
                 /// Dealing with profile data
                     $scope.prepareTabledataFromAnalytics(analytics_data);
-                    //var profiledata = utilityService.tableDatas;
-                    //angular.forEach(profiledata,function(profileValue,profileIndex){
-                    //    if($scope.profile[profileValue.name] !="undefined"){
-                    //        $scope.profile[profileValue.name] = profileValue.value;
-                    //        console.log("Profile");
-                    //        console.log(profileValue);
-                    //    }
-                    //});
+
 
 
 
@@ -663,7 +656,7 @@
             var names        = data.metaData.names;
             var ou           = data.metaData.ou;
             var rows         = data.rows;
-
+            $scope.profile = {};
             angular.forEach(dataelements,function(value,index){
                 angular.forEach(rows,function(rowValue,rowIndex){
                     if(rowValue[0] == value){
