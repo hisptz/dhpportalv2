@@ -347,6 +347,10 @@
                         angular.forEach(chValue.children,function(value,index){
                             if(value.id==uid){
                                 console.log($scope.organisationUnitTree[chIndex][index]);
+                                $scope.organisationUnitTree[chIndex][index].isActive     = true;
+                                $scope.organisationUnitTree[chIndex][index].isExpanded   = true;
+                                $scope.organisationUnitTree[chIndex][index].isFiltered   = false;
+                                $scope.organisationUnitTree[chIndex][index].selected     = true;
                             }
                         });
                     });
@@ -354,13 +358,13 @@
 
             }
         }
-        //
+
+
         //$scope.previewData = function(form){
         //    var profiledata = {};
         //
         //    utilityService.getDataPreview(form).then(function(data){
         //
-        //        console.log(data);
         //        $scope.filterProfiles(data);
         //
         //        utilityService.prepareTabledata(data).then(function(){
@@ -368,8 +372,6 @@
         //            angular.forEach(profiledata,function(profileValue,profileIndex){
         //                if($scope.profile[profileValue.name] !="undefined"){
         //                    $scope.profile[profileValue.name] = profileValue.value;
-        //                    console.log("Profile");
-        //                    console.log(profileValue);
         //                }
         //            });
         //
@@ -534,7 +536,7 @@
                         $scope.submitted = mapService.submitted;
                         $scope.notsubmitted = mapService.totalDistricts - mapService.submitted;
                     }else{
-                        Materialize.toast("User is loged out", 3000)
+                        //Materialize.toast("User is loged out", 3000)
                     }
 
                     $scope.dashboardObject.chart.chartObject = mapService.chartObject;
@@ -600,6 +602,20 @@
 
                                     $scope.selectedItems = [{id:$scope.selectedDistrict.facility_id,isActive:true,isExpanded: false,isFiltered: false,name:$scope.selectedDistrict.name,selected:true}];
                                     $scope.treeWithSelectedDistrict(feature.getId());
+                                    var indicators = [
+                                        {id:"zIAxcoxZ3Pl",name:"EAC: BCG dose given under one year"},
+                                        {id:"Y1pkrlq2hWi",name:"Infant Mortality Rate"},
+                                        {id:"BlZrj2FC6bG",name:"Neonatal Mortality Rate"},
+                                        {id:"WhsP7nsuwnz",name:"PENTA 3 vaccination coverage children under 1 year"},
+                                        {id:"TvgyTWvJamX",name:"Proportion of pregnant mothers who received 2 doses IPT"},
+                                        {id:"TdxVgoa08tn",name:"ANC HIV prevalence (15-24 years)"},
+                                        {id:"sxBx8Bone59",name:"OPD Attendance per capita"},
+                                        {id:"uOOJi6b0pzm",name:"Low birth weight among new-borns"},
+                                        {id:"heyJnpx5b37",name:"OPV 3 Vaccination Coverage"},
+                                        {id:"qHpMHX3KWZn",name:"Proportion of laboratory confirmed malaria cases among all OPD visits"},
+                                        {id:"z9ispsHeYNw",name:"Malaria Death Rate <5"},
+                                        {id:"ohw1MBklYkc",name:"PlanRep Implemented Skilled Human Resources Recruited"}
+                                    ]
                                     $scope.selectedDistrictName = $scope.selectedDistrict.name;
                                     //$scope.registerChanges($scope.selectedYear,feature.getId())
                                 }
