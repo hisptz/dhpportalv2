@@ -601,7 +601,7 @@
                                     $scope.selectedItems = [{id:$scope.selectedDistrict.facility_id,isActive:true,isExpanded: false,isFiltered: false,name:$scope.selectedDistrict.name,selected:true}];
                                     $scope.treeWithSelectedDistrict(feature.getId());
                                     $scope.selectedDistrictName = $scope.selectedDistrict.name;
-                                    $scope.registerChanges($scope.selectedYear,feature.getId())
+                                    //$scope.registerChanges($scope.selectedYear,feature.getId())
                                 }
                             });
 
