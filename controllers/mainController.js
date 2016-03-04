@@ -461,7 +461,7 @@
                 });
 
                 if(success.data.length>30){
-                    console.log(success.data);
+
                 }
 
             },function(failure){
@@ -582,12 +582,10 @@
                                 if(feature) {
                                     // looping throught indicator types
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
-                                    console.log($scope.selectedDistrict);
-                                    console.log($scope.selectedItems);
-                                    $scope.selectedItems = [{id:$scope.selectedDistrict.facility_id,isActive:true,name:$scope.selectedDistrict.name,selected:true}];
-                                    console.log($scope.selectedItems);
+
+                                    $scope.selectedItems = [{id:$scope.selectedDistrict.facility_id,isActive:true,isExpanded: false,isFiltered: false,name:$scope.selectedDistrict.name,selected:true}];
+
                                     $scope.selectedDistrictName = $scope.selectedDistrict.name;
-                                    //$scope.selectedItems =
                                     $scope.registerChanges($scope.selectedYear,feature.getId())
                                 }
                             });
@@ -661,6 +659,7 @@
             var names        = data.metaData.names;
             var ou           = data.metaData.ou;
             var rows         = data.rows;
+            console.log(data);
             $scope.profile = {};
             angular.forEach(dataelements,function(value,index){
                 angular.forEach(rows,function(rowValue,rowIndex){
