@@ -339,6 +339,21 @@
             });
 
         }
+
+        $scope.treeWithSelectedDistrict = function(uid){
+            if($scope.organisationUnitTree.children!=null){
+                if($scope.organisationUnitTree.name.indexOf('Tanzania')>=0){
+                    angular.forEach($scope.organisationUnitTree.children,function(chValue,chIndex){
+                        angular.forEach(chValue.children,function(value,index){
+                            if(value.id==uid){
+                                console.log($scope.organisationUnitTree[chIndex][index]);
+                            }
+                        });
+                    });
+                }
+
+            }
+        }
         //
         //$scope.previewData = function(form){
         //    var profiledata = {};
@@ -584,7 +599,7 @@
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
 
                                     $scope.selectedItems = [{id:$scope.selectedDistrict.facility_id,isActive:true,isExpanded: false,isFiltered: false,name:$scope.selectedDistrict.name,selected:true}];
-
+                                    $scope.treeWithSelectedDistrict(feature.getId());
                                     $scope.selectedDistrictName = $scope.selectedDistrict.name;
                                     $scope.registerChanges($scope.selectedYear,feature.getId())
                                 }
