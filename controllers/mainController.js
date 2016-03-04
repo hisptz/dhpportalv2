@@ -341,23 +341,22 @@
         }
 
         $scope.treeWithSelectedDistrict = function(uid){
-            console.log($scope.organisationUnitTree);
             if($scope.organisationUnitTree[0].children!=null){
-
-                //if($scope.organisationUnitTree.name.indexOf('Tanzania')>=0){
                     angular.forEach($scope.organisationUnitTree[0].children,function(chValue,chIndex){
                         console.log(chValue);
                         angular.forEach(chValue.children,function(value,index){
                             if(value.id==uid){
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].isActive     = true;
-                                $scope.organisationUnitTree[0].children[chIndex].children[index].isExpanded   = true;
-                                $scope.organisationUnitTree[0].children[chIndex].children[index].isFiltered   = false;
+                                $scope.organisationUnitTree[0].children[chIndex].children[index].isExpanded   = false;
+                                $scope.organisationUnitTree[0].children[chIndex].children[index].isFiltered   = true;
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].selected     = true;
-                                console.log($scope.organisationUnitTree[0].children[chIndex].children[index]);
+
+                                $scope.$watch('organisationUnitTree',function(first,last){
+                                    console.log($scope.organisationUnitTree);
+                                });
                             }
                         });
                     });
-                //}
 
             }
         }
