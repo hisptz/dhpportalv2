@@ -350,11 +350,12 @@
                         angular.forEach(chValue.children,function(value,index){
                             console.log(value)
                             if(value.id==uid){
-                                console.log($scope.organisationUnitTree[0].children[chIndex].children[index]);
+
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].isActive     = true;
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].isExpanded   = true;
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].isFiltered   = false;
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].selected     = true;
+                                console.log($scope.organisationUnitTree[0].children[chIndex].children[index]);
                             }
                         });
                     });
