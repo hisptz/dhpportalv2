@@ -342,19 +342,19 @@
 
         $scope.treeWithSelectedDistrict = function(uid){
             console.log($scope.organisationUnitTree);
-            if($scope.organisationUnitTree.children!=null){
+            if($scope.organisationUnitTree[0].children!=null){
 
                 //if($scope.organisationUnitTree.name.indexOf('Tanzania')>=0){
-                    angular.forEach($scope.organisationUnitTree.children,function(chValue,chIndex){
+                    angular.forEach($scope.organisationUnitTree[0].children,function(chValue,chIndex){
                         console.log(chValue);
                         angular.forEach(chValue.children,function(value,index){
                             console.log(value)
                             if(value.id==uid){
-                                console.log($scope.organisationUnitTree[chIndex][index]);
-                                $scope.organisationUnitTree[chIndex][index].isActive     = true;
-                                $scope.organisationUnitTree[chIndex][index].isExpanded   = true;
-                                $scope.organisationUnitTree[chIndex][index].isFiltered   = false;
-                                $scope.organisationUnitTree[chIndex][index].selected     = true;
+                                console.log($scope.organisationUnitTree[0][chIndex][index]);
+                                $scope.organisationUnitTree[0][chIndex][index].isActive     = true;
+                                $scope.organisationUnitTree[0][chIndex][index].isExpanded   = true;
+                                $scope.organisationUnitTree[0][chIndex][index].isFiltered   = false;
+                                $scope.organisationUnitTree[0][chIndex][index].selected     = true;
                             }
                         });
                     });
