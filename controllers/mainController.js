@@ -342,9 +342,10 @@
 
         $scope.treeWithSelectedDistrict = function(uid){
             if($scope.organisationUnitTree.children!=null){
-                if($scope.organisationUnitTree.name.indexOf('Tanzania')>=0){
+                //if($scope.organisationUnitTree.name.indexOf('Tanzania')>=0){
                     angular.forEach($scope.organisationUnitTree.children,function(chValue,chIndex){
                         angular.forEach(chValue.children,function(value,index){
+                            console.log(value)
                             if(value.id==uid){
                                 console.log($scope.organisationUnitTree[chIndex][index]);
                                 $scope.organisationUnitTree[chIndex][index].isActive     = true;
@@ -354,7 +355,7 @@
                             }
                         });
                     });
-                }
+                //}
 
             }
         }
@@ -599,7 +600,7 @@
                                 if(feature) {
                                     // looping throught indicator types
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
-
+                                    console.log(feature.getId());
                                     //$scope.selectedItems = [{id:$scope.selectedDistrict.facility_id,isActive:true,isExpanded: false,isFiltered: false,name:$scope.selectedDistrict.name,selected:true}];
                                     $scope.treeWithSelectedDistrict(feature.getId());
                                     var indicators = [
