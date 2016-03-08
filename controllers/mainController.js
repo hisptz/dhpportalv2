@@ -419,10 +419,9 @@
         function prepareOrgUnitStrings(){
             var orgString = "";
 
-//            $scope.$watch($scope.objectsselected,function(value1,value2){
+
             angular.forEach($scope.objectsselected,function(value,index){
                 orgString+=value.id+";";
-//                });
 
                 if(orgString.length>0){
                     $scope.orgunitString = orgString.substring(0, orgString.length - 1);
