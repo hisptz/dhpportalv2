@@ -52,6 +52,23 @@
             visible:'consumption by demographic'
         }];
 
+        $scope.newView = "And That's is the view";
+
+
+        $scope.switchViewCallback = function(scopeObj) {
+
+            if (scopeObj.switchViewLabel == 'test2') {
+                scopeObj.switchViewLabel = 'test1';
+                //scopeObj.inputModel = data1;
+                scopeObj.selectOnlyLeafs = true;
+            } else {
+                scopeObj.switchViewLabel = 'test2';
+                //scopeObj.inputModel = data3;
+                scopeObj.selectOnlyLeafs = false;
+            }
+        }
+
+
         // set current year
         $scope.current_year = date.getFullYear();
 
