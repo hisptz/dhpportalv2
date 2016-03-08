@@ -125,8 +125,17 @@
 <div class="row" >
 
 <div class="col s12 m12 l12">
-    <div class="col s12 z-depth-1" style="">
+    <div class="col s12 z-depth-1" style="background-color:#ffffff;">
         <div class="section grey lighten-5 " >
+
+            <div class="input-field col s12 m3 l3 orgDropdown grey lighten-5"  >
+                <multi-select-tree data-input-model="organisationUnitTree" multi-select="true"
+                                   data-output-model="selectedItems" data-default-label="Organisation Units"
+                                   data-callback="selectedCallback(item, selectedItems)"
+                                   data-select-only-leafs="false"
+                        ></multi-select-tree>
+
+            </div>
 
             <div class="input-field col s12 m3 l3 grey lighten-5" >
 
@@ -136,14 +145,7 @@
                 </select>
                 <label>Period</label>
             </div>
-            <div class="input-field col s12 m3 l3 orgDropdown grey lighten-5"  >
-                <multi-select-tree data-input-model="organisationUnitTree" multi-select="true"
-                                   data-output-model="selectedItems" data-default-label="Organisation Units"
-                                   data-callback="selectedCallback(item, selectedItems)"
-                                   data-select-only-leafs="false"
-                                   ></multi-select-tree>
 
-            </div>
             <div class="input-field col s12 m6 l6 orgDropdown grey lighten-5"  >
                 <ul class="right hide-on-med-and-down">
                     <!--<li><a href="./#home">Dashboard</a></li>-->
@@ -1428,7 +1430,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12"><!--modal-close-->
-                        <a class="waves-effect modal-action  waves-light btn  col s12 m12" style="background-color:#82b1ff" ng-click="main.login(login)">Login</a>
+                        <a class="waves-effect modal-action  waves-light btn  col s12 m12" style="background-color:#00796B" ng-click="main.login(login)">Login</a>
                     </div>
                 </div>
 
