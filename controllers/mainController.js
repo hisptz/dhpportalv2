@@ -430,6 +430,22 @@
 
         }
 
+
+        /// sort organisation unit
+        function sortingOrUnit(parentOrg){
+
+            angular.forEach(parentOrg,function(parentOrgUnit,index){
+                if(parentOrg[index].children) {
+                    parentOrg[index].children = $filter('orderBy')(parentOrg[index].children, 'name');
+                    angular.forEach(parentOrg[index].children,function (child,indexc) {
+                        parentOrg[index].children[indexc].children=$filter('orderBy')(parentOrg[index].children[indexc].children, 'name');
+                    });
+                }
+            });
+
+            return parentOrg;
+        }
+
         // load organisation unit fro tree
         $scope.loadOrganisationUnit = function(){
             $scope.failureMessage = null;
@@ -489,6 +505,8 @@
 
 
         }
+
+
         $scope.loadOrganisationUnit();
 
 
@@ -601,7 +619,6 @@
                                     // looping throught indicator types
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
                                     console.log(feature.getId());
-                                    //$scope.selectedItems = [{id:$scope.selectedDistrict.facility_id,isActive:true,isExpanded: false,isFiltered: false,name:$scope.selectedDistrict.name,selected:true}];
                                     $scope.treeWithSelectedDistrict(feature.getId());
                                     var indicators = [
                                         {id:"zIAxcoxZ3Pl",name:"EAC: BCG dose given under one year"},
@@ -618,7 +635,6 @@
                                         {id:"ohw1MBklYkc",name:"PlanRep Implemented Skilled Human Resources Recruited"}
                                     ]
                                     $scope.selectedDistrictName = $scope.selectedDistrict.name;
-                                    //$scope.registerChanges($scope.selectedYear,feature.getId())
                                 }
                             });
 
@@ -709,7 +725,7 @@
         $scope.getOrganisationUnit = function(){
             $scope.failureMessage = null;
             utilityService.getOrgUnits().then(function(data){
-                $scope.data.organisationUnits = data.organisationUnits;
+                $scope.data.organisationUnits = sortingOrUnit(data.organisationUnits);
                 $scope.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
             },function(status){
                 $scope.failureMessage = "failed to load resources, check network connection";
@@ -733,6 +749,8 @@
 
             return Regions;
         }
+
+
 
         $scope.getPeriod = function(start_period){
             var date = new Date();
