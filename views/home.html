@@ -149,8 +149,8 @@
 
             <div class="input-field col s12 m6 l6 orgDropdown grey lighten-5"  >
                 <ul class="right hide-on-med-and-down">
-                    <!--<li><a href="./#home">Dashboard</a></li>-->
-                    <li><a modal href="#login_modal">Login</a></li>
+                    <li ng-if="currentLogedUser"><a >{{currentLogedUser}}</a></li>
+                    <li ng-if="!currentLogedUser"><a modal href="#login_modal" >Login</a></li>
                 </ul>
             </div>
         </div>
