@@ -120,9 +120,23 @@
       <file leaf-file-name="mainController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47440946" vertical-offset="14375" max-vertical-offset="17046">
-              <caret line="812" column="24" selection-start-line="812" selection-start-column="24" selection-end-line="812" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.33267716" vertical-offset="15563" max-vertical-offset="17064">
+              <caret line="874" column="15" selection-start-line="874" selection-start-column="15" selection-end-line="874" selection-end-column="15" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1567" max-vertical-offset="3348">
+              <caret line="109" column="16" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
+              <folding>
+                <element signature="e#12669#13019#0" expanded="false" />
+                <element signature="e#13075#13605#0" expanded="false" />
+                <element signature="e#14536#14899#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -821,18 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2746" max-vertical-offset="3348">
-          <caret line="164" column="32" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="32" />
-          <folding>
-            <element signature="e#12669#13019#0" expanded="false" />
-            <element signature="e#13075#13605#0" expanded="false" />
-            <element signature="e#14536#14899#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/directive/directives.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
@@ -965,10 +967,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/services/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1567" max-vertical-offset="3348">
+          <caret line="109" column="16" selection-start-line="109" selection-start-column="16" selection-end-line="109" selection-end-column="16" />
+          <folding>
+            <element signature="e#12669#13019#0" expanded="false" />
+            <element signature="e#13075#13605#0" expanded="false" />
+            <element signature="e#14536#14899#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47440946" vertical-offset="14375" max-vertical-offset="17046">
-          <caret line="812" column="24" selection-start-line="812" selection-start-column="24" selection-end-line="812" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.33267716" vertical-offset="15563" max-vertical-offset="17064">
+          <caret line="874" column="15" selection-start-line="874" selection-start-column="15" selection-end-line="874" selection-end-column="15" />
           <folding />
         </state>
       </provider>

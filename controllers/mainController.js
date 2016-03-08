@@ -818,6 +818,7 @@
             $scope.failureMessage = null;
                 utilityService.login(username,password).then(function(data){
                     $scope.progressLogin = false;
+
                         utilityService.getUserDetails().then(function(userdata){
                             if(typeof(userdata)=="object"&&userdata.userCredentials.code==username&&username!="Demo"){
                                 $cookies.put('dhis_enabled', 'logedIn');
@@ -828,10 +829,10 @@
                                 $scope.logedOut = false;
                                 $scope.logedSuccessMessage = "LoggedIn as "+userdata.displayName+": Connected to DHIS2.";
                                 $scope.closeLoginForm();
-                            utilityService.getDataElements().then(function(data){
-                                utilityService.prepareDataElementUid(data);
-                                utilityService.prepareDataElementNames(data);
-                            });
+                            //utilityService.getDataElements().then(function(data){
+                            //    utilityService.prepareDataElementUid(data);
+                            //    utilityService.prepareDataElementNames(data);
+                            //});
                             }else{
                                 $cookies.remove('dhis_enabled');
                                 $cookies.remove('current_user');
@@ -868,11 +869,11 @@
         $scope.getLoginForm = function(){
             $scope.logedSuccessMessage = null;
             $scope.logedFailureMessage = null;
-            $('#modal1').openModal();
+            $('#login_modal').openModal();
 
         }
         $scope.closeLoginForm = function(){
-            $('#modal1').closeModal();
+            $('#login_modal').closeModal();
 
         }
 
