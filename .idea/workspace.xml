@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66528064" vertical-offset="2110" max-vertical-offset="26082">
-              <caret line="135" column="89" selection-start-line="135" selection-start-column="89" selection-end-line="135" selection-end-column="89" />
+            <state vertical-scroll-proportion="-3.3859649" vertical-offset="25601" max-vertical-offset="26082">
+              <caret line="1433" column="143" selection-start-line="1433" selection-start-column="134" selection-end-line="1433" selection-end-column="143" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -117,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mainController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.133333" vertical-offset="914" max-vertical-offset="17046">
-              <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.47440946" vertical-offset="14375" max-vertical-offset="17046">
+              <caret line="812" column="24" selection-start-line="812" selection-start-column="24" selection-end-line="812" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -148,8 +148,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/controllers/mainController.js" />
         <option value="$PROJECT_DIR$/views/home.html" />
+        <option value="$PROJECT_DIR$/controllers/mainController.js" />
       </list>
     </option>
   </component>
@@ -877,14 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.133333" vertical-offset="914" max-vertical-offset="17046">
-          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="6.2105265" vertical-offset="2280" max-vertical-offset="4302">
@@ -900,8 +892,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66528064" vertical-offset="2110" max-vertical-offset="26082">
-          <caret line="135" column="89" selection-start-line="135" selection-start-column="89" selection-end-line="135" selection-end-column="89" />
+        <state vertical-scroll-proportion="-3.3859649" vertical-offset="25601" max-vertical-offset="26082">
+          <caret line="1433" column="143" selection-start-line="1433" selection-start-column="134" selection-end-line="1433" selection-end-column="143" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
@@ -970,6 +962,14 @@
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#form#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47440946" vertical-offset="14375" max-vertical-offset="17046">
+          <caret line="812" column="24" selection-start-line="812" selection-start-column="24" selection-end-line="812" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

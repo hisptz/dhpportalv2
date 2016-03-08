@@ -810,7 +810,7 @@
             $location.path("/");
         }
 
-        $scope.login = function(login){
+        $scope.userLogin = function(login){
 
             $scope.progressLogin = true;
             var username = login.dhis_login_username;
