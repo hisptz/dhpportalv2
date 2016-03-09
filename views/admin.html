@@ -1,0 +1,102 @@
+<div class="row" ng-controller="adminController as admin" >
+    <script>
+        $(document).ready(function(){
+            $('.collapsible').collapsible({
+                accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+            });
+
+
+        });
+    </script>
+    <div class="col s12 m3">
+        <ul class="collapsible" data-collapsible="accordion">
+
+            <li>
+                <div class="collapsible-header active"><i class="material-icons">library_add</i>Health Profile </div>
+                <div class="collapsible-body">
+                    <ul class="section table-of-contents">
+                        <!--<li><a style="cursor: pointer;" ng-click="admin.readOnlyDataPreview()">Profile Preview</a></li>-->
+                        <li><a style="cursor: pointer;" ng-click="admin.uploadCSV()">Upload Profile</a></li>
+                    </ul>
+
+
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col s12 m9" style="min-height: 500px;">
+
+        <div class="row" id="upload_csv" ><!--ng-if="admin.uploadcsv"-->
+            <div class="col s12 m12">
+                <div class="card blue-white darken-1">
+                    <div class="card-content grey-text" >
+                        <form class="col s12 m12" name="upload_form" ng-submit="admin.uploadProfileToDHIS(form)" style="color: #000000;">
+                            <div >DHP HEALTH PROFILE DATA ENTRY  </div></br>
+                            <div style="font-weight:bolder;color:#CD781B;"><i>Please ....!</i>&nbsp;&nbsp;Upload Both "<i>Read Only PDF</i>"&nbsp;&nbsp;and&nbsp;&nbsp;"<i>CSV</i>"  </div></br>
+                            <div class="row">
+                                <label >* Organisation Unit (Region)</label>
+                                <div class="input-field  col  s12 m12">
+                                    <select  name="org_unit" ng-model="admin.selectedEntryRegion" material-select watch  required="required">
+                                        <option ng-repeat="org in admin.regions" value="{{org}}">{{org.value}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label >* Organisation Unit (District)</label>
+                                <div class="input-field col  s12 m12">
+                                    <select  name="org_unit" ng-model="admin.selectedCSVEntryDistrict" material-select watch  required="required">
+                                        <option ng-repeat="distr in admin.districts" value="{{distr.id}}">{{distr.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label>* Period</label>
+                                <div class="input-field col  s12 m12">
+
+                                    <select  name="period" ng-model="form.form_period" material-select watch >
+                                        <option value="{{main.current_year}}"  selected="selected">{{main.current_year}}</option>
+                                        <option ng-repeat="period in main.periods" value="{{period.name}}">{{period.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="button" ngf-select ng-model="admin.csvfile" name="csvfile" ngf-pattern="'.csv'"
+                                     accept="application/csv" ><a href="#"><i class="fa fa-file-excel-o fa-2x"></i> Select a CSV File</a></div>
+                            </div>
+
+                            <br/>
+                            <br/>
+                            <div class="row">
+                                <div class="button" ngf-select ng-model="admin.pdffile" name="pdffile" ngf-pattern="'.pdf'"
+                                     accept="application/pdf" ><a href="#"><i class="fa fa-file-pdf-o fa-2x"></i> Select a readOnly PDF File</a></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12 m12">
+                                    <button class="waves-effect waves-light btn col s12 m12" style="background-color:#00796B" type="submit" name="submit">Upload To DHIS</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="progress" ng-if="admin.showProgress">
+                                    <div class="determinate" style="width:{{admin.progressPercent}}"></div>
+                                </div>
+
+
+                                <div class="col m12 s12" ng-if="admin.message">
+                                    <div class="chip" class="{{admin.message_class}}">
+                                        {{admin.message}}
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+

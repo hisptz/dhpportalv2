@@ -212,10 +212,23 @@
 
 <script>
     var mainModule = angular.module('dhpportal', ['openlayers-directive','multi-select-tree','highcharts-ng','ngFileUpload','datatables',"ngRoute",'ui.materialize','ngCookies','ngResource','ngAnimate','dhisHighchartAngularService','angular-spinkit','ngCsv']);
+    mainModule.config(function($routeProvider, $locationProvider) {
+        $routeProvider
+                .when('/home', {
+                    templateUrl: 'views/home.html',
+                    controller: 'mainController'
+                })
+                .when('/admin', {
+                    templateUrl: 'views/admin.html',
+                    controller: 'mapController'
+                });
+
+    });
 </script>
 <script src="assets/js/routes.js"></script>
 <script src="controllers/mainController.js"></script>
 <script src="controllers/mapController.js"></script>
+<script src="controllers/adminController.js"></script>
 <script src="services/portalService.js"></script>
 <script src="services/chartService.js"></script>
 <script src="services/service.js"></script>

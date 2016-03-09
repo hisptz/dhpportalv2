@@ -827,6 +827,7 @@
                                 $scope.logedOut = false;
                                 $scope.logedSuccessMessage = "LoggedIn as "+userdata.displayName+": Connected to DHIS2.";
                                 $scope.closeLoginForm();
+                                $location.path('/main');
                             //utilityService.getDataElements().then(function(data){
                             //    utilityService.prepareDataElementUid(data);
                             //    utilityService.prepareDataElementNames(data);
