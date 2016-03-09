@@ -42,6 +42,10 @@
         admin.csvfile = null;
         admin.pdffile = null;
         admin.profile = {};
+
+        if(!$scope.$parent.currentLogedUser){
+            window.location.href="#home";
+        }
         /**
         * THE BEGINNING OF THE FUNCTION THAT HANDLES ADMIN PAGE FUNCTIONALITY OF PORTAL
         * */
@@ -61,6 +65,11 @@
             $('select').material_select();
 
         }
+
+        admin.home = function(){
+            window.location.href = "#/home";
+        }
+
         //
         //admin.drawTable = function(year,orgUnit){
         //    if(orgUnit==admin.tanzania){

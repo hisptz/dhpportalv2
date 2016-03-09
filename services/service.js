@@ -203,6 +203,10 @@
                 }
                 return periods;
         }
+
+        profile.logOut = function(){
+            window.location.href = "#/home";
+        }
     }
 
 
