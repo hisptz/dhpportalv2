@@ -149,7 +149,7 @@
 
             <div class="input-field col s12 m6 l6 orgDropdown grey lighten-5"  >
                 <ul class="right hide-on-med-and-down">
-                    <li ng-if="currentLogedUser"><a ><i class="fa fa-user fa-2x"></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;<a ng-click="userLogout()">Logout</a></li>
+                    <li ng-if="currentLogedUser"><a ><i class="fa fa-user fa-2x"></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a ng-click="userLogout()" style="cursor: pointer;">Logout</a></li>
                     <li ng-if="!currentLogedUser"><a modal href="#login_modal" >Login</a></li>
                 </ul>
             </div>
