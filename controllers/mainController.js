@@ -871,6 +871,17 @@
             $('#login_modal').openModal();
 
         }
+
+
+
+        $scope.userLogout = function(){
+            $scope.logedSuccessMessage = null;
+            $scope.logedFailureMessage = null;
+            $('#login_modal').openModal();
+
+        }
+
+
         $scope.closeLoginForm = function(){
             $('#login_modal').closeModal();
 
