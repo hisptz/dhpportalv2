@@ -511,9 +511,7 @@
                     console.warn("organisation unit can't load internal server or network error")
                 });
 
-                if(success.data.length>30){
 
-                }
 
             },function(failure){
 
