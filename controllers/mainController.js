@@ -122,6 +122,13 @@
 
         $scope.getDHPResources = function(organisationUnit,year){
             dataService.getPopulationData(organisationUnit,year).then(function(data){
+                var categoryOption = data.metaData.co;
+                var dataElement    = data.metaData.dx;
+                var names          = data.metaData.names;
+                var rows           = data.rows;
+
+
+
                 console.log(data);
             },function(response){
 
