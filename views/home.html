@@ -149,7 +149,7 @@
 
             <div class="input-field col s12 m6 l6 orgDropdown grey lighten-5"  >
                 <ul class="right hide-on-med-and-down">
-                    <li ng-if="currentLogedUser"><a ><i class="fa fa-user fa-2x"></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a ng-click="userLogout()" style="cursor: pointer;">Logout</a></li>
+                    <li ng-if="currentLogedUser"><a ><i class="fa fa-user "></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a ng-click="userLogout()" style="cursor: pointer;">Logout</a></li>
                     <li ng-if="!currentLogedUser"><a modal href="#login_modal" >Login</a></li>
                 </ul>
             </div>
@@ -1401,8 +1401,8 @@
         <h4 style="text-align: center"></h4>
         <div style="width: 100%">
             <p style="font-weight: bolder;font-size: 14px;">DHP Login (DHIS2 users only)</p>
-            <p style="color:red;font-weight: bolder;" ng-if="main.logedFailureMessage">{{main.logedFailureMessage}}</p>
-            <p style="color:green;font-weight: bolder;" ng-if="main.logedSuccessMessage">{{main.logedSuccessMessage}}</p>
+            <p style="color:red;font-weight: bolder;" ng-if="logedFailureMessage">{{logedFailureMessage}}</p>
+            <p style="color:green;font-weight: bolder;" ng-if="logedSuccessMessage">{{logedSuccessMessage}}</p>
             <div class="row">
                 <div class="preloader-wrapper small active" ng-if="progressLogin">
                     <div class="spinner-layer spinner-green-only">
