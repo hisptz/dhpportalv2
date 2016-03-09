@@ -8,8 +8,8 @@
         })
         .controller('mainController', mainController);
 
-    mainController.$inject   = ['$scope','$cookies','$http','$timeout','$location','DTOptionsBuilder', 'DTColumnDefBuilder','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
-    function mainController($scope,$cookies,$http,$timeout,$location,DTOptionsBuilder, DTColumnDefBuilder,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
+    mainController.$inject   = ['$scope','$cookies','$http','$timeout','$location','DTOptionsBuilder', 'DTColumnDefBuilder','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
+    function mainController($scope,$cookies,$http,$timeout,$location,DTOptionsBuilder, DTColumnDefBuilder,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
         var main  = this;
         var date = new Date();
          // this is the main object do not delete this variable
@@ -52,7 +52,7 @@
             visible:'consumption by demographic'
         }];
 
-        $scope.newView = "And That's is the view";
+        $scope.newView = "";
 
 
         $scope.switchViewCallback = function(scopeObj) {
@@ -119,6 +119,14 @@
         $scope.totalMales = 0;
         $scope.totalFemales = 0;
 
+
+        $scope.getDHPResources = function(organisationUnit,year){
+            dataService.getPopulationData(organisationUnit,year).then(function(data){
+                console.log(data);
+            },function(response){
+
+            });
+        }
 
 
         //// front page UX functions
@@ -377,33 +385,6 @@
 
             }
         }
-
-
-        //$scope.previewData = function(form){
-        //    var profiledata = {};
-        //
-        //    utilityService.getDataPreview(form).then(function(data){
-        //
-        //        $scope.filterProfiles(data);
-        //
-        //        utilityService.prepareTabledata(data).then(function(){
-        //            profiledata = utilityService.tableDatas;
-        //            angular.forEach(profiledata,function(profileValue,profileIndex){
-        //                if($scope.profile[profileValue.name] !="undefined"){
-        //                    $scope.profile[profileValue.name] = profileValue.value;
-        //                }
-        //            });
-        //
-        //        });
-        //
-        //    },function(response){
-        //        $scope.failureMessage = " Loading failed check network connection";
-        //    });
-        //}
-        //
-
-
-
 
         $scope.getOrgunitFileStatistics = function(facility_name){
             var file_counts = 0;
@@ -814,10 +795,6 @@
                                 $scope.logedSuccessMessage = "LoggedIn as "+userdata.displayName+": Connected to DHIS2.";
                                 $scope.closeLoginForm();
                                 window.location.href = "#/admin";
-                            //utilityService.getDataElements().then(function(data){
-                            //    utilityService.prepareDataElementUid(data);
-                            //    utilityService.prepareDataElementNames(data);
-                            //});
                             }else{
                                 $cookies.remove('dhis_enabled');
                                 $cookies.remove('current_user');
@@ -940,6 +917,8 @@
 
             });
         };
+
+        $scope.getDHPResources("m0frOspS7JY",2015);
 
 
 
