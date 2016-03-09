@@ -193,6 +193,16 @@
 
             return {region:region,district:district_name,year:year};
         }
+
+        profile.getPeriods = function(start_period){
+                var date = new Date();
+                var periods = [];
+                var thisyear = date.getFullYear();
+                for(var i=Number(thisyear);i>=Number(start_period);i--){
+                    periods.push({name:i,value:i})
+                }
+                return periods;
+        }
     }
 
 
