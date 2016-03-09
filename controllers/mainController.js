@@ -877,7 +877,9 @@
         $scope.userLogout = function(){
             $scope.logedSuccessMessage = null;
             $scope.logedFailureMessage = null;
-            $('#login_modal').openModal();
+            $scope.currentLogedUser    = null;
+
+
 
         }
 
