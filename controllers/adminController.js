@@ -137,61 +137,61 @@
         //
         //}
         //
-        //admin.saveProfile = function(form,pdf_file,orgUnit){
-        //    admin.editProfileForm = false;
-        //    admin.addProfileForm = true;
-        //    admin.list = false;
-        //    admin.uploadcsv = false;
-        //    admin.previewcsv = false;
-        //
-        //    angular.forEach(admin.districts,function(value,index){
-        //        if(value.id==orgUnit){
-        //            form.org_unit_selected = value.name;
-        //            return false;
-        //        }
-        //
-        //    });
-        //
-        //    var payload = {file_name:form.org_unit_selected+"_"+form.form_period+".pdf",file_object:pdf_file};
-        //    if(!admin.selectedEntryDistrict&&!form.form_period){
-        //
-        //    }else{
-        //        profileService.saveProfile(payload).then(function(data){
-        //            admin.showProgress = false;
-        //            if(data=="UPLOAD_FAILED"){
-        //                admin.loadingUpload = false;
-        //                admin.message = "upload failed";
-        //                admin.message_class = "failed";
-        //            }
-        //
-        //            if(data=="UPLOAD_SUCCESS"){
-        //                admin.loadingUpload = false;
-        //                admin.showList();
-        //                admin.message = "uploaded successful";
-        //                admin.message_class = "success";
-        //            }
-        //
-        //            if(data=="FILE_EXIST_ERROR"){
-        //                admin.loadingUpload = false;
-        //                admin.message = "file exist";
-        //                admin.message_class = "failed";
-        //            }
-        //
-        //            if(data=="INVALID_TYPE_ERROR"){
-        //                admin.message = "file is not pdf";
-        //                admin.message_class = "failed";
-        //            }
-        //
-        //        },function(response){
-        //            console.log("NETWORK ERROR");
-        //            admin.loadingUpload = false;
-        //            admin.message = "Upload failed: internal server error";
-        //            admin.message_class = "failed";
-        //        });
-        //    }
-        //
-        //}
-        //
+        admin.saveProfile = function(form,pdf_file,orgUnit){
+            admin.editProfileForm = false;
+            admin.addProfileForm = true;
+            admin.list = false;
+            admin.uploadcsv = false;
+            admin.previewcsv = false;
+
+            angular.forEach(admin.districts,function(value,index){
+                if(value.id==orgUnit){
+                    form.org_unit_selected = value.name;
+                    return false;
+                }
+
+            });
+
+            var payload = {file_name:form.org_unit_selected+"_"+form.form_period+".pdf",file_object:pdf_file};
+            if(!admin.selectedEntryDistrict&&!form.form_period){
+
+            }else{
+                profileService.saveProfile(payload).then(function(data){
+                    admin.showProgress = false;
+                    if(data=="UPLOAD_FAILED"){
+                        admin.loadingUpload = false;
+                        admin.message = "upload failed";
+                        admin.message_class = "failed";
+                    }
+
+                    if(data=="UPLOAD_SUCCESS"){
+                        admin.loadingUpload = false;
+                        admin.showList();
+                        admin.message = "uploaded successful";
+                        admin.message_class = "success";
+                    }
+
+                    if(data=="FILE_EXIST_ERROR"){
+                        admin.loadingUpload = false;
+                        admin.message = "file exist";
+                        admin.message_class = "failed";
+                    }
+
+                    if(data=="INVALID_TYPE_ERROR"){
+                        admin.message = "file is not pdf";
+                        admin.message_class = "failed";
+                    }
+
+                },function(response){
+                    console.log("NETWORK ERROR");
+                    admin.loadingUpload = false;
+                    admin.message = "Upload failed: internal server error";
+                    admin.message_class = "failed";
+                });
+            }
+
+        }
+
         admin.editProfile = function(profile){
             admin.editProfileForm = true;
             admin.addProfileForm = false;

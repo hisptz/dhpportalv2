@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62cf4d15-4153-401f-9b24-e80ff4516c4f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin.html" afterPath="$PROJECT_DIR$/views/admin.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/adminController.js" afterPath="$PROJECT_DIR$/controllers/adminController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/service.js" afterPath="$PROJECT_DIR$/services/service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dhpnew.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,8 +107,8 @@
       <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6666665" vertical-offset="864" max-vertical-offset="1944">
-              <caret line="58" column="82" selection-start-line="58" selection-start-column="82" selection-end-line="58" selection-end-column="82" />
+            <state vertical-scroll-proportion="-3.5789473" vertical-offset="894" max-vertical-offset="1944">
+              <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -169,11 +166,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adminController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/adminController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.9" vertical-offset="7149" max-vertical-offset="7848">
-              <caret line="422" column="43" selection-start-line="422" selection-start-column="43" selection-end-line="422" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="1549" max-vertical-offset="7848">
+              <caret line="95" column="27" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -181,10 +178,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54385966" vertical-offset="1503" max-vertical-offset="2232">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1503" max-vertical-offset="2232">
               <caret line="202" column="17" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="17" />
               <folding>
                 <element signature="e#3433#3813#0" expanded="false" />
@@ -232,8 +229,8 @@
         <option value="$PROJECT_DIR$/controllers/mainController.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/views/admin.html" />
-        <option value="$PROJECT_DIR$/controllers/adminController.js" />
         <option value="$PROJECT_DIR$/services/service.js" />
+        <option value="$PROJECT_DIR$/controllers/adminController.js" />
       </list>
     </option>
   </component>
@@ -1141,29 +1138,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665" vertical-offset="864" max-vertical-offset="1944">
-          <caret line="58" column="82" selection-start-line="58" selection-start-column="82" selection-end-line="58" selection-end-column="82" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/adminController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.9" vertical-offset="7149" max-vertical-offset="7848">
-          <caret line="422" column="43" selection-start-line="422" selection-start-column="43" selection-end-line="422" selection-end-column="43" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54385966" vertical-offset="1503" max-vertical-offset="2232">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1503" max-vertical-offset="2232">
           <caret line="202" column="17" selection-start-line="202" selection-start-column="17" selection-end-line="202" selection-end-column="17" />
           <folding>
             <element signature="e#3433#3813#0" expanded="false" />
@@ -1179,6 +1156,26 @@
             <element signature="e#13075#13605#0" expanded="false" />
             <element signature="e#13656#14474#0" expanded="false" />
             <element signature="e#14536#14899#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5789473" vertical-offset="894" max-vertical-offset="1944">
+          <caret line="61" column="34" selection-start-line="61" selection-start-column="34" selection-end-line="61" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#7;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/adminController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1549" max-vertical-offset="7848">
+          <caret line="95" column="27" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
