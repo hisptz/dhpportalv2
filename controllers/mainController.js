@@ -873,7 +873,7 @@
             $scope.csv_menu = false;
             $scope.logedSuccessMessage = null;
             $scope.logedFailureMessage = null;
-            $location.path("/");
+            $scope.$apply(function() { $location.path("/admin"); });
             $scope.currentLogedUser    = null;
 
         }
