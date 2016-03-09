@@ -793,20 +793,6 @@
 
 
         }
-        $scope.Logout = function(){
-            if($cookies.get('dhis_enabled')){
-                $cookies.remove('dhis_enabled');
-                $cookies.remove('current_user');
-            }
-            $cookies.remove('dhis_enabled');
-            $scope.currentLogedUser = "";
-            $scope.logedIn = false;
-            $scope.logedOut = true;
-            $scope.csv_menu = false;
-            $scope.logedSuccessMessage = null;
-            $scope.logedFailureMessage = null;
-            $location.path("/");
-        }
 
         $scope.userLogin = function(login){
 
@@ -827,7 +813,8 @@
                                 $scope.logedOut = false;
                                 $scope.logedSuccessMessage = "LoggedIn as "+userdata.displayName+": Connected to DHIS2.";
                                 $scope.closeLoginForm();
-                                $location.path('/main');
+                                $location.path("/");
+                                alert('abcd');
                             //utilityService.getDataElements().then(function(data){
                             //    utilityService.prepareDataElementUid(data);
                             //    utilityService.prepareDataElementNames(data);
@@ -875,9 +862,18 @@
 
 
         $scope.userLogout = function(){
-
+            if($cookies.get('dhis_enabled')){
+                $cookies.remove('dhis_enabled');
+                $cookies.remove('current_user');
+            }
+            $cookies.remove('dhis_enabled');
+            $scope.currentLogedUser = "";
+            $scope.logedIn = false;
+            $scope.logedOut = true;
+            $scope.csv_menu = false;
             $scope.logedSuccessMessage = null;
             $scope.logedFailureMessage = null;
+            $location.path("/");
             $scope.currentLogedUser    = null;
 
         }
