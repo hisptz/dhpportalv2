@@ -875,11 +875,10 @@
 
 
         $scope.userLogout = function(){
+
             $scope.logedSuccessMessage = null;
             $scope.logedFailureMessage = null;
             $scope.currentLogedUser    = null;
-
-
 
         }
 
