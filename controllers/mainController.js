@@ -813,8 +813,7 @@
                                 $scope.logedOut = false;
                                 $scope.logedSuccessMessage = "LoggedIn as "+userdata.displayName+": Connected to DHIS2.";
                                 $scope.closeLoginForm();
-                                $location.path("/");
-                                alert('abcd');
+                                window.location.href = "#/admin";
                             //utilityService.getDataElements().then(function(data){
                             //    utilityService.prepareDataElementUid(data);
                             //    utilityService.prepareDataElementNames(data);
@@ -873,8 +872,7 @@
             $scope.csv_menu = false;
             $scope.logedSuccessMessage = null;
             $scope.logedFailureMessage = null;
-            window.location.href = "#/admin";
-            //$scope.$apply(function() { $location.path("/admin"); });
+            window.location.href = "#/home";
             $scope.currentLogedUser    = null;
 
         }
