@@ -9,7 +9,7 @@ angular.module("dhpportal")
         self.period = '';
         self.orgUnitId = '';
         self.header='';
-        self.base = "https://hmisportal.moh.go.tz/training/";
+        self.base = utilityService.baseDHIS;
         self.icons = [
             {name: 'table', image: 'table.jpg', action: ''},
             {name: 'bar', image: 'bar.png', action: ''},

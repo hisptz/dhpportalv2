@@ -122,14 +122,10 @@
 
         $scope.getDHPResources = function(organisationUnit,year){
             dataService.getPopulationData(organisationUnit,year).then(function(data){
-                var categoryOption = data.metaData.co;
-                var dataElement    = data.metaData.dx;
-                var names          = data.metaData.names;
-                var rows           = data.rows;
+                $scope.population = {};
 
+                $scope.population = dataService.createPopulationObject(data);
 
-
-                console.log(data);
             },function(response){
 
             });
@@ -375,7 +371,7 @@
         $scope.treeWithSelectedDistrict = function(uid){
             if($scope.organisationUnitTree[0].children!=null){
                     angular.forEach($scope.organisationUnitTree[0].children,function(chValue,chIndex){
-                        console.log(chValue);
+
                         angular.forEach(chValue.children,function(value,index){
                             if(value.id==uid){
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].isActive     = true;
@@ -384,7 +380,7 @@
                                 $scope.organisationUnitTree[0].children[chIndex].children[index].selected     = true;
 
                                 $scope.$watch('organisationUnitTree',function(first,last){
-                                    console.log($scope.organisationUnitTree);
+
                                 });
                             }
                         });
@@ -549,7 +545,7 @@
                 /// Dealing with map
 
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
-                    console.info("DATA FROM RENDER MAP");
+
 
 
 
@@ -621,7 +617,7 @@
                                 if(feature) {
                                     // looping throught indicator types
                                     $scope.selectedDistrict = feature ? mapService.features[feature.getId()] : '';
-                                    console.log(feature.getId());
+
                                     $scope.treeWithSelectedDistrict(feature.getId());
                                     var indicators = [
                                         {id:"zIAxcoxZ3Pl",name:"EAC: BCG dose given under one year"},
@@ -710,7 +706,6 @@
             var names        = data.metaData.names;
             var ou           = data.metaData.ou;
             var rows         = data.rows;
-            console.log(data);
             $scope.profile = {};
             angular.forEach(dataelements,function(value,index){
                 angular.forEach(rows,function(rowValue,rowIndex){

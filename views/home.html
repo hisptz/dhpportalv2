@@ -396,26 +396,27 @@
                             <div class="row profile-pages" style="color:#000000;">
                                 <p class="secondary_header">Table 0-1. {{selectedYear}} DHP Results Summary Table</p>
                                 <br/>
+
                                 <table class="profile_table">
                                     <tr style="background-color:#CEE4B3;"><td colspan="8">DISTRICT POPULATION AND FACILITY STATISTICS</td></tr>
                                     <tr style="background-color:#DCB081;"><td style="text-align: left">Demographics</td><td><1</td><td>1-4</td><td>5-14</td><td>15-49</td><td>50-60</td><td>>60</td><td>Total</td></tr>
                                     <tr><td style="text-align: left">Female</td>
-                                        <td>{{profile['DHP_Population_Female1']}}</td>
-                                        <td>{{profile['DHP_Population_Female2']}}</td>
-                                        <td>{{profile['DHP_Population_Female3']}}</td>
-                                        <td>{{profile['DHP_Population_Female4']}}</td>
-                                        <td>{{profile['DHP_Population_Female5']}}</td>
-                                        <td>{{profile['DHP_Population_Female6']}}</td>
-                                        <td>{{0 | addElements:profile['DHP_Population_Female1']:profile['DHP_Population_Female2']:profile['DHP_Population_Female3']:profile['DHP_Population_Female4']:profile['DHP_Population_Female5']:profile['DHP_Population_Female6']}}</td>
+                                        <td>{{population.female['< 1']}}</td>
+                                        <td>{{population.female['1-4']}}</td>
+                                        <td>{{population.female['5 - 14']}}</td>
+                                        <td>{{population.female['15-49']}}</td>
+                                        <td>{{population.female['50 - 60']}}</td>
+                                        <td>{{population.female['60+']}}</td>
+                                        <td>{{0 | addElements:population.female['< 1']:population.female['1-4']:population.female['5 - 14']:population.female['15-49']:population.female['50 - 60']:population.female['60+']}}</td>
                                     </tr>
                                     <tr><td style="text-align: left">Male</td>
-                                        <td>{{profile['DHP_Population_Male1']}}</td>
-                                        <td>{{profile['DHP_Population_Male2']}}</td>
-                                        <td>{{profile['DHP_Population_Male3']}}</td>
-                                        <td>{{profile['DHP_Population_Male4']}}</td>
-                                        <td>{{profile['DHP_Population_Male5']}}</td>
-                                        <td>{{profile['DHP_Population_Male6']}}</td>
-                                        <td>{{0 | addElements:profile['DHP_Population_Male1']:profile['DHP_Population_Male2']:profile['DHP_Population_Male3']:profile['DHP_Population_Male4']:profile['DHP_Population_Male5']:profile['DHP_Population_Male6']}}</td>
+                                        <td>{{population.male['< 1']}}</td>
+                                        <td>{{population.male['1-4']}}</td>
+                                        <td>{{population.male['5 - 14']}}</td>
+                                        <td>{{population.male['15-49']}}</td>
+                                        <td>{{population.male['50 - 60']}}</td>
+                                        <td>{{population.male['60+']}}</td>
+                                        <td>{{0 | addElements:population.male['< 1']:population.male['1-4']:population.male['5 - 14']:population.male['15-49']:population.male['50 - 60']:population.male['60+']}}</td>
                                     </tr>
                                 </table>
 

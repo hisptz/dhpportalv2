@@ -15,7 +15,6 @@
         chartService.prepareSeries = function(features,districts){
           var redfacility = districts.length;
           var greenfacility = 0;
-            console.log(districts);
             angular.forEach(districts,function(value){
 
                 if(features[value.id].color=="green"){

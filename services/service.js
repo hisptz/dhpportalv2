@@ -9,10 +9,11 @@
         .service('profileService', profileService)
         .service('utilityService', utilityService);
     profileService.$inject = ['$http','Upload'];
-    utilityService.$inject = ['$http'];
+    utilityService.$inject = ['$http','profileService'];
     function profileService($http,Upload) {
       var profile = this;
-        profile.baseDHIS = "https://hmisportal.moh.go.tz/training/";
+        profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
+        //profile.baseDHIS = "http://localhost:8080/";
         profile.basePortal = "server/";
         profile.listProfileByYear = function(year){
             return $http.get(profile.basePortal+'process.php?by_year='+year+'&only=1').then(handleSuccess, handleError('Error creating user'));
@@ -63,9 +64,10 @@
             return $http.get(profile.basePortal+"process.php?delete="+health_profile).then(handleSuccess, handleError('Error creating user'));
         }
     }
-    function utilityService($http) {
+    function utilityService($http,profileService) {
       var profile = this;
-        profile.baseDHIS = "https://hmisportal.moh.go.tz/training/";
+        //profile.baseDHIS = "https://hmisportal.moh.go.tz/training/";
+        profile.baseDHIS = profileService.baseDHIS;
         profile.basePortal = "server/";
         profile.dataelementsUrl = profile.baseDHIS+"api/dataElements.json?filter=dataElementGroups.id:eq:TWx3Doxh1jG&fields=[name,id]&paging=false";
         profile.loadOrganisationUnits = function(){
