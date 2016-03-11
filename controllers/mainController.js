@@ -129,6 +129,14 @@
             },function(response){
 
             });
+
+            dataService.getIndicatorData(organisationUnit,year).then(function(data){
+                console.log("HEALTH STATUS");
+                $scope.healthstatus = dataService.createHealthStatusObject(data,year);
+
+            },function(response){
+                console.info("NO INDICTORS");
+            });
         }
 
 
@@ -681,7 +689,7 @@
                 /// Dealing with profile data
                     $scope.prepareTabledataFromAnalytics(analytics_data);
 
-
+                    $scope.getDHPResources($scope.orgunitString,$scope.selectedYear);
 
 
 
@@ -787,7 +795,7 @@
                     $scope.progressLogin = false;
 
                         utilityService.getUserDetails().then(function(userdata){
-                            if(typeof(userdata)=="object"&&userdata.userCredentials.code==username&&username!="Demo"){
+                            if(typeof(userdata)=="object"){
                                 $cookies.put('dhis_enabled', 'logedIn');
                                 $cookies.put('current_user', userdata.displayName);
                                 $scope.currentLogedUser = $cookies.get('current_user');
@@ -920,7 +928,7 @@
             });
         };
 
-        $scope.getDHPResources("m0frOspS7JY",2015);
+
 
 
 
