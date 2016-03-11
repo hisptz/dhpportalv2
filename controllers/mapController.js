@@ -73,7 +73,7 @@
 
                         var orgUnitsString = utilityService.prepareOrgString(data.features);
 
-                        var profilePromise = profileService.checkProfileByOrgUnitAndPeriod(orgUnitsString,$scope.$parent.main.selectedYear);
+                        var profilePromise = profileService.checkProfileByOrgUnitAndPeriod(orgUnitsString,$scope.$parent.selectedYear);
                         profilePromise.then(function(datas){
                             var withDataSet = [];
                             if(datas.completeDataSetRegistrations!=="undefined"){
@@ -276,18 +276,18 @@
                                 });
 
                                 $scope.$on('openlayers.layers.geojson.click', function(event, feature, olEvent) {
-                                    $scope.$parent.main.chart_shown = false;
-                                    $scope.$parent.main.backToGrid()
+                                    $scope.$parent.chart_shown = false;
+                                    $scope.$parent.backToGrid()
                                     //$scope.closeTootipHover();
                                     $scope.$apply(function(scope) {
                                         $scope.selectedDistrict = feature ? $scope.districts[feature.getId()] : '';
-                                        $scope.$parent.main.org_unit_selected = scope.selectedDistrict.district_id;
+                                        $scope.$parent.org_unit_selected = scope.selectedDistrict.district_id;
                                         if(feature) {
                                             // looping throught indicator types
                                             scope.selectedDistrict = feature ? $scope.districts[feature.getId()] : '';
                                             $scope.selectedDistrictName = scope.selectedDistrict.name;
                                             var orgUnit = {children:null};
-                                            $scope.$parent.main.processView(orgUnit,scope.selectedDistrict.name,scope.selectedDistrict.district_id)
+                                            $scope.$parent.processView(orgUnit,scope.selectedDistrict.name,scope.selectedDistrict.district_id)
 
 
                                         }

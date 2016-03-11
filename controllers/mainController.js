@@ -184,10 +184,12 @@
         if(localStorage.getItem("seriesObject")||localStorage.getItem("seriesObject")!=null){
             localStorage.removeItem("seriesObject");
         }
+
         if($cookies.get('dhis_enabled')){
             $scope.logedIn = true;
             $scope.logedOut = false;
         }
+
         $scope.showChart = function(){
             $scope.showChD = "active";
             $scope.showTabD = "";

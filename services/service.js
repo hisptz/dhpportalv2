@@ -139,7 +139,7 @@
         }
 
 
-        profile.completeDataset = function(orgunit,period,successCallback){
+        profile.completeDataset  = function(orgunit,period,successCallback){
     var completenessUrl = profile.baseDHIS+"api/completeDataSetRegistrations?ds=Pc2t6Tq5era&pe="+period+"&ou="+orgunit;
             $http({
                 method: 'POST',
@@ -150,7 +150,7 @@
             }).success(successCallback);
 }
 
-        profile.modifyOrgUnits = function(rawOrgUnits){
+        profile.modifyOrgUnits   = function(rawOrgUnits){
             var Regions = [];
             var i  = 0;
             angular.forEach(rawOrgUnits,function(value,index){
@@ -164,7 +164,7 @@
             return Regions;
         }
 
-        profile.prepareTabledata = function(data){
+        profile.prepareTabledata     = function(data){
 
            return profile.getDataElements().then(function(dataElements){
                var dElements =[];
@@ -184,11 +184,11 @@
            });
 
         }
-        profile.getPropertiesArray = function(profile_string){
-            var stage_one = profile_string.split("_");
-            var region = stage_one[0];
-            var district_name = stage_one[1];
-            var year_and_format = stage_one[2];
+        profile.getPropertiesArray   = function(profile_string){
+            var stage_one        = profile_string.split("_");
+            var region           = stage_one[0];
+            var district_name    = stage_one[1];
+            var year_and_format  = stage_one[2];
 
             var stage_two = year_and_format.split(".");
             var year = stage_two[0];
@@ -196,9 +196,9 @@
             return {region:region,district:district_name,year:year};
         }
 
-        profile.getPeriods = function(start_period){
-                var date = new Date();
-                var periods = [];
+        profile.getPeriods   = function(start_period){
+                var date     = new Date();
+                var periods  = [];
                 var thisyear = date.getFullYear();
                 for(var i=Number(thisyear);i>=Number(start_period);i--){
                     periods.push({name:i,value:i})
@@ -207,11 +207,12 @@
         }
 
         profile.getConsecutivePeriods = function(start_perod){
-            var periods = [];
+            var periods      = [];
 
-            for(var counter = 2; counter>=0;counter--){
+            for(var counter  = 2; counter   >=  0;counter--){
                 periods.push(start_perod-counter);
             }
+
             return periods;
         }
 
