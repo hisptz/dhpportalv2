@@ -12,8 +12,8 @@
     utilityService.$inject = ['$http','profileService'];
     function profileService($http,Upload) {
       var profile = this;
-        //profile.baseDHIS = "https://hmisportal.moh.go.tz/training/";
-        profile.baseDHIS = "http://localhost:8080/";
+        profile.baseDHIS = "https://hmisportal.moh.go.tz/training/";
+        //profile.baseDHIS = "http://localhost:8080/";
         profile.basePortal = "server/";
         profile.listProfileByYear = function(year){
             return $http.get(profile.basePortal+'process.php?by_year='+year+'&only=1').then(handleSuccess, handleError('Error creating user'));
