@@ -140,6 +140,10 @@
         }
 
 
+        $scope.admin = function(){
+            window.location.href = "#/admin";
+        }
+
         //// front page UX functions
         $scope.showMaps = function(){
             $scope.dashboardObject.displayMap = true;
@@ -806,7 +810,7 @@
                                 $scope.logedOut = false;
                                 $scope.logedSuccessMessage = "LoggedIn as "+userdata.displayName+": Connected to DHIS2.";
                                 $scope.closeLoginForm();
-                                window.location.href = "#/admin";
+
                             }else{
                                 $cookies.remove('dhis_enabled');
                                 $cookies.remove('current_user');
