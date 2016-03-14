@@ -4,7 +4,7 @@ include_once('functions.php');
 if(isset($_GET["file"])) { $test_variable = "for upload";
 	$target_file = $_GET['new_file_name'];
 
-	$target_dir = "/usr/share/nginx/html/dhpportal/uploads/";
+	$target_dir = "/usr/share/nginx/html/dhpportalv2/uploads/";
 	$target_file = $target_dir . basename($target_file);
 	$uploadOk = 1;
 	$fileType = pathinfo($target_file,PATHINFO_EXTENSION);
