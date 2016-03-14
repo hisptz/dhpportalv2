@@ -163,9 +163,29 @@
         $scope.downloadCSV = function(){
             var array = []
             angular.forEach($scope.dashboardObject.table.tableObject,function(value){
-                array.push({profile:value.name});
+
+                if(doesFileExist('uploads/'+value.name)){
+                    array.push({profile:value.name});
+                }else{
+
+                }
+
             });
             return array;
+        }
+
+        function doesFileExist(urlToFile)
+        {
+            var xhr = new XMLHttpRequest();
+            xhr.open('HEAD', urlToFile, false);
+            xhr.send();
+
+            if (xhr.status == "404") {
+                return false;
+            } else {
+                console.log('file doesnot exist');
+                return true;
+            }
         }
 
         $scope.getCSVHeader = function(){
