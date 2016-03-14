@@ -15,8 +15,8 @@
         })
         .controller('adminController', adminController);
 
-    adminController.$inject   = ['$scope','$cookies', '$http','$q','$timeout', 'olData','olHelpers','shared','profileService','DTOptionsBuilder','Upload','utilityService'];
-    function adminController($scope,$cookies, $http,$timeout,$q, olData,olHelpers,shared,profileService,DTOptionsBuilder,Upload,utilityService) {
+    adminController.$inject   = ['$scope','$rootScope','$cookies', '$http','$q','$timeout', 'olData','olHelpers','shared','profileService','DTOptionsBuilder','Upload','utilityService'];
+    function adminController($scope,$rootScope,$cookies, $http,$timeout,$q, olData,olHelpers,shared,profileService,DTOptionsBuilder,Upload,utilityService) {
         var admin = this;
         var date = new Date();
         admin.current_year = date.getFullYear();
@@ -43,9 +43,9 @@
         admin.pdffile = null;
         admin.profile = {};
 
-        if(!$scope.$parent.currentLogedUser){
-            window.location.href="#home";
-        }
+        //if(!$scope.$parent.currentLogedUser){
+        //    window.location.href="#home";
+        //}
         /**
         * THE BEGINNING OF THE FUNCTION THAT HANDLES ADMIN PAGE FUNCTIONALITY OF PORTAL
         * */
@@ -298,30 +298,30 @@
         //}
         //
         admin.uploadProfileToDHIS = function(form){
-            $scope.$parent.failureMessage = null;
+            $rootScope.failureMessage = null;
             admin.message = null;
             admin.loading = true;
             if(admin.selectedEntryRegion==null){
-                $scope.$parent.failureMessage = 'Form not Submitted!, Select Region';
+                $rootScope.failureMessage = 'Form not Submitted!, Select Region';
                 admin.loading = false;
                 return false;
             }
 
             if(admin.selectedCSVEntryDistrict==null){
-                $scope.$parent.failureMessage = 'Form not Submitted!, Select District';
+                $rootScope.failureMessage = 'Form not Submitted!, Select District';
                 admin.loading = false;
                 return false;
             }
 
 
             if(admin.csvfile==null){
-                $scope.$parent.failureMessage = 'Form not Submitted!, Choose CSV file';
+                $rootScope.failureMessage = 'Form not Submitted!, Choose CSV file';
                 admin.loading = false;
                 return false;
             }
 
             if(admin.pdffile==null){
-                $scope.$parent.failureMessage = 'Form not Submitted!, Choose Pdf ReadOnly file';
+                $rootScope.failureMessage = 'Form not Submitted!, Choose Pdf ReadOnly file';
                 admin.loading = false;
                 return false;
             }
@@ -331,7 +331,7 @@
             admin.list = false;
             admin.addProfileForm = false;
             admin.previewcsv = false;
-            $scope.$parent.failureMessage = null;
+            $rootScope.failureMessage = null;
                 admin.saveProfile(form,admin.pdffile,admin.selectedCSVEntryDistrict);
 
             form.org_unit_selected = admin.selectedCSVEntryDistrict;

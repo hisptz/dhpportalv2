@@ -8,8 +8,8 @@
         })
         .controller('mainController', mainController);
 
-    mainController.$inject   = ['$scope','$cookies','$http','$timeout','$location','DTOptionsBuilder', 'DTColumnDefBuilder','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
-    function mainController($scope,$cookies,$http,$timeout,$location,DTOptionsBuilder, DTColumnDefBuilder,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
+    mainController.$inject   = ['$scope','$rootScope','$cookies','$http','$timeout','$location','DTOptionsBuilder', 'DTColumnDefBuilder','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
+    function mainController($scope,$rootScope,$cookies,$http,$timeout,$location,DTOptionsBuilder, DTColumnDefBuilder,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
         var main  = this;
         var date = new Date();
          // this is the main object do not delete this variable
@@ -22,9 +22,8 @@
         $scope.submitted = 0;
         $scope.notsubmitted = 0;
         $scope.allAvailable = mapService.features.length;
-
         // page failure message dialogue
-        $scope.failureMessage = null;
+        $rootScope.failureMessage = null;
 
 
         $scope.fpCards = [{
@@ -483,7 +482,7 @@
 
         // load organisation unit fro tree
         $scope.loadOrganisationUnit = function(){
-            $scope.failureMessage = null;
+            $rootScope.failureMessage = null;
             // login to dhis server for pulling authenticated resources
             utilityService.login('Demo','HMISDEMO2016').then(function(success){
 
@@ -533,7 +532,7 @@
 
             },function(failure){
 
-                $scope.failureMessage = " Can not load organisation units ,check network connection";
+                $rootScope.failureMessage = " Can not load organisation units ,check network connection";
             })
 
 
@@ -571,7 +570,7 @@
                     url = profileService.baseDHIS+selective_url;
                 }
 
-                $scope.failureMessage = null;
+                $rootScope.failureMessage = null;
                 $http({method:'GET',url:url,dataType:'json',catche:true,isModified:true}).then(function(analytics){
 
                 var analytics_data = analytics.data;
@@ -708,7 +707,7 @@
                     });
 
                 },function(response){
-                    $scope.failureMessage = "failed to load resources, check network connection";
+                    $rootScope.failureMessage = "failed to load resources, check network connection";
                 });
 
 
@@ -720,7 +719,7 @@
 
 
                 },function(failure){
-                  $scope.failureMessage = "failed to load resources, check network connection";
+                    $rootScope.failureMessage = "failed to load resources, check network connection";
             });
 
 
@@ -755,12 +754,12 @@
         }
 
         $scope.getOrganisationUnit = function(){
-            $scope.failureMessage = null;
+            $rootScope.failureMessage = null;
             utilityService.getOrgUnits().then(function(data){
                 $scope.data.organisationUnits = sortingOrUnit(data.organisationUnits);
                 $scope.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
             },function(status){
-                $scope.failureMessage = "failed to load resources, check network connection";
+                $rootScope.failureMessage = "failed to load resources, check network connection";
             });
         }
 
@@ -816,7 +815,7 @@
             $scope.progressLogin = true;
             var username = login.dhis_login_username;
             var password = login.dhis_login_password;
-            $scope.failureMessage = null;
+            $rootScope.failureMessage = null;
                 utilityService.login(username,password).then(function(data){
                     $scope.progressLogin = false;
 
@@ -848,10 +847,10 @@
                                 $scope.logedOut = true;
                                 $scope.logedFailureMessage = "Login Failed: check network connection";
                                 $scope.progressLogin = false;
-                            $scope.failureMessage = "failed to login, check network connection";
+                            $rootScope.failureMessage = "failed to login, check network connection";
                         });
                 },function(response){
-                    $scope.failureMessage = "failed to login, check network connection";
+                    $rootScope.failureMessage = "failed to login, check network connection";
                                 $cookies.remove('dhis_enabled');
                                 $cookies.remove('current_user');
                                 $scope.logedIn = false;
@@ -910,7 +909,7 @@
 
         // upload on file select or drop
         $scope.upload = function (file,new_file_name) {
-            $scope.failureMessage = null;
+            $rootScope.failureMessage = null;
             Upload.upload({
                 url: 'server/process.php?file=1&new_file_name='+new_file_name,
                 data: {file: file}
@@ -939,7 +938,7 @@
 
             }, function (resp) {
                 $scope.showProgress = false;
-                $scope.failureMessage = "Upload failure";
+                $rootScope.failureMessage = "Upload failure";
             }, function (evt) {
                 var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
                 if(!evt.config.data.file){
