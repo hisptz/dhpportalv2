@@ -298,29 +298,30 @@
         //}
         //
         admin.uploadProfileToDHIS = function(form){
+            $scope.$parent.failureMessage = null;
             admin.message = null;
             admin.loading = true;
             if(admin.selectedEntryRegion==null){
-                Materialize.toast('Form not Submitted!, Select Region', 2000, 'rounded');
+                $scope.$parent.failureMessage = 'Form not Submitted!, Select Region';
                 admin.loading = false;
                 return false;
             }
 
             if(admin.selectedCSVEntryDistrict==null){
-                Materialize.toast('Form not Submitted!, Select District', 2000, 'rounded');
+                $scope.$parent.failureMessage = 'Form not Submitted!, Select District';
                 admin.loading = false;
                 return false;
             }
 
 
             if(admin.csvfile==null){
-                Materialize.toast('Form not Submitted!, Choose CSV file', 2000, 'rounded');
+                $scope.$parent.failureMessage = 'Form not Submitted!, Choose CSV file';
                 admin.loading = false;
                 return false;
             }
 
             if(admin.pdffile==null){
-                Materialize.toast('Form not Submitted!, Choose Pdf ReadOnly file', 2000, 'rounded');
+                $scope.$parent.failureMessage = 'Form not Submitted!, Choose Pdf ReadOnly file';
                 admin.loading = false;
                 return false;
             }

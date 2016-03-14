@@ -115,23 +115,11 @@
 </head>
 <body style="height:100%">
 <div class="page-wrap">
-<!--information toast-->
-<div id="toast-container" ng-show="$root.showProgressMessage" ng-if="!showLoader">
-    <div class="toast ng-cloak" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 121, 107, 0); top: 0px; opacity: 1;" > {{ $root.progressMessage }}</div>
-</div>
 
-<!--excel download message-->
-<!--<div class="col s12 m5" style="position: absolute;bottom: 5px;right: 5px;z-index: 203200" ng-if="failureMessage">-->
-    <!--<div class="card-panel white">-->
-        <!--<span class="{{display_block}}" style="display: none">{{failureMessage}}</span>-->
-    <!--</div>-->
-<!--</div>-->
-
-    <div class="col s12 m5 {{display_block}}"  style="position: absolute;bottom: 5px;right: 5px;z-index: 203200;display: none"  ng-show="failureMessage">
-        <div class="card-panel white" ng-show="failureMessage" >
-            <span class="{{display_block}}" style="display: none">{{failureMessage}}</span>
-        </div>
+    <div id="toast-container" ng-if="failureMessage">
+        <div class="toast ng-cloak" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 121, 107, 0); top: 0px; opacity: 1;" > {{ failureMessage }} </div>
     </div>
+
 
 <div class="navbar-fixed z-depth-2">
     <nav class="teal darken-2">
