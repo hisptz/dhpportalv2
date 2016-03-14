@@ -299,24 +299,29 @@
         //
         admin.uploadProfileToDHIS = function(form){
             admin.message = null;
+            admin.loading = true;
             if(admin.selectedEntryRegion==null){
-                Materialize.toast('Form not Submitted!, Select Region', 2000, 'rounded')
+                Materialize.toast('Form not Submitted!, Select Region', 2000, 'rounded');
+                admin.loading = false;
                 return false;
             }
 
             if(admin.selectedCSVEntryDistrict==null){
-                Materialize.toast('Form not Submitted!, Select District', 2000, 'rounded')
+                Materialize.toast('Form not Submitted!, Select District', 2000, 'rounded');
+                admin.loading = false;
                 return false;
             }
 
 
             if(admin.csvfile==null){
-                Materialize.toast('Form not Submitted!, Choose CSV file', 2000, 'rounded')
+                Materialize.toast('Form not Submitted!, Choose CSV file', 2000, 'rounded');
+                admin.loading = false;
                 return false;
             }
 
             if(admin.pdffile==null){
-                Materialize.toast('Form not Submitted!, Choose Pdf ReadOnly file', 2000, 'rounded')
+                Materialize.toast('Form not Submitted!, Choose Pdf ReadOnly file', 2000, 'rounded');
+                admin.loading = false;
                 return false;
             }
             admin.loadingUpload = true;
@@ -348,11 +353,13 @@
                         admin.selectedCSVEntryDistrict=null;
                         admin.csvfile = null;
                         admin.pdffile = null;
+                        admin.loading = false;
 
                     }
 
                     if(data=="UPLOAD_SUCCESS"){
                         admin.loadingUpload = false;
+                        admin.loading = false;
                         //admin.showList();
                         admin.message = "uploaded successful";
                         admin.message_class = "success";
@@ -363,12 +370,14 @@
 
                     if(data=="FILE_EXIST_ERROR"){
                         admin.loadingUpload = false;
+                        admin.loading = false;
                         admin.message = "file exist";
                         admin.message_class = "failed";
                     }
 
                     if(data=="INVALID_TYPE_ERROR"){
                         admin.loadingUpload = false;
+                        admin.loading = false;
                         admin.message = "file is not csv";
                         admin.message_class = "failed";
                     }
