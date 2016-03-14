@@ -138,7 +138,7 @@
 
             </div>
 
-            <div class="input-field col s12 m3 l3 grey lighten-5" >
+            <div class="input-field col s12 m1 l1 grey lighten-5" >
 
                 <select ng-change="selectPeriod()" ng-model="selectedYear"  material-select watch>
                     <option ng-selected="selectedYear" value="{{selectedYear}}">{{selectedYear}}</option>
@@ -147,7 +147,7 @@
                 <label>Period</label>
             </div>
 
-            <div class="input-field col s12 m6 l6 orgDropdown grey lighten-5"  >
+            <div class="input-field col s12 m8 l8 orgDropdown grey lighten-5"  >
                 <ul class="right hide-on-med-and-down">
                     <li ng-if="currentLogedUser"><a ><i class="fa fa-user "></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a ng-click="userLogout()" style="cursor: pointer;">Logout</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="cursor: pointer;" ng-click="admin()"><i class="fa fa-cog"></i>&nbsp;Admin</a></li>
                     <li ng-if="!currentLogedUser"><a modal href="#login_modal" >Login</a></li>
