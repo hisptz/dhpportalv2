@@ -331,8 +331,8 @@
             admin.list = false;
             admin.addProfileForm = false;
             admin.previewcsv = false;
-
-            admin.saveProfile(form,admin.pdffile,admin.selectedCSVEntryDistrict);
+            $scope.$parent.failureMessage = null;
+                admin.saveProfile(form,admin.pdffile,admin.selectedCSVEntryDistrict);
 
             form.org_unit_selected = admin.selectedCSVEntryDistrict;
 
