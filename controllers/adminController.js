@@ -43,9 +43,9 @@
         admin.pdffile = null;
         admin.profile = {};
 
-        //if(!$scope.$parent.currentLogedUser){
-        //    window.location.href="#home";
-        //}
+        if(!$scope.$parent.currentLogedUser){
+            window.location.href="#home";
+        }
         /**
         * THE BEGINNING OF THE FUNCTION THAT HANDLES ADMIN PAGE FUNCTIONALITY OF PORTAL
         * */
