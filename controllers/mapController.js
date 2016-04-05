@@ -216,9 +216,13 @@
                                     }
                                 ],defaults: {
                                     events: {
-                                        layers: [ 'mousemove', 'click']
+                                        layers: [ 'mousemove', 'click', 'pointermove']
                                     }
-                                }
+                                },
+                                mouseposition: {},
+                                mouseclickposition: {},
+                                projection: 'EPSG:3857'
+
                             });
 
                             $scope.districts = {};
@@ -227,7 +231,7 @@
                                 $scope.districts[district['district_id']] = district;
                             });
 
-
+                            $scope.enter = 0;
                             olData.getMap().then(function(map) {
                                 var previousFeature;
                                 var overlay = new ol.Overlay({
@@ -239,6 +243,7 @@
                                 var overlayHidden = true;
                                 // Mouse click function, called from the Leaflet Map Events
                                 $scope.$on('openlayers.layers.geojson.mousemove', function(event, feature, olEvent) {
+                                    console.log(feature);
                                     $scope.$apply(function(scope) {
 
                                         scope.selectedDistrictHover = feature ? $scope.districts[feature.getId()] : '';
@@ -274,7 +279,20 @@
                                         previousFeature = feature;
                                     }
                                 });
-
+                                $scope.$on('openlayers.layers.geojson.pointermove', function(event, data) {
+                                    $scope.$apply(function() {
+                                        if ($scope.projection === data.projection) {
+                                            $scope.mouseposition = data.coord;
+                                        } else {
+                                            var p = ol.proj.transform([ data.coord[0], data.coord[1] ], data.projection, $scope.projection);
+                                            $scope.mouseposition = {
+                                                lat: p[1],
+                                                lon: p[0],
+                                                projection: $scope.projection
+                                            }
+                                        }
+                                    });
+                                });
                                 $scope.$on('openlayers.layers.geojson.click', function(event, feature, olEvent) {
                                     $scope.$parent.chart_shown = false;
                                     $scope.$parent.backToGrid()
@@ -323,6 +341,7 @@
                                     });
 
                                 });
+
                             });
                             $scope.closeTootip = function(){
                                 $scope.selectedDistrict = null;

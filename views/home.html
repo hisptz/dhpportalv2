@@ -127,14 +127,15 @@
 <div class="col s12 m12 l12">
     <div class="col s12 z-depth-1" style="background-color:#ffffff;">
         <div class="section grey lighten-5 " >
-
             <div class="input-field col s12 m3 l3 orgDropdown grey lighten-5"  >
                 <multi-select-tree data-input-model="organisationUnitTree" multi-select="true"
                                    data-output-model="selectedItems" data-default-label="Organisation Units"
                                    data-callback="selectedCallback(item, selectedItems)"
                                    data-select-only-leafs="false" data-switch-view-callback="switchViewCallback(scopeObj)"
-                                   data-switch-view-label="test1" data-switch-view="true"
-                        ></multi-select-tree>
+                                   data-switch-view="true"
+                >
+
+                </multi-select-tree>
 
             </div>
 
@@ -169,8 +170,7 @@
                         <p ng-if="!dashboardObject.map.layers" class="center" style="text-align: center;">
                             <img src="assets/img/preloader.gif" style="height:30px;width:90px;margin-top: 50%;margin-left: 50%">
                         </p>
-                        <div ng-show="dashboardObject.displayMap">
-
+                        <div ng-show="dashboardObject.displayMap" >
                             <openlayers ng-if="dashboardObject.map.layers" ol-center="dashboardObject.map.Africa" ol-defaults="dashboardObject.map.defaults" custom-layers="true"  height="400px" >
                                 <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in dashboardObject.map.layers"></ol-layer>
                             </openlayers>

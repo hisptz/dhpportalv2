@@ -8,8 +8,8 @@
         })
         .controller('mainController', mainController);
 
-    mainController.$inject   = ['$scope','$rootScope','$cookies','$http','$timeout','$location','DTOptionsBuilder', 'DTColumnDefBuilder','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
-    function mainController($scope,$rootScope,$cookies,$http,$timeout,$location,DTOptionsBuilder, DTColumnDefBuilder,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
+    mainController.$inject   = ['$scope','$rootScope','$cookies','$http','$timeout','$interval','$location','DTOptionsBuilder', 'DTColumnDefBuilder','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
+    function mainController($scope,$rootScope,$cookies,$http,$timeout,$interval,$location,DTOptionsBuilder, DTColumnDefBuilder,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
         var main  = this;
         var date = new Date();
          // this is the main object do not delete this variable
@@ -25,6 +25,7 @@
         // page failure message dialogue
         $rootScope.failureMessage = null;
 
+        //console.log(mainContrl);
 
         $scope.fpCards = [{
             title:'Clients < 20 Years of Age Quarterly',
@@ -109,7 +110,7 @@
         $scope.message_class = null;
         $scope.progressPercent = '0%';
         $scope.orgUnitTable = [];
-        $scope.organisationUnitTree = [{name:'Tanzania',id:'m0frOspS7JY','children':[],'isExpanded':false,'isActive':true,'isFiltered':false,'selected':true}];
+        //$scope.organisationUnitTree = [{name:'Tanzania',id:'m0frOspS7JY','children':[],'isExpanded':false,'isActive':true,'isFiltered':false,'selected':true}];
         $scope.logedSuccessMessage = null;
         $scope.logedFailureMessage = null;
         $scope.profile = {};
@@ -394,7 +395,7 @@
         $scope.filterProfiles = function(data){
 
             var dataElement  = localStorage.getItem('dataElementNames');
-            dataElement = JSON.parse(dataElement);
+                dataElement  = JSON.parse(dataElement);
             angular.forEach(dataElement,function(valueOfDataEl,indexOfDataEl){
                 $scope.profile[valueOfDataEl] = "";
             });
@@ -402,25 +403,28 @@
         }
 
         $scope.treeWithSelectedDistrict = function(uid){
-            if($scope.organisationUnitTree[0].children!=null){
+            console.log($scope.organisationUnitTree);
+            var orgUnit = $scope.organisationUnitTree;
+            //if(organisationUnitTree[0].children!=null){
                     angular.forEach($scope.organisationUnitTree[0].children,function(chValue,chIndex){
 
                         angular.forEach(chValue.children,function(value,index){
                             if(value.id==uid){
-                                $scope.organisationUnitTree[0].children[chIndex].children[index].isActive     = true;
-                                $scope.organisationUnitTree[0].children[chIndex].children[index].isExpanded   = false;
-                                $scope.organisationUnitTree[0].children[chIndex].children[index].isFiltered   = true;
-                                $scope.organisationUnitTree[0].children[chIndex].children[index].selected     = true;
+                                orgUnit[0].children[chIndex].children[index].selected  = true;
+                                orgUnit[0].children[chIndex].children[index].isActive  = true;
+                                    $scope.drawOrgUnitTree(null);
+                                    //$scope.drawOrgUnitTree(orgUnit);
 
-                                $scope.$watch('organisationUnitTree',function(first,last){
 
-                                });
                             }
                         });
+
+
                     });
 
-            }
+            //}
         }
+
 
         $scope.getOrgunitFileStatistics = function(facility_name){
             var file_counts = 0;
@@ -480,6 +484,18 @@
             return parentOrg;
         }
 
+        $scope.drawOrgUnitTree = function(organisationUnit){
+
+            if(typeof $scope.organisationUnitTree == "undefined") {
+
+                $scope.organisationUnitTree = organisationUnit;
+            }else{
+                $scope.organisationUnitTree = [];
+                $scope.organisationUnitTree = organisationUnit;
+            }
+
+        }
+
         // load organisation unit fro tree
         $scope.loadOrganisationUnit = function(){
             $rootScope.failureMessage = null;
@@ -490,12 +506,13 @@
                 utilityService.loadOrganisationUnits().then(function(data){
 
                     /// initialize tree varaibale after safe login
-                    $scope.organisationUnitTree = data.organisationUnits;
-                    if($scope.organisationUnitTree.length>=1){
-                        $scope.organisationUnitTree[0].isExpanded = false;
-                        $scope.organisationUnitTree[0].isActive = true;
-                        $scope.organisationUnitTree[0].isFiltered = false;
-                        $scope.organisationUnitTree[0].selected = true;
+                    var organisatonunit = data.organisationUnits;
+                    if(organisatonunit.length>=1){
+                        organisatonunit[0].isExpanded = false;
+                        organisatonunit[0].isActive = true;
+                        organisatonunit[0].isFiltered = false;
+                        organisatonunit[0].selected = true;
+                        $scope.drawOrgUnitTree(organisatonunit);
                     }
 
 
@@ -555,6 +572,8 @@
                 }
 
 
+
+
             prepareOrgUnitStrings();
 
 
@@ -603,13 +622,19 @@
                         });
                         var overlayHidden = true;
                         // Mouse click function, called from the Leaflet Map Events
+                        $scope.lastFeature = null;
                         $scope.$on('openlayers.layers.geojson.mousemove', function(event, feature, olEvent) {
+
+
+
                             $scope.$apply(function($scope) {
 
                                 $scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
                                 if(feature) {
                                     $scope.selectedDistrictHover = feature ? mapService.features[feature.getId()] : '';
                                 }
+
+
 
 
                             });
@@ -631,8 +656,9 @@
                                         opacity:0.4
                                     },
                                     stroke: {
-                                        color: '#A3CEC5',
-                                        width:2
+                                        //color: '#A3CEC5',
+                                        color: '#D0D0D0',
+                                        width:3
 
                                     }
                                 }));

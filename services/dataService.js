@@ -59,9 +59,9 @@
             var rows           = data.rows;
 
             angular.forEach(dataElement,function(elementValue,elementIndex){
-                angular.forEach(output,function(valueOutput,indexOutput){console.log(indexOutput)
+                angular.forEach(output,function(valueOutput,indexOutput){
                     angular.forEach(rows,function(valueRow,indexRow){
-                        console.log(rows[indexRow]);
+
                         if(indexOutput==rows[indexRow][1]){
                             if(elementValue==rows[indexRow][0]){
                                 output[indexOutput][names[elementValue]] = rows[indexRow][2];
@@ -71,7 +71,6 @@
                 });
 
             });
-console.log(output);
             return output;
         }
 

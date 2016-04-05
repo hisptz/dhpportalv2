@@ -55,7 +55,7 @@ angular.module("dhpportal")
                 feature.properties.parent       = value.pi;
                 feature.properties.parentGraph  = value.pg;
                 feature.id  = value.id;
-                feature.style  = map.getStyle(feature);
+                feature.style  = null;
                 map.geoLayer.features.push(feature);
 
 
@@ -105,12 +105,15 @@ angular.module("dhpportal")
                         },
                         style: map.getStyle
                     }
-                ],
-                defaults: {
+                ],defaults: {
                     events: {
-                        layers: [ 'mousemove', 'click']
+                        layers: [ 'mousemove', 'click', 'pointermove']
                     }
-                }
+                },
+                mouseposition: {},
+                mouseclickposition: {},
+                projection: 'EPSG:3857'
+
             }
 
             return boundaries;
