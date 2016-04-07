@@ -66,7 +66,6 @@
     }
     function utilityService($http,profileService) {
       var profile = this;
-        profile.baseDHIS = "https://dhis.moh.go.tz/";
         profile.baseDHIS = profileService.baseDHIS;
         profile.basePortal = "server/";
         profile.dataelementsUrl = profile.baseDHIS+"api/dataElements.json?filter=dataElementGroups.id:eq:TWx3Doxh1jG&fields=[name,id]&paging=false";
@@ -75,8 +74,8 @@
             return $http.get(profile.baseDHIS+'api/organisationUnits.json?filter=level:eq:1&paging=false&fields=id,name,children[id,name,children[id,name]]').then(handleSuccess, handleError('Error creating user'));
         }
         profile.getOrgUnits = function(){
-            return $http.get(profile.basePortal+'organisationUnits.json').then(handleSuccess, handleError('Error creating user'));
-            //return $http.get(profile.baseDHIS+'api/organisationUnits.json?level=3&fields=[name]&paging=false').then(handleSuccess, handleError('Error creating user'));
+            //return $http.get(profile.basePortal+'organisationUnits.json').then(handleSuccess, handleError('Error creating user'));
+            return $http.get(profile.baseDHIS+'api/organisationUnits.json?level=3&fields=[name]&paging=false').then(handleSuccess, handleError('Error creating user'));
         }
 
         profile.login = function(username,password){
