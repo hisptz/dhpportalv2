@@ -6,6 +6,7 @@ class DhpFile {
         
         public static $directional_image="iVBORw0KGgoAAAANSUhEUgAAAfMAAABeCAIAAAC4mGqYAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA";
         public static $dir = "../uploads/";
+        public static $filePath = "home/dhis/tomcat-main/ROOT/webapps/dhpportal/";
 
 		/**
 		 *  Delete file function
@@ -45,7 +46,7 @@ class DhpFile {
 		 * */
 		 
 		public static function processUploadsForDHIS($target_file,$period,$orgUnit,$category,$attributeoptioncombo,$names,$uids){
-			$csv_file = "/usr/share/nginx/html/dhpportal/downloads/datavalueset.csv";
+			$csv_file = $filePath."downloads/datavalueset.csv";
 			$json_object = [];
 				$file_handle = fopen($target_file, 'r');
 				while (!feof($file_handle) ) {
@@ -114,7 +115,7 @@ class DhpFile {
 		 * */
 		 
 		public static function saveDataToCSVFile($table_name,$json_object,$available_fields,$period,$names,$uids,$orgUnit,$category,$attributeoptioncombo){
-			$csv_file = "/usr/share/nginx/html/dhpportal/downloads/datavalueset.csv";
+			$csv_file = $filePath."downloads/datavalueset.csv";
 			$query_string = "";
 			$csv_array = array();
 
@@ -264,7 +265,7 @@ class DhpFile {
 
 		public static function send_CSV_To_Dhis($csv_file){
 		                $old_path = getcwd();
-						chdir('/usr/share/nginx/html/dhpportal/downloads/');
+						chdir($filePath.'downloads/');
 						$output = shell_exec('./pushdatavalue.sh');
 //						$output = shell_exec('./completedataset.sh');
 						chdir($old_path);
