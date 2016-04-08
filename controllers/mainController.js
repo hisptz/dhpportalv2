@@ -359,8 +359,6 @@
             }
         }
 
-
-
         $scope.processViewPdf = function(orgUnit,name,id){
             var proposed_files = [];
             var orgUnitWithFiles = JSON.parse(localStorage.getItem('widataset'));
@@ -448,7 +446,6 @@
             //}
         }
 
-
         $scope.getOrgunitFileStatistics = function(facility_name){
             var file_counts = 0;
             var total = 0;
@@ -474,7 +471,6 @@
         };
         $scope.getOrgUnitWithAvailableFilesThisYear();
 
-
         /// get organisation unit string for map
         $scope.orgunitString = "";
         function prepareOrgUnitStrings(){
@@ -490,7 +486,6 @@
             });
 
         }
-
 
         /// sort organisation unit
         function sortingOrUnit(parentOrg){
@@ -582,7 +577,7 @@
         $scope.loadOrganisationUnit();
 
 
-            $scope.registerChanges = function(newperiod,newvalue){
+        $scope.registerChanges = function(newperiod,newvalue){
                 // hide all views and show loading image
                 $scope.dashboardObject.map.layers = null;
                 if(!newvalue||newvalue.length==0){
@@ -1002,10 +997,6 @@
 
             });
         };
-
-
-
-
 
     }
 
