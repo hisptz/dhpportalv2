@@ -805,6 +805,7 @@
         $scope.getOrganisationUnit = function(){
             $rootScope.failureMessage = null;
             utilityService.getOrgUnits().then(function(data){
+                console.log(data);
                 $scope.data.organisationUnits = sortingOrUnit(data.organisationUnits);
                 $scope.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
             },function(status){
