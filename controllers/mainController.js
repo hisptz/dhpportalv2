@@ -149,7 +149,7 @@
                 console.info("NO INDICTORS");
             });
 
-            var indicator = 'BlZrj2FC6bG;TdxVgoa08tn;TvgyTWvJamX;WhsP7nsuwnz;Y1pkrlq2hWi;bzTuXoKa87E;heyJnpx5b37;ohw1MBklYkc;qHpMHX3KWZn;sxBx8Bone59;uOOJi6b0pzm;z9ispsHeYNw;zIAxcoxZ3Pl';
+            //var indicator = 'BlZrj2FC6bG;TdxVgoa08tn;TvgyTWvJamX;WhsP7nsuwnz;Y1pkrlq2hWi;bzTuXoKa87E;heyJnpx5b37;ohw1MBklYkc;qHpMHX3KWZn;sxBx8Bone59;uOOJi6b0pzm;z9ispsHeYNw;zIAxcoxZ3Pl';
             //dataService.getIndicatorDataSystem(indicator,organisationUnit,year).then(function(data){
             //    console.log("HEALTH STATUS");
             //    $scope.healthstatus = dataService.createHealthStatusObject(data,year);
