@@ -13,6 +13,9 @@
         chartService.totalFacilities = 0;
 
         chartService.prepareSeries = function(features,districts){
+            if(typeof districts == "undefined"){
+                return {submitted:0,notsubmmitted:0};
+            }
           var redfacility = districts.length;
           var greenfacility = 0;
             angular.forEach(districts,function(value){

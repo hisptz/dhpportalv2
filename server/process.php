@@ -1,10 +1,11 @@
 <?php
 include_once('functions.php');
-// Check if  file is a csv
+$filePath = "/usr/share/nginx/html/dhpportal/";
+// Check if  file variable
 if(isset($_GET["file"])) { $test_variable = "for upload";
 	$target_file = $_GET['new_file_name'];
 
-	$target_dir = "/usr/share/nginx/html/dhpportalv2/uploads/";
+	$target_dir = $filePath."uploads/";
 	$target_file = $target_dir . basename($target_file);
 	$uploadOk = 1;
 	$fileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -50,7 +51,7 @@ if(isset($_GET["csv_input"])){
     $uidsArray               = json_decode($decodedUids, true);
 
 //    $target_dir              = "dataset/";
-    $target_dir              = "/usr/share/nginx/html/dhpportal/dataset/";
+    $target_dir              = $filePath."dataset/";
     $target_file             = $target_dir . basename($target_file);
     $uploadOk                = 1;
     $fileType                = pathinfo($target_file,PATHINFO_EXTENSION);

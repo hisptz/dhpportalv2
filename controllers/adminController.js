@@ -298,6 +298,9 @@
         //}
         //
         admin.uploadProfileToDHIS = function(form){
+
+
+
             $rootScope.failureMessage = null;
             admin.message = null;
             admin.loading = true;
@@ -348,7 +351,7 @@
                     admin.showProgress = false;
                     if(data=="UPLOAD_FAILED"){
                         admin.loadingUpload = false;
-                        admin.message = "upload failed";
+                        admin.message = "Upload Failed";
                         admin.message_class = "failed";
                         admin.selectedEntryRegion=null;
                         admin.selectedCSVEntryDistrict=null;
@@ -362,7 +365,7 @@
                         admin.loadingUpload = false;
                         admin.loading = false;
                         //admin.showList();
-                        admin.message = "uploaded successful";
+                        admin.message = "Upload Successful";
                         admin.message_class = "success";
                         utilityService.completeDataset(form.org_unit_selected,form.form_period,function(dataComplete){
 
@@ -372,14 +375,14 @@
                     if(data=="FILE_EXIST_ERROR"){
                         admin.loadingUpload = false;
                         admin.loading = false;
-                        admin.message = "file exist";
+                        admin.message = "File Exist";
                         admin.message_class = "failed";
                     }
 
                     if(data=="INVALID_TYPE_ERROR"){
                         admin.loadingUpload = false;
                         admin.loading = false;
-                        admin.message = "file is not csv";
+                        admin.message = "File is not csv";
                         admin.message_class = "failed";
                     }
 

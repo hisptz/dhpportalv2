@@ -13,7 +13,7 @@
         <ul class="collapsible" data-collapsible="accordion">
 
             <li>
-                <div class="collapsible-header active"><i class="material-icons">library_add</i>Health Profile </div>
+                <div class="collapsible-header active"><i class="fa fa-folder-open fa-2x"></i>Health Profile </div>
                 <div class="collapsible-body">
                     <ul class="section table-of-contents">
                         <!--<li><a style="cursor: pointer;" ng-click="admin.readOnlyDataPreview()">Profile Preview</a></li>-->
@@ -62,15 +62,30 @@
                             </div>
 
                             <div class="row">
-                                <div class="button" ngf-select ng-model="admin.csvfile" name="csvfile" ngf-pattern="'.csv'"
-                                     accept="application/csv" ><a href="#"><i class="fa fa-file-excel-o fa-2x"></i> Click to select a CSV File</a></div>
+                                <div id="csvFile" class="button" ngf-select ng-model="admin.csvfile" name="csvfile" ngf-pattern="'.csv'"
+                                     accept="application/csv" >
+                                    <p ng-if="!admin.csvfile">
+                                        <a href="#"><i class="fa fa-file-excel-o fa-2x"></i> Click to select a CSV File</a>
+                                    </p>
+                                    <p ng-if="admin.csvfile">
+                                        <a href="#"><i class="fa fa-file-excel-o fa-2x"></i> Click to change a CSV File <img src="assets/img/text_csv.png" style="width:30px;"></a>
+                                    </p>
+                                </div>
                             </div>
 
                             <br/>
                             <br/>
                             <div class="row">
                                 <div class="button" ngf-select ng-model="admin.pdffile" name="pdffile" ngf-pattern="'.pdf'"
-                                     accept="application/pdf" ><a href="#"><i class="fa fa-file-pdf-o fa-2x"></i> Click to select a readOnly PDF File</a></div>
+                                     accept="application/pdf" >
+
+                                    <p ng-if="!admin.pdffile">
+                                        <a href="#"><i class="fa fa-file-pdf-o fa-2x"></i> Click to select a readOnly PDF File</a>
+                                    </p>
+                                    <p ng-if="admin.pdffile">
+                                        <a href="#"><i class="fa fa-file-pdf-o fa-2x"></i> Click to change PDF File <img src="assets/img/pdf.png" style="width:30px;"></a>
+                                    </p>
+                                </div>
                             </div>
 
                             <div class="row">
