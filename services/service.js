@@ -13,8 +13,8 @@
     function profileService($http,Upload) {
       var profile = this;
         //profile.baseDHIS = "https://dhis.moh.go.tz/";
-        profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
-        //profile.baseDHIS = "http://localhost:8080/";
+        //profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
+        profile.baseDHIS = "http://localhost:8080/";
         profile.basePortal = "server/";
         profile.listProfileByYear = function(year){
             return $http.get(profile.basePortal+'process.php?by_year='+year+'&only=1').then(handleSuccess, handleError('Error creating user'));
@@ -74,6 +74,7 @@
             //return $http.get(profile.basePortal+'organisationUnits_level_1_org.json').then(handleSuccess, handleError('Error creating user'));
             return $http.get(profile.baseDHIS+'api/organisationUnits.json?filter=level:eq:1&paging=false&fields=id,name,children[id,name,children[id,name]]').then(handleSuccess, handleError('Error creating user'));
         }
+
         profile.getOrgUnits = function(){
             //return $http.get(profile.basePortal+'organisationUnits.json').then(handleSuccess, handleError('Error creating user'));
             return $http.get(profile.baseDHIS+'api/organisationUnits.json?level=3&fields=[name]&paging=false').then(handleSuccess, handleError('Error creating user'));
