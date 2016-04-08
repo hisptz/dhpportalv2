@@ -9,13 +9,27 @@
         var dataService = this;
         dataService.baseDHIS = profileService.baseDHIS;
         dataService.getPopulationData = function(orgunit,period){
+
             //return $http.get("server/analytics.json").then(handleSuccess, handleError('Error loading population data'));
             return $http.get(dataService.baseDHIS+"api/analytics.json?dimension=Cow9nZikDgD:FfN1mqXvpR7;HKU7NijIEIH;LBipXEMD6mq;aZcKJ9XxvaF;h8JRv8POdfy;p1b4SYcdjJw&dimension=dx:ykShMtNgDB1&dimension=hENn80Fmmlf:mtUMlCLFTTz;syxWmui9UMq&filter=ou:"+orgunit+"&filter=pe:"+period).then(handleSuccess, handleError('Error loading population data'));
         }
 
-        dataService.getIndicatorData = function(orgunit,periods){
-            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:BlZrj2FC6bG;TdxVgoa08tn;TvgyTWvJamX;WhsP7nsuwnz;Y1pkrlq2hWi;bzTuXoKa87E;heyJnpx5b37;ohw1MBklYkc;qHpMHX3KWZn;sxBx8Bone59;uOOJi6b0pzm;z9ispsHeYNw;zIAxcoxZ3Pl&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            //var therIndicatorUrl = "server/indicatorsanaltics.json";
+        dataService.getIndicatorDataDistribution = function(indicator,orgunit,period){
+            var periodArray = utilityService.getConsecutivePeriods(period);
+            var periods = periodArray[0]+";"+periodArray[1]+";"+periodArray[2];
+            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            return $http.get(therIndicatorUrl).then(handleSuccess,handleError('Error loading HMIS Indicators'));
+        }
+        dataService.getIndicatorDataDelivery = function(indicator,orgunit,period){
+            var periodArray = utilityService.getConsecutivePeriods(period);
+            var periods = periodArray[0]+";"+periodArray[1]+";"+periodArray[2];
+            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            return $http.get(therIndicatorUrl).then(handleSuccess,handleError('Error loading HMIS Indicators'));
+        }
+        dataService.getIndicatorDataSystem = function(indicator,orgunit,period){
+            var periodArray = utilityService.getConsecutivePeriods(period);
+            var periods = periodArray[0]+";"+periodArray[1]+";"+periodArray[2];
+            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
             return $http.get(therIndicatorUrl).then(handleSuccess,handleError('Error loading HMIS Indicators'));
         }
 
@@ -59,6 +73,8 @@
             var rows           = data.rows;
 
             angular.forEach(dataElement,function(elementValue,elementIndex){
+                console.log(names[elementValue]);
+                console.log(elementValue);
                 angular.forEach(output,function(valueOutput,indexOutput){
                     angular.forEach(rows,function(valueRow,indexRow){
 

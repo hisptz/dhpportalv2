@@ -12,7 +12,8 @@
     utilityService.$inject = ['$http','profileService'];
     function profileService($http,Upload) {
       var profile = this;
-        profile.baseDHIS = "https://dhis.moh.go.tz/";
+        //profile.baseDHIS = "https://dhis.moh.go.tz/";
+        profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
         //profile.baseDHIS = "http://localhost:8080/";
         profile.basePortal = "server/";
         profile.listProfileByYear = function(year){

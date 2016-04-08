@@ -1,7 +1,7 @@
 <?php
 include_once('functions.php');
-//$filePath = "/usr/share/nginx/html/dhpportal/";
-$filePath = "home/dhis/tomcat-main/ROOT/webapps/dhpportal/";
+$filePath = "/usr/share/nginx/html/dhpportal/";
+//$filePath = "home/dhis/tomcat-main/ROOT/webapps/dhpportal/";
 // Check if  file variable
 if(isset($_GET["file"])) { $test_variable = "for upload";
 	$target_file = $_GET['new_file_name'];

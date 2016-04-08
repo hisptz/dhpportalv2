@@ -6,7 +6,8 @@ class DhpFile {
         
         public static $directional_image="iVBORw0KGgoAAAANSUhEUgAAAfMAAABeCAIAAAC4mGqYAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA";
         public static $dir = "../uploads/";
-        public static $filePath = "home/dhis/tomcat-main/ROOT/webapps/dhpportal/";
+        ///public static $filePath = "home/dhis/tomcat-main/ROOT/webapps/dhpportal/";
+        public static $filePath = "/usr/share/nginx/html/dhpportal/";
 
 		/**
 		 *  Delete file function

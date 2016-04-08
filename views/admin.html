@@ -67,8 +67,8 @@
                                     <p ng-if="!admin.csvfile">
                                         <a href="#"><i class="fa fa-file-excel-o fa-2x"></i> Click to select a CSV File</a>
                                     </p>
-                                    <p ng-if="admin.csvfile">
-                                        <a href="#"><i class="fa fa-file-excel-o fa-2x"></i> Click to change a CSV File <img src="assets/img/text_csv.png" style="width:30px;"></a>
+                                    <p ng-if="admin.csvfile" >
+                                        <a href="#" style="color:forestgreen;"><i class="fa fa-file-excel-o fa-2x"></i> Click to change a CSV File <img src="assets/img/text_csv.png" style="width:30px;"></a>
                                     </p>
                                 </div>
                             </div>
@@ -79,11 +79,11 @@
                                 <div class="button" ngf-select ng-model="admin.pdffile" name="pdffile" ngf-pattern="'.pdf'"
                                      accept="application/pdf" >
 
-                                    <p ng-if="!admin.pdffile">
+                                    <p ng-if="!admin.pdffile" >
                                         <a href="#"><i class="fa fa-file-pdf-o fa-2x"></i> Click to select a readOnly PDF File</a>
                                     </p>
-                                    <p ng-if="admin.pdffile">
-                                        <a href="#"><i class="fa fa-file-pdf-o fa-2x"></i> Click to change PDF File <img src="assets/img/pdf.png" style="width:30px;"></a>
+                                    <p ng-if="admin.pdffile" >
+                                        <a href="#" style="color:forestgreen;"><i class="fa fa-file-pdf-o fa-2x"></i> Click to change PDF File <img src="assets/img/pdf.png" style="width:30px;"></a>
                                     </p>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col m12 s12" ng-if="!admin.message">
+                                <div class="col m12 s12" ng-if="!admin.message" >
                                     <img src="assets/img/preloader.gif" style="height:30px;width:90px" ng-if="admin.loading">
                                 </div>
                             </div>
