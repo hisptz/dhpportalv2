@@ -1667,24 +1667,20 @@
                     </div>
                 </div>
             </div>
-            <form class="col s12" style="margin-top: 100px;">
-                <div class="row">
+            <form class="col s12" >
                     <div class="input-field col s12">
                         <input id="email" type="text" class="validate" ng-model="login.dhis_login_username">
                         <label for="email">Username</label>
                     </div>
-                </div>
-                <div class="row">
                     <div class="input-field col s12">
                         <input id="password" type="password" class="validate" ng-model="login.dhis_login_password">
                         <label for="password">Password</label>
                     </div>
-                </div>
-                <div class="row">
                     <div class="input-field col s12"><!--modal-close-->
-                        <a class="waves-effect modal-action  waves-light btn  col s12 m12" style="background-color:#00796B" ng-click="userLogin(login)">Login</a>
+                        <div class="row">
+                            <a class="waves-effect modal-action  waves-light btn  col s12 m12" style="background-color:#00796B" ng-click="userLogin(login)">Login</a>
+                        </div>
                     </div>
-                </div>
 
             </form>
         </div>
