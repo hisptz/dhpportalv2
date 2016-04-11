@@ -616,9 +616,6 @@
 
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
 
-
-
-
                     if (typeof orgunits.data == "object" ){
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
                         $scope.submitted = mapService.submitted;
@@ -937,7 +934,9 @@
 
         $scope.closeLoginForm = function(){
             $('#login_modal').closeModal();
-
+            $scope.progressLogin = null;
+            $scope.logedSuccessMessage = null;
+            $scope.logedFailureMessage = null;
         }
 
         $scope.submit = function(form) {

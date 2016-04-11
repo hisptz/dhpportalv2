@@ -678,9 +678,9 @@
                                     <tr>
                                         <td class="align_left">Proportion of LGAs with improved capacity to provide quality welfare and protection services</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthstatus[selectedYear-2]['Proportion of LGAs']}}</td>
-                                        <td>{{healthstatus[selectedYear-1]['Proportion of LGAs']}}</td>
-                                        <td>{{healthstatus[selectedYear-0]['Proportion of LGAs']}}</td>
+                                        <td>{{healthDelivery[selectedYear-2]['Proportion of LGAs']}}</td>
+                                        <td>{{healthDelivery[selectedYear-1]['Proportion of LGAs']}}</td>
+                                        <td>{{healthDelivery[selectedYear-0]['Proportion of LGAs']}}</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
 
@@ -1647,11 +1647,11 @@
 </div>
 
 
-<div id="login_modal" class="modal" style="border-radius: 10px;width: 60%;max-height: 100%">
+<div id="login_modal" class="modal" style="border-radius: 10px;width:25%!important;;max-height: 100%;font-size: 12px;text-align:center;">
     <div class="modal-content">
         <h4 style="text-align: center"></h4>
-        <div style="width: 100%">
-            <p style="font-weight: bolder;font-size: 14px;">DHP Login (DHIS2 users only)</p>
+        <div >
+            <p style="font-weight: bolder;font-size: 12px;text-align:center;">DHP Login (DHIS2 users only)</p>
             <p style="color:red;font-weight: bolder;" ng-if="logedFailureMessage">{{logedFailureMessage}}</p>
             <p style="color:green;font-weight: bolder;" ng-if="logedSuccessMessage">{{logedSuccessMessage}}</p>
             <div class="row">
