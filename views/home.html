@@ -498,9 +498,9 @@
                                         <td class="align_left">Incidence of malaria/laboratory confirmed cases</td>
                                         <!--<td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaTarget']}}</td>-->
                                         <td></td>
-                                        <td>{{healthDistribution[selectedYear-2]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
-                                        <td>{{healthDistribution[selectedYear-1]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
-                                        <td>{{healthDistribution[selectedYear-0]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
+                                        <td>{{healthDistribution[selectedYear-2]['X OPD_Malaria Confirmed Blood Slide']}}</td>
+                                        <td>{{healthDistribution[selectedYear-1]['X OPD_Malaria Confirmed Blood Slide']}}</td>
+                                        <td>{{healthDistribution[selectedYear-0]['X OPD_Malaria Confirmed Blood Slide']}}</td>
                                         <td></td>
                                         <!--<td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaProgress']}}</td>-->
                                     </tr>
@@ -549,7 +549,7 @@
                                         <td colspan="6" class="align_left">General</td>
                                     </tr>
                                     <tr>
-                                        <td class="align_left">OPD attention</td>
+                                        <td class="align_left">OPD attendance</td>
                                         <td>{{profile['DHP_General_GeneralOPDAttendanceTarget']}}</td>
                                         <td>{{healthDelivery[selectedYear-2]['OPD Attendance per capita']}}</td>
                                         <td>{{healthDelivery[selectedYear-1]['OPD Attendance per capita']}}</td>
@@ -571,25 +571,25 @@
                                     <tr>
                                         <td class="align_left">Proportion of under 1 year 3rd polio (OPV3)</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthDelivery[selectedYear-2]['Proportion of under 1 year 3rd']}}</td>
-                                        <td>{{healthDelivery[selectedYear-1]['Proportion of under 1 year 3rd']}}</td>
-                                        <td>{{healthDelivery[selectedYear-0]['Proportion of under 1 year 3rd']}}</td>
+                                        <td>{{healthDelivery[selectedYear-2]['Proportion of under 1 year 3rd polio (OPV3)']}}</td>
+                                        <td>{{healthDelivery[selectedYear-1]['Proportion of under 1 year 3rd polio (OPV3)']}}</td>
+                                        <td>{{healthDelivery[selectedYear-0]['Proportion of under 1 year 3rd polio (OPV3)']}}</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr>
                                         <td class="align_left">Proportion of under 1 year BCG dose</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthDelivery[selectedYear-2]['Proportion of under 1 year']}}</td>
-                                        <td>{{healthDelivery[selectedYear-1]['Proportion of under 1 year']}}</td>
-                                        <td>{{healthDelivery[selectedYear-0]['Proportion of under 1 year']}}</td>
+                                        <td>{{healthDelivery[selectedYear-2]['Proportion of under 1 year BCG dose']}}</td>
+                                        <td>{{healthDelivery[selectedYear-1]['Proportion of under 1 year BCG dose']}}</td>
+                                        <td>{{healthDelivery[selectedYear-0]['Proportion of under 1 year BCG dose']}}</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr>
                                         <td class="align_left">Proportion of under 1 year Penta3</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthDelivery[selectedYear-2]['Proportion of under 1 year']}}</td>
-                                        <td>{{healthDelivery[selectedYear-1]['Proportion of under 1 year']}}</td>
-                                        <td>{{healthDelivery[selectedYear-0]['Proportion of under 1 year']}}</td>
+                                        <td data-item="PENTA 3 vaccination coverage children under 1 year">{{healthDelivery[selectedYear-2]['PENTA 3 vaccination coverage children under 1 year']}}</td>
+                                        <td data-item="PENTA 3 vaccination coverage children under 1 year">{{healthDelivery[selectedYear-1]['PENTA 3 vaccination coverage children under 1 year']}}</td>
+                                        <td data-item="PENTA 3 vaccination coverage children under 1 year">{{healthDelivery[selectedYear-0]['PENTA 3 vaccination coverage children under 1 year']}}</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr class="header_two">
@@ -620,38 +620,38 @@
                                     <tr>
                                         <td class="align_left">Proportion of mothers who received two doses of preventative intermittent treatment for malaria during pregnancy during a specified time
                                         </td>
-                                        <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthDelivery[selectedYear-2]['Proportion of mothers who']}}</td>
-                                        <td>{{healthDelivery[selectedYear-1]['Proportion of mothers who']}}</td>
-                                        <td>{{healthDelivery[selectedYear-0]['Proportion of mothers who']}}</td>
+                                        <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
+                                        <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{healthDelivery[selectedYear-2]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
+                                        <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{healthDelivery[selectedYear-1]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
+                                        <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{healthDelivery[selectedYear-0]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr>
                                         <td class="align_left">Proportion of vulnerable groups sleeping under ITN the previous night
                                         </td>
-                                        <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthDelivery[selectedYear-2]['Proportion of vulnerable']}}</td>
-                                        <td>{{healthDelivery[selectedYear-1]['Proportion of vulnerable']}}</td>
-                                        <td>{{healthDelivery[selectedYear-0]['Proportion of vulnerable']}}</td>
-                                        <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
+                                        <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
+                                        <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{healthDelivery[selectedYear-2]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
+                                        <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{healthDelivery[selectedYear-1]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
+                                        <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{healthDelivery[selectedYear-0]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
+                                        <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr>
                                         <td class="align_left">Proportion of laboratory confirmed malaria cases among all OPD visits
                                         </td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthDelivery[selectedYear-2]['Proportion of laboratory']}}</td>
-                                        <td>{{healthDelivery[selectedYear-1]['Proportion of laboratory']}}</td>
-                                        <td>{{healthDelivery[selectedYear-0]['Proportion of laboratory']}}</td>
+                                        <td>{{healthDelivery[selectedYear-2]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
+                                        <td>{{healthDelivery[selectedYear-1]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
+                                        <td>{{healthDelivery[selectedYear-0]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr>
                                         <td class="align_left">TB notification rate per 100,000 population
                                         </td>
-                                        <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthDelivery[selectedYear-2]['TB notification rate ']}}</td>
-                                        <td>{{healthDelivery[selectedYear-1]['TB notification rate ']}}</td>
-                                        <td>{{healthDelivery[selectedYear-0]['TB notification rate ']}}</td>
-                                        <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
+                                        <td data-item="TB case detection rate">{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
+                                        <td data-item="TB case detection rate">{{healthDelivery[selectedYear-2]['TB case detection rate']}}</td>
+                                        <td data-item="TB case detection rate">{{healthDelivery[selectedYear-1]['TB case detection rate']}}</td>
+                                        <td data-item="TB case detection rate">{{healthDelivery[selectedYear-0]['TB case detection rate']}}</td>
+                                        <td data-item="TB case detection rate">{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr class="header_two">
                                         <td colspan="6" class="align_left">Social Welfare</td>

@@ -130,7 +130,7 @@
 
             });
 
-            var indicator = "Y1pkrlq2hWi;BlZrj2FC6bG;bzTuXoKa87E;TdxVgoa08tn;uOOJi6b0pzm";
+            var indicator = "Y1pkrlq2hWi;BlZrj2FC6bG;bzTuXoKa87E;TdxVgoa08tn;uOOJi6b0pzm;Qs5gUtaelJn";
             dataService.getIndicatorDataDistribution(indicator,organisationUnit,year).then(function(data){
                 console.log("HEALTH STATUS");
                 $scope.healthDistribution = dataService.createHealthStatusObject(data,year);
@@ -139,7 +139,7 @@
                 console.info("NO INDICTORS");
             });
 
-            var indicator = "heyJnpx5b37;sxBx8Bone59;TvgyTWvJamX";
+            var indicator = "heyJnpx5b37;sxBx8Bone59;TvgyTWvJamX;QG9qsX5DkwG;yho46pwbbNQ;WhsP7nsuwnz;qHpMHX3KWZn;D1ajYTD7PWQ;q06r0G4AOUV";
             dataService.getIndicatorDataDelivery(indicator,organisationUnit,year).then(function(data){
                 console.log("HEALTH STATUS");
                 $scope.healthDelivery = dataService.createHealthStatusObject(data,year);

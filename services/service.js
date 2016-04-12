@@ -220,6 +220,16 @@
         profile.logOut = function(){
             window.location.href = "#/home";
         }
+
+
+        profile.getTopTenIndicators = function(analyticsObject){
+            var topten = [];
+            if(analyticsObject.rows.length>0){
+
+            }
+
+            return topten;
+        }
     }
 
 
