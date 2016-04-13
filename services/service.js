@@ -14,7 +14,7 @@
       var profile = this;
         //profile.baseDHIS = "https://dhis.moh.go.tz/";
         profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
-        //profile.baseDHIS = "http://localhost:8080/";
+        //~ profile.baseDHIS = "http://localhost:8080/";
         profile.basePortal = "server/";
         profile.listProfileByYear = function(year){
             return $http.get(profile.basePortal+'process.php?by_year='+year+'&only=1').then(handleSuccess, handleError('Error creating user'));
@@ -222,13 +222,36 @@
         }
 
 
-        profile.getTopTenIndicators = function(analyticsObject){
-            var topten = [];
-            if(analyticsObject.rows.length>0){
+        profile.getTopTenIndicators = function(analyticsObject,year){
+            console.log("TOP TEN CAUSES OF DEATH");
+            var periods = profile.getConsecutivePeriods(year);
+            var output = [];
+            var outputs = [];
+            
 
-            }
-
-            return topten;
+            var dataElement    = data.metaData.dx;
+            var names          = data.metaData.names;
+            var rows           = data.rows;
+            
+			angular.forEach(dataElement,function(elementValue,elementIndex){
+				output[elementValue] = {name:names[elementValue]};
+				output[elementValue][periods[0]] = 0;
+				output[elementValue][periods[1]] = 0;
+				output[elementValue][periods[2]] = 0;
+			});
+			
+            angular.forEach(rows,function(rowValue,rowIndex){
+				output[rowValue[0]][rowValue[1]] = Number(rowValue[2]);
+			});
+			
+			
+			angular.forEach(dataElement,function(elementValue,elementIndex){
+				outputs.push(output[elementValue]);
+				
+			});
+			
+	
+            return outputs;
         }
     }
 
