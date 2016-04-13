@@ -34,10 +34,10 @@
         }
 
         dataService.getIndicatorTopTenMortality = function(indicator,orgunit,period){
-            //var periodArray = utilityService.getConsecutivePeriods(period);
-            //var periods = periodArray[0]+";"+periodArray[1]+";"+periodArray[2];
-            var therIndicatorUrl = "";//dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            therIndicatorUrl = "server/toptepdiagnosis.json";
+            var periodArray = utilityService.getConsecutivePeriods(period);
+            var periods = periodArray[0]+";"+periodArray[1]+";"+periodArray[2];
+            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            //~ therIndicatorUrl = "server/toptepdiagnosis.json";
             return $http.get(therIndicatorUrl).then(handleSuccess,handleError('Error loading HMIS Indicators'));
         }
 

@@ -514,6 +514,7 @@
                                         <td></td>
                                         <!--{{profile['DHP_Morbidity_MorbidityHIVAIDSProgress']}}-->
                                     </tr>
+<!--
                                     <tr>
                                         <td class="align_left">Top 10 cases of admission (List #1 cause)</td>
                                         <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionTargetsd']}}</td>
@@ -522,6 +523,15 @@
                                         <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionYear3sd']}}</td>
                                         <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionProgresssd']}}</td>
                                     </tr>
+-->									<tr ng-repeat="singleCase in toptenAdmission | orderBy:selectedYear:true" ng-if="$index<10">
+                                        <td class="align_left">{{singleCase.name}}</td>
+                                        <td></td>
+                                        <td>{{singleCase[selectedYear-2]}}</td>
+                                        <td>{{singleCase[selectedYear-1]}}</td>
+                                        <td>{{singleCase[selectedYear-0]}}</td>
+                                        <td></td>
+                                    </tr>
+                                    
                                     <tr class="header_two">
                                         <td colspan="6" class="align_left">Mortality</td>
                                     </tr> 
