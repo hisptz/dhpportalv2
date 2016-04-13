@@ -185,6 +185,7 @@
            });
 
         }
+        
         profile.getPropertiesArray   = function(profile_string){
             var stage_one        = profile_string.split("_");
             var region           = stage_one[0];
@@ -229,9 +230,9 @@
             var outputs = [];
             
 
-            var dataElement    = data.metaData.dx;
-            var names          = data.metaData.names;
-            var rows           = data.rows;
+            var dataElement    = analyticsObject.metaData.dx;
+            var names          = analyticsObject.metaData.names;
+            var rows           = analyticsObject.rows;
             
 			angular.forEach(dataElement,function(elementValue,elementIndex){
 				output[elementValue] = {name:names[elementValue]};
