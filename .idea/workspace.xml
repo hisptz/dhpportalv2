@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62cf4d15-4153-401f-9b24-e80ff4516c4f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controllers/mainController.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="dhpnew.iws" />
@@ -36,53 +37,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="adminController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/adminController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-6.9103446">
               <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28431374">
-              <caret line="537" column="78" selection-start-line="537" selection-start-column="78" selection-end-line="537" selection-end-column="78" />
-              <folding>
-                <element signature="e#4678#4813#0" expanded="false" />
-                <element signature="e#4832#4848#0" expanded="false" />
-                <element signature="e#5060#5215#0" expanded="false" />
-                <element signature="e#5539#5742#0" expanded="false" />
-                <element signature="e#14414#14517#0" expanded="false" />
-                <element signature="e#14572#14584#0" expanded="false" />
-                <element signature="e#14640#16250#0" expanded="false" />
-                <element signature="e#16309#17423#0" expanded="false" />
-                <element signature="e#17530#17852#0" expanded="false" />
-                <element signature="e#17900#17913#0" expanded="false" />
-                <element signature="e#18044#18468#0" expanded="false" />
-                <element signature="e#18516#18805#0" expanded="false" />
-                <element signature="e#18862#19701#0" expanded="false" />
-                <element signature="e#19768#20144#0" expanded="false" />
-                <element signature="e#20212#20700#0" expanded="false" />
-                <element signature="e#20882#21207#0" expanded="false" />
-                <element signature="e#21285#21833#0" expanded="false" />
-                <element signature="e#21894#22187#0" expanded="false" />
-                <element signature="e#22598#24003#0" expanded="false" />
-                <element signature="e#24175#24297#0" expanded="false" />
-                <element signature="e#24415#33857#0" expanded="false" />
-                <element signature="e#33920#34461#0" expanded="false" />
-                <element signature="e#35092#35606#0" expanded="false" />
-                <element signature="e#36084#36278#0" expanded="false" />
-                <element signature="e#36319#36371#0" expanded="false" />
-                <element signature="e#39155#39304#0" expanded="false" />
-                <element signature="e#39346#39898#0" expanded="false" />
-                <element signature="e#39943#40133#0" expanded="false" />
-                <element signature="e#40174#40490#0" expanded="false" />
-                <element signature="e#40588#42272#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -405,12 +365,12 @@
     <frame x="48" y="-3" width="1553" height="904" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27189544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27189544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29615384" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4898734" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24983211" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4164557" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4164557" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -467,29 +427,9 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>812</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/services/service.js</url>
           <line>12</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>854</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>586</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>883</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/services/dataService.js</url>
@@ -497,24 +437,9 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>642</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>293</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/services/service.js</url>
           <line>13</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>159</line>
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/services/dataService.js</url>
@@ -522,29 +447,14 @@
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>249</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/bower_components/angular-multi-select-tree/dist/angular-multi-select-tree-0.1.0.min.js</url>
           <line>98</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>988</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/services/service.js</url>
           <line>53</line>
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/controllers/mainController.js</url>
-          <line>215</line>
-          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/services/service.js</url>
@@ -586,88 +496,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="425" column="105" selection-start-line="425" selection-start-column="105" selection-end-line="425" selection-end-column="105" />
-          <folding>
-            <element signature="e#4678#4813#0" expanded="false" />
-            <element signature="e#4832#4848#0" expanded="false" />
-            <element signature="e#5060#5215#0" expanded="false" />
-            <element signature="e#5539#5742#0" expanded="false" />
-            <element signature="e#14414#14517#0" expanded="false" />
-            <element signature="e#14572#14584#0" expanded="false" />
-            <element signature="e#14640#16250#0" expanded="false" />
-            <element signature="e#16309#17423#0" expanded="false" />
-            <element signature="e#17530#17852#0" expanded="false" />
-            <element signature="e#17900#17913#0" expanded="false" />
-            <element signature="e#18044#18468#0" expanded="false" />
-            <element signature="e#18516#18805#0" expanded="false" />
-            <element signature="e#18862#19701#0" expanded="false" />
-            <element signature="e#19768#20144#0" expanded="false" />
-            <element signature="e#20212#20700#0" expanded="false" />
-            <element signature="e#20882#21207#0" expanded="false" />
-            <element signature="e#21285#21833#0" expanded="false" />
-            <element signature="e#21894#22187#0" expanded="false" />
-            <element signature="e#22598#24003#0" expanded="false" />
-            <element signature="e#24175#24297#0" expanded="false" />
-            <element signature="e#24415#33857#0" expanded="false" />
-            <element signature="e#33920#34461#0" expanded="false" />
-            <element signature="e#35092#35606#0" expanded="false" />
-            <element signature="e#36084#36278#0" expanded="false" />
-            <element signature="e#36319#36371#0" expanded="false" />
-            <element signature="e#39155#39304#0" expanded="false" />
-            <element signature="e#39346#39898#0" expanded="false" />
-            <element signature="e#39943#40133#0" expanded="false" />
-            <element signature="e#40174#40490#0" expanded="false" />
-            <element signature="e#40588#42272#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="337" column="41" selection-start-line="337" selection-start-column="41" selection-end-line="337" selection-end-column="41" />
-          <folding>
-            <element signature="e#4678#4813#0" expanded="false" />
-            <element signature="e#4832#4848#0" expanded="false" />
-            <element signature="e#5060#5215#0" expanded="false" />
-            <element signature="e#5539#5742#0" expanded="false" />
-            <element signature="e#14414#14517#0" expanded="false" />
-            <element signature="e#14572#14584#0" expanded="false" />
-            <element signature="e#14640#16250#0" expanded="false" />
-            <element signature="e#16309#17423#0" expanded="false" />
-            <element signature="e#17530#17852#0" expanded="false" />
-            <element signature="e#17900#17913#0" expanded="false" />
-            <element signature="e#18044#18468#0" expanded="false" />
-            <element signature="e#18516#18805#0" expanded="false" />
-            <element signature="e#18862#19701#0" expanded="false" />
-            <element signature="e#19768#20144#0" expanded="false" />
-            <element signature="e#20212#20700#0" expanded="false" />
-            <element signature="e#20882#21207#0" expanded="false" />
-            <element signature="e#21285#21833#0" expanded="false" />
-            <element signature="e#21894#22187#0" expanded="false" />
-            <element signature="e#22598#24003#0" expanded="false" />
-            <element signature="e#24175#24297#0" expanded="false" />
-            <element signature="e#24415#33857#0" expanded="false" />
-            <element signature="e#33920#34461#0" expanded="false" />
-            <element signature="e#35092#35606#0" expanded="false" />
-            <element signature="e#36084#36278#0" expanded="false" />
-            <element signature="e#36319#36371#0" expanded="false" />
-            <element signature="e#39155#39304#0" expanded="false" />
-            <element signature="e#39346#39898#0" expanded="false" />
-            <element signature="e#39943#40133#0" expanded="false" />
-            <element signature="e#40174#40490#0" expanded="false" />
-            <element signature="e#40588#42272#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,45 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#4678#4813#0" expanded="false" />
-            <element signature="e#4832#4848#0" expanded="false" />
-            <element signature="e#5060#5215#0" expanded="false" />
-            <element signature="e#5539#5742#0" expanded="false" />
-            <element signature="e#14414#14517#0" expanded="false" />
-            <element signature="e#14572#14584#0" expanded="false" />
-            <element signature="e#14640#16250#0" expanded="false" />
-            <element signature="e#16309#17423#0" expanded="false" />
-            <element signature="e#17530#17852#0" expanded="false" />
-            <element signature="e#17900#17913#0" expanded="false" />
-            <element signature="e#18044#18468#0" expanded="false" />
-            <element signature="e#18516#18805#0" expanded="false" />
-            <element signature="e#18862#19701#0" expanded="false" />
-            <element signature="e#19768#20144#0" expanded="false" />
-            <element signature="e#20212#20700#0" expanded="false" />
-            <element signature="e#20882#21207#0" expanded="false" />
-            <element signature="e#21285#21833#0" expanded="false" />
-            <element signature="e#21894#22187#0" expanded="false" />
-            <element signature="e#22598#24003#0" expanded="false" />
-            <element signature="e#24175#24297#0" expanded="false" />
-            <element signature="e#24415#33857#0" expanded="false" />
-            <element signature="e#33920#34461#0" expanded="false" />
-            <element signature="e#35092#35606#0" expanded="false" />
-            <element signature="e#36084#36278#0" expanded="false" />
-            <element signature="e#36319#36371#0" expanded="false" />
-            <element signature="e#39155#39304#0" expanded="false" />
-            <element signature="e#39346#39898#0" expanded="false" />
-            <element signature="e#39943#40133#0" expanded="false" />
-            <element signature="e#40174#40490#0" expanded="false" />
-            <element signature="e#40588#42272#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -964,7 +757,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/adminController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-6.9103446">
           <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
           <folding />
         </state>
@@ -1024,45 +817,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28431374">
-          <caret line="537" column="78" selection-start-line="537" selection-start-column="78" selection-end-line="537" selection-end-column="78" />
-          <folding>
-            <element signature="e#4678#4813#0" expanded="false" />
-            <element signature="e#4832#4848#0" expanded="false" />
-            <element signature="e#5060#5215#0" expanded="false" />
-            <element signature="e#5539#5742#0" expanded="false" />
-            <element signature="e#14414#14517#0" expanded="false" />
-            <element signature="e#14572#14584#0" expanded="false" />
-            <element signature="e#14640#16250#0" expanded="false" />
-            <element signature="e#16309#17423#0" expanded="false" />
-            <element signature="e#17530#17852#0" expanded="false" />
-            <element signature="e#17900#17913#0" expanded="false" />
-            <element signature="e#18044#18468#0" expanded="false" />
-            <element signature="e#18516#18805#0" expanded="false" />
-            <element signature="e#18862#19701#0" expanded="false" />
-            <element signature="e#19768#20144#0" expanded="false" />
-            <element signature="e#20212#20700#0" expanded="false" />
-            <element signature="e#20882#21207#0" expanded="false" />
-            <element signature="e#21285#21833#0" expanded="false" />
-            <element signature="e#21894#22187#0" expanded="false" />
-            <element signature="e#22598#24003#0" expanded="false" />
-            <element signature="e#24175#24297#0" expanded="false" />
-            <element signature="e#24415#33857#0" expanded="false" />
-            <element signature="e#33920#34461#0" expanded="false" />
-            <element signature="e#35092#35606#0" expanded="false" />
-            <element signature="e#36084#36278#0" expanded="false" />
-            <element signature="e#36319#36371#0" expanded="false" />
-            <element signature="e#39155#39304#0" expanded="false" />
-            <element signature="e#39346#39898#0" expanded="false" />
-            <element signature="e#39943#40133#0" expanded="false" />
-            <element signature="e#40174#40490#0" expanded="false" />
-            <element signature="e#40588#42272#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
