@@ -262,13 +262,15 @@
 
 
             var dataElement    = [];
-            var period         = analyticsObject.metaData.pe;
+            var period          = analyticsObject.metaData.pe;
             var rows           = analyticsObject.rows;
 
 
 
             angular.forEach(rows,function(rowValue,rowIndex){
-                if(typeof output[rowValue[0]]=="undefined"){
+                if(typeof output[rowValue[0]]!="undefined"){
+
+                }else{
                     output[rowValue[0]] = {name:rowValue[0]};
                     output[rowValue[0]][periods[0]] = 0;
                     output[rowValue[0]][periods[1]] = 0;
@@ -276,7 +278,7 @@
                 }
 
             });
-
+            console.log(output);
             angular.forEach(rows,function(rowValue,rowIndex){
                 dataElement.push(rowValue[0]);
 				output[rowValue[0]][rowValue[1]] = Number(rowValue[2]);
