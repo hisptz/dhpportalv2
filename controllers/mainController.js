@@ -181,7 +181,7 @@
                         console.log("It is not safe to load"); // TODO :put codes here to handle this problem
                     }
                 });
-                $scope.toptenCauses = utilityService.getTopTenInMoltalitydicators(data,year);
+                $scope.toptenCauses = utilityService.getTopTenMoltalityIndicators(data,year);
             },function(response){
                 console.info("NO INDICTORS");
             });
