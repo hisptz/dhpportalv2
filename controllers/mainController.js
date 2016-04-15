@@ -166,22 +166,22 @@
                 var counter = 0;
                 console.log("DATA OF CAUSES OF DEATH");
                 console.log(results);
-                //angular.forEach(results,function(resultValue,resultIndex){
-                //    if(typeof resultValue.success =="undefined"){
-                //        counter++;
-                //        if(counter==1){
-                //            data = resultValue;
-                //        }else{
-                //            var rows = resultValue.rows;
-                //            angular.forEach(rows,function(rowValue,rowIndex){
-                //                data.rows.push(rowValue);
-                //            });
-                //        }
-                //    }else{
-                //        console.log("It is not safe to load"); // TODO :put codes here to handle this problem
-                //    }
-                //});
-                //$scope.toptenCauses = utilityService.getTopTenIndicators(data,year);
+                angular.forEach(results,function(resultValue,resultIndex){
+                    if(typeof resultValue.success =="undefined"){
+                        counter++;
+                        if(counter==1){
+                            data = resultValue;
+                        }else{
+                            var rows = resultValue.rows;
+                            angular.forEach(rows,function(rowValue,rowIndex){
+                                data.rows.push(rowValue);
+                            });
+                        }
+                    }else{
+                        console.log("It is not safe to load"); // TODO :put codes here to handle this problem
+                    }
+                });
+                $scope.toptenCauses = utilityService.getTopTenInMoltalitydicators(data,year);
             },function(response){
                 console.info("NO INDICTORS");
             });
@@ -205,7 +205,7 @@
                         console.log("It is not safe to load"); // TODO :put codes here to handle this problem
                     }
                 });
-                $scope.toptenAdmission = utilityService.getTopTenIndicators(data,year);
+                $scope.toptenAdmission = utilityService.getTopTenAdmissionIndicators(data,year);
             },function(response){
                 console.info("NO INDICTORS");
             });

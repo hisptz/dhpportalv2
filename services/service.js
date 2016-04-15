@@ -223,7 +223,7 @@
         }
 
 
-        profile.getTopTenIndicators = function(analyticsObject,year){
+        profile.getTopTenAdmissionIndicators = function(analyticsObject,year){
             console.log("TOP TEN CAUSES OF DEATH");
             var periods = profile.getConsecutivePeriods(year);
             var output = [];
@@ -252,6 +252,45 @@
 			});
 			
 	
+            return outputs;
+        }
+        profile.getTopTenMoltalityIndicators = function(analyticsObject,year){
+
+            var periods = profile.getConsecutivePeriods(year);
+            var output = [];
+            var outputs = [];
+
+
+            var dataElement    = [];
+            var period          = analyticsObject.metaData.pe;
+            var rows           = analyticsObject.rows;
+
+
+
+            angular.forEach(rows,function(rowValue,rowIndex){
+                if(typeof output[rowValue[0]]!="undefined"){
+
+                }else{
+                    output[rowValue[0]] = {name:rowValue[0]};
+                    output[rowValue[0]][periods[0]] = 0;
+                    output[rowValue[0]][periods[1]] = 0;
+                    output[rowValue[0]][periods[2]] = 0;
+                }
+
+            });
+
+            angular.forEach(rows,function(rowValue,rowIndex){
+                dataElement.push(rowValue[0]);
+				output[rowValue[0]][rowValue[1]] = Number(rowValue[2]);
+			});
+
+
+			angular.forEach(dataElement,function(elementValue,elementIndex){
+				outputs.push(output[elementValue]);
+
+			});
+
+
             return outputs;
         }
     }
