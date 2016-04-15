@@ -8,7 +8,7 @@
         })
         .controller('mainController', mainController);
 
-    mainController.$inject   = ['$scope','$rootScope','$filter','$cookies','$http','$timeout','$interval','$location','DTOptionsBuilder', 'DTColumnDefBuilder','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
+    mainController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','DTOptionsBuilder', 'DTColumnDefBuilder','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
     function mainController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,DTOptionsBuilder, DTColumnDefBuilder,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
         var main  = this;
         var date = new Date();
