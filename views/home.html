@@ -523,7 +523,7 @@
                                         <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionYear3sd']}}</td>
                                         <td>{{profile['DHP_Morbidity_MorbidityTopTenAdmissionProgresssd']}}</td>
                                     </tr>
--->									<tr ng-repeat="singleCase in toptenAdmission track by $index | toArray:false | orderBy:selectedYear:true" ng-if="$index<10">
+-->									<tr ng-repeat="singleCase in toptenAdmission track by $index | orderBy:selectedYear:true" ng-if="$index<10">
                                         <td class="align_left">{{singleCase.name}}</td>
                                         <td></td>
                                         <td>{{singleCase[selectedYear-2]}}</td>
@@ -535,7 +535,7 @@
                                     <tr class="header_two">
                                         <td colspan="6" class="align_left">Mortality</td>
                                     </tr> 
-                                    <tr ng-repeat="singleCase in toptenCauses track by $index | toArray:false | orderBy:selectedYear:true" ng-if="$index<10">
+                                    <tr ng-repeat="singleCase in toptenCauses track by $index | orderBy:selectedYear:true" ng-if="$index<10">
                                         <td class="align_left">{{singleCase.name}}</td>
                                         <td></td>
                                         <td>{{singleCase[selectedYear-2]}}</td>
