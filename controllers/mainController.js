@@ -181,6 +181,7 @@
                         console.log("It is not safe to load"); // TODO :put codes here to handle this problem
                     }
                 });
+                console.log(utilityService.getTopTenMoltalityIndicators(data,year));
                 $scope.toptenCauses = utilityService.getTopTenMoltalityIndicators(data,year);
             },function(response){
                 console.info("NO INDICTORS");
@@ -205,6 +206,7 @@
                         console.log("It is not safe to load"); // TODO :put codes here to handle this problem
                     }
                 });
+                console.log(utilityService.getTopTenAdmissionIndicators(data,year));
                 $scope.toptenAdmission = utilityService.getTopTenAdmissionIndicators(data,year);
             },function(response){
                 console.info("NO INDICTORS");

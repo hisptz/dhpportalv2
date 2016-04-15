@@ -49,7 +49,7 @@
       <file leaf-file-name="mainController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3292683">
+            <state vertical-scroll-proportion="-7.1780486">
               <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
               <folding>
                 <element signature="e#11084#11145#0" expanded="false" />
@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/views/home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-4.6666665">
-              <caret line="525" column="96" selection-start-line="525" selection-start-column="96" selection-end-line="525" selection-end-column="96" />
+              <caret line="525" column="97" selection-start-line="525" selection-start-column="97" selection-end-line="525" selection-end-column="97" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -134,8 +134,8 @@
       <list>
         <option value="$PROJECT_DIR$/services/dataService.js" />
         <option value="$PROJECT_DIR$/services/service.js" />
-        <option value="$PROJECT_DIR$/views/home.html" />
         <option value="$PROJECT_DIR$/controllers/mainController.js" />
+        <option value="$PROJECT_DIR$/views/home.html" />
       </list>
     </option>
   </component>
@@ -850,7 +850,7 @@
     <entry file="file://$PROJECT_DIR$/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6666665">
-          <caret line="525" column="96" selection-start-line="525" selection-start-column="96" selection-end-line="525" selection-end-column="96" />
+          <caret line="525" column="97" selection-start-line="525" selection-start-column="97" selection-end-line="525" selection-end-column="97" />
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
@@ -863,7 +863,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3292683">
+        <state vertical-scroll-proportion="-7.1780486">
           <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
           <folding>
             <element signature="e#11084#11145#0" expanded="false" />
