@@ -35,9 +35,9 @@
 
         dataService.getIndicatorTopTenMortality = function(indicator,orgunit,period){
             var periodArray = utilityService.getConsecutivePeriods(period);
-            var therIndicatorUrlYear1 = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray[0]+'&dimension=&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
-            var therIndicatorUrlYear2 = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray[1]+'&dimension=&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
-            var therIndicatorUrlYear3 = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray[2]+'&dimension=&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
+            var therIndicatorUrlYear1 = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray[0]+'&dimension='+indicator+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
+            var therIndicatorUrlYear2 = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray[1]+'&dimension='+indicator+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
+            var therIndicatorUrlYear3 = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray[2]+'&dimension='+indicator+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
 
 
             var requestOne    = $http.get(therIndicatorUrlYear1).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[0]));
