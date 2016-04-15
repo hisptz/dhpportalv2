@@ -149,31 +149,32 @@
                 console.info("NO INDICTORS");
             });
 
-            var indicator = 'BlZrj2FC6bG;TdxVgoa08tn;TvgyTWvJamX;WhsP7nsuwnz;Y1pkrlq2hWi;bzTuXoKa87E;heyJnpx5b37;ohw1MBklYkc;qHpMHX3KWZn;sxBx8Bone59;uOOJi6b0pzm;z9ispsHeYNw;zIAxcoxZ3Pl';
-            dataService.getIndicatorDataSystem(indicator,organisationUnit,year).then(function(data){
-                console.log("HEALTH STATUS");
-                $scope.healthstatus = dataService.createHealthStatusObject(data,year);
-                console.log($scope.healthstatus);
+            //var indicator = 'BlZrj2FC6bG;TdxVgoa08tn;TvgyTWvJamX;WhsP7nsuwnz;Y1pkrlq2hWi;bzTuXoKa87E;heyJnpx5b37;ohw1MBklYkc;qHpMHX3KWZn;sxBx8Bone59;uOOJi6b0pzm;z9ispsHeYNw;zIAxcoxZ3Pl';
+            //dataService.getIndicatorDataSystem(indicator,organisationUnit,year).then(function(data){
+            //    console.log("HEALTH STATUS");
+            //    $scope.healthstatus = dataService.createHealthStatusObject(data,year);
+            //    console.log($scope.healthstatus);
+            //
+            //},function(response){
+            //    console.info("NO INDICTORS");
+            //});
 
-            },function(response){
-                console.info("NO INDICTORS");
-            });
-
-            var indicator = 'ACM4BHrKZNQ;AKeayZWILrh;BwJsDwQayqN;C2Rg2uPfbhs;CNzWVlVeOdx;CWXG9lBSI7Y;ClHcTEiVMpb;CpP8znGTTWi;DWWNT5pcrWf;EEeh0pyQISB;FkKfVoslpKi;Fuwwc9CgYUN;GQwVaLxM9Gs;GqSZits9IeK;H2R0UdSYRPn;HMEUM6T2dxF;HWZmyu3j4NX;IJAImvSE7P6;ItK93OX9wyu;Ivd9opj8WCi;KlePTLpBdWd;Kpa6sheYah0;LD4thW4OmXi;Lcj8osNjKQx;MG98iWgxXNT;MOYDHlGVOZi;MwnLlVZZJkU;NLBkuHemCAx;NRmqyxps5ZA;NSYWPEpZBuY;NlXYR3IJWCl;NwzMLHAFMSC;O9HZJ5frgiJ;PxPfeeZz5eI;Q5AQcGLeh7y;Qhi9QXHzP9b;QhpE8F5apCj;QqqAeR0wrwS;QtBqSDM3YCN;QvexV259cj2;RifXFxv1lQq;RlEchOC92Yr;Rlr4Y8hOejL;RppK9y0dY08;SAD8J9zO6MF;SgeSIiqTN2l;ShxnDczlruP;SjNEefHqcz4;SxNQQBphBOS;TsLGQxidpbn;UlFUBEpJsSs;VHmWnicZtbQ;VSb3ctsTz4z;VmFo3tNlgIW;W5GuP81V3Zf;WSaSCvJTnfQ;WXuqsXyNq4K;Wa3cm09YbsP;Wyorktq1rUA;X0TXADJv7GA;Y6xpjIVTsJ7;Y7upeLGM36C;YVOid8f091G;YzWIMlVnfxq;a9Pxllofrpx;anYwhLJV58B;aruodm4tcnY;avzBnVwWlV9;c4ZuqcOCyix;cGVl8WkpBTL;cUHWPSXirUl;ccIfQsrfWeL;ctT1j57B2OL;d8FSoimbeKH;eTOV59Rcv4F;eoZtkUbfrmF;f6Q9p6uSWtS;f8yQ5FUAIx0;fLjZYZB3tuB;fVzXb5qPrCp;fWq6ZXy0Uzp;fYO2JUHPdul;gNQ5NYT8SCz;hBSqV93WRL4;hO9LkFt8n2p;hufCs1tU1gs;iP9wSaCAZl5;jz1y4ru52rC;k3TGMJ3ru5y;kmpnqbSQLBl;kzj3RYX536Y;l1GL5Tmn22E;lJry1lLp3dJ;mE81BaLRP29;mMkFYcDVj3e;mcVhgPQtLLX;n611GaZn5Xr;nWRerupXUoy;o0KObJuu9Yu;pP6BsR5KiRM;pZr0OzykmJB;q3ELeLciuTh;qoeOTJT0x6o;qwFz1atKnbC;s1GFhwCZaWq;s74ccDa9ZDM;sr87SW2uEmt;tM1ecc8qcsJ;tfDgtMmh9TU;uAa5OgHFwud;uqno4prZX61;uyQpafHrxLT;v6sdLtxvY1K;wULlcm4Qj5S;wwl4tRTnPEo;x5cswY9qs7m;xCl76XUXHb9;xsoXkeM69KC;yx1Ndv0hlhO;zQQFpz3JT6g;zfhmMA4HeJn;ziUz3NmWftW;zqaHIXl6j7c;zx2fEoXul5W';
-            dataService.getIndicatorTopTenMortality(indicator,organisationUnit,year).then(function(data){
-               
-                $scope.toptenCauses = utilityService.getTopTenIndicators(data,year);
+            var indicator = 'ACM4BHrKZNQ;AKeayZWILrh;BwJsDwQayqN;C2Rg2uPfbhs;CNzWVlVeOdx;CWXG9lBSI7Y;ClHcTEiVMpb;CpP8znGTTWi;DWWNT5pcrWf;EEeh0pyQISB;FkKfVoslpKi;Fuwwc9CgYUN;GQwVaLxM9Gs;GqSZits9IeK;H2R0UdSYRPn;HWZmyu3j4NX;IJAImvSE7P6;ItK93OX9wyu;KlePTLpBdWd;Kpa6sheYah0;LD4thW4OmXi;Lcj8osNjKQx;MG98iWgxXNT;MOYDHlGVOZi;MwnLlVZZJkU;NLBkuHemCAx;NRmqyxps5ZA;NSYWPEpZBuY;NlXYR3IJWCl;NwzMLHAFMSC;O9HZJ5frgiJ;PxPfeeZz5eI;Q5AQcGLeh7y;Qhi9QXHzP9b;QhpE8F5apCj;QqqAeR0wrwS;QtBqSDM3YCN;RifXFxv1lQq;RlEchOC92Yr;Rlr4Y8hOejL;RppK9y0dY08;SAD8J9zO6MF;SgeSIiqTN2l;ShxnDczlruP;SjNEefHqcz4;SxNQQBphBOS;TsLGQxidpbn;UlFUBEpJsSs;VHmWnicZtbQ;VSb3ctsTz4z;VmFo3tNlgIW;W5GuP81V3Zf;WSaSCvJTnfQ;WXuqsXyNq4K;Wa3cm09YbsP;Wyorktq1rUA;X0TXADJv7GA;Y6xpjIVTsJ7;Y7upeLGM36C;YVOid8f091G;Yut5amdi7iw;YzWIMlVnfxq;a9Pxllofrpx;anYwhLJV58B;aruodm4tcnY;avzBnVwWlV9;c4ZuqcOCyix;cGVl8WkpBTL;cUHWPSXirUl;ccIfQsrfWeL;ctT1j57B2OL;d8FSoimbeKH;eTOV59Rcv4F;eoZtkUbfrmF;f6Q9p6uSWtS;f8yQ5FUAIx0;fLjZYZB3tuB;fVzXb5qPrCp;fWq6ZXy0Uzp;fYO2JUHPdul;gNQ5NYT8SCz;hBSqV93WRL4;hO9LkFt8n2p;hufCs1tU1gs;iP9wSaCAZl5;jz1y4ru52rC;k3TGMJ3ru5y;kmpnqbSQLBl;kzj3RYX536Y;l1GL5Tmn22E;lJry1lLp3dJ;mE81BaLRP29;mMkFYcDVj3e;mcVhgPQtLLX;n611GaZn5Xr;o0KObJuu9Yu;pP6BsR5KiRM;pZr0OzykmJB;q3ELeLciuTh;qoeOTJT0x6o;s1GFhwCZaWq;s74ccDa9ZDM;sr87SW2uEmt;tM1ecc8qcsJ;tfDgtMmh9TU;uAa5OgHFwud;uqno4prZX61;uyQpafHrxLT;v6sdLtxvY1K;wULlcm4Qj5S;wwl4tRTnPEo;x5cswY9qs7m;xCl76XUXHb9;xsoXkeM69KC;yx1Ndv0hlhO;zQQFpz3JT6g;zfhmMA4HeJn;ziUz3NmWftW;zqaHIXl6j7c';
+            dataService.getIndicatorTopTenMortality(indicator,organisationUnit,year).then(function(results){
+               console.log("TEST MULITPLE");
+               console.log(results);
+                //$scope.toptenCauses = utilityService.getTopTenIndicators(data,year);
             },function(response){
                 console.info("NO INDICTORS");
             });
             
-            var indicator = 'ACM4BHrKZNQ;AKeayZWILrh;BwJsDwQayqN;C2Rg2uPfbhs;CNzWVlVeOdx;CWXG9lBSI7Y;ClHcTEiVMpb;CpP8znGTTWi;DWWNT5pcrWf;EEeh0pyQISB;FkKfVoslpKi;Fuwwc9CgYUN;GQwVaLxM9Gs;GqSZits9IeK;H2R0UdSYRPn;HMEUM6T2dxF;HWZmyu3j4NX;IJAImvSE7P6;ItK93OX9wyu;Ivd9opj8WCi;KlePTLpBdWd;Kpa6sheYah0;LD4thW4OmXi;Lcj8osNjKQx;MG98iWgxXNT;MOYDHlGVOZi;MwnLlVZZJkU;NLBkuHemCAx;NRmqyxps5ZA;NSYWPEpZBuY;NlXYR3IJWCl;NwzMLHAFMSC;O9HZJ5frgiJ;PxPfeeZz5eI;Q5AQcGLeh7y;Qhi9QXHzP9b;QhpE8F5apCj;QqqAeR0wrwS;QtBqSDM3YCN;QvexV259cj2;RifXFxv1lQq;RlEchOC92Yr;Rlr4Y8hOejL;RppK9y0dY08;SAD8J9zO6MF;SgeSIiqTN2l;ShxnDczlruP;SjNEefHqcz4;SxNQQBphBOS;TsLGQxidpbn;UlFUBEpJsSs;VHmWnicZtbQ;VSb3ctsTz4z;VmFo3tNlgIW;W5GuP81V3Zf;WSaSCvJTnfQ;WXuqsXyNq4K;Wa3cm09YbsP;Wyorktq1rUA;X0TXADJv7GA;Y6xpjIVTsJ7;Y7upeLGM36C;YVOid8f091G;YzWIMlVnfxq;a9Pxllofrpx;anYwhLJV58B;aruodm4tcnY;avzBnVwWlV9;c4ZuqcOCyix;cGVl8WkpBTL;cUHWPSXirUl;ccIfQsrfWeL;ctT1j57B2OL;d8FSoimbeKH;eTOV59Rcv4F;eoZtkUbfrmF;f6Q9p6uSWtS;f8yQ5FUAIx0;fLjZYZB3tuB;fVzXb5qPrCp;fWq6ZXy0Uzp;fYO2JUHPdul;gNQ5NYT8SCz;hBSqV93WRL4;hO9LkFt8n2p;hufCs1tU1gs;iP9wSaCAZl5;jz1y4ru52rC;k3TGMJ3ru5y;kmpnqbSQLBl;kzj3RYX536Y;l1GL5Tmn22E;lJry1lLp3dJ;mE81BaLRP29;mMkFYcDVj3e;mcVhgPQtLLX;n611GaZn5Xr;nWRerupXUoy;o0KObJuu9Yu;pP6BsR5KiRM;pZr0OzykmJB;q3ELeLciuTh;qoeOTJT0x6o;qwFz1atKnbC;s1GFhwCZaWq;s74ccDa9ZDM;sr87SW2uEmt;tM1ecc8qcsJ;tfDgtMmh9TU;uAa5OgHFwud;uqno4prZX61;uyQpafHrxLT;v6sdLtxvY1K;wULlcm4Qj5S;wwl4tRTnPEo;x5cswY9qs7m;xCl76XUXHb9;xsoXkeM69KC;yx1Ndv0hlhO;zQQFpz3JT6g;zfhmMA4HeJn;ziUz3NmWftW;zqaHIXl6j7c;zx2fEoXul5W';
-            dataService.getIndicatorTopTenMortality(indicator,organisationUnit,year).then(function(data){
-                
-                $scope.toptenAdmission = utilityService.getTopTenIndicators(data,year);
-            },function(response){
-                console.info("NO INDICTORS");
-            });
+            //var indicator = 'ACM4BHrKZNQ;AKeayZWILrh;BwJsDwQayqN;C2Rg2uPfbhs;CNzWVlVeOdx;CWXG9lBSI7Y;ClHcTEiVMpb;CpP8znGTTWi;DWWNT5pcrWf;EEeh0pyQISB;FkKfVoslpKi;Fuwwc9CgYUN;GQwVaLxM9Gs;GqSZits9IeK;H2R0UdSYRPn;HMEUM6T2dxF;HWZmyu3j4NX;IJAImvSE7P6;ItK93OX9wyu;Ivd9opj8WCi;KlePTLpBdWd;Kpa6sheYah0;LD4thW4OmXi;Lcj8osNjKQx;MG98iWgxXNT;MOYDHlGVOZi;MwnLlVZZJkU;NLBkuHemCAx;NRmqyxps5ZA;NSYWPEpZBuY;NlXYR3IJWCl;NwzMLHAFMSC;O9HZJ5frgiJ;PxPfeeZz5eI;Q5AQcGLeh7y;Qhi9QXHzP9b;QhpE8F5apCj;QqqAeR0wrwS;QtBqSDM3YCN;QvexV259cj2;RifXFxv1lQq;RlEchOC92Yr;Rlr4Y8hOejL;RppK9y0dY08;SAD8J9zO6MF;SgeSIiqTN2l;ShxnDczlruP;SjNEefHqcz4;SxNQQBphBOS;TsLGQxidpbn;UlFUBEpJsSs;VHmWnicZtbQ;VSb3ctsTz4z;VmFo3tNlgIW;W5GuP81V3Zf;WSaSCvJTnfQ;WXuqsXyNq4K;Wa3cm09YbsP;Wyorktq1rUA;X0TXADJv7GA;Y6xpjIVTsJ7;Y7upeLGM36C;YVOid8f091G;YzWIMlVnfxq;a9Pxllofrpx;anYwhLJV58B;aruodm4tcnY;avzBnVwWlV9;c4ZuqcOCyix;cGVl8WkpBTL;cUHWPSXirUl;ccIfQsrfWeL;ctT1j57B2OL;d8FSoimbeKH;eTOV59Rcv4F;eoZtkUbfrmF;f6Q9p6uSWtS;f8yQ5FUAIx0;fLjZYZB3tuB;fVzXb5qPrCp;fWq6ZXy0Uzp;fYO2JUHPdul;gNQ5NYT8SCz;hBSqV93WRL4;hO9LkFt8n2p;hufCs1tU1gs;iP9wSaCAZl5;jz1y4ru52rC;k3TGMJ3ru5y;kmpnqbSQLBl;kzj3RYX536Y;l1GL5Tmn22E;lJry1lLp3dJ;mE81BaLRP29;mMkFYcDVj3e;mcVhgPQtLLX;n611GaZn5Xr;nWRerupXUoy;o0KObJuu9Yu;pP6BsR5KiRM;pZr0OzykmJB;q3ELeLciuTh;qoeOTJT0x6o;qwFz1atKnbC;s1GFhwCZaWq;s74ccDa9ZDM;sr87SW2uEmt;tM1ecc8qcsJ;tfDgtMmh9TU;uAa5OgHFwud;uqno4prZX61;uyQpafHrxLT;v6sdLtxvY1K;wULlcm4Qj5S;wwl4tRTnPEo;x5cswY9qs7m;xCl76XUXHb9;xsoXkeM69KC;yx1Ndv0hlhO;zQQFpz3JT6g;zfhmMA4HeJn;ziUz3NmWftW;zqaHIXl6j7c;zx2fEoXul5W';
+            //dataService.getIndicatorTopTenMortality(indicator,organisationUnit,year).then(function(data){
+            //
+            //    $scope.toptenAdmission = utilityService.getTopTenIndicators(data,year);
+            //},function(response){
+            //    console.info("NO INDICTORS");
+            //});
 
 
         }

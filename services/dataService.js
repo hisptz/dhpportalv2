@@ -4,8 +4,8 @@
     angular
         .module('dhpportal')
         .service('dataService', dataService);
-    dataService.$inject = ['$http','profileService','utilityService'];
-    function dataService($http,profileService,utilityService) {
+    dataService.$inject = ['$http','$q','profileService','utilityService'];
+    function dataService($http,$q,profileService,utilityService) {
         var dataService = this;
         dataService.baseDHIS = profileService.baseDHIS;
         dataService.getPopulationData = function(orgunit,period){
@@ -35,10 +35,18 @@
 
         dataService.getIndicatorTopTenMortality = function(indicator,orgunit,period){
             var periodArray = utilityService.getConsecutivePeriods(period);
-            var periods = periodArray[0]+";"+periodArray[1]+";"+periodArray[2];
-            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            //~ therIndicatorUrl = "server/toptepdiagnosis.json";
-            return $http.get(therIndicatorUrl).then(handleSuccess,handleError('Error loading HMIS Indicators'));
+
+            var therIndicatorUrlYear1 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[0]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var therIndicatorUrlYear2 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[1]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var therIndicatorUrlYear3 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[2]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+
+
+            var requestOne    = $http.get(therIndicatorUrlYear1).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[0]));
+            var requestTwo    = $http.get(therIndicatorUrlYear2).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[1]));
+            var requestThree  = $http.get(therIndicatorUrlYear3).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[2]));
+
+            return $q.all([requestOne,requestTwo,requestThree]);
+
         }
 
 
