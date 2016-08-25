@@ -362,6 +362,8 @@
         }
 
         $scope.selectedCallback = function(item, selectedItems){
+            console.log("THIS IS SELECTED ITEM FROM CALL BACK FUNCTION");
+            console.log(selectedItems)
         }
 
 
@@ -550,8 +552,7 @@
                     $scope.orgunitString = orgString.substring(0, orgString.length - 1);
                 }
             });
-            console.log("ORG UNIT STRING");
-            console.log($scope.orgunitString);
+
         }
 
         /// sort organisation unit
@@ -619,6 +620,8 @@
                     // callback for organisation unit selection from tree
                         var monitor = 0;
                         $scope.$watch('selectedItems',function(newvalue,oldvalue){
+                            console.log('SELECTED ITEMS FROM WATCH FUNCTION')
+                            console.log($scope.selectedItems);
                             if(monitor<1){
                                 $scope.registerChanges($scope.selectedYear,newvalue);
                                 monitor++
