@@ -104,7 +104,13 @@
         //
         admin.showDistricts = function(district){
 
-            admin.districts = JSON.parse(district).children;
+            admin.districts = [];
+            var districts = JSON.parse(district);
+            if ( districts.children )
+            {
+                admin.districts = districts;
+            }
+
         };
 
 
