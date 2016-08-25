@@ -550,7 +550,8 @@
                     $scope.orgunitString = orgString.substring(0, orgString.length - 1);
                 }
             });
-
+            console.log("ORG UNIT STRING");
+            console.log($scope.orgunitString);
         }
 
         /// sort organisation unit
