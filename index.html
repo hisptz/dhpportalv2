@@ -197,7 +197,7 @@
 <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.3/mapbox-gl.js"></script>
 
 <script>
-    var mainModule = angular.module('dhpportal', ['openlayers-directive','multi-select-tree','highcharts-ng','ngFileUpload','datatables',"ngRoute",'ui.materialize','ngResource','dhisHighchartAngularService','angular-spinkit','ngCsv']);
+    var mainModule = angular.module('dhpportal', ['openlayers-directive','multi-select-tree','highcharts-ng','ngFileUpload','datatables',"ngRoute",'ui.materialize','ngCookies','ngResource','ngAnimate','dhisHighchartAngularService','angular-spinkit','ngCsv']);
     mainModule.config(function($routeProvider, $locationProvider) {
         $routeProvider
                 .when('/home', {
