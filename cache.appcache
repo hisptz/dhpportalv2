@@ -27,6 +27,15 @@ assets/libs/materialize/css/materialize.min.css
 assets/libs/materialize/js/jquery-2.1.4.min.js
 assets/libs/materialize/js/materialize.min.js
 assets/libs/jqueryui/js/jquery-ui-1.10.4.custom.js
+assets/Highcharts/js/modules/data.js
+assets/Highcharts/js/modules/exporting.js
+assets/Highcharts/js/highcharts-more.js
+assets/Highcharts/js/highcharts.src.js
+assets/js/angular-resource.js
+assets/js/angular-route.js
+assets/libs/pace/pace.min.js
+
+bower_components/datatables/media/js/jquery.dataTables.js
 
 bower_components/angular/angular.min.js
 bower_components/angular-materialize/css/style.css
@@ -53,6 +62,19 @@ assets/spinkit/angular-spinkit.min.js
 bower_components/openlayers3/build/ol.js
 bower_components/angular-openlayers-directive/dist/angular-openlayers-directive.js
 https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.3/mapbox-gl.js
+
+assets/js/routes.js
+controllers/mainController.js
+controllers/mapController.js
+controllers/adminController.js
+services/portalService.js
+services/chartService.js
+services/service.js
+services/tableService.js
+services/mapService.js
+directive/directives.js
+services/dataService.js
+filters/filters.js
 
 
 
