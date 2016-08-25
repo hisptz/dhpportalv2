@@ -77,14 +77,14 @@
         $scope.selected = date.getFullYear();
 
 
-        $scope.custome_height    ="default";
+        $scope.custome_height       ="default";
         $scope.begginingOfthePeriod = 2011;
-        $scope.viewOpen          = false;
-        $scope.csv_menu            = false;
-        $scope.facilityUid         = null;
+        $scope.viewOpen             = false;
+        $scope.csv_menu             = false;
+        $scope.facilityUid          = null;
 
-        $scope.current_id          = "m0frOspS7JY";
-        $scope.data              = {};
+        $scope.current_id           = "m0frOspS7JY";
+        $scope.data                 = {};
         $scope.Documents = null;
         $scope.current_pdf_link = null;
         $scope.clickedDistrict = "";
