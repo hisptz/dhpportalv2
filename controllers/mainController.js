@@ -113,7 +113,7 @@
         //$scope.organisationUnitTree = [{name:'Tanzania',id:'m0frOspS7JY','children':[],'isExpanded':false,'isActive':true,'isFiltered':false,'selected':true}];
         $scope.logedSuccessMessage = null;
         $scope.logedFailureMessage = null;
-        $scope.loadingDone = false;
+        $scope.loadingDone = true;
         $scope.profile = {};
         $scope.chartConfig = false;
         $scope.netfailure = null;
@@ -867,7 +867,7 @@
 
                 });
             }
-            $scope.loadingDone = true;
+
 
         }
 
