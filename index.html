@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="dhpportal" ng-controller="mainController" manifest="cache.appcache">
 <head>
-    <title>DHP Web Portal</title>
+    <title>Tanzania Health Profile Portal</title>
     <style>
 
         * {
@@ -111,7 +111,7 @@
         display: block!important;
     }
 </style>
-
+    <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body style="height:100%">
 <div class="page-wrap">
@@ -126,17 +126,12 @@
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">
                 <img class="responsive-img" style="height: 50px" src="assets/img/tanzania1.gif">
-                DHP Web Portal
+                Tanzania Health Profile Portal
             </a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-            <!--<ul class="right hide-on-med-and-down">-->
-                <!--<li><a href="./#home">Dashboard</a></li>-->
-                <!--<li><a modal href="#login_modal">Login</a></li>-->
-            <!--</ul>-->
 
             <ul class="side-nav" id="mobile-demo">
-                <!--<li><a href="./#home">Dashboard</a></li>-->
                 <li><a modal href="#login_modal">Login</a></li>
             </ul>
 
@@ -156,12 +151,14 @@
             </div>
             <div class="col l6 s6">
                 <table>
-                    <tbody><tr>
+                    <tbody>
+                    <tr>
                         <td><a class="grey-text text-lighten-3" target="_blank" href="https://dhis.moh.go.tz/">DHIS/HMIS</a></td>
                         <td><a class="grey-text text-lighten-3" target="_blank" href="http://hmisportal.moh.go.tz/">HMIS Web portal</a></td>
                         <td><a class="grey-text text-lighten-3" target="_blank" href="http://www.moh.go.tz/">MOH</a></td>
                     </tr>
-                    </tbody></table>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

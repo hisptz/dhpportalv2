@@ -48,6 +48,7 @@
 
         }
         dataService.getIndicatorTopTenAdmissions = function(indicator,orgunit,period){
+
             var periodArray = utilityService.getConsecutivePeriods(period);
 
             var therIndicatorUrlYear1 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[0]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
@@ -67,14 +68,16 @@
         dataService.createPopulationObject = function(data){
             var output = {male:{},female:{}};
 
-            var categoryOption = data.metaData.co;
-            var agePopulation  = data.metaData.Cow9nZikDgD;
-            var jinsi          = data.metaData.hENn80Fmmlf;
-            var dataElement    = data.metaData.dx;
-            var names          = data.metaData.names;
-            var rows           = data.rows;
+            if  ( data.metaData )
+            {
+                var categoryOption = data.metaData.co;
+                var agePopulation  = data.metaData.Cow9nZikDgD;
+                var jinsi          = data.metaData.hENn80Fmmlf;
+                var dataElement    = data.metaData.dx;
+                var names          = data.metaData.names;
+                var rows           = data.rows;
 
-            angular.forEach(jinsi,function(value,index){
+                angular.forEach(jinsi,function(value,index){
 
 
                     angular.forEach(agePopulation,function(valuex,indexs){
@@ -88,15 +91,22 @@
 
                     });
 
-            });
+                });
+
+            }
+
             return output;
         }
         dataService.createHealthStatusObject = function(data,year){
             var periods = utilityService.getConsecutivePeriods(year);
             var output = [];
+
             angular.forEach(periods,function(periodValue,periodIndex){
                 output[periodValue] = {};
             });
+
+        if ( data.metaData )
+        {
 
             var dataElement    = data.metaData.dx;
             var names          = data.metaData.names;
@@ -117,13 +127,18 @@
                 });
 
             });
+
+
+        }
             return output;
         }
 
         dataService.toNormalize = function(data){
+
             var theIndex = data.indexOf('E');
 
-            if(theIndex>=0){
+            if ( theIndex >= 0 )
+            {
                var base =  data.substring(theIndex+1,data.length);
                data =  data.substring(0,theIndex);
 

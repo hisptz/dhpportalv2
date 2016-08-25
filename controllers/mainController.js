@@ -164,8 +164,6 @@
             dataService.getIndicatorTopTenMortality(indicator,organisationUnit,year).then(function(results){
                 var data = null;
                 var counter = 0;
-                console.log("DATA OF CAUSES OF DEATH");
-                console.log(results);
                 angular.forEach(results,function(resultValue,resultIndex){
                     if(typeof resultValue.success =="undefined"){
                         counter++;
@@ -174,14 +172,19 @@
                         }else{
                             var rows = resultValue.rows;
                             angular.forEach(rows,function(rowValue,rowIndex){
-                                data.rows.push(rowValue);
+
+                                if ( data.rows )
+                                {
+                                    data.rows.push(rowValue);
+                                }
+
                             });
                         }
                     }else{
                         console.log("It is not safe to load"); // TODO :put codes here to handle this problem
                     }
                 });
-                console.log(utilityService.getTopTenMoltalityIndicators(data,year));
+
                 $scope.toptenCauses = utilityService.getTopTenMoltalityIndicators(data,year);
             },function(response){
                 console.info("NO INDICTORS");
@@ -199,14 +202,17 @@
                         }else{
                             var rows = resultValue.rows;
                             angular.forEach(rows,function(rowValue,rowIndex){
-                                data.rows.push(rowValue);
+                                if ( data.rows )
+                                {
+                                    data.rows.push(rowValue);
+                                }
                             });
                         }
                     }else{
                         console.log("It is not safe to load"); // TODO :put codes here to handle this problem
                     }
                 });
-                console.log(utilityService.getTopTenAdmissionIndicators(data,year));
+
                 $scope.toptenAdmission = utilityService.getTopTenAdmissionIndicators(data,year);
             },function(response){
                 console.info("NO INDICTORS");
@@ -270,7 +276,7 @@
         }
 
         /**
-         * There comes leonard
+         *
          * */
 
         $scope.filename = "test";
@@ -579,7 +585,7 @@
 
                     /// initialize tree varaibale after safe login
                     var organisatonunit = data.organisationUnits;
-                    if(organisatonunit.length>=1){
+                    if( organisatonunit && organisatonunit.length >= 1 ){
                         organisatonunit[0].isExpanded = false;
                         organisatonunit[0].isActive = true;
                         organisatonunit[0].isFiltered = false;
@@ -589,7 +595,12 @@
 
 
 
-                    $scope.modifedOrgunits = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
+                    if ( data.organisationUnits )
+                    {
+                        $scope.modifedOrgunits = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
+
+                    }
+
                     $scope.selectedItems = $scope.organisationUnitTree;
 
 
@@ -621,7 +632,7 @@
 
             },function(failure){
 
-                $rootScope.failureMessage = " Can not load organisation units ,check network connection";
+                $rootScope.failureMessage = " remote authentication failure try to reload the portal";
             })
 
 
@@ -830,33 +841,45 @@
         }
 
         $scope.prepareTabledataFromAnalytics = function(data){
-            var dataelements = data.metaData.dx;
-            var names        = data.metaData.names;
-            var ou           = data.metaData.ou;
-            var rows         = data.rows;
+
             $scope.profile = {};
-            angular.forEach(dataelements,function(value,index){
-                angular.forEach(rows,function(rowValue,rowIndex){
-                    if(rowValue[0] == value){
-                        $scope.profile[names[value]] = rowValue[2];
-                    }
-                })
 
+            if ( data.metaData )
+            {
+                var dataelements = data.metaData.dx;
+                var names        = data.metaData.names;
+                var ou           = data.metaData.ou;
+                var rows         = data.rows;
 
+                angular.forEach(dataelements,function(value,index){
 
-            });
+                    angular.forEach(rows,function(rowValue,rowIndex){
+                        if(rowValue[0] == value){
+                            $scope.profile[names[value]] = rowValue[2];
+                        }
+                    });
+
+                });
+            }
+
 
         }
 
         $scope.getOrganisationUnit = function(){
+
             $rootScope.failureMessage = null;
             utilityService.getOrgUnits().then(function(data){
-                console.log(data);
-                $scope.data.organisationUnits = sortingOrUnit(data.organisationUnits);
-                $scope.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
+
+                if ( data.organisationUnits )
+                {
+                    $scope.data.organisationUnits = sortingOrUnit(data.organisationUnits);
+                    $scope.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
+                }
+
             },function(status){
                 $rootScope.failureMessage = "failed to load resources, check network connection";
             });
+
         }
 
         $scope.getOrganisationUnit();
