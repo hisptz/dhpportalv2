@@ -113,6 +113,7 @@
         //$scope.organisationUnitTree = [{name:'Tanzania',id:'m0frOspS7JY','children':[],'isExpanded':false,'isActive':true,'isFiltered':false,'selected':true}];
         $scope.logedSuccessMessage = null;
         $scope.logedFailureMessage = null;
+        $scope.loadingDone = false;
         $scope.profile = {};
         $scope.chartConfig = false;
         $scope.netfailure = null;
@@ -282,10 +283,7 @@
         $scope.filename = "test";
         $scope.getArray = [{a: 1, b:2}, {a:3, b:4}];
 
-
         $scope.getHeader = function () {return ["A", "B"]};
-
-
 
 
         if(localStorage.getItem("seriesObject")||localStorage.getItem("seriesObject")!=null){
@@ -310,6 +308,7 @@
             $scope.showChartD = "display:none;";
             $scope.showTableD = "display:block;";
         }
+
         $scope.backToChart = function(){
             $scope.viewOpen = false;
             $scope.chart_shown = true;
@@ -349,9 +348,10 @@
             });
         }
 
-            $scope.$on('netfailure',function(){
+        $scope.$on('netfailure',function(){
                 $scope.netfailure = true;
             });
+
         $scope.getChildren = function(children){
             var childrens = [];
             angular.forEach(children,function(value,index){
@@ -373,6 +373,7 @@
             var file = {name:row.facility,id:row.id};
             $scope.openPdfFile(file);
         }
+
         $scope.getHealthProfileFromMap = function(row){
 
         }
@@ -445,13 +446,16 @@
         }
 
         $scope.getOrgunitProposesdFiles = function(children,selectedYear,orgUnitWithFiles,proposed_files){
+
             angular.forEach(children,function(value,index){
                 if(orgUnitWithFiles.indexOf(value.id)>=0){
                     proposed_files.push({id:value.id,facility:value.name,file:value.name+"_"+$scope.selectedYear+".pdf"});
                 }
             });
+
             return proposed_files;
         }
+
         $scope.prepareDocumentFile = function(){
 
 
@@ -460,6 +464,7 @@
         $scope.backToGrid = function(){
             $scope.viewOpen = false;
         }
+
         $scope.openPdfFile = function(row){
             var form = {org_unit_selected:row.id,form_period:$scope.selectedYear};
             $scope.profileTitle = row.name;
@@ -484,26 +489,26 @@
         }
 
         $scope.treeWithSelectedDistrict = function(uid){
-            console.log($scope.organisationUnitTree);
+
             var orgUnit = $scope.organisationUnitTree;
-            //if(organisationUnitTree[0].children!=null){
+            if($scope.organisationUnitTree){
+
                     angular.forEach($scope.organisationUnitTree[0].children,function(chValue,chIndex){
 
                         angular.forEach(chValue.children,function(value,index){
+
                             if(value.id==uid){
                                 orgUnit[0].children[chIndex].children[index].selected  = true;
                                 orgUnit[0].children[chIndex].children[index].isActive  = true;
-                                    $scope.drawOrgUnitTree(null);
-                                    //$scope.drawOrgUnitTree(orgUnit);
-
-
+                                $scope.drawOrgUnitTree(null);
                             }
+
                         });
 
 
                     });
 
-            //}
+            }
         }
 
         $scope.getOrgunitFileStatistics = function(facility_name){
@@ -529,6 +534,7 @@
                 });
             });
         };
+
         $scope.getOrgUnitWithAvailableFilesThisYear();
 
         /// get organisation unit string for map
@@ -686,7 +692,7 @@
                         $scope.submitted = mapService.submitted;
                         $scope.notsubmitted = mapService.totalDistricts - mapService.submitted;
                     }else{
-                        //Materialize.toast("User is loged out", 3000)
+
                     }
 
                     $scope.dashboardObject.chart.chartObject = mapService.chartObject;
@@ -861,7 +867,7 @@
 
                 });
             }
-
+            $scope.loadingDone = true;
 
         }
 
@@ -923,6 +929,7 @@
             }
 
         }
+
         $scope.getDashboard = function(){
             //$scope.csv_menu = false;
 
@@ -988,7 +995,6 @@
             $('#login_modal').openModal();
 
         }
-
 
 
         $scope.userLogout = function(){

@@ -425,7 +425,7 @@
                                 <br/>
                                 <p> Facility Distribution</p>
                                 <br/>
-                                <img src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                                <img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                                 <p class="paragraph-style" ng-bind-html=" profile['DHP_Population_Population'] | renderItLikeHTML "></p>
 
                             </div>
@@ -525,7 +525,6 @@
                                         <td>{{singleAdminission[selectedYear-0]}}</td>
                                         <td></td>
                                     </tr>
-                                    
                                     <tr class="header_two">
                                         <td colspan="6" class="align_left">Mortality</td>
                                     </tr> 
@@ -540,7 +539,7 @@
                                 </table>
                             </div>
                             <br/>
-                            <img src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                            <img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <div class="row profile-pages">
                                 <table class="profile_table">
                                     <tr class="header_one">
@@ -702,7 +701,7 @@
                                 </table>
                             </div>
                             <br/>
-                            <img src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                            <img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <div class="row profile-pages">
                                 <table class="profile_table">
                                     <tr class="header_one">
@@ -812,8 +811,7 @@
                             </div>
                             <div class="row profile-pages">
                                 <br/>
-                                {{profile.length}}profile legth
-                                <img src="assets/img/preloader.gif"  style="height:15px;width:45px;">
+                                <img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                                 <table class="profile_table">
                                     <tr class="header_one">
                                         <td colspan="6">PROGRESS IN THE HEALTH DISTRICT FACTOR</td>
@@ -968,8 +966,6 @@
                                 </table>
                             </div>
 
-
-
                         </div>
 
                         <!-- END OF REMOVE BLOCK-->
@@ -1122,7 +1118,7 @@
 
                             </div>
                                 <br/>
-                                <img src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                                <img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <div class="row profile-pages">
                                 <table class="profile_table">
                                     <tr class="header_one">
@@ -1219,7 +1215,7 @@
                                 </table>
                             </div>
                                 <br/>
-                                <img src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                                <img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <div class="row profile-pages">
                                 <table class="profile_table">
                                     <tr class="header_one">
@@ -1381,7 +1377,7 @@
                                 </table>
                             </div>
                                 <br/>
-                                <img src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                                <img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <div class="row profile-pages">
                                 <table class="profile_table">
                                     <tr class="header_one">
@@ -1490,7 +1486,7 @@
                                 </table>
                             </div>
                                 <br/>
-                                <img src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                                <img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <div class="row profile-pages">
 
                                 <table class="profile_table">
