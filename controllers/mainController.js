@@ -20,6 +20,7 @@
         $scope.dashboardObject.table = {};
         $scope.tableCardView = 'l12';
         $scope.mapCard = false;
+        $scope.loadCurrentTemplate = 'views/templates.html';
 
         $scope.submitted = 0;
         $scope.notsubmitted = 0;
