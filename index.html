@@ -113,7 +113,7 @@
 </style>
     <link rel="shortcut icon" href="favicon.ico">
 </head>
-<body style="height:100%">
+<body style="height:100%" ng-controller="mainController">
 <div class="page-wrap">
 
     <div id="toast-container" ng-if="failureMessage">
@@ -202,10 +202,10 @@
         $routeProvider
                 .when('/home', {
                     templateUrl: 'views/home.html',
-                    controller: 'mainController'
-                }).when('/home/downloadable', {
+                    controller: 'homeController'
+                }).when('/home/downloadable/:pareUid/:period', {
                     templateUrl: 'views/downloadables.html',
-                    controller: 'mainController'
+                    controller: 'downloadableController'
                 })
                 .when('/admin', {
                     templateUrl: 'views/admin.html',

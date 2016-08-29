@@ -20,8 +20,6 @@
         $scope.dashboardObject.table = {};
         $scope.tableCardView = 'l12';
         $scope.mapCard = false;
-        $scope.loadCurrentTemplate = 'views/templates/summaryTable.html';
-
         $scope.submitted = 0;
         $scope.notsubmitted = 0;
         $scope.allAvailable = mapService.features.length;
@@ -180,10 +178,6 @@
             });
 
 
-        }
-
-        $scope.showReadOnlyFiles = function(){
-            $scope.loadCurrentTemplate = 'views/templates/downloadableFiles.html';
         }
 
 
