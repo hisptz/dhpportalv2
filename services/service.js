@@ -13,8 +13,8 @@
     function profileService($http,Upload) {
       var profile = this;
         //profile.baseDHIS = "https://dhis.moh.go.tz/";
-        profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
-        //profile.baseDHIS = "http://localhost:9000/";
+        //profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
+        profile.baseDHIS = "http://localhost:9000/";
         profile.basePortal = "server/";
         profile.listProfileByYear = function(year){
             return $http.get(profile.basePortal+'process.php?by_year='+year+'&only=1').then(handleSuccess, handleError('Error creating user'));
@@ -24,6 +24,7 @@
         profile.listProfileByOrgUnit = function(orgunits){
             return $http.get(profile.basePortal+'process.php?by_orgunit='+orgunits).then(handleSuccess, handleError('Error creating user'));
         }
+
         profile.checkProfileByOrgUnitAndPeriod = function(orgunits,period){
             var url=profile.baseDHIS+"api/completeDataSetRegistrations?dataSet=Pc2t6Tq5era&startDate="+period+"-01-01&endDate="+period+"-12-31&"+orgunits;
             return $http.get(url).then(handleSuccess, handleError('Error creating user'));
@@ -65,6 +66,7 @@
             return $http.get(profile.basePortal+"process.php?delete="+health_profile).then(handleSuccess, handleError('Error creating user'));
         }
     }
+
     function utilityService($http,profileService) {
       var profile = this;
         profile.baseDHIS = profileService.baseDHIS;

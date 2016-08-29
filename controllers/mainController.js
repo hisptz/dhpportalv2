@@ -25,49 +25,6 @@
         // page failure message dialogue
         $rootScope.failureMessage = null;
 
-        //console.log(mainContrl);
-
-        $scope.fpCards = [{
-            title:'Clients < 20 Years of Age Quarterly',
-            description:'Total Clients Quarterly',
-            cardClass:"col s12 m6",
-            data:"",
-            category:'quarter',
-            category1:'quarter',
-            displayTable:false,
-            displayMap:false,
-            chart:'line',
-            visible:'consumption by demographic'
-
-        },{
-            title:'Clients < 20 Years of Age Monthly',
-            description:'Total Clients Monthly',
-            cardClass:"col s12 m6",
-            data:"",
-            category:'month',
-            category1:'month',
-            displayTable:false,
-            displayMap:false,
-            chart:'line',
-            visible:'consumption by demographic'
-        }];
-
-        $scope.newView = "";
-
-
-        $scope.switchViewCallback = function(scopeObj) {
-
-            if (scopeObj.switchViewLabel == 'test2') {
-                scopeObj.switchViewLabel = 'test1';
-                //scopeObj.inputModel = data1;
-                scopeObj.selectOnlyLeafs = true;
-            } else {
-                scopeObj.switchViewLabel = 'test2';
-                //scopeObj.inputModel = data3;
-                scopeObj.selectOnlyLeafs = false;
-            }
-        }
-
 
         // set current year
         $scope.current_year = date.getFullYear();
@@ -361,9 +318,25 @@
             return childrens;
         }
 
+        var formerOrganisationUnitObject = [];
+        localStorage.setItem('orgUnitNumber',0);
         $scope.selectedCallback = function(item, selectedItems){
-            console.log("THIS IS SELECTED ITEM FROM CALL BACK FUNCTION");
-            console.log(selectedItems)
+
+            var orgunitNumber = localStorage.getItem('orgUnitNumber');
+
+            if ( orgunitNumber != selectedItems.length  )
+            {
+
+                $scope.registerChanges($scope.selectedYear,selectedItems);
+
+                localStorage.setItem('orgUnitNumber',selectedItems.length);
+            }else{
+
+
+
+            }
+
+
         }
 
 
@@ -619,17 +592,16 @@
 
                     // callback for organisation unit selection from tree
                         var monitor = 0;
-                        $scope.$watch('selectedItems',function(newvalue,oldvalue){
-                            console.log('SELECTED ITEMS FROM WATCH FUNCTION')
-                            console.log($scope.selectedItems);
-                            if(monitor<1){
-                                $scope.registerChanges($scope.selectedYear,newvalue);
-                                monitor++
-                            }else{
-                                monitor = 0;
-                            }
-
-                        });
+                        //$scope.$watch('selectedItems',function(newvalue,oldvalue){
+                        //
+                        //    if(monitor<1){
+                        //        $scope.registerChanges($scope.selectedYear,newvalue);
+                        //        monitor++
+                        //    }else{
+                        //        monitor = 0;
+                        //    }
+                        //
+                        //});
 
 
 
@@ -667,7 +639,7 @@
 
 
 
-            prepareOrgUnitStrings();
+                prepareOrgUnitStrings();
 
 
 

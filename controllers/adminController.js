@@ -70,38 +70,7 @@
             window.location.href = "#/home";
         }
 
-        //
-        //admin.drawTable = function(year,orgUnit){
-        //    if(orgUnit==admin.tanzania){
-        //        profileService.listProfileByYear(year).then(function(data){
-        //            admin.profiles = data;
-        //        },function(response){
-        //            console.log(response);
-        //        });
-        //    }else{
-        //        profileService.listProfileByOrgUnitAndPeriod(year,orgUnit).then(function(data){
-        //            admin.profiles = data;
-        //        },function(response){
-        //            console.log(response);
-        //        });
-        //    }
-        //
-        //}
-        //
-        //admin.showList();
-        //
-        //admin.districtSelection = function(){
-        //    if(typeof(admin.selectedOrgUnitRegion)!=="undefined"){
-        //        if(admin.districtSelector){
-        //            admin.districtSelector = false;
-        //            admin.selectedOrgUnitToDisplay = JSON.parse(admin.selectedOrgUnitRegion).value;
-        //        }else{
-        //            admin.districtSelector = true;
-        //        }
-        //    }
-        //
-        //}
-        //
+
         admin.showDistricts = function(district){
 
             admin.districts = [];
@@ -143,15 +112,6 @@
         });
 
 
-        //admin.newProfile = function(){
-        //    admin.editProfileForm = false;
-        //    admin.addProfileForm = true;
-        //    admin.list = false;
-        //    admin.uploadcsv = false;
-        //    admin.previewcsv = false;
-        //
-        //}
-        //
         admin.saveProfile = function(form,pdf_file,orgUnit){
             admin.editProfileForm = false;
             admin.addProfileForm = true;
@@ -293,16 +253,7 @@
             admin.Proportion_of_under_1_year_3rd_polio_progress = 0;
 
         }
-        //
-        //
-        //admin.uploadCSV = function(){
-        //    admin.uploadcsv = true;
-        //    admin.editProfileForm = false;
-        //    admin.list = false;
-        //    admin.addProfileForm = false;
-        //    admin.previewcsv = false;
-        //}
-        //
+
         admin.uploadProfileToDHIS = function(form){
 
 
@@ -396,37 +347,7 @@
                 },function(response){});
             }
         }
-        //admin.openCriteriaPreview = function(){
-        //
-        //    if(admin.criteriaPreview){
-        //        admin.criteriaPreview = false;
-        //    }else{
-        //        admin.criteriaPreview = true;
-        //    }
-        //
-        //}
-        //admin.readOnlyDataPreview = function(){
-        //    admin.uploadcsv = false;
-        //    admin.editProfileForm = false;
-        //    admin.list = false;
-        //    admin.addProfileForm = false;
-        //    admin.previewcsv = true;
-        //    admin.criteriaPreview = true;
-        //    admin.table_data = [];
-        //
-        //}
-        //admin.previewData = function(form){
-        //
-        //    utilityService.getDataPreview(form).then(function(data){
-        //        admin.table_data = utilityService.prepareTabledata(data);
-        //        admin.filterProfiles(data);
-        //
-        //    },function(response){
-        //        console.log(data);
-        //    });
-        //}
-        //
-        //
+
         utilityService.loadOrganisationUnits().then(function(data){
             admin.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
         });
