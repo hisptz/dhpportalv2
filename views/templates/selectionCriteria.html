@@ -1,0 +1,48 @@
+<div>
+    <div class="col s12 m12 l12">
+        <div class="col s12 z-depth-1" style="background-color:#ffffff;">
+            <div class="section grey lighten-5 " >
+                <div class="input-field col s12 m3 l3 orgDropdown grey lighten-5"  >
+                    <multi-select-tree data-input-model="organisationUnitTree" multi-select="true"
+                                       data-output-model="selectedItems" data-default-label="Organisation Units"
+                                       data-callback="selectedCallback(item, selectedItems)"
+                                       data-select-only-leafs="false"
+                                       data-switch-view="false"
+                    >
+
+                    </multi-select-tree>
+
+                </div>
+
+                <div class="input-field col s12 m1 l1 grey lighten-5" >
+
+                    <select ng-change="selectPeriod()" ng-model="selectedYear"  material-select watch>
+                        <option ng-selected="selectedYear" value="{{selectedYear}}">{{selectedYear}}</option>
+                        <option ng-repeat="period in periods" ng-if="selectedYear!=period.name">{{period.name}}</option>
+                    </select>
+                    <label>Period</label>
+                </div>
+
+                <div class="input-field col s12 m8 l8 orgDropdown grey lighten-5"  >
+                    <ul class="right hide-on-med-and-down">
+                        <li ng-if="currentLogedUser"><a ><i class="fa fa-user "></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a ng-click="userLogout()" style="cursor: pointer;">Logout</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="cursor: pointer;" ng-click="admin()"><i class="fa fa-cog"></i>&nbsp;Settings</a></li>
+                        <li ng-if="!currentLogedUser"><a modal href="#login_modal" >Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col s12 m12 l12" >
+        <div class="col s2 m2 l2" >
+            <br/>
+            <a style="cursor:pointer;" title="view map" ng-click="showMapCard()"><i class="material-icons dp48">room</i></a>
+            <a style="cursor:pointer;" title="downloadable files" ng-click="showReadOnlyFiles()"><i class="material-icons dp48">play_for_work</i></a>
+        </div>
+        <div class="col s10 m10 l10" >
+            <br/>
+            <p class="center" style="text-align:left;">Health Profile : {{ orgUnitNames }} - {{ selectedYear }}</p>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div id="login_modal" class="modal" style="border-radius: 10px;width:25%!important;;max-height: 100%;font-size: 12px;text-align:center;">
+    <div class="modal-content">
+        <h4 style="text-align: center"></h4>
+        <div >
+            <p style="font-weight: bolder;font-size: 12px;text-align:center;">DHP Login (DHIS2 users only)</p>
+            <p style="color:red;font-weight: bolder;" ng-if="logedFailureMessage">{{logedFailureMessage}}</p>
+            <p style="color:green;font-weight: bolder;" ng-if="logedSuccessMessage">{{logedSuccessMessage}}</p>
+            <div class="row">
+                <div class="preloader-wrapper small active" ng-if="progressLogin">
+                    <div class="spinner-layer spinner-green-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <form class="col s12" >
+                <div class="input-field col s12">
+                    <input id="email" type="text" class="validate" ng-model="login.dhis_login_username">
+                    <label for="email">Username</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" ng-model="login.dhis_login_password">
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-field col s12"><!--modal-close-->
+                    <div class="row">
+                        <a class="waves-effect modal-action  waves-light btn  col s12 m12" style="background-color:#00796B" ng-click="userLogin(login)">Login</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class=" modal-action modal-close waves-effect waves-green btn-flat">Close</button>
+    </div>
+</div>
