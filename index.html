@@ -172,7 +172,6 @@
 <script type="text/javascript" src="assets/libs/materialize/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="assets/libs/jqueryui/js/jquery-ui-1.10.4.custom.js"></script>
 <script type="text/javascript" src="assets/libs/materialize/js/materialize.min.js"></script>
-<script type="text/javascript" src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 <script type="text/javascript" src="assets/js/angular-route.js"></script>
 <script type="text/javascript" src="assets/js/angular-resource.js"></script>
@@ -182,7 +181,6 @@
 <script type="text/javascript" src="assets/Highcharts/js/modules/data.js"></script>
 <script type="text/javascript" src="bower_components/highcharts-ng/src/highcharts-ng.js"></script>
 <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-<script type="text/javascript" src="bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
 <script type="text/javascript" src="bower_components/angular-materialize/src/angular-materialize.js"></script>
 <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script type="text/javascript" src="bower_components/angular/angular-cookies.min.js"></script>
@@ -200,7 +198,7 @@
 <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.3/mapbox-gl.js"></script>
 
 <script>
-    var mainModule = angular.module('dhpportal', ['openlayers-directive','multi-select-tree','treeControl','highcharts-ng','ngFileUpload','datatables',"ngRoute",'ui.materialize','ngCookies','ngResource','ngAnimate','dhisHighchartAngularService','angular-spinkit','ngCsv']);
+    var mainModule = angular.module('dhpportal', ['openlayers-directive','multi-select-tree','treeControl','highcharts-ng','ngFileUpload',"ngRoute",'ui.materialize','ngCookies','ngResource','ngAnimate','dhisHighchartAngularService','angular-spinkit','ngCsv']);
     mainModule.config(function($routeProvider, $locationProvider) {
         $routeProvider
                 .when('/home', {
