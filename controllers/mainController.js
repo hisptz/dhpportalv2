@@ -626,7 +626,7 @@
 
         $scope.registerChanges = function(newperiod,newvalue){
                 // hide all views and show loading image
-                $scope.dashboardObject.map.layers = null;
+
                 if(!newvalue||newvalue.length==0){
                     portalService.districts = [];
                     newvalue = $scope.organisationUnitTree;
@@ -662,7 +662,7 @@
                 /// Dealing with map
 
                 mapService.renderMap($scope.selectedYear,$scope.orgunitString).then(function(orgunits){
-
+                    $scope.dashboardObject.map.layers = null;
                     if (typeof orgunits.data == "object" ){
                         angular.extend($scope.dashboardObject.map,mapService.prepareMapObject(orgunits.data,analytics_data));
                         $scope.submitted = mapService.submitted;
