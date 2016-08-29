@@ -81,7 +81,7 @@
 
         if ( $routeParams.parentUid )
         {
-            $scope.showBackBatton = true;
+            $scope.showBackButton = true;
         }
 
         $scope.getDHPResources = function(organisationUnit,year){
