@@ -267,8 +267,6 @@
                                 </div>
 
                             </div>
-
-
                             <div style="width: 100%" ng-if="dashboardObject.displayChart">
                                 <p ng-if="!dashboardObject.chart.chartObject" class="center" style="text-align: center;">
                                     <img src="assets/img/preloader.gif" style="height:30px;width:90px">
@@ -308,19 +306,14 @@
         </div>
             <div class="col s12 m12 {{tableCardView}}" >
                 <div class="card z-depth-2 white lighten-5 large">
-                    <div class="card-image waves-effect waves-block waves-light" ng-if="!dashboardObject.map.layers">
-                        <p ng-if="!dashboardObject.map.layers" class="center" style="text-align: center;margin-top:15%;margin-left: 50%;">
-                            <img src="assets/img/preloader.gif" style="height:30px;width:90px;">
-                        </p>
-                    </div>
-                    <p style="text-align: center;" ng-if="dashboardObject.map.layers">HEALTH PROFILE SUMMARY TABLE</p>
+                    <!--<div class="card-image waves-effect waves-block waves-light" ng-if="!dashboardObject.map.layers">-->
+                        <!--<p ng-if="!dashboardObject.map.layers" class="center" style="text-align: center;margin-top:15%;margin-left: 50%;">-->
+                            <!--<img src="assets/img/preloader.gif" style="height:30px;width:90px;">-->
+                        <!--</p>-->
+                    <!--</div>-->
+                    <p style="text-align: center;" >HEALTH PROFILE SUMMARY TABLE</p>
 
-                    <div class="card-image waves-effect waves-block waves-light" style="overflow: scroll" ng-if="dashboardObject.map.layers">
-
-                      <!--<summary-table data="profile"></summary-table>-->
-
-                        <!--  REMOVE THIS NON STANDARD PROGRAMMING SCHEME USE DIRECTIVE INSTEAD-->
-
+                    <div class="card-image waves-effect waves-block waves-light" style="overflow: scroll" >
 
                         <style>
                             table.profile_table {

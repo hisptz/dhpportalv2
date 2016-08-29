@@ -18,6 +18,7 @@
         $scope.dashboardObject.map = {};
         $scope.dashboardObject.chart = {};
         $scope.dashboardObject.table = {};
+        $scope.tableCardView = 'l12';
 
         $scope.submitted = 0;
         $scope.notsubmitted = 0;
