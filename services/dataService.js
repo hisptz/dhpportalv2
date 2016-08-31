@@ -65,6 +65,7 @@
         }
 
         dataService.getAutomatedIndicator = function(indicator,orgunit,period){
+            console.log('INDICATORS',indicator);
             var periodArray = utilityService.getConsecutivePeriods(period);
             var automatedUrl1 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[0]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
             var automatedUrl2 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[1]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
