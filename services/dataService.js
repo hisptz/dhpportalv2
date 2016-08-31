@@ -71,7 +71,12 @@
             var automatedUrl2 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[1]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
             var automatedUrl3 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[2]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
 
-            return $q.all([automatedUrl1,automatedUrl2,automatedUrl3]);
+
+            var requestOne    = $http.get(automatedUrl1).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[0]));
+            var requestTwo    = $http.get(automatedUrl2).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[1]));
+            var requestThree  = $http.get(automatedUrl3).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[2]));
+
+            return $q.all([requestOne,requestTwo,requestThree]);
         }
 
 

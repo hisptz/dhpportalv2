@@ -126,7 +126,7 @@
             // get automated dhis indicators
             var indicator = 'ELLbdOFMLWJ;yho46pwbbNQ';
             dataService.getAutomatedIndicator(indicator,organisationUnit,year).then(function(data){
-                console.log('automated data',data)
+                console.log('automated data',data);
                 $scope.fromDHIS = dataService.assembleDataFromDHIS(data,year);
                 console.log('$scope.fromDHIS',$scope.fromDHIS);
 
