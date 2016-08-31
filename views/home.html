@@ -485,7 +485,7 @@
                                     <td class="align_left" style="font-weight: bold">Top 10 causes of admission (List #1 cause)</td>
                                     <td colspan="6"></td>
                                 </tr>
-                                <tr ng-repeat="singleCase in toptenCauses  | track by $index  | orderBy:selectedYear:true" ng-if="$index<10">
+                                <tr ng-repeat="singleCase in toptenCauses  track by $index  | orderBy:selectedYear:true" ng-if="$index<10">
                                     <td class="align_left">{{singleCase.name}}</td>
                                     <td></td>
                                     <td>{{singleCase[selectedYear-2]}}</td>
@@ -525,9 +525,9 @@
                                 <tr>
                                     <td class="align_left">Proportion of children under 1 year vaccinated against measles</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesTarget']}}</td>
-                                    <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesYear1']}}</td>
-                                    <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesYear2']}}</td>
-                                    <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesYear3']}}</td>
+                                    <td>{{fromDHIS['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesYear1']}}</td>
+                                    <td>{{fromDHIS['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesYear2']}}</td>
+                                    <td>{{fromDHIS['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesYear3']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionVaccinatedMeaslesProgress']}}</td>
                                 </tr>
                                 <tr>
