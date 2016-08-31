@@ -64,6 +64,15 @@
 
         }
 
+        dataService.getAutomatedIndicator = function(indicator,orgunit,period){
+            var periodArray = utilityService.getConsecutivePeriods(period);
+            var automatedUrl1 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[0]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var automatedUrl2 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[1]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var automatedUrl3 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray[2]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+
+            return $q.all([automatedUrl1,automatedUrl2,automatedUrl3]);
+        }
+
 
         dataService.createPopulationObject = function(data){
             var output = {male:{},female:{}};
@@ -98,6 +107,41 @@
             return output;
         }
         dataService.createHealthStatusObject = function(data,year){
+            var periods = utilityService.getConsecutivePeriods(year);
+            var output = [];
+
+            angular.forEach(periods,function(periodValue,periodIndex){
+                output[periodValue] = {};
+            });
+
+        if ( data.metaData )
+        {
+
+            var dataElement    = data.metaData.dx;
+            var names          = data.metaData.names;
+            var rows           = data.rows;
+
+            angular.forEach(dataElement,function(elementValue,elementIndex){
+                console.log(names[elementValue]);
+                console.log(elementValue);
+                angular.forEach(output,function(valueOutput,indexOutput){
+                    angular.forEach(rows,function(valueRow,indexRow){
+
+                        if(indexOutput==rows[indexRow][1]){
+                            if(elementValue==rows[indexRow][0]){
+                                output[indexOutput][names[elementValue]] = rows[indexRow][2];
+                            }
+                        }
+                    });
+                });
+
+            });
+
+
+        }
+            return output;
+        }
+        dataService.assembleDataFromDHIS = function(data,year){
             var periods = utilityService.getConsecutivePeriods(year);
             var output = [];
 

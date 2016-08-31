@@ -96,7 +96,7 @@
 
             var indicator = "Y1pkrlq2hWi;BlZrj2FC6bG;bzTuXoKa87E;TdxVgoa08tn;uOOJi6b0pzm;Qs5gUtaelJn";
             dataService.getIndicatorDataDistribution(indicator,organisationUnit,year).then(function(data){
-                console.log("HEALTH STATUS");
+                //console.log("HEALTH STATUS");
                 $scope.healthDistribution = dataService.createHealthStatusObject(data,year);
 
             },function(response){
@@ -105,9 +105,9 @@
 
             var indicator = "heyJnpx5b37;sxBx8Bone59;TvgyTWvJamX;QG9qsX5DkwG;yho46pwbbNQ;WhsP7nsuwnz;qHpMHX3KWZn;D1ajYTD7PWQ;q06r0G4AOUV";
             dataService.getIndicatorDataDelivery(indicator,organisationUnit,year).then(function(data){
-                console.log("HEALTH STATUS");
+                //console.log("HEALTH STATUS");
                 $scope.healthDelivery = dataService.createHealthStatusObject(data,year);
-                console.log($scope.healthDelivery);
+                //console.log($scope.healthDelivery);
 
             },function(response){
                 console.info("NO INDICTORS");
@@ -122,6 +122,19 @@
             //},function(response){
             //    console.info("NO INDICTORS");
             //});
+
+            // get automated dhis indicators
+            var indicator = 'ELLbdOFMLWJ;yho46pwbbNQ';
+            dataService.getAutomatedIndicator(indicator,organisationUnit,year).then(function(data){
+
+                $scope.fromDHIS = dataService.assembleDataFromDHIS(data,year);
+                console.log($scope.fromDHIS);
+
+
+
+            },function(response){
+                console.info("NO INDICTORS");
+            });
 
 
             var indicator = 'A0q2I8nTWcV:IN%3AA00%20-%20Cholera%3BA01%20-%20Typhoid%3BA01%20-%20Typhoid%20fever%20(salmonellosis)%3BA06%20-%20Dysentery%20Acute%2FChronic%3BA09%20-%20Diarrhoea%3BA15%20-%20TB%20Confirmed%3BA16%20-%20TB%20Not%20confirmed%3BA20%20-%20Plague%3BA33%20-%20Tetanus%2C%20Neonatal%3BA41%20-%20Septicaemia%3BA75%20-%20Relapsing%20Fever%20(Louse%20borne%20Typhus)%3BB05%20-%20Measles%3BB24%20-%20HIV%20and%20AIDS%3BB45%20-%20Meningitis%20Cryptococal%3BB53%20-%20Malaria%20confirmed%3BB54%20-%20Malaria%20presumptive%3BC80%20-%20Neoplasm%3BG03%20-%20Meningitis%3BG04%20-%20Encephalitis%3BG83%20-%20Acute%20Flaccid%20Paralysis%3BI50%20-%20Heart%20failure%3BJ06%20-%20Respiratory%20Infection%20Acute%20(ARI)%3BJ18%20-%20Pneumonia%3BJ45%20-%20Asthma%3BJ81%20-%20Pulmonary%20oedema%3BJ98%20-%20Pneumopathies%3BK75%20-%20Hepatitis%3BL08%20-%20Skin%20infections%3BR09%20-%20Pleurisy%20(non-Tuberculosis)%3BR50%20-%20Fever%20Chronic%20(%3E%201%20month)%3BS09%20-%20Head%20injury%3BS36%20-%20Ruptured%20spleen%3BT14%20-%20Fractures%3BT14.9%20-%20Trauma%20Other%3BT30%20-%20Burns%3BC22%20-%20Cancer%20Liver%3BC46%20-%20Kaposi%60s%20sarcoma%3BC50%20-%20Cancer%20Breast%3BC55%20-%20Cancer%20Uterine%3BC61%20-%20Cancer%20Prostate%3BC80%20-%20Tumours%20Other%20malignant%3BD48%20-%20Tumours%20Other%20non-malignant%3BE14%20-%20Diabetes%3BI10%20-%20Hypertension%3BI42%20-%20Cardiomyopathy%3BI64%20-%20Cerebrovascular%20accident%3BA80%20-%20Acute%20Flacid%20Paralysis%20(polio)%3BK25%20-%20Ulcer%2C%20gastro-duodenal%3BK29%20-%20Gastritis%3BK37%20-%20Appendicitis%3BK46%20-%20Hernia%3BK56%20-%20Intestinal%20occlusion%3BK65%20-%20Peritonitis%20(non-Tuberculosis)%3BK74%20-%20Cirrhosis%20of%20the%20liver%3BK92%20-%20Digestive%20tract%20Haemorrhages%3BM86%20-%20Bone%20infections%20(including%20osteomyelitis)%3BM89%20-%20Bone%20and%20joint%20disease%20other%3BN04%20-%20Nephrotic%20syndrome%3BN05%20-%20Glomerulonephritis%3BN15%20-%20Kidney%20infections%3BN39%20-%20Urinary%20tract%20infections%3BN94%20-%20Gynecological%20problems%3BB24%20-%20Paediatric%20AIDS%3BP05%20-%20Low%20birth%20weight%20or%20Prematurity%20Complication%3BP15%20-%20Birth%20trauma%3BP21%20-%20Neonatal%20Asphyxia%3BP22%20-%20Respiratory%20distress%3BP23%20-%20Pneumonia%3BP36%20-%20Neonatal%20Septicaemia%3BP37%20-%20Malaria%20%E2%80%93%20Neonatal%3BP54%20-%20Haemorrhage%20%E2%80%93%20Neonatal%3BP74%20-%20Dehydration%3BP78%20-%20Diarrhoea%20%E2%80%93%20Neonatal%3BP95%20-%20Stillbirth%20(fresh)%3BP95%20-%20Stillbirth%20(macerated)%3BP95%20-%20Stillbirth%3BQ05%20-%20Congenital%20hydrocephalus%20and%20spinal%20bifida%3BQ24%20-%20Congenital%20malformation%20of%20the%20heart%3BQ89%20-%20Other%20congenital%20malformation%3BR95%20-%20Sudden%20infant%20death%20syndrome%3BX49%20-%20Accidental%20poisoning%20by%20and%20exposure%20to%20noxious%20substances%3BY09%20-%20Assault%3BO06%20-%20Abortion%3BO16%2FO15%20-%20Severe%20Hypertension%20in%20pregnancy%2F%20eclampsia%3BO46%20-%20Antepartum%20Haemorrhage%3BO66%20-%20Obstructed%20Labour%3BO71%20-%20Rupture%20uterus%3BO72%20-%20Post-partum%20haemorrhage%3BO75%20-%20Unknown%20fever%3BO75%20-%20Local%20herbs%20in%20Pregnancy%3BO85%20-%20Puerperal%20Sepsis%20%2FSepticaemia%3BO98%20-%20Malaria%20in%20pregnancy%3BO99%20-%20Anaemia%20in%20Pregnancy%3BO99%20-%20Pneumonia%20in%20pregnancy%3BO99%20-%20Pulmonary%20oedema%3BO99%20-%20Meningitis%3BO99.4%20-%20Cardiomyopathy%20in%20Pregnancy%3BZ21%20-%20Asymptomatic%20HIV%3BT29%20-%20Burns%20and%20corrosions%20of%20multiple%20body%20regions';

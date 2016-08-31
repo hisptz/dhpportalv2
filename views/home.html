@@ -1069,7 +1069,7 @@
 
                             </div>
                             <br/>
-                            <img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                            <!--<img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">-->
                             <div class="row profile-pages">
                                 <table class="profile_table">
                                     <tr class="header_one">
@@ -1211,17 +1211,17 @@
                                     <tr>
                                         <td class="align_left">Proportion of under 1 year BCG dose</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthstatus[selectedYear-2]['Proportion of under 1 year']}}</td>
-                                        <td>{{healthstatus[selectedYear-1]['Proportion of under 1 year']}}</td>
-                                        <td>{{healthstatus[selectedYear-0]['Proportion of under 1 year']}}</td>
+                                        <td>{{fromDHIS[selectedYear-2]['BCG under 1 year coverage']}}</td>
+                                        <td>{{fromDHIS[selectedYear-1]['BCG under 1 year coverage']}}</td>
+                                        <td>{{fromDHIS[selectedYear-0]['BCG under 1 year coverage']}}</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr>
                                         <td class="align_left">Proportion of under 1 year Penta3</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthstatus[selectedYear-2]['Proportion of under 1 year']}}</td>
-                                        <td>{{healthstatus[selectedYear-1]['Proportion of under 1 year']}}</td>
-                                        <td>{{healthstatus[selectedYear-0]['Proportion of under 1 year']}}</td>
+                                        <td>{{fromDHIS[selectedYear-2]['OPV 3 under 1 year coverage']}}</td>
+                                        <td>{{fromDHIS[selectedYear-1]['OPV 3 under 1 year coverage']}}</td>
+                                        <td>{{fromDHIS[selectedYear-0]['OPV 3 under 1 year coverage']}}</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr class="header_two">
@@ -1241,9 +1241,9 @@
                                         <td class="align_left">Proportion of pregnant women starting ANC before 12 weeks
                                         </td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                        <td>{{healthstatus[selectedYear-2]['Proportion of pregnant']}}</td>
-                                        <td>{{healthstatus[selectedYear-1]['Proportion of pregnant']}}</td>
-                                        <td>{{healthstatus[selectedYear-0]['Proportion of pregnant']}}</td>
+                                        <td>{{fromDHIS[selectedYear-2]['Proportion of pregnant']}}</td>
+                                        <td>{{fromDHIS[selectedYear-1]['Proportion of pregnant']}}</td>
+                                        <td>{{fromDHIS[selectedYear-0]['Proportion of pregnant']}}</td>
                                         <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                     </tr>
                                     <tr class="header_two">
