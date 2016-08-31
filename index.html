@@ -10,6 +10,21 @@
         html, body {
             height: 100%;
         }
+
+        @media print {
+            body * {
+                visibility:hidden;
+            }
+            #printSection, #printSection * {
+                visibility:visible;
+            }
+            #printSection {
+                position:absolute;
+                left:0;
+                top:0;
+            }
+        }
+
         .page-wrap {
             min-height: 100%;
             /* equal to footer height */

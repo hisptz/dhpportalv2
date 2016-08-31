@@ -124,7 +124,7 @@
             //});
 
             // get automated dhis indicators
-            var indicator = 'ELLbdOFMLWJ;yho46pwbbNQ;TRoamv0YPt3';
+            var indicator = 'ELLbdOFMLWJ;yho46pwbbNQ;TRoamv0YPt3;QiA9L6tNHFy';
             dataService.getAutomatedIndicator(indicator,organisationUnit,year).then(function(data){
 
                 $scope.fromDHIS = dataService.assembleDataFromDHIS(data,year);
