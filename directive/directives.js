@@ -28,12 +28,12 @@
     }
 
     function printHtml(){
-        var printSection = document.getElementById('summary_table');
+        var printSection = document.getElementById('previewProfile');
 
         // if there is no printing section, create one
         if (!printSection) {
             printSection = document.createElement('div');
-            printSection.id = 'summary_table';
+            printSection.id = 'previewProfile';
             document.body.appendChild(printSection);
         }
 
