@@ -122,8 +122,6 @@
             var rows           = data.rows;
 
             angular.forEach(dataElement,function(elementValue,elementIndex){
-                console.log(names[elementValue]);
-                console.log(elementValue);
                 angular.forEach(output,function(valueOutput,indexOutput){
                     angular.forEach(rows,function(valueRow,indexRow){
 
@@ -141,6 +139,7 @@
         }
             return output;
         }
+
         dataService.assembleDataFromDHIS = function(data,year){
             var periods = utilityService.getConsecutivePeriods(year);
             var output = [];
@@ -157,8 +156,7 @@
             var rows           = data.rows;
 
             angular.forEach(dataElement,function(elementValue,elementIndex){
-                console.log(names[elementValue]);
-                console.log(elementValue);
+
                 angular.forEach(output,function(valueOutput,indexOutput){
                     angular.forEach(rows,function(valueRow,indexRow){
 
