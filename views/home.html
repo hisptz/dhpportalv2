@@ -465,20 +465,25 @@
                                     <td>{{healthstatus[selectedYear-1]['ANC HIV prevalence (15-24 years)']}}</td>
                                     <td>{{healthstatus[selectedYear-0]['ANC HIV prevalence (15-24 years)']}}</td>
                                     <td></td>
-
                                 </tr>
-                                <!--
-
-                                -->									<tr ng-repeat="singleAdminission in toptenAdmission | orderBy:selectedYear:true " ng-if="$index<10">
-                                <td class="align_left">{{singleAdminission.name}}</td>
-                                <td></td>
-                                <td>{{singleAdminission[selectedYear-2]}}</td>
-                                <td>{{singleAdminission[selectedYear-1]}}</td>
-                                <td>{{singleAdminission[selectedYear-0]}}</td>
-                                <td></td>
-                            </tr>
+                                <tr>
+                                    <td class="align_left"  style="font-weight: bold">Top 10 causes of admission (List #1 cause)</td>
+                                    <td colspan="6"></td>
+                                </tr>
+                                <tr ng-repeat="singleAdminission in toptenAdmission | orderBy:selectedYear:true " ng-if="$index<3">
+                                    <td class="align_left">{{singleAdminission.name}}</td>
+                                    <td></td>
+                                    <td>{{singleAdminission[selectedYear-2]}}</td>
+                                    <td>{{singleAdminission[selectedYear-1]}}</td>
+                                    <td>{{singleAdminission[selectedYear-0]}}</td>
+                                    <td></td>
+                                </tr>
                                 <tr class="header_two">
                                     <td colspan="6" class="align_left">Mortality</td>
+                                </tr>
+                                <tr>
+                                    <td class="align_left" style="font-weight: bold">Top 10 causes of admission (List #1 cause)</td>
+                                    <td colspan="6"></td>
                                 </tr>
                                 <tr ng-repeat="singleCase in toptenCauses  | track by $index  | orderBy:selectedYear:true" ng-if="$index<10">
                                     <td class="align_left">{{singleCase.name}}</td>
@@ -597,9 +602,9 @@
                                     <td class="align_left">Proportion of laboratory confirmed malaria cases among all OPD visits
                                     </td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{healthDelivery[selectedYear-2]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
-                                    <td>{{healthDelivery[selectedYear-1]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
-                                    <td>{{healthDelivery[selectedYear-0]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr>
