@@ -485,7 +485,7 @@
                                     <td class="align_left" style="font-weight: bold">Top 10 causes of death (List #1 cause)</td>
                                     <td colspan="6"></td>
                                 </tr>
-                                <tr ng-repeat="(key,singleCase) in toptenCauses  | orderBy:selectedYear:true track by $index" ng-if="$index<10">
+                                <tr ng-repeat="singleCase in toptenCauses  | orderBy:selectedYear:true track by $index" ng-if="$index<10">
                                     <td class="align_left">{{singleCase.name}}</td>
                                     <td></td>
                                     <td>{{singleCase[selectedYear-2]}}</td>
