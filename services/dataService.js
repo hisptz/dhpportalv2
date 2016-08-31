@@ -171,8 +171,8 @@
         if ( data[0].metaData )
         {
 
-            var dataElement    = data.metaData.dx;
-            var names          = data.metaData.names;
+            var dataElement    = data[0].metaData.dx;
+            var names          = data[0].metaData.names;
 
             angular.forEach(dataElement,function(elementValue,elementIndex){
 
