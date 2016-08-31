@@ -36,7 +36,7 @@
             printSection.id = 'summary_table';
             document.body.appendChild(printSection);
         }
-
+        console.log('PRINT DIRECTIVE');
         function printElement(elem) {
             // clones the element you want to print
             var domClone = elem.cloneNode(true);
@@ -46,6 +46,7 @@
         return {
             link: function (scope, element, attrs) {
                 element.on('click', function () {
+                    console.log('PRINT IS CLICKED');
                     var elemToPrint = document.getElementById(attrs.printElementId);
                     if (elemToPrint) {
                         printElement(elemToPrint);
