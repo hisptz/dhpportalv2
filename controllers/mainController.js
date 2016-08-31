@@ -128,7 +128,7 @@
             dataService.getAutomatedIndicator(indicator,organisationUnit,year).then(function(data){
 
                 $scope.fromDHIS = dataService.assembleDataFromDHIS(data,year);
-
+                console.log($scope.fromDHIS);
 
 
             },function(response){
