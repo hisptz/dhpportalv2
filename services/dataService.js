@@ -154,12 +154,25 @@
                 output[periodValue] = {};
             });
 
-        if ( data.metaData )
+            var rows = [];
+            angular.forEach(data,function(dataValue,dataIndex){
+
+                if ( dataValue.metaData )
+                {
+
+                    angular.forEach(dataValue.rows,function(dataValue,dataIndex){
+
+                        rows.push(dataValue);
+                    });
+                }
+
+            });
+        //
+        if ( data[0].metaData )
         {
 
             var dataElement    = data.metaData.dx;
             var names          = data.metaData.names;
-            var rows           = data.rows;
 
             angular.forEach(dataElement,function(elementValue,elementIndex){
 
