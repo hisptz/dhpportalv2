@@ -215,7 +215,6 @@
         dataService.loadAllFiles = function(){
             var url = '/dhpportal/server/process.php?list_files=1';
 
-
             return getDataFromAnalytics(url);
         }
 
