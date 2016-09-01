@@ -96,7 +96,6 @@
             return $q.all([requestOne,requestTwo,requestThree]);
         }
 
-
         dataService.createPopulationObject = function(data){
             var output = {male:{},female:{}};
 
@@ -210,6 +209,14 @@
         }
             console.log('output',output);
             return output;
+        }
+
+
+        dataService.loadAllFiles = function(){
+            var url = '/dhpportal/server/process.php?list_files=1';
+
+
+            return getDataFromAnalytics(url);
         }
 
         dataService.toNormalize = function(data){
