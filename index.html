@@ -281,7 +281,10 @@
 </div>
 
 <!--file views will stay here-->
-<div ng-if="showLoader"><img src="assets/img/preloader.gif" style="height:30px;width:90px;margin-top: 50%;margin-left: 50%;position: relative;top: 100%;transform:translateY(1000%);"></div>
+
+    <div ng-if="showLoader" class="row">
+        <div ><img src="assets/img/preloader.gif" style="height:30px;width:90px;margin-top: 50%;margin-left: 50%;position: relative;top: 100%;transform:translateY(1000%);"></div>
+    </div>
     <div class="row">
         <div ng-include="'views/templates/selectionCriteria.html'"></div>
     </div>
