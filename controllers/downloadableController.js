@@ -4,6 +4,8 @@
 
 angular.module("dhpportal")
     .controller("downloadableController",function ($rootScope,$scope,$q,$http,$timeout,portalService) {
-
+        $rootScope.updateDataContainers = function(){
+            console.log($scope.selectedOrgUnit,'DOWNLOADABLE');
+        }
 
     });

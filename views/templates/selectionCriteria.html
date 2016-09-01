@@ -1,3 +1,36 @@
+<style>
+    .bootstrap-button-default {
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+    }
+    .bootstrap-button {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid #c6c6c6!important;
+        border-radius: 4px!important;
+        cursor: pointer
+    }
+
+    .bootstrap-button:hover{
+        background-color: #c5dbec!important;
+    }
+</style>
 <div>
     <div class="col s12 m12 l12">
         <div class="col s12 z-depth-1" style="background-color:#ffffff;">
@@ -11,7 +44,7 @@
                     >
 
                     </multi-select-tree>
-
+                    <img ng-if="!organisationUnitTree" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                 </div>
 
                 <div class="input-field col s12 m1 l1 grey lighten-5" >
@@ -22,8 +55,13 @@
                     </select>
                     <label>Period</label>
                 </div>
+                &nbsp;
+                <div class="input-field col s12 m1 l1 grey lighten-5" >
 
-                <div class="input-field col s12 m8 l8 orgDropdown grey lighten-5"  >
+                    <a class="waves-effect waves-light bootstrap-button bootstrap-button-default" type="button" ng-click="updateDataContainers()">Update</a>
+                </div>
+
+                <div class="input-field col s12 m7 l7 orgDropdown grey lighten-5"  >
                     <ul class="right hide-on-med-and-down">
                         <li ng-if="currentLogedUser"><a ><i class="fa fa-user "></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a ng-click="userLogout()" style="cursor: pointer;">Logout</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="cursor: pointer;" ng-click="admin()"><i class="fa fa-cog"></i>&nbsp;Settings</a></li>
                         <li ng-if="!currentLogedUser"><a modal href="#login_modal" >Login</a></li>
@@ -37,7 +75,7 @@
         <div class="col s2 m2 l2" >
             <br/>
             <a style="cursor:pointer;" title="view map" ng-click="showMapCard()"><i class="material-icons dp48">room</i></a>
-            <a  title="downloadable files" href="#/home/downloadable/{{current_id}}/{{selectedYear}}"><i class="material-icons dp48">play_for_work</i></a>
+            <a  title="downloadable files" href="#/home/downloadable/{{selectedOrgUnit}}/{{selectedYear}}"><i class="material-icons dp48">play_for_work</i></a>
         </div>
         <div class="col s8 m8 l8" >
             <br/>
@@ -45,7 +83,7 @@
         </div>
         <div class="col s2 m2 l2" style="text-align:right;">
             <br/>
-             <a  title="back to home"  href="#/home" ng-if="$rootScope.showBackButton"><i class="material-icons dp48">keyboard_backspace</i></a>
+             <a  title="back to home"  href="#/home" ng-if="showBackButton"><i class="material-icons dp48">keyboard_backspace</i></a>
         </div>
     </div>
 </div>
