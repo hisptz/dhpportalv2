@@ -28,75 +28,135 @@
         }
 
 
-        dataService.getPopulationData = function(orgunit,period){
+        dataService.getPopulationData            = function(orgunit,period){
             return getDataFromAnalytics(dataService.baseDHIS+"api/analytics.json?dimension=Cow9nZikDgD:FfN1mqXvpR7;HKU7NijIEIH;LBipXEMD6mq;aZcKJ9XxvaF;h8JRv8POdfy;p1b4SYcdjJw&dimension=dx:ykShMtNgDB1&dimension=hENn80Fmmlf:mtUMlCLFTTz;syxWmui9UMq&filter=ou:"+orgunit+"&filter=pe:"+period);
         }
 
         dataService.getIndicatorDataDistribution = function(orgunit,period){
             var periodArray = utilityService.getConsecutivePeriods(period);
-            var periods = periodArray[0]+";"+periodArray[1]+";"+periodArray[2];
-            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDistributionIndicators+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDistributionIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
             return getDataFromAnalytics(therIndicatorUrl);
         }
-        dataService.getIndicatorDataDelivery = function(orgunit,period){
+        dataService.getIndicatorDataDelivery     = function(orgunit,period){
             var periodArray = utilityService.getConsecutivePeriods(period);
-            var periods = periodArray[0]+";"+periodArray[1]+";"+periodArray[2];
-            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDeliveryIndicators+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDeliveryIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
             return getDataFromAnalytics(therIndicatorUrl);
         }
-        dataService.getIndicatorDataSystem = function(indicator,orgunit,period){
+        dataService.getIndicatorDataSystem       = function(indicator,orgunit,period){
             var periodArray = utilityService.getConsecutivePeriods(period);
-            var periods = periodArray[0]+";"+periodArray[1]+";"+periodArray[2];
-            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            return $http.get(therIndicatorUrl).then(handleSuccess,handleError('Error loading HMIS Indicators'));
+            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            return getDataFromAnalytics(therIndicatorUrl);
         }
 
-        dataService.getIndicatorTopTenMortality = function(indicator,orgunit,period){
+        dataService.getIndicatorTopTenMortality  = function(indicator,orgunit,period){
             var periodArray = utilityService.getConsecutivePeriods(period);
-            var therIndicatorUrlYear1 = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray[0]+'&dimension='+dataService.metaData.topTenMortalityIndicators+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
-            var therIndicatorUrlYear2 = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray[1]+'&dimension='+dataService.metaData.topTenMortalityIndicators+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
-            var therIndicatorUrlYear3 = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray[2]+'&dimension='+dataService.metaData.topTenMortalityIndicators+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
+            var therIndicatorUrlYear = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray+'&dimension='+dataService.metaData.topTenMortalityIndicators+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
 
-
-            var requestOne    = getDataFromAnalytics(therIndicatorUrlYear1);
-            var requestTwo    = getDataFromAnalytics(therIndicatorUrlYear2);
-            var requestThree  = getDataFromAnalytics(therIndicatorUrlYear3);
-
-            return $q.all([requestOne,requestTwo,requestThree]);
+            return getDataFromAnalytics(therIndicatorUrlYear);
 
         }
         dataService.getIndicatorTopTenAdmissions = function(orgunit,period){
 
             var periodArray = utilityService.getConsecutivePeriods(period);
 
-            var therIndicatorUrlYear1 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.topTenAdmission+"&dimension=pe:"+periodArray[0]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            var therIndicatorUrlYear2 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.topTenAdmission+"&dimension=pe:"+periodArray[1]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            var therIndicatorUrlYear3 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.topTenAdmission+"&dimension=pe:"+periodArray[2]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-
-
-            var requestOne    = $http.get(therIndicatorUrlYear1).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[0]));
-            var requestTwo    = $http.get(therIndicatorUrlYear2).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[1]));
-            var requestThree  = $http.get(therIndicatorUrlYear3).then(handleSuccess,handleError('Error loading HMIS Indicators for '+periodArray[2]));
-
-            return $q.all([requestOne,requestTwo,requestThree]);
+            var therIndicatorUrlYear = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.topTenAdmission+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            return getDataFromAnalytics(therIndicatorUrlYear);
 
         }
 
-        dataService.getAutomatedIndicator = function(orgunit,period){
+        dataService.getAutomatedIndicator        = function(orgunit,period){
             var periodArray = utilityService.getConsecutivePeriods(period);
-            var automatedUrl1 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.automatedIndicators+"&dimension=pe:"+periodArray[0]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            var automatedUrl2 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.automatedIndicators+"&dimension=pe:"+periodArray[1]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            var automatedUrl3 = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.automatedIndicators+"&dimension=pe:"+periodArray[2]+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var automatedUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.automatedIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
 
-
-            var requestOne    = getDataFromAnalytics(automatedUrl1);
-            var requestTwo    = getDataFromAnalytics(automatedUrl2);
-            var requestThree  = getDataFromAnalytics(automatedUrl3);
-
-            return $q.all([requestOne,requestTwo,requestThree]);
+            return getDataFromAnalytics(automatedUrl);
         }
 
-        dataService.createPopulationObject = function(data){
+
+
+        dataService.refineTopTenAdmissionIndicators = function(analyticsObject,year){
+            console.log("TOP TEN CAUSES OF DEATH");
+            var periods = profile.getConsecutivePeriods(year);
+            var output = [];
+            var outputs = [];
+
+
+            if ( analyticsObject.metaData )
+            {
+                var dataElement    = analyticsObject.metaData.dx;
+                var names          = analyticsObject.metaData.names;
+                var rows           = analyticsObject.rows;
+
+                angular.forEach(dataElement,function(elementValue,elementIndex){
+                    output[elementValue] = {name:names[elementValue]};
+                    output[elementValue][periods[0]] = 0;
+                    output[elementValue][periods[1]] = 0;
+                    output[elementValue][periods[2]] = 0;
+                });
+
+                angular.forEach(rows,function(rowValue,rowIndex){
+                    output[rowValue[0]][rowValue[1]] = Number(rowValue[2]);
+                });
+
+
+                angular.forEach(dataElement,function(elementValue,elementIndex){
+                    outputs.push(output[elementValue]);
+
+                });
+            }
+
+
+
+            return outputs;
+        }
+        dataService.refineTopTenMoltalityIndicators = function(analyticsObject,year){
+
+            var periods = profile.getConsecutivePeriods(year);
+            var output = [];
+            var outputs = [];
+
+
+            var dataElement    = [];
+            console.log(analyticsObject);
+            if ( analyticsObject )
+            {
+
+                var period          = analyticsObject.metaData.pe;
+                var rows           = analyticsObject.rows;
+
+
+
+                angular.forEach(rows,function(rowValue,rowIndex){
+                    if(typeof output[rowValue[0]]!="undefined"){
+
+                    }else{
+                        output[rowValue[0]] = {name:rowValue[0]};
+                        output[rowValue[0]][periods[0]] = 0;
+                        output[rowValue[0]][periods[1]] = 0;
+                        output[rowValue[0]][periods[2]] = 0;
+                    }
+
+                });
+
+                angular.forEach(rows,function(rowValue,rowIndex){
+                    dataElement.push(rowValue[0]);
+                    output[rowValue[0]][rowValue[1]] = Number(rowValue[2]);
+                });
+
+
+                angular.forEach(dataElement,function(elementValue,elementIndex){
+                    outputs.push(output[elementValue]);
+
+                });
+
+            }
+
+
+
+
+            return outputs;
+        }
+
+        dataService.createPopulationObject       = function(data){
             var output = {male:{},female:{}};
 
             if  ( data.metaData )
@@ -128,67 +188,22 @@
 
             return output;
         }
-        dataService.createHealthStatusObject = function(data,year){
-            var periods = utilityService.getConsecutivePeriods(year);
-            var output = [];
+
+        dataService.assembleDataFromDHIS         = function(data,year){
+            var periodString = utilityService.getConsecutivePeriods(year);
+            var output = {}
+            var periods = periodString.split(';');
 
             angular.forEach(periods,function(periodValue,periodIndex){
                 output[periodValue] = {};
             });
+
 
         if ( data.metaData )
         {
 
             var dataElement    = data.metaData.dx;
             var names          = data.metaData.names;
-            var rows           = data.rows;
-
-            angular.forEach(dataElement,function(elementValue,elementIndex){
-                angular.forEach(output,function(valueOutput,indexOutput){
-                    angular.forEach(rows,function(valueRow,indexRow){
-
-                        if(indexOutput==rows[indexRow][1]){
-                            if(elementValue==rows[indexRow][0]){
-                                output[indexOutput][names[elementValue]] = rows[indexRow][2];
-                            }
-                        }
-                    });
-                });
-
-            });
-
-
-        }
-            return output;
-        }
-
-        dataService.assembleDataFromDHIS = function(data,year){
-            var periods = utilityService.getConsecutivePeriods(year);
-            var output = [];
-
-            angular.forEach(periods,function(periodValue,periodIndex){
-                output[periodValue] = {};
-            });
-
-            var rows = [];
-            angular.forEach(data,function(dataValue,dataIndex){
-
-                if ( dataValue.metaData )
-                {
-
-                    angular.forEach(dataValue.rows,function(dataValue,dataIndex){
-
-                        rows.push(dataValue);
-                    });
-                }
-
-            });
-        //
-        if ( data[0].metaData )
-        {
-
-            var dataElement    = data[0].metaData.dx;
-            var names          = data[0].metaData.names;
 
             angular.forEach(dataElement,function(elementValue,elementIndex){
 

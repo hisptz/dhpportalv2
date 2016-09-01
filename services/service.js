@@ -13,8 +13,8 @@
     function profileService($http,Upload) {
       var profile = this;
         //profile.baseDHIS = "https://dhis.moh.go.tz/";
-        profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
-        //profile.baseDHIS = "http://localhost:9000/";
+        //profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
+        profile.baseDHIS = "http://localhost:9000/";
         profile.basePortal = "server/";
         profile.listProfileByYear = function(year){
             return $http.get(profile.basePortal+'process.php?by_year='+year+'&only=1').then(handleSuccess, handleError('Error creating user'));
@@ -224,10 +224,14 @@
         }
 
         profile.getConsecutivePeriods = function(start_perod){
-            var periods      = [];
+            var periods      = "";
 
             for(var counter  = 2; counter   >=  0;counter--){
-                periods.push(start_perod-counter);
+                periods+=start_perod-counter;
+                if ( counter != 0 )
+                {
+                    periods+=";";
+                }
             }
 
             return periods;
@@ -237,89 +241,6 @@
             window.location.href = "#/home";
         }
 
-
-        profile.getTopTenAdmissionIndicators = function(analyticsObject,year){
-            console.log("TOP TEN CAUSES OF DEATH");
-            var periods = profile.getConsecutivePeriods(year);
-            var output = [];
-            var outputs = [];
-
-
-            if ( analyticsObject.metaData )
-            {
-                var dataElement    = analyticsObject.metaData.dx;
-                var names          = analyticsObject.metaData.names;
-                var rows           = analyticsObject.rows;
-
-                angular.forEach(dataElement,function(elementValue,elementIndex){
-                    output[elementValue] = {name:names[elementValue]};
-                    output[elementValue][periods[0]] = 0;
-                    output[elementValue][periods[1]] = 0;
-                    output[elementValue][periods[2]] = 0;
-                });
-
-                angular.forEach(rows,function(rowValue,rowIndex){
-                    output[rowValue[0]][rowValue[1]] = Number(rowValue[2]);
-                });
-
-
-                angular.forEach(dataElement,function(elementValue,elementIndex){
-                    outputs.push(output[elementValue]);
-
-                });
-            }
-
-
-
-            return outputs;
-        }
-        profile.getTopTenMoltalityIndicators = function(analyticsObject,year){
-
-            var periods = profile.getConsecutivePeriods(year);
-            var output = [];
-            var outputs = [];
-
-
-            var dataElement    = [];
-            console.log(analyticsObject);
-            if ( analyticsObject )
-                {
-
-                    var period          = analyticsObject.metaData.pe;
-                    var rows           = analyticsObject.rows;
-
-
-
-                    angular.forEach(rows,function(rowValue,rowIndex){
-                        if(typeof output[rowValue[0]]!="undefined"){
-
-                        }else{
-                            output[rowValue[0]] = {name:rowValue[0]};
-                            output[rowValue[0]][periods[0]] = 0;
-                            output[rowValue[0]][periods[1]] = 0;
-                            output[rowValue[0]][periods[2]] = 0;
-                        }
-
-                    });
-
-                    angular.forEach(rows,function(rowValue,rowIndex){
-                        dataElement.push(rowValue[0]);
-                        output[rowValue[0]][rowValue[1]] = Number(rowValue[2]);
-                    });
-
-
-                    angular.forEach(dataElement,function(elementValue,elementIndex){
-                        outputs.push(output[elementValue]);
-
-                    });
-
-                }
-
-
-
-
-            return outputs;
-        }
     }
 
 

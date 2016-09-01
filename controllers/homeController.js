@@ -41,7 +41,7 @@
             });
 
             dataService.getIndicatorDataDelivery(organisationUnit,year).then(function(data){
-                $scope.healthDelivery = dataService.createHealthStatusObject(data,year);
+                $scope.healthDelivery = dataService.assembleDataFromDHIS(data,year);
             },function(response){
                 console.warn("failed to pull data delivery indicators");
             });
@@ -81,7 +81,7 @@
                     }
                 });
 
-                $scope.toptenCauses = utilityService.getTopTenMoltalityIndicators(data,year);
+                $scope.toptenCauses = dataService.refineTopTenMoltalityIndicators(data,year);
             },function(response){
                 console.warn("failed to load top ten indicators");
             });
@@ -109,7 +109,7 @@
                     }
                 });
 
-                $scope.toptenAdmission = utilityService.getTopTenAdmissionIndicators(data,year);
+                $scope.toptenAdmission = dataService.refineTopTenAdmissionIndicators(data,year);
             },function(response){
                 console.warn("failed to load top ten indicators");
             });
