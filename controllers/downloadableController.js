@@ -3,7 +3,7 @@
  */
 
 angular.module("dhpportal")
-    .controller("downloadableController",function ($rootScope,$scope,$q,$http,$timeout,portalService,dataService) {
+    .controller("downloadableController",['$rootScope','$scope','$q','$http','$timeout','portalService','dataService',function ($rootScope,$scope,$q,$http,$timeout,portalService,dataService) {
         $rootScope.updateDataContainers = function(){
             console.log(dataService);
             dataService.loadAllFiles().then(function(files){
@@ -13,4 +13,4 @@ angular.module("dhpportal")
             })
         }
 
-    });
+    }]);
