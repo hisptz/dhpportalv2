@@ -51,7 +51,7 @@
         //}
 
         dataService.getIndicatorTopTenMortality  = function(indicator,orgunit,period){
-            var periods = utilityService.getConsecutivePeriods(period);console.log(periods);
+            var periods = utilityService.getConsecutivePeriods(period);console.log("TOP TEN PERIODS",periods);
             var periodArray = periods.split(';');
             var therIndicatorUrlYear = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray+'&dimension='+dataService.metaData.topTenMortalityIndicators+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
 
@@ -79,7 +79,7 @@
 
 
         dataService.refineTopTenAdmissionIndicators = function(analyticsObject,year){
-            console.log("TOP TEN CAUSES OF DEATH");
+
             var period  = utilityService.getConsecutivePeriods(year);
             var periods = period.split(';');
             var output = [];
