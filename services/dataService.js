@@ -194,7 +194,7 @@
 
         dataService.assembleDataFromDHIS         = function(data,year){
             var periodString = utilityService.getConsecutivePeriods(year);
-            var output = {}
+            var output = [];
             var periods = periodString.split(';');
 
             angular.forEach(periods,function(periodValue,periodIndex){

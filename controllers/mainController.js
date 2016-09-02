@@ -11,6 +11,7 @@
         var main  = this;
         var date = new Date();
 
+
         $scope.selectedYear = date.getFullYear();
         $scope.admin = function(){
             window.location.href = "#/admin";
