@@ -21,6 +21,8 @@
 
         }
 
+        var indicator = dataService.metaData.automatedIndicators+';'+dataService.metaData.dataDeliveryIndicators+';'+dataService.metaData.automatedIndicators+';'+dataService.metaData.indicators
+
         function getDataFromAnalytics(url){
 
             return $http.get(url).then(handleSuccess, handleError('Error loading analytics data'));
@@ -32,21 +34,21 @@
             return getDataFromAnalytics(dataService.baseDHIS+"api/analytics.json?dimension=Cow9nZikDgD:FfN1mqXvpR7;HKU7NijIEIH;LBipXEMD6mq;aZcKJ9XxvaF;h8JRv8POdfy;p1b4SYcdjJw&dimension=dx:ykShMtNgDB1&dimension=hENn80Fmmlf:mtUMlCLFTTz;syxWmui9UMq&filter=ou:"+orgunit+"&filter=pe:"+period);
         }
 
-        dataService.getIndicatorDataDistribution = function(orgunit,period){
-            var periodArray = utilityService.getConsecutivePeriods(period);
-            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDistributionIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            return getDataFromAnalytics(therIndicatorUrl);
-        }
-        dataService.getIndicatorDataDelivery     = function(orgunit,period){
-            var periodArray = utilityService.getConsecutivePeriods(period);
-            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDeliveryIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            return getDataFromAnalytics(therIndicatorUrl);
-        }
-        dataService.getIndicatorDataSystem       = function(indicator,orgunit,period){
-            var periodArray = utilityService.getConsecutivePeriods(period);
-            var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-            return getDataFromAnalytics(therIndicatorUrl);
-        }
+        //dataService.getIndicatorDataDistribution = function(orgunit,period){
+        //    var periodArray = utilityService.getConsecutivePeriods(period);
+        //    var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDistributionIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+        //    return getDataFromAnalytics(therIndicatorUrl);
+        //}
+        //dataService.getIndicatorDataDelivery     = function(orgunit,period){
+        //    var periodArray = utilityService.getConsecutivePeriods(period);
+        //    var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDeliveryIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+        //    return getDataFromAnalytics(therIndicatorUrl);
+        //}
+        //dataService.getIndicatorDataSystem       = function(indicator,orgunit,period){
+        //    var periodArray = utilityService.getConsecutivePeriods(period);
+        //    var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+        //    return getDataFromAnalytics(therIndicatorUrl);
+        //}
 
         dataService.getIndicatorTopTenMortality  = function(indicator,orgunit,period){
             var periodArray = utilityService.getConsecutivePeriods(period);
@@ -66,7 +68,7 @@
 
         dataService.getAutomatedIndicator        = function(orgunit,period){
             var periodArray = utilityService.getConsecutivePeriods(period);
-            var automatedUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.automatedIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var automatedUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
 
             return getDataFromAnalytics(automatedUrl);
         }
@@ -75,7 +77,8 @@
 
         dataService.refineTopTenAdmissionIndicators = function(analyticsObject,year){
             console.log("TOP TEN CAUSES OF DEATH");
-            var periods = profile.getConsecutivePeriods(year);
+            var period  = utilityService.getConsecutivePeriods(year);
+            var periods = period.split(';');
             var output = [];
             var outputs = [];
 
@@ -109,8 +112,8 @@
             return outputs;
         }
         dataService.refineTopTenMoltalityIndicators = function(analyticsObject,year){
-
-            var periods = profile.getConsecutivePeriods(year);
+            var period  = utilityService.getConsecutivePeriods(year);
+            var periods = period.split(';');
             var output = [];
             var outputs = [];
 
