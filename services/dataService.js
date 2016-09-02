@@ -176,7 +176,7 @@
 
         dataService.formatDataForTree  =  function(files) {
 
-                    var treeData = {name:'MOH - Tanzania',children:[]};
+                    var treeData = {name:'MOH - Tanzania',children:null};
                        var regions = [];
                        var regionsArray = [];
                       for (var i = 2;i<files.length;i++) {
@@ -202,7 +202,7 @@
 
                       }
 
-                    treeData.children.push(regionsArray);
+                    treeData.children  = regionsArray;
                   return treeData;
          }
 
