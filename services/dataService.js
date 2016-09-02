@@ -197,7 +197,7 @@
                     for (var i = 2;i<files.length;i++) {
                        var fileArray = files[i].split('_');
                          if (regions[r] == fileArray[1]) {
-                             regionsArray[r].children.push({name:fileArray[2]+" profile",url:'uploads'+files[i]});
+                             regionsArray[r].children.push({name:fileArray[2]+" profile",url:'uploads/'+files[i]});
                          }
                         }
 

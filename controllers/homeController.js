@@ -8,7 +8,7 @@
 
     homeController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
     function homeController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
-        $scope.selectedYear = $rootScope.selectedYear;
+
         $rootScope.updateDataContainers = function(){
 
             if ( $scope.selectedOrgUnit ) {
