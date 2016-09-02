@@ -271,7 +271,7 @@
 
                   if ( treeData.children.length == childIndexindex+1 )
                   {
-                    treeData.children.push({name:valueName,children:[]};)
+                    treeData.children.push({name:valueName,children:[]})
                   }
 
                 });
