@@ -82,7 +82,7 @@
             var outputs = [];
 
 
-            if ( analyticsObject.metaData )
+            if ( typeof analyticsObject.metaData == 'object' )
             {
                 var dataElement    = analyticsObject.metaData.dx;
                 var names          = analyticsObject.metaData.names;
@@ -124,8 +124,6 @@
 
                 var period          = analyticsObject.metaData.pe;
                 var rows            = analyticsObject.rows;
-
-
 
                 angular.forEach(rows,function(rowValue,rowIndex){
                     if( typeof output[rowValue[0]] != "undefined" ){
