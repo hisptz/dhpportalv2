@@ -118,8 +118,8 @@
 
 
             var dataElement    = [];
-
-            if ( analyticsObject )
+            console.log(analyticsObject);
+            if ( typeof analyticsObject == 'object' )
             {
 
                 var period          = analyticsObject.metaData.pe;
@@ -206,7 +206,7 @@
 
             var dataElement    = data.metaData.dx;
             var names          = data.metaData.names;
-            var rows          = data.rows;
+            var rows           = data.rows;
 
             angular.forEach(dataElement,function(elementValue,elementIndex){
 
