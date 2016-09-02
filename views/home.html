@@ -495,7 +495,7 @@
                         <br/>
 
                         <div class="row profile-pages">
-                            <img ng-if="!healthDelivery" src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                            <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <table class="profile_table">
                                 <tr class="header_one">
                                     <td>DISTRICT HEALTH SERVICE DELIVERY</td>
@@ -511,9 +511,9 @@
                                 <tr>
                                     <td class="align_left">OPD attendance</td>
                                     <td>{{profile['DHP_General_GeneralOPDAttendanceTarget']}}</td>
-                                    <td>{{healthDelivery[selectedYear-2]['OPD Attendance per capita']}}</td>
-                                    <td>{{healthDelivery[selectedYear-1]['OPD Attendance per capita']}}</td>
-                                    <td>{{healthDelivery[selectedYear-0]['OPD Attendance per capita']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['OPD Attendance per capita']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['OPD Attendance per capita']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['OPD Attendance per capita']}}</td>
                                     <td>{{profile['DHP_General_GeneralOPDAttendanceProgress']}}</td>
 
                                 </tr>
@@ -560,9 +560,9 @@
                                     <td class="align_left">Percentage of health centers and dispensaries that can provide EmONC as defined in Essential Health Package (EHP)
                                     </td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{healthDelivery[selectedYear-2]['Percentage of health centers']}}</td>
-                                    <td>{{healthDelivery[selectedYear-1]['Percentage of health centers']}}</td>
-                                    <td>{{healthDelivery[selectedYear-0]['Percentage of health centers']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Percentage of health centers']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Percentage of health centers']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Percentage of health centers']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 
@@ -582,18 +582,18 @@
                                     <td class="align_left">Proportion of mothers who received two doses of preventative intermittent treatment for malaria during pregnancy during a specified time
                                     </td>
                                     <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{healthDelivery[selectedYear-2]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
-                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{healthDelivery[selectedYear-1]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
-                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{healthDelivery[selectedYear-0]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
+                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{fromDHIS[selectedYear-2]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
+                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{fromDHIS[selectedYear-1]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
+                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{fromDHIS[selectedYear-0]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr>
                                     <td class="align_left">Proportion of vulnerable groups sleeping under ITN the previous night
                                     </td>
                                     <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{healthDelivery[selectedYear-2]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
-                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{healthDelivery[selectedYear-1]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
-                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{healthDelivery[selectedYear-0]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
+                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{fromDHIS[selectedYear-2]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
+                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{fromDHIS[selectedYear-1]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
+                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{fromDHIS[selectedYear-0]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
                                     <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr>
@@ -609,9 +609,9 @@
                                     <td class="align_left">TB notification rate per 100,000 population
                                     </td>
                                     <td data-item="TB case detection rate">{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td data-item="TB case detection rate">{{healthDelivery[selectedYear-2]['TB case detection rate']}}</td>
-                                    <td data-item="TB case detection rate">{{healthDelivery[selectedYear-1]['TB case detection rate']}}</td>
-                                    <td data-item="TB case detection rate">{{healthDelivery[selectedYear-0]['TB case detection rate']}}</td>
+                                    <td data-item="TB case detection rate">{{fromDHIS[selectedYear-2]['TB case detection rate']}}</td>
+                                    <td data-item="TB case detection rate">{{fromDHIS[selectedYear-1]['TB case detection rate']}}</td>
+                                    <td data-item="TB case detection rate">{{fromDHIS[selectedYear-0]['TB case detection rate']}}</td>
                                     <td data-item="TB case detection rate">{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr class="header_two">
@@ -621,36 +621,36 @@
                                 <tr>
                                     <td class="align_left">Proportion of children in need of care and protection who received services</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{healthDelivery[selectedYear-2]['Proportion of children']}}</td>
-                                    <td>{{healthDelivery[selectedYear-1]['Proportion of children']}}</td>
-                                    <td>{{healthDelivery[selectedYear-0]['Proportion of children']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion of children']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion of children']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion of children']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 
                                 <tr>
                                     <td class="align_left">Proportion of adults in need of welfare and protection who received services</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{healthDelivery[selectedYear-2]['Proportion of adults']}}</td>
-                                    <td>{{healthDelivery[selectedYear-1]['Proportion of adults']}}</td>
-                                    <td>{{healthDelivery[selectedYear-0]['Proportion of adults']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion of adults']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion of adults']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion of adults']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 
                                 <tr>
                                     <td class="align_left">Proportion of LGAs with improved capacity to provide quality welfare and protection services</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{healthDelivery[selectedYear-2]['Proportion of LGAs']}}</td>
-                                    <td>{{healthDelivery[selectedYear-1]['Proportion of LGAs']}}</td>
-                                    <td>{{healthDelivery[selectedYear-0]['Proportion of LGAs']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion of LGAs']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion of LGAs']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion of LGAs']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 
                                 <tr>
                                     <td class="align_left">Proportion of health facilities providing birth registration and birth certification services</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{healthDelivery[selectedYear-2]['Proportion']}}</td>
-                                    <td>{{healthDelivery[selectedYear-1]['Proportion']}}</td>
-                                    <td>{{healthDelivery[selectedYear-0]['Proportion']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 

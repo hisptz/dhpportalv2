@@ -122,7 +122,7 @@
 
 
             var dataElement    = [];
-            console.log(analyticsObject);
+
             if ( analyticsObject )
             {
 
@@ -156,7 +156,7 @@
 
             }
 
-
+            console.log('TOP TEN',outputs);
 
 
             return outputs;
