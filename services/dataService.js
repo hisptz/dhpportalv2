@@ -174,6 +174,25 @@
             return output;
         }
 
+        dataService.formatDataForTree  =  function(files) {
+          var treeData = {name:'',children:[]};
+          if ( files )
+          {
+            angular.forEach( files ,function(filesValue,fileIndex){
+
+              if (filesValue !== '.' || filesValue !== '..')
+              {
+                var singleFileArray = filesValue.split('_');
+
+                treeData = pushChildrens(treeData,singleFileArray);
+              }
+
+            })
+          }
+
+          return treeData;
+         }
+
         dataService.assembleDataFromDHIS         = function(data,year){
             var periodString = utilityService.getConsecutivePeriods(year);
             var output = [];
@@ -236,6 +255,31 @@
         }
 
         return dataService;
+    }
+
+
+    function pushChildrens(treeData,singleFileArray){
+
+            angular.forEach(singleFileArray,function(valueName){
+
+              if ( treeData.name !== valueName ) {
+                treeData.name = valueName;
+                treeData.children = {name:'',children:[]};
+              }else{
+
+                angular.forEach(treeData.children,function(childValue,childIndex){
+
+                  if ( treeData.children.length == childIndexindex+1 )
+                  {
+                    treeData.children.push({name:valueName,children:[]};)
+                  }
+
+                });
+
+              }
+
+            })
+      return treeData;
     }
 
 
