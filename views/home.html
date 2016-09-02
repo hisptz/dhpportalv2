@@ -154,7 +154,7 @@
                                 <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Submitted District Health Profile - {{$rootScope.selectedYear}}</th>
+                                    <th>Submitted District Health Profile - {{selectedYear}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -231,7 +231,7 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Submitted District Health Profile - {{$rootScope.selectedYear}}</th>
+                                        <th>Submitted District Health Profile - {{selectedYear}}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -346,7 +346,7 @@
                     <div id="previewProfile" class="col s12 m12 preview_profile"  >
 
                         <div class="row profile-pages" style="color:#000000;">
-                            <p class="secondary_header">Table 0-1. {{$rootScope.selectedYear}} DHP Results Summary Table</p>
+                            <p class="secondary_header">Table 0-1. {{selectedYear}} DHP Results Summary Table</p>
                             <br/>
                             <img ng-if="!population" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <table class="profile_table">
@@ -385,9 +385,9 @@
                                         HEALTH STATUS OF THE DISTRICT POPULATION
                                     </td>
                                     <td>TARGET</td>
-                                    <td>{{$rootScope.selectedYear-2}}</td>
-                                    <td>{{$rootScope.selectedYear-1}}</td>
-                                    <td>{{$rootScope.selectedYear-0}}</td>
+                                    <td>{{selectedYear-2}}</td>
+                                    <td>{{selectedYear-1}}</td>
+                                    <td>{{selectedYear-0}}</td>
                                     <td>OVERALL PROGRESS (+/-)</td>
                                 </tr>
                                 <tr class="header_two">
@@ -396,9 +396,9 @@
                                 <tr>
                                     <td class="align_left">Maternal mortality ratio</td>
                                     <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityTarget']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Maternal Mortality Ratio (Institutional)']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Maternal Mortality Ratio (Institutional)']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Maternal Mortality Ratio (Institutional)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Maternal Mortality Ratio (Institutional)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Maternal Mortality Ratio (Institutional)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Maternal Mortality Ratio (Institutional)']}}</td>
                                     <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityProgress']}}</td>
                                 </tr>
                                 <tr>
@@ -413,9 +413,9 @@
                                     <td class="align_left">Neonatal mortality rates (per 1,000)</td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthNeonatalMortalityTarget']}}</td>-->
                                     <td></td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Neonatal Mortality Rate']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Neonatal Mortality Rate']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Neonatal Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Neonatal Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Neonatal Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Neonatal Mortality Rate']}}</td>
                                     <td></td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthNeonatalMortalityProgress']}}</td>-->
                                 </tr>
@@ -423,9 +423,9 @@
                                     <td class="align_left">Infant mortality rates (per 1,000)</td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityTarget_tobe']}}</td>-->
                                     <td></td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Infant Mortality Rate']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Infant Mortality Rate']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Infant Mortality Rate']}}</td>
                                     <td></td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityProgress_tobe']}}</td>-->
                                 </tr>
@@ -433,9 +433,9 @@
                                     <td class="align_left">Under 5 mortality rates (per 1,000)</td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthUnder5MortalityTarget_tobe']}}</td>-->
                                     <td></td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Infant Mortality Rate']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Infant Mortality Rate']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Infant Mortality Rate']}}</td>
                                     <td></td>
 
 
@@ -448,9 +448,9 @@
                                     <td class="align_left">Incidence of malaria/laboratory confirmed cases</td>
                                     <!--<td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaTarget']}}</td>-->
                                     <td></td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['X OPD_Malaria Confirmed Blood Slide']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['X OPD_Malaria Confirmed Blood Slide']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['X OPD_Malaria Confirmed Blood Slide']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['X OPD_Malaria Confirmed Blood Slide']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['X OPD_Malaria Confirmed Blood Slide']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['X OPD_Malaria Confirmed Blood Slide']}}</td>
                                     <td></td>
                                     <!--<td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaProgress']}}</td>-->
                                 </tr>
@@ -458,21 +458,21 @@
                                     <td class="align_left">HIV prevalence in 15 to 24 years age group</td>
                                     <!--{{profile['DHP_Morbidity_MorbidityHIVAIDSTarget']}}-->
                                     <td></td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['ANC HIV prevalence (15-24 years)']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['ANC HIV prevalence (15-24 years)']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['ANC HIV prevalence (15-24 years)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['ANC HIV prevalence (15-24 years)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['ANC HIV prevalence (15-24 years)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['ANC HIV prevalence (15-24 years)']}}</td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td class="align_left"  style="font-weight: bold">Top 10 causes of admission (List #1 cause)</td>
                                     <td colspan="6"></td>
                                 </tr>
-                                <tr ng-repeat="singleAdminission in toptenAdmission | orderBy:$rootScope.selectedYear:true " ng-if="$index<3">
+                                <tr ng-repeat="singleAdminission in toptenAdmission | orderBy:selectedYear:true " ng-if="$index<3">
                                     <td class="align_left">{{singleAdminission.name}}</td>
                                     <td></td>
-                                    <td>{{singleAdminission[$rootScope.selectedYear-2]}}</td>
-                                    <td>{{singleAdminission[$rootScope.selectedYear-1]}}</td>
-                                    <td>{{singleAdminission[$rootScope.selectedYear-0]}}</td>
+                                    <td>{{singleAdminission[selectedYear-2]}}</td>
+                                    <td>{{singleAdminission[selectedYear-1]}}</td>
+                                    <td>{{singleAdminission[selectedYear-0]}}</td>
                                     <td></td>
                                 </tr>
                                 <tr class="header_two">
@@ -482,12 +482,12 @@
                                     <td class="align_left" style="font-weight: bold">Top 10 causes of death (List #1 cause)</td>
                                     <td colspan="6"></td>
                                 </tr>
-                                <tr ng-repeat="singleCase in toptenCauses  | orderBy:$rootScope.selectedYear:true track by $index" ng-if="$index<1">
+                                <tr ng-repeat="singleCase in toptenCauses  | orderBy:selectedYear:true track by $index" ng-if="$index<1">
                                     <td class="align_left">{{singleCase.name}}</td>
                                     <td></td>
-                                    <td>{{singleCase[$rootScope.selectedYear-2]}}</td>
-                                    <td>{{singleCase[$rootScope.selectedYear-1]}}</td>
-                                    <td>{{singleCase[$rootScope.selectedYear-0]}}</td>
+                                    <td>{{singleCase[selectedYear-2]}}</td>
+                                    <td>{{singleCase[selectedYear-1]}}</td>
+                                    <td>{{singleCase[selectedYear-0]}}</td>
                                     <td></td>
                                 </tr>
                             </table>
@@ -500,9 +500,9 @@
                                 <tr class="header_one">
                                     <td>DISTRICT HEALTH SERVICE DELIVERY</td>
                                     <td>TARGET</td>
-                                    <td>{{$rootScope.selectedYear-2}}</td>
-                                    <td>{{$rootScope.selectedYear-1}}</td>
-                                    <td>{{$rootScope.selectedYear-0}}</td>
+                                    <td>{{selectedYear-2}}</td>
+                                    <td>{{selectedYear-1}}</td>
+                                    <td>{{selectedYear-0}}</td>
                                     <td>OVERALL PROGRESS (+/-)</td>
                                 </tr>
                                 <tr class="header_two">
@@ -511,9 +511,9 @@
                                 <tr>
                                     <td class="align_left">OPD attendance</td>
                                     <td>{{profile['DHP_General_GeneralOPDAttendanceTarget']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['OPD Attendance per capita']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['OPD Attendance per capita']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['OPD Attendance per capita']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['OPD Attendance per capita']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['OPD Attendance per capita']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['OPD Attendance per capita']}}</td>
                                     <td>{{profile['DHP_General_GeneralOPDAttendanceProgress']}}</td>
 
                                 </tr>
@@ -531,26 +531,26 @@
                                 <tr>
                                     <td class="align_left">Proportion of under 1 year 3rd polio (OPV3)</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['OPV 3 under 1 year coverage']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['OPV 3 under 1 year coverage']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['OPV 3 under 1 year coverage']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['OPV 3 under 1 year coverage']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['OPV 3 under 1 year coverage']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['OPV 3 under 1 year coverage']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <!--['BCG under 1 year coverage']-->
                                 <tr>
                                     <td class="align_left">Proportion of under 1 year BCG dose</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['BCG under 1 year coverage ']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['BCG under 1 year coverage ']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['BCG under 1 year coverage ']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['BCG under 1 year coverage ']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['BCG under 1 year coverage ']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['BCG under 1 year coverage ']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr>
                                     <td class="align_left">Proportion of under 1 year Penta3</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td >{{fromDHIS[$rootScope.selectedYear-2]['PENTA 3 vaccination coverage children under 1 year']}}</td>
-                                    <td >{{fromDHIS[$rootScope.selectedYear-1]['PENTA 3 vaccination coverage children under 1 year']}}</td>
-                                    <td >{{fromDHIS[$rootScope.selectedYear-0]['PENTA 3 vaccination coverage children under 1 year']}}</td>
+                                    <td >{{fromDHIS[selectedYear-2]['PENTA 3 vaccination coverage children under 1 year']}}</td>
+                                    <td >{{fromDHIS[selectedYear-1]['PENTA 3 vaccination coverage children under 1 year']}}</td>
+                                    <td >{{fromDHIS[selectedYear-0]['PENTA 3 vaccination coverage children under 1 year']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr class="header_two">
@@ -560,9 +560,9 @@
                                     <td class="align_left">Percentage of health centers and dispensaries that can provide EmONC as defined in Essential Health Package (EHP)
                                     </td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Percentage of health centers']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Percentage of health centers']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Percentage of health centers']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Percentage of health centers']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Percentage of health centers']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Percentage of health centers']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 
@@ -570,9 +570,9 @@
                                     <td class="align_left">Proportion of pregnant women starting ANC before 12 weeks
                                     </td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['ANC visits before 12 weeks rate']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['ANC visits before 12 weeks rate']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['ANC visits before 12 weeks rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['ANC visits before 12 weeks rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['ANC visits before 12 weeks rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['ANC visits before 12 weeks rate']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr class="header_two">
@@ -582,36 +582,36 @@
                                     <td class="align_left">Proportion of mothers who received two doses of preventative intermittent treatment for malaria during pregnancy during a specified time
                                     </td>
                                     <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{fromDHIS[$rootScope.selectedYear-2]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
-                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{fromDHIS[$rootScope.selectedYear-1]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
-                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{fromDHIS[$rootScope.selectedYear-0]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
+                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{fromDHIS[selectedYear-2]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
+                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{fromDHIS[selectedYear-1]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
+                                    <td data-item="AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)">{{fromDHIS[selectedYear-0]['AMOUNT_ANC/MALARIA: Number of pregnant women receiving two doses of intermittent presumptive Therapy of Malaria (IPT2)']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr>
                                     <td class="align_left">Proportion of vulnerable groups sleeping under ITN the previous night
                                     </td>
                                     <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{fromDHIS[$rootScope.selectedYear-2]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
-                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{fromDHIS[$rootScope.selectedYear-1]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
-                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{fromDHIS[$rootScope.selectedYear-0]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
+                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{fromDHIS[selectedYear-2]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
+                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{fromDHIS[selectedYear-1]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
+                                    <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{fromDHIS[selectedYear-0]['ANC Proportion of pregnant women receiving ITN Voucher']}}</td>
                                     <td data-item="ANC Proportion of pregnant women receiving ITN Voucher">{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr>
                                     <td class="align_left">Proportion of laboratory confirmed malaria cases among all OPD visits
                                     </td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion of laboratory confirmed malaria cases among all OPD visits']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr>
                                     <td class="align_left">TB notification rate per 100,000 population
                                     </td>
                                     <td data-item="TB case detection rate">{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td data-item="TB case detection rate">{{fromDHIS[$rootScope.selectedYear-2]['TB case detection rate']}}</td>
-                                    <td data-item="TB case detection rate">{{fromDHIS[$rootScope.selectedYear-1]['TB case detection rate']}}</td>
-                                    <td data-item="TB case detection rate">{{fromDHIS[$rootScope.selectedYear-0]['TB case detection rate']}}</td>
+                                    <td data-item="TB case detection rate">{{fromDHIS[selectedYear-2]['TB case detection rate']}}</td>
+                                    <td data-item="TB case detection rate">{{fromDHIS[selectedYear-1]['TB case detection rate']}}</td>
+                                    <td data-item="TB case detection rate">{{fromDHIS[selectedYear-0]['TB case detection rate']}}</td>
                                     <td data-item="TB case detection rate">{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
                                 <tr class="header_two">
@@ -621,36 +621,36 @@
                                 <tr>
                                     <td class="align_left">Proportion of children in need of care and protection who received services</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Proportion of children']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Proportion of children']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Proportion of children']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion of children']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion of children']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion of children']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 
                                 <tr>
                                     <td class="align_left">Proportion of adults in need of welfare and protection who received services</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Proportion of adults']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Proportion of adults']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Proportion of adults']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion of adults']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion of adults']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion of adults']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 
                                 <tr>
                                     <td class="align_left">Proportion of LGAs with improved capacity to provide quality welfare and protection services</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Proportion of LGAs']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Proportion of LGAs']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Proportion of LGAs']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion of LGAs']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion of LGAs']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion of LGAs']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 
                                 <tr>
                                     <td class="align_left">Proportion of health facilities providing birth registration and birth certification services</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Target']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-2]['Proportion']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-1]['Proportion']}}</td>
-                                    <td>{{fromDHIS[$rootScope.selectedYear-0]['Proportion']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Proportion']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Proportion']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Proportion']}}</td>
                                     <td>{{profile['DHP_Vaccination_VaccinationProportionOPV3Progress']}}</td>
                                 </tr>
 
@@ -664,9 +664,9 @@
                                 <tr class="header_one">
                                     <td>DISTRICT HEALTH SYSTEM</td>
                                     <td>TARGET</td>
-                                    <td>{{$rootScope.selectedYear-2}}</td>
-                                    <td>{{$rootScope.selectedYear-1}}</td>
-                                    <td>{{$rootScope.selectedYear-0}}</td>
+                                    <td>{{selectedYear-2}}</td>
+                                    <td>{{selectedYear-1}}</td>
+                                    <td>{{selectedYear-0}}</td>
                                     <td>OVERALL PROGRESS (+/-)</td>
                                 </tr>
                                 <tr class="header_two">
@@ -935,7 +935,7 @@
                     </p>
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">{{ 'District Health Profile Summary Table - ' }} {{$rootScope.selectedYear}}<i class="material-icons right">close</i></span>
+                    <span class="card-title grey-text text-darken-4">{{ 'District Health Profile Summary Table - ' }} {{selectedYear}}<i class="material-icons right">close</i></span>
                     <p class="flow-text">{{ card.description }}</p>
                     <table class="bordered">
                         <tr><td>Indicator Type</td><td>{{card.indicatorType}}</td></tr>
