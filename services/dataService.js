@@ -179,6 +179,7 @@
                     var treeData = {name:'MOH - Tanzania',children:null};
                        var regions = [];
                        var regionsArray = [];
+
                       for (var i = 2;i<files.length;i++) {
                        var fileArray = files[i].split('_');
                         if (regions.indexOf(fileArray[1])>=0){
@@ -196,14 +197,13 @@
                     for (var i = 2;i<files.length;i++) {
                        var fileArray = files[i].split('_');
                          if (regions[r] == fileArray[1]) {
-                             regionsArray[r].children.push({name:files[i]});
+                             regionsArray[r].children.push({name:fileArray[1]+" profile"});
                          }
                         }
 
                       }
 
                     treeData.children  = regionsArray;
-                    console.log('treeData',treeData);
                   return treeData;
          }
 
