@@ -68,7 +68,7 @@
             dataService.getIndicatorTopTenAdmissions(organisationUnit,year).then(function(results){
 
 
-                $scope.toptenAdmission = dataService.refineTopTenAdmissionIndicators(data,year);
+                $scope.toptenAdmission = dataService.refineTopTenAdmissionIndicators(results,year);
             },function(response){
                 console.warn("failed to load top ten indicators");
             });
