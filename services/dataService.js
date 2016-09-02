@@ -53,8 +53,7 @@
         dataService.getIndicatorTopTenMortality  = function(orgunit,period){
           console.log('Mortality',period);
             var periods     = utilityService.getConsecutivePeriods(period);
-            var periodArray = periods.split(';');
-            var therIndicatorUrlYear = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray+'&dimension='+dataService.metaData.topTenMortalityIndicators+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
+            var therIndicatorUrlYear = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periods+'&dimension='+dataService.metaData.topTenMortalityIndicators+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
 
             return getDataFromAnalytics(therIndicatorUrlYear);
 
@@ -62,17 +61,15 @@
         dataService.getIndicatorTopTenAdmissions = function(orgunit,period){
 
             var periods     = utilityService.getConsecutivePeriods(period);
-            var periodArray = periods.split(';');
 
-            var therIndicatorUrlYear = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.topTenAdmission+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var therIndicatorUrlYear = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.topTenAdmission+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
             return getDataFromAnalytics(therIndicatorUrlYear);
 
         }
 
         dataService.getAutomatedIndicator        = function(orgunit,period){
             var periods      = utilityService.getConsecutivePeriods(period);
-            var periodArray  = periods.split(';');
-            var automatedUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
+            var automatedUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periods+"&filter=ou:"+orgunit+"&displayProperty=NAME";
 
             return getDataFromAnalytics(automatedUrl);
         }
