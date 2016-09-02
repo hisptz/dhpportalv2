@@ -378,7 +378,7 @@
 
                         </div>
                         <div class="row profile-pages">
-                            <img ng-if="!healthDistribution" src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                            <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <table class="profile_table">
                                 <tr class="header_one">
                                     <td class="align_left ">
@@ -396,26 +396,26 @@
                                 <tr>
                                     <td class="align_left">Maternal mortality ratio</td>
                                     <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityTarget']}}</td>
-                                    <td>{{healthDistribution[selectedYear-2]['Maternal Mortality Ratio (Institutional)']}}</td>
-                                    <td>{{healthDistribution[selectedYear-1]['Maternal Mortality Ratio (Institutional)']}}</td>
-                                    <td>{{healthDistribution[selectedYear-0]['Maternal Mortality Ratio (Institutional)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Maternal Mortality Ratio (Institutional)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Maternal Mortality Ratio (Institutional)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Maternal Mortality Ratio (Institutional)']}}</td>
                                     <td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityProgress']}}</td>
                                 </tr>
                                 <tr>
                                     <td class="align_left">Nutritional Status: Incidence of low birth weight among humans</td>
                                     <td></td>
-                                    <td>{{profile['DHP_Maternal_MaternalNCHealthLowBWYear1_tobe']}}</td>
-                                    <td>{{profile['DHP_Maternal_MaternalNCHealthLowBWYear2_tobe']}}</td>
-                                    <td>{{profile['DHP_Maternal_MaternalNCHealthLowBWYear3_tobe']}}</td>
+                                    <td>{{fromDHIS['DHP_Maternal_MaternalNCHealthLowBWYear1_tobe']}}</td>
+                                    <td>{{fromDHIS['DHP_Maternal_MaternalNCHealthLowBWYear2_tobe']}}</td>
+                                    <td>{{fromDHIS['DHP_Maternal_MaternalNCHealthLowBWYear3_tobe']}}</td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td class="align_left">Neonatal mortality rates (per 1,000)</td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthNeonatalMortalityTarget']}}</td>-->
                                     <td></td>
-                                    <td>{{healthDistribution[selectedYear-2]['Neonatal Mortality Rate']}}</td>
-                                    <td>{{healthDistribution[selectedYear-1]['Neonatal Mortality Rate']}}</td>
-                                    <td>{{healthDistribution[selectedYear-0]['Neonatal Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Neonatal Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Neonatal Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Neonatal Mortality Rate']}}</td>
                                     <td></td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthNeonatalMortalityProgress']}}</td>-->
                                 </tr>
@@ -423,9 +423,9 @@
                                     <td class="align_left">Infant mortality rates (per 1,000)</td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityTarget_tobe']}}</td>-->
                                     <td></td>
-                                    <td>{{healthDistribution[selectedYear-2]['Infant Mortality Rate']}}</td>
-                                    <td>{{healthDistribution[selectedYear-1]['Infant Mortality Rate']}}</td>
-                                    <td>{{healthDistribution[selectedYear-0]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Infant Mortality Rate']}}</td>
                                     <td></td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthInfantMortalityProgress_tobe']}}</td>-->
                                 </tr>
@@ -433,9 +433,9 @@
                                     <td class="align_left">Under 5 mortality rates (per 1,000)</td>
                                     <!--<td>{{profile['DHP_Maternal_MaternalNCHealthUnder5MortalityTarget_tobe']}}</td>-->
                                     <td></td>
-                                    <td>{{healthDistribution[selectedYear-2]['Infant Mortality Rate']}}</td>
-                                    <td>{{healthDistribution[selectedYear-1]['Infant Mortality Rate']}}</td>
-                                    <td>{{healthDistribution[selectedYear-0]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['Infant Mortality Rate']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['Infant Mortality Rate']}}</td>
                                     <td></td>
 
 
@@ -448,9 +448,9 @@
                                     <td class="align_left">Incidence of malaria/laboratory confirmed cases</td>
                                     <!--<td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaTarget']}}</td>-->
                                     <td></td>
-                                    <td>{{healthDistribution[selectedYear-2]['X OPD_Malaria Confirmed Blood Slide']}}</td>
-                                    <td>{{healthDistribution[selectedYear-1]['X OPD_Malaria Confirmed Blood Slide']}}</td>
-                                    <td>{{healthDistribution[selectedYear-0]['X OPD_Malaria Confirmed Blood Slide']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['X OPD_Malaria Confirmed Blood Slide']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['X OPD_Malaria Confirmed Blood Slide']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['X OPD_Malaria Confirmed Blood Slide']}}</td>
                                     <td></td>
                                     <!--<td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaProgress']}}</td>-->
                                 </tr>
@@ -458,9 +458,9 @@
                                     <td class="align_left">HIV prevalence in 15 to 24 years age group</td>
                                     <!--{{profile['DHP_Morbidity_MorbidityHIVAIDSTarget']}}-->
                                     <td></td>
-                                    <td>{{healthstatus[selectedYear-2]['ANC HIV prevalence (15-24 years)']}}</td>
-                                    <td>{{healthstatus[selectedYear-1]['ANC HIV prevalence (15-24 years)']}}</td>
-                                    <td>{{healthstatus[selectedYear-0]['ANC HIV prevalence (15-24 years)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-2]['ANC HIV prevalence (15-24 years)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-1]['ANC HIV prevalence (15-24 years)']}}</td>
+                                    <td>{{fromDHIS[selectedYear-0]['ANC HIV prevalence (15-24 years)']}}</td>
                                     <td></td>
                                 </tr>
                                 <tr>
