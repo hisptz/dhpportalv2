@@ -34,21 +34,6 @@
             return getDataFromAnalytics(dataService.baseDHIS+"api/analytics.json?dimension=Cow9nZikDgD:FfN1mqXvpR7;HKU7NijIEIH;LBipXEMD6mq;aZcKJ9XxvaF;h8JRv8POdfy;p1b4SYcdjJw&dimension=dx:ykShMtNgDB1&dimension=hENn80Fmmlf:mtUMlCLFTTz;syxWmui9UMq&filter=ou:"+orgunit+"&filter=pe:"+period);
         }
 
-        //dataService.getIndicatorDataDistribution = function(orgunit,period){
-        //    var periodArray = utilityService.getConsecutivePeriods(period);
-        //    var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDistributionIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-        //    return getDataFromAnalytics(therIndicatorUrl);
-        //}
-        //dataService.getIndicatorDataDelivery     = function(orgunit,period){
-        //    var periodArray = utilityService.getConsecutivePeriods(period);
-        //    var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.dataDeliveryIndicators+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-        //    return getDataFromAnalytics(therIndicatorUrl);
-        //}
-        //dataService.getIndicatorDataSystem       = function(indicator,orgunit,period){
-        //    var periodArray = utilityService.getConsecutivePeriods(period);
-        //    var therIndicatorUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
-        //    return getDataFromAnalytics(therIndicatorUrl);
-        //}
 
         dataService.getIndicatorTopTenMortality  = function(orgunit,period){
             var periods     = utilityService.getConsecutivePeriods(period);
