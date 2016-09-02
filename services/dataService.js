@@ -203,6 +203,7 @@
                       }
 
                     treeData.children  = regionsArray;
+                    console.log('treeData',treeData);
                   return treeData;
          }
 
