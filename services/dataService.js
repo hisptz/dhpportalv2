@@ -103,7 +103,7 @@
 
 
             var dataElement    = [];
-            console.log(analyticsObject);
+
             if ( typeof analyticsObject == 'object' )
             {
 
@@ -175,22 +175,35 @@
         }
 
         dataService.formatDataForTree  =  function(files) {
-          var treeData = {name:'',children:[]};
-          if ( files )
-          {
-            angular.forEach( files ,function(filesValue,fileIndex){
 
-              if (filesValue !== '.' || filesValue !== '..')
-              {
-                var singleFileArray = filesValue.split('_');
+                    var treeData = {name:'MOH - Tanzania',children:[]};
+                       var regions = [];
+                       var regionsArray = [];
+                      for (var i = 0;i<files.length;i++) {
+                       var fileArray = files[i].split('_');
+                        if (regions.indexOf(fileArray[1])>=0){
 
-                treeData = pushChildrens(treeData,singleFileArray);
-              }
+                         }else{
+                           regions.push(fileArray[1]);
+                           regionsArray.push({name:fileArray[1],children:[]});
+                        }
 
-            })
-          }
+                      }
 
-          return treeData;
+                         for (var r = 0;r<regions.length;r++) {
+
+
+                    for (var i = 0;i<files.length;i++) {
+                       var fileArray = files[i].split('_');
+                         if (regions[r] == fileArray[1]) {
+                             regionsArray[r].children.push(files[i]);
+                         }
+                        }
+
+                      }
+
+                    treeData.children.push(regionsArray);
+                  return treeData;
          }
 
         dataService.assembleDataFromDHIS         = function(data,year){
@@ -260,25 +273,16 @@
 
     function pushChildrens(treeData,singleFileArray){
 
-            angular.forEach(singleFileArray,function(valueName){
+      angular.forEach(treeData.children,function(value,index){
+          if (value.name == singleFileArray[1]) {
+            treeData.children[index];
+          }else{
+            if ( treeData.children.length == index+1 ) {
+              treeData.children.push({name:singleFileArray[1],children:[]});
+            }
+          }
+      })
 
-              if ( treeData.name !== valueName ) {
-                treeData.name = valueName;
-                treeData.children = {name:'',children:[]};
-              }else{
-
-                angular.forEach(treeData.children,function(childValue,childIndex){
-
-                  if ( treeData.children.length == childIndexindex+1 )
-                  {
-                    treeData.children.push({name:valueName,children:[]})
-                  }
-
-                });
-
-              }
-
-            })
       return treeData;
     }
 
