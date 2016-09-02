@@ -10,7 +10,7 @@
     function mainController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,portalService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
         var main  = this;
         var date = new Date();
-
+        var checker = 0;
 
         $scope.selectedYear = date.getFullYear();
         $scope.admin = function(){
@@ -31,6 +31,8 @@
 
         // load organisation unit fro tree
         $scope.loadOrganisationUnit = function(){
+            checker++;
+            console.log('CHEKER',checker);
             $rootScope.failureMessage = null;
             // login to dhis server for pulling authenticated resources
             utilityService.login('Demo','HMISDEMO2016').then(function(success){
