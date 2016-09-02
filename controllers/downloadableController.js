@@ -21,23 +21,9 @@ angular.module("dhpportal")
                     labelSelected: "a8"
                 }
             }
-            $scope.dataForTheTree =
-                [
-                    { "name" : "Joe", "age" : "21", "children" : [
-                        { "name" : "Smith", "age" : "42", "children" : [] },
-                        { "name" : "Gary", "age" : "21", "children" : [
-                            { "name" : "Jenifer", "age" : "23", "children" : [
-                                { "name" : "Dani", "age" : "32", "children" : [] },
-                                { "name" : "Max", "age" : "34", "children" : [] }
-                            ]}
-                        ]}
-                    ]},
-                    { "name" : "Albert", "age" : "33", "children" : [] },
-                    { "name" : "Ron", "age" : "29", "children" : [] }
-                ];
 
             dataService.loadAllFiles().then(function(files){
-              $scope.dataForTheTreeDemo = dataService.formatDataForTree(files);
+              $scope.dataForTheTree = dataService.formatDataForTree(files);
             },function(failure){
 
             })
