@@ -10,6 +10,7 @@
     function homeController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
 
         $rootScope.updateDataContainers = function(){
+
             if ( $scope.selectedOrgUnit ) {
                 $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
             }
@@ -17,7 +18,6 @@
             {
 
             }
-
 
         }
 
