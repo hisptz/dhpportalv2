@@ -50,7 +50,7 @@
         //    return getDataFromAnalytics(therIndicatorUrl);
         //}
 
-        dataService.getIndicatorTopTenMortality  = function(indicator,orgunit,period){
+        dataService.getIndicatorTopTenMortality  = function(orgunit,period){
           console.log('Mortality',period);
             var periods     = utilityService.getConsecutivePeriods(period);
             var periodArray = periods.split(';');
