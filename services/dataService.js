@@ -51,7 +51,8 @@
         //}
 
         dataService.getIndicatorTopTenMortality  = function(indicator,orgunit,period){
-            var periods = utilityService.getConsecutivePeriods(period);console.log("TOP TEN PERIODS",periods);
+          console.log('Mortality',period);
+            var periods     = utilityService.getConsecutivePeriods(period);
             var periodArray = periods.split(';');
             var therIndicatorUrlYear = dataService.baseDHIS+'/api/analytics/events/aggregate/Mvc0jfU9Ua2.json?stage=mlDzRw3ibhE&dimension=pe:'+periodArray+'&dimension='+dataService.metaData.topTenMortalityIndicators+'&filter=ou:'+orgunit+'&outputType=EVENT&displayProperty=NAME';
 
@@ -60,7 +61,7 @@
         }
         dataService.getIndicatorTopTenAdmissions = function(orgunit,period){
 
-            var periods = utilityService.getConsecutivePeriods(period);
+            var periods     = utilityService.getConsecutivePeriods(period);
             var periodArray = periods.split(';');
 
             var therIndicatorUrlYear = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+dataService.metaData.topTenAdmission+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
@@ -69,8 +70,8 @@
         }
 
         dataService.getAutomatedIndicator        = function(orgunit,period){
-            var periods = utilityService.getConsecutivePeriods(period);
-            var periodArray = periods.split(';');
+            var periods      = utilityService.getConsecutivePeriods(period);
+            var periodArray  = periods.split(';');
             var automatedUrl = dataService.baseDHIS+"api/analytics.json?dimension=dx:"+indicator+"&dimension=pe:"+periodArray+"&filter=ou:"+orgunit+"&displayProperty=NAME";
 
             return getDataFromAnalytics(automatedUrl);
@@ -82,7 +83,7 @@
 
             var period  = utilityService.getConsecutivePeriods(year);
             var periods = period.split(';');
-            var output = [];
+            var output  = [];
             var outputs = [];
 
 
@@ -93,7 +94,7 @@
                 var rows           = analyticsObject.rows;
 
                 angular.forEach(dataElement,function(elementValue,elementIndex){
-                    output[elementValue] = {name:names[elementValue]};
+                    output[elementValue]             = {name:names[elementValue]};
                     output[elementValue][periods[0]] = 0;
                     output[elementValue][periods[1]] = 0;
                     output[elementValue][periods[2]] = 0;
@@ -117,7 +118,7 @@
         dataService.refineTopTenMoltalityIndicators = function(analyticsObject,year){
             var period  = utilityService.getConsecutivePeriods(year);
             var periods = period.split(';');
-            var output = [];
+            var output  = [];
             var outputs = [];
 
 
@@ -127,12 +128,12 @@
             {
 
                 var period          = analyticsObject.metaData.pe;
-                var rows           = analyticsObject.rows;
+                var rows            = analyticsObject.rows;
 
 
 
                 angular.forEach(rows,function(rowValue,rowIndex){
-                    if(typeof output[rowValue[0]]!="undefined"){
+                    if( typeof output[rowValue[0]] != "undefined" ){
 
                     }else{
                         output[rowValue[0]] = {name:rowValue[0]};
@@ -156,7 +157,7 @@
 
             }
 
-            console.log('TOP TEN',outputs);
+
 
 
             return outputs;
@@ -229,7 +230,7 @@
 
 
         }
-            console.log('output',output);
+
             return output;
         }
 
