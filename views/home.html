@@ -431,7 +431,6 @@
                                 </tr>
                                 <tr>
                                     <td class="align_left">Under 5 mortality rates (per 1,000)</td>
-                                    <!--<td>{{profile['DHP_Maternal_MaternalNCHealthUnder5MortalityTarget_tobe']}}</td>-->
                                     <td></td>
                                     <td>{{fromDHIS[selectedYear-2]['Infant Mortality Rate']}}</td>
                                     <td>{{fromDHIS[selectedYear-1]['Infant Mortality Rate']}}</td>
@@ -439,20 +438,20 @@
                                     <td></td>
 
 
-                                    <!--<td>{{profile['DHP_Maternal_MaternalNCHealthUnder5MortalityProgress_tobe']}}</td>-->
+
                                 </tr>
                                 <tr class="header_two">
                                     <td colspan="6" class="align_left">Morbidity</td>
                                 </tr>
                                 <tr>
                                     <td class="align_left">Incidence of malaria/laboratory confirmed cases</td>
-                                    <!--<td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaTarget']}}</td>-->
+
                                     <td></td>
                                     <td>{{fromDHIS[selectedYear-2]['X OPD_Malaria Confirmed Blood Slide']}}</td>
                                     <td>{{fromDHIS[selectedYear-1]['X OPD_Malaria Confirmed Blood Slide']}}</td>
                                     <td>{{fromDHIS[selectedYear-0]['X OPD_Malaria Confirmed Blood Slide']}}</td>
                                     <td></td>
-                                    <!--<td>{{profile['DHP_Morbidity_MorbidityIncidenceOfMalariaProgress']}}</td>-->
+
                                 </tr>
                                 <tr>
                                     <td class="align_left">HIV prevalence in 15 to 24 years age group</td>
@@ -657,9 +656,9 @@
                             </table>
                         </div>
                         <br/>
-                        <!--<img ng-if="loadingDone" src="assets/img/preloader.gif" style="height:15px;width:45px;">-->
+
                         <div class="row profile-pages">
-                            <img ng-if="!profile" src="assets/img/preloader.gif" style="height:15px;width:45px;">
+                            <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                             <table class="profile_table">
                                 <tr class="header_one">
                                     <td>DISTRICT HEALTH SYSTEM</td>

@@ -17,7 +17,9 @@
         }
 
         $rootScope.updateDataContainers = function(){
-
+          console.log($scope.selectedYear);
+          $scope.selectedYear = $rootScope.selectedYear;
+          console.log($rootScope.selectedYear);
             if ( $scope.selectedOrgUnit ) {
                 $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
             }

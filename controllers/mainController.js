@@ -64,7 +64,7 @@
 
 
                     $scope.selectPeriod = function(){
-                        $scope.selectedYear
+
                         //$scope.registerChanges($scope.selectedYear,$scope.selectedItems);
                     }
 
