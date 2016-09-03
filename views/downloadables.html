@@ -154,8 +154,8 @@
                     <div class="col s12 m8 l8">
                       <br/>
                       <p>Health Profile Preview</p>
-                      <div  class='row well'>
-                        <object ng-if='node1.url' data="{{node1.url}}" type="application/pdf" width="100%" height="600px">
+                      <div ng-if='node1.url' class='row well'>
+                        <object  data="{{node1.url}}" type="application/pdf" width="100%" height="600px">
                           <p>Alternative text - include a link <a href="{{node1.url}}">to the PDF!</a></p>
                         </object>
                       </div>
