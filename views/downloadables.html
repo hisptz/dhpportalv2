@@ -140,6 +140,7 @@
                       <br/>
                       <p>Available Health Profiles</p>
                       <div class="well" style='max-height:300px;overflow-y:auto;'>
+                        <img ng-if="!dataForTheTree" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                         <treecontrol class="tree-classic"
                                      tree-model="dataForTheTree"
                                      options="treeOptions"
