@@ -9,6 +9,13 @@
     homeController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
     function homeController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
 
+        if ( $routeParams.parentUid )
+        {
+          $rootScope.showBackButton = true;
+        }else{
+          $rootScope.showBackButton = false;
+        }
+
         $rootScope.updateDataContainers = function(){
 
             if ( $scope.selectedOrgUnit ) {
@@ -30,22 +37,6 @@
             },function(response){
 
             });
-
-
-            //dataService.getIndicatorDataDistribution(organisationUnit,year).then(function(data){
-            //    //console.log("HEALTH STATUS");
-            //    $scope.healthDistribution = dataService.createHealthStatusObject(data,year);
-            //
-            //},function(response){
-            //    console.warn("failed to pull data districution indicators");
-            //});
-
-            //dataService.getIndicatorDataDelivery(organisationUnit,year).then(function(data){
-            //    $scope.healthDelivery = dataService.assembleDataFromDHIS(data,year);
-            //},function(response){
-            //    console.warn("failed to pull data delivery indicators");
-            //});
-
 
             //// get automated dhis indicators
             dataService.getAutomatedIndicator(organisationUnit,year).then(function(data){
