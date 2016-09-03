@@ -5,8 +5,7 @@
 angular.module("dhpportal")
     .controller("downloadableController",['$rootScope','$scope','$q','$http','$timeout','portalService','dataService',function ($rootScope,$scope,$q,$http,$timeout,portalService,dataService) {
         $rootScope.updateDataContainers = function(){
-            console.log(dataService);
-
+            
             $scope.treeOptions = {
                 nodeChildren: "children",
                 dirSelectable: true,
