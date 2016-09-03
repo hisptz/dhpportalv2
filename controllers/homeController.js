@@ -17,7 +17,7 @@
         }
 
         $rootScope.updateDataContainers = function(){
-          );
+          
             if ( $scope.selectedOrgUnit ) {
                 $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
             }
