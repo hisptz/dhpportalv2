@@ -3,9 +3,9 @@
  */
 
 angular.module("dhpportal")
-    .controller("downloadableController",['$rootScope','$scope','$q','$http','$timeout','portalService','dataService',function ($rootScope,$scope,$q,$http,$timeout,portalService,dataService) {
+    .controller("downloadableController",['$rootScope','$scope','$routeParams','$q','$http','$timeout','portalService','dataService',function ($rootScope,$scope,$routeParams,$q,$http,$timeout,portalService,dataService) {
         $rootScope.updateDataContainers = function(){
-            
+
             $scope.treeOptions = {
                 nodeChildren: "children",
                 dirSelectable: true,
@@ -19,6 +19,13 @@ angular.module("dhpportal")
                     label: "a6",
                     labelSelected: "a8"
                 }
+            }
+            console.log($routeParams);
+            if ( $routeParams.parentUid )
+            {
+              $rootScope.showBackButton = true;
+            }else{
+              $rootScope.showBackButton = false;
             }
 
             dataService.loadAllFiles().then(function(files){

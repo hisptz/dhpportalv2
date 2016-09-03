@@ -12,14 +12,7 @@
         var date = new Date();
         var checker = 0;
 
-        console.log($routeParams.parentUid);
 
-        if ( $routeParams.parentUid )
-        {
-          $scope.showBackButton = true;
-        }else{
-          $scope.showBackButton = false;
-        }
 
         $scope.selectedYear = date.getFullYear();
         $scope.admin = function(){
