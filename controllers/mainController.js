@@ -34,7 +34,7 @@
         // load organisation unit fro tree
         $scope.loadOrganisationUnit = function(){
             checker++;
-            console.log('CHEKER',checker);
+            
             $rootScope.failureMessage = null;
             // login to dhis server for pulling authenticated resources
             utilityService.login('Demo','HMISDEMO2016').then(function(success){
