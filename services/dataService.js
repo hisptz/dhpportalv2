@@ -4,9 +4,10 @@
     angular
         .module('dhpportal')
         .service('dataService', dataService);
-    dataService.$inject = ['$http','$q','profileService','utilityService'];
-    function dataService($http,$q,profileService,utilityService) {
+    dataService.$inject = ['$http','$q','profileService','utilityService','pendingRequestsService'];
+    function dataService($http,$q,profileService,utilityService,pendingRequestsService) {
         var dataService = this;
+        var canceller = $q.defer();
         dataService.baseDHIS = profileService.baseDHIS;
 
         dataService.metaData = {
@@ -24,7 +25,8 @@
         var indicator = dataService.metaData.automatedIndicators+';'+dataService.metaData.dataDeliveryIndicators+';'+dataService.metaData.automatedIndicators+';'+dataService.metaData.indicators
 
         function getDataFromAnalytics(url){
-
+            
+            pendingRequestsService.add({url: url,canceller: canceller});
             return $http.get(url).then(handleSuccess, handleError('Error loading analytics data'));
 
         }

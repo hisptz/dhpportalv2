@@ -7,14 +7,16 @@
             $httpProvider.defaults.withCredentials = true;
         })
         .service('profileService', profileService)
-        .service('utilityService', utilityService);
+        .service('utilityService', utilityService)
+        .service('pendingRequestsService',pendingRequestsService);
+    pendingRequestsService.$inject = ['$http'];
     profileService.$inject = ['$http','Upload'];
     utilityService.$inject = ['$http','profileService'];
     function profileService($http,Upload) {
       var profile = this;
         //profile.baseDHIS = "https://dhis.moh.go.tz/";
-        profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
-        //profile.baseDHIS = "http://localhost:9000/";
+        // profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
+        profile.baseDHIS = "http://localhost:9000/";
         profile.basePortal = "server/";
         profile.listProfileByYear = function(year){
             return $http.get(profile.basePortal+'process.php?by_year='+year+'&only=1').then(handleSuccess, handleError('Error creating user'));
@@ -66,7 +68,27 @@
             return $http.get(profile.basePortal+"process.php?delete="+health_profile).then(handleSuccess, handleError('Error creating user'));
         }
     }
-
+    function pendingRequestsService($http){
+      // This service keeps track of pending requests
+                var pending = [];
+                this.get = function() {
+                  return pending;
+                };
+                this.add = function(request) {
+                  pending.push(request);
+                };
+                this.remove = function(request) {
+                  pending = _.filter(pending, function(p) {
+                    return p.url !== request;
+                  });
+                };
+                this.cancelAll = function() {
+                  angular.forEach(pending, function(p) {
+                    p.canceller.resolve();
+                  });
+                  pending.length = 0;
+                };
+    }
     function utilityService($http,profileService) {
       var profile = this;
         profile.baseDHIS = profileService.baseDHIS;

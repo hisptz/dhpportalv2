@@ -6,8 +6,8 @@
         .module('dhpportal')
         .controller('homeController', homeController);
 
-    homeController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
-    function homeController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
+    homeController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService','pendingRequestsService'];
+    function homeController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService,pendingRequestsService) {
 
         if ( $routeParams.parentUid )
         {
@@ -17,7 +17,11 @@
         }
 
         $rootScope.updateDataContainers = function(){
-          
+            $scope.selectedYear = $scope.selectedYearBuffer;
+          var pendingReqiests = pendingRequestsService.get();
+
+            pendingRequestsService.cancelAll();
+
             if ( $scope.selectedOrgUnit ) {
                 $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
             }

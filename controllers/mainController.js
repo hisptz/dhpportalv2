@@ -6,17 +6,21 @@
         })
         .controller('mainController', mainController);
 
-    mainController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService'];
-    function mainController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,portalService,utilityService,portalService,chartService,olData,olHelpers,mapService) {
+    mainController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService','pendingRequestsService'];
+    function mainController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,portalService,utilityService,portalService,chartService,olData,olHelpers,mapService,pendingRequestsService) {
         var main  = this;
         var date = new Date();
         var checker = 0;
 
 
 
-        $scope.selectedYear = date.getFullYear();
+        $rootScope.selectedYear = date.getFullYear();
         $scope.admin = function(){
             window.location.href = "#/admin";
+        }
+
+        $scope.selectPeriod = function(selectedYear){
+            $rootScope.selectedYearBuffer = selectedYear;
         }
 
         $scope.drawOrgUnitTree = function(organisationUnit){
@@ -34,7 +38,7 @@
         // load organisation unit fro tree
         $scope.loadOrganisationUnit = function(){
             checker++;
-            
+
             $rootScope.failureMessage = null;
             // login to dhis server for pulling authenticated resources
             utilityService.login('Demo','HMISDEMO2016').then(function(success){
@@ -63,10 +67,7 @@
                     $scope.selectedItems = $scope.organisationUnitTree;
 
 
-                    $scope.selectPeriod = function(){
 
-                        //$scope.registerChanges($scope.selectedYear,$scope.selectedItems);
-                    }
 
                     // callback for organisation unit selection from tree
                     var monitor = 0;
