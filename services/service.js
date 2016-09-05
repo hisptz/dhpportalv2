@@ -15,8 +15,8 @@
     function profileService($http,Upload) {
       var profile = this;
         //profile.baseDHIS = "https://dhis.moh.go.tz/";
-        // profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
-        profile.baseDHIS = "http://localhost:9000/";
+         profile.baseDHIS = "https://hmisportal.moh.go.tz/dhis/";
+        //profile.baseDHIS = "http://localhost:9000/";
         profile.basePortal = "server/";
         profile.listProfileByYear = function(year){
             return $http.get(profile.basePortal+'process.php?by_year='+year+'&only=1').then(handleSuccess, handleError('Error creating user'));

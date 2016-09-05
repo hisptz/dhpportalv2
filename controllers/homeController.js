@@ -11,9 +11,10 @@
 
         if ( $routeParams.parentUid )
         {
-          $rootScope.showBackButton = true;
+
+          $scope.showBackButton = true;
         }else{
-          $rootScope.showBackButton = false;
+          $scope.showBackButton = false;
         }
 
         $rootScope.updateDataContainers = function(){
