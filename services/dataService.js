@@ -176,8 +176,9 @@
             return output;
         }
 
-        dataService.formatDataForTree  =  function(files) {
-
+        dataService.formatDataForTree  =  function(files,organisationUnitTree) {
+                    console.log(organisationUnitTree);
+                    console.log(organisationUnitTree.name);
                     var treeData = {name:'MOH - Tanzania',children:null};
                        var regions = [];
                        var regionsArray = [];

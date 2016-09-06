@@ -34,7 +34,7 @@ angular.module("dhpportal")
               }
 
               dataService.loadAllFiles().then(function(files){
-                $scope.dataForTheTree = dataService.formatDataForTree(files);
+                $scope.dataForTheTree = dataService.formatDataForTree(files,$scope.$parent.organisationUnitTree);
               },function(failure){
 
               })
