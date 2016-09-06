@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c29d40fd-4c64-44f6-a38d-df2e6a25ae63" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/homeController.js" afterPath="$PROJECT_DIR$/controllers/homeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/mainController.js" afterPath="$PROJECT_DIR$/controllers/mainController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/templates/selectionCriteria.html" afterPath="$PROJECT_DIR$/views/templates/selectionCriteria.html" />
-    </list>
+    <list default="true" id="c29d40fd-4c64-44f6-a38d-df2e6a25ae63" name="Default" comment="" />
     <ignored path="dhpportal.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
