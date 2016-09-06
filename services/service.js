@@ -96,7 +96,7 @@
         profile.dataelementsUrl = profile.baseDHIS+"api/dataElements.json?filter=dataElementGroups.id:eq:TWx3Doxh1jG&fields=[name,id]&paging=false";
         profile.loadOrganisationUnits = function(){
             //return $http.get(profile.basePortal+'organisationUnits_level_1_org.json').then(handleSuccess, handleError('Error creating user'));
-            return $http.get(profile.baseDHIS+'api/organisationUnits.json?filter=level:eq:1&paging=false&fields=id,name,children[id,name,children[id,name]]').then(handleSuccess, handleError('Error creating user'));
+            return $http.get(profile.baseDHIS+'api/organisationUnits.json?filter=level:eq:1&paging=false&fields=id,name,children[id,name,children[id,name,children[]]]').then(handleSuccess, handleError('Error creating user'));
         }
 
         profile.getOrgUnits = function(){
