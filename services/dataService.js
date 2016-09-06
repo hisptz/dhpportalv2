@@ -177,8 +177,7 @@
         }
 
         dataService.formatDataForTree  =  function(files,organisationUnitTree) {
-                    console.log(organisationUnitTree[0]);
-                    console.log(organisationUnitTree[0].name);
+
                     var treeData = {name:organisationUnitTree[0].name,children:null};
                        var regions = [];
                        var regionsArray = [];
