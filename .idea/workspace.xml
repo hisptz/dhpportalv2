@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c29d40fd-4c64-44f6-a38d-df2e6a25ae63" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/downloadableController.js" afterPath="$PROJECT_DIR$/controllers/downloadableController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/dataService.js" afterPath="$PROJECT_DIR$/services/dataService.js" />
     </list>
     <ignored path="dhpportal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +55,8 @@
       <file leaf-file-name="downloadableController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/downloadableController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.296297">
-              <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+            <state vertical-scroll-proportion="-9.333333">
+              <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
               <folding>
                 <element signature="e#765#1215#0" expanded="false" />
               </folding>
@@ -64,14 +64,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dataService.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dataService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/dataService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-              <folding>
-                <element signature="e#9517#10734#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.4393638">
+              <caret line="181" column="69" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,10 +94,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2268908">
+            <state vertical-scroll-proportion="-27.62963">
               <caret line="74" column="47" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="47" />
               <folding />
             </state>
@@ -127,8 +125,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/services/service.js" />
-        <option value="$PROJECT_DIR$/services/dataService.js" />
         <option value="$PROJECT_DIR$/controllers/downloadableController.js" />
+        <option value="$PROJECT_DIR$/services/dataService.js" />
       </list>
     </option>
   </component>
@@ -340,16 +338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/dataService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding>
-            <element signature="e#9517#10734#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/templates/downloadableFiles.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -368,20 +356,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.62963">
+          <caret line="74" column="47" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/downloadableController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.296297">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+        <state vertical-scroll-proportion="-9.333333">
+          <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
           <folding>
             <element signature="e#765#1215#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/mainController.js">
+    <entry file="file://$PROJECT_DIR$/services/dataService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2268908">
-          <caret line="74" column="47" selection-start-line="74" selection-start-column="27" selection-end-line="74" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.4393638">
+          <caret line="181" column="69" selection-start-line="181" selection-start-column="69" selection-end-line="181" selection-end-column="69" />
           <folding />
         </state>
       </provider>
