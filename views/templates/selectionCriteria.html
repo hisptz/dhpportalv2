@@ -74,8 +74,9 @@
     <div class="col s12 m12 l12" >
         <div class="col s2 m2 l2" >
             <br/>
-            <a style="cursor:pointer;" title="view map" ng-click="showMapCard()"><i class="material-icons dp48">room</i></a>
-            <a  title="downloadable files" href="#/home/downloadable/{{selectedOrgUnit}}/{{selectedYear}}"><i class="material-icons dp48">play_for_work</i></a>
+            <a style="cursor:pointer;" title="view map" ng-click="showMapCard()">Map</a>
+            &nbsp;|&nbsp;
+            <a  title="downloadable files" href="#/home/downloadable/{{selectedOrgUnit}}/{{selectedYear}}">Download Profiles</a>
         </div>
         <div class="col s8 m8 l8" >
             <br/>
@@ -83,7 +84,7 @@
         </div>
         <div class="col s2 m2 l2" style="text-align:right;">
             <br/>
-             <a  title="back to home"  href="#/home" ><i class="material-icons dp48">keyboard_backspace</i></a>
+             <a  title="back to home"  href="#/home" ng-if="!showBackButton" ><i class="material-icons dp48">keyboard_backspace</i></a>
         </div>
     </div>
 </div>

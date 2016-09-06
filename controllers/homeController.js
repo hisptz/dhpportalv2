@@ -11,11 +11,11 @@
 
         if ( $routeParams.parentUid )
         {
-
-          $scope.showBackButton = true;
+            $rootScope.showBackButton = true;
         }else{
-          $scope.showBackButton = false;
+            $rootScope.showBackButton = false;
         }
+
 
         $rootScope.updateDataContainers = function(){
             $scope.selectedYear = $scope.selectedYearBuffer;
