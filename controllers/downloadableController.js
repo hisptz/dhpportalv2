@@ -43,4 +43,6 @@ angular.module("dhpportal")
 
         }
 
+        $rootScope.updateDataContainers();
+
     }]);
