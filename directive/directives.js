@@ -37,11 +37,15 @@
         templateUrl:"partials/alert.html"
           ,
           link: function (scope, element, attrs) {
-            scope.showAlertBox = true;
+            scope.showAlertBox = false;
 
-            if( scope.dataObject ) {
-              console.log(scope.tableName,scope.dataObject);
-            }
+            scope.$watch('dataObject',function(value){
+              console.log(value);
+                if( value ) {
+                  console.log(scope.tableName,scope.dataObject);
+                }
+            })
+
 
             scope.hideAlertBox  = function(){
               scope.showAlertBox = false;
