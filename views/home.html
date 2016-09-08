@@ -342,13 +342,50 @@
                             color:#7F7F7F!important;
                             /*font-size:23px;*/
                         }
+
+                        .alert {
+                            padding: 15px;
+                            margin-bottom: 20px;
+                            border: 1px solid transparent;
+                            border-radius: 4px;
+                        }
+
+
+                        .alert-danger {
+                            color: #a94442;
+                            background-color: #f2dede;
+                            border-color: #ebccd1;
+                        }
+                        button.close {
+                            -webkit-appearance: none;
+                            padding: 0;
+                            cursor: pointer;
+                            background: 0 0;
+                            border: 0;
+                        }
+
+                        .close{
+                          float: right;
+                          font-size: 21px;
+                          font-weight: 700;
+                          line-height: 1;
+                          color: #000;
+                          text-shadow: 0 1px 0 #fff;
+                          filter: alpha(opacity=20);
+                          opacity: .2;
+                        }
                     </style>
                     <div id="previewProfile" class="col s12 m12 preview_profile"  >
 
                         <div class="row profile-pages" style="color:#000000;">
                             <p class="secondary_header">Table 0-1. {{selectedYear}} DHP Results Summary Table</p>
                             <br/>
-                            <img ng-if="!population" src="assets/img/preloader.gif" style="height:15px;width:45px;">
+
+                            <alert-panel data-object='population' table-name='"Population"'></alert-panel>
+
+                            <div style="margin-left:50%;">
+                            <img ng-if="!population" src="assets/img/preloader.gif" style="height:30px;width:90px;" class="ng-scope">
+                            </div>
                             <table class="profile_table">
                                 <tr style="background-color:#CEE4B3;"><td colspan="8">DISTRICT POPULATION AND FACILITY STATISTICS</td></tr>
                                 <tr style="background-color:#DCB081;"><td style="text-align: left">Demographics</td><td><1</td><td>1-4</td><td>5-14</td><td>15-49</td><td>50-60</td><td>>60</td><td>Total</td></tr>
@@ -378,8 +415,10 @@
 
                         </div>
                         <div class="row profile-pages">
-                            <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:15px;width:45px;">
-                            <table class="profile_table">
+                          <div style="margin-left:50%;">
+                          <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:30px;width:90px;" class="ng-scope">
+                          </div>
+                          <table class="profile_table">
                                 <tr class="header_one">
                                     <td class="align_left ">
                                         HEALTH STATUS OF THE DISTRICT POPULATION
@@ -494,8 +533,10 @@
                         <br/>
 
                         <div class="row profile-pages">
-                            <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:15px;width:45px;">
-                            <table class="profile_table">
+                          <div style="margin-left:50%;">
+                          <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:30px;width:90px;" class="ng-scope">
+                          </div>
+                        <table class="profile_table">
                                 <tr class="header_one">
                                     <td>DISTRICT HEALTH SERVICE DELIVERY</td>
                                     <td>TARGET</td>
@@ -658,8 +699,10 @@
                         <br/>
 
                         <div class="row profile-pages">
-                            <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:15px;width:45px;">
-                            <table class="profile_table">
+                          <div style="margin-left:50%;">
+                            <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:30px;width:90px;" class="ng-scope">
+                          </div>
+                        <table class="profile_table">
                                 <tr class="header_one">
                                     <td>DISTRICT HEALTH SYSTEM</td>
                                     <td>TARGET</td>

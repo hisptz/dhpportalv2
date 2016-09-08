@@ -40,7 +40,7 @@
                 $scope.population = dataService.createPopulationObject(data);
 
             },function(response){
-
+                console.log();
             });
 
             //// get automated dhis indicators
@@ -50,6 +50,7 @@
 
             },function(response){
                 console.warn("failed to pull automated indicators failed to pull");
+
             });
 
 

@@ -74,17 +74,15 @@
     <div class="col s12 m12 l12" >
         <div class="col s2 m2 l2" >
             <br/>
+            <a  title="back to home"  href="#/home" ng-if="!showBackButton" >Home</a>
+            &nbsp;|&nbsp;
             <a style="cursor:pointer;" title="view map" ng-click="showMapCard()">Map</a>
             &nbsp;|&nbsp;
-            <a  title="downloadable files" href="#/home/downloadable/{{selectedOrgUnit}}/{{selectedYear}}">Download Profiles</a>
+            <a  title="downloadable files" href="#/home/downloadable/{{selectedOrgUnit}}/{{selectedYear}}">Profiles</a>
         </div>
         <div class="col s8 m8 l8" >
             <br/>
             <p class="center" style="text-align:left;">Health Profile : {{ orgUnitNames }} - {{ selectedYear }}</p>
-        </div>
-        <div class="col s2 m2 l2" style="text-align:right;">
-            <br/>
-             <a  title="back to home"  href="#/home" ng-if="!showBackButton" ><i class="material-icons dp48">keyboard_backspace</i></a>
         </div>
     </div>
 </div>

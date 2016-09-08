@@ -5,6 +5,7 @@
         .module('dhpportal')
         .directive('summaryTable', summaryTable)
         .directive('printHtml', printHtml)
+        .directive('alertPanel',alertPanel)
         .controller('summaryController',function($scope){
 
 
@@ -27,6 +28,29 @@
 
     }
 
+    function alertPanel(){
+      return {
+        scope:{
+          dataObject:'=dataObject',
+          tableName:'=tableName'
+        },
+        templateUrl:"partials/alert.html"
+          ,
+          link: function (scope, element, attrs) {
+            scope.showAlertBox = true;
+
+            if( scope.dataObject ) {
+              console.log(scope.tableName,scope.dataObject);
+            }
+
+            scope.hideAlertBox  = function(){
+              scope.showAlertBox = false;
+            }
+
+          },
+          restrict: 'E'
+      }
+    }
     function printHtml(){
         var printSection = document.getElementById('previewProfile');
 
