@@ -55,13 +55,13 @@
                   var counter = 0;
                   var count = scope.tableData.length;
                   angular.forEach(scope.tableData, function(value,index){
-
+                      console.log(index);
                     if ( value.length == 0 ) {
                       counter++;
                     }
 
                     if (count == index+1 && counter == count ){
-                        scope.showAlertBox = true;
+                        scope.showAlertBox = true;console.log("THIS HAS EMPTY DATA")
 
                     }
 
