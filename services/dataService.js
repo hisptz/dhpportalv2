@@ -177,27 +177,25 @@
         }
 
         dataService.getSelectedFromCriterial = function(selectedUid,organisationUnitTree){
-          var selectedOrganisationUnit = [];
-                angular.forEach(organisationUnitTree, function(value,Index){
-                  console.log(value.id,selectedUid);
-                  if (value.id==selectedUid){
-                    selectedOrganisationUnit.push(value);
-                    if (value.children){
-                      dataService.getSelectedFromCriterial(selectedUid,value.children);
-                    }
-                  }else{
-                    if (value.children){
-                      dataService.getSelectedFromCriterial(selectedUid,value.children);
-                    }
-                  }
-                })
-          return selectedOrganisationUnit;
+         dataService.selectedOrganisationUnit = [];
+         getChildren(selectedUid,organisationUnitTree);
+         return dataService.selectedOrganisationUnit;
         }
 
-        function getChildren(parent){
-          if (parent.children){
-            parent.children;
-          }
+        function getChildren(selectedUid,organisationUnitTree){
+          angular.forEach(organisationUnitTree, function(value,Index){
+            console.log(value.id,selectedUid);
+            if (value.id==selectedUid){
+              dataService.selectedOrganisationUnit.push(value);
+              if (value.children){
+                dataService.getSelectedFromCriterial(selectedUid,value.children);
+              }
+            }else{
+              if (value.children){
+                dataService.getSelectedFromCriterial(selectedUid,value.children);
+              }
+            }
+          })
         }
 
         dataService.formatDataForTree  =  function(fileResponse,organisationUnitTree,selectedUid) {
