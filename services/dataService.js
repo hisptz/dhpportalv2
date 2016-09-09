@@ -205,7 +205,7 @@
 
                       }
 
-                    treeData[0].children  = regionsArray;
+                    treeData.children[0].children  = regionsArray;
                   return treeData;
          }
 
