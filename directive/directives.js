@@ -31,19 +31,31 @@
     function alertPanel(){
       return {
         scope:{
-          dataObject:'=dataObject',
-          tableName:'=tableName'
+          tableData:'=tableData',
+          tableName:'=tableName',
+          errorCheck:'=errorCheck',
+          errorMessage:'=errorMessage'
         },
         templateUrl:"partials/alert.html"
           ,
           link: function (scope, element, attrs) {
             scope.showAlertBox = false;
 
-            scope.$watch('dataObject',function(value){
-              console.log(value);
-                if( value ) {
-                  console.log(scope.tableName,scope.dataObject);
+            scope.message = 'No '+scope.tableName+' data available';
+
+            if ( scope.errorCheck )
+            {
+              scope.message = errorMessage;
+              scope.showAlertBox = true;
+            }
+
+            scope.$watch('tableData',function(value){
+
+                if ( value ) {
+                    console.log(scope.tableData);
                 }
+
+
             })
 
 
@@ -52,7 +64,7 @@
             }
 
           },
-          restrict: 'E'
+          restrict: 'AE'
       }
     }
     function printHtml(){

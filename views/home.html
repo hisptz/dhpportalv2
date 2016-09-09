@@ -381,7 +381,7 @@
                             <p class="secondary_header">Table 0-1. {{selectedYear}} DHP Results Summary Table</p>
                             <br/>
 
-                            <alert-panel data-object='population' table-name='"Population"'></alert-panel>
+                            <alert-panel table-data="population" table-name='"Population"' error-check="isError['population']" error-text="{{error_message}}"></alert-panel>
 
                             <div style="margin-left:50%;">
                             <img ng-if="!population" src="assets/img/preloader.gif" style="height:30px;width:90px;" class="ng-scope">
@@ -415,6 +415,9 @@
 
                         </div>
                         <div class="row profile-pages">
+
+                          <alert-panel table-data="fromDHIS" table-name='"Health status"' error-check="isError['healthstatus']" error-text="{{error_message}}"></alert-panel>
+
                           <div style="margin-left:50%;">
                           <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:30px;width:90px;" class="ng-scope">
                           </div>
@@ -533,6 +536,8 @@
                         <br/>
 
                         <div class="row profile-pages">
+                          <alert-panel table-data="fromDHIS" table-name='"health services delivery"' error-check="isError['servicedelivery']" error-text="{{error_message}}"></alert-panel>
+
                           <div style="margin-left:50%;">
                           <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:30px;width:90px;" class="ng-scope">
                           </div>
@@ -699,6 +704,7 @@
                         <br/>
 
                         <div class="row profile-pages">
+                          <alert-panel table-data="fromDHIS" table-name='"Health financing"' error-check="isError['healthfinancing']" error-text="{{error_message}}"></alert-panel>
                           <div style="margin-left:50%;">
                             <img ng-if="!fromDHIS" src="assets/img/preloader.gif" style="height:30px;width:90px;" class="ng-scope">
                           </div>

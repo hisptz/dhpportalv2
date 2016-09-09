@@ -25,9 +25,9 @@
         var indicator = dataService.metaData.automatedIndicators+';'+dataService.metaData.dataDeliveryIndicators+';'+dataService.metaData.automatedIndicators+';'+dataService.metaData.indicators
 
         function getDataFromAnalytics(url){
-            
+
             pendingRequestsService.add({url: url,canceller: canceller});
-            return $http.get(url).then(handleSuccess, handleError('Error loading analytics data'));
+            return $http.get(url);
 
         }
 
@@ -106,7 +106,7 @@
 
             var dataElement    = [];
 
-            if ( typeof analyticsObject == 'object' )
+            if ( typeof analyticsObject.metaData == 'object' )
             {
 
                 var period          = analyticsObject.metaData.pe;
@@ -219,30 +219,30 @@
             });
 
 
-        if ( data.metaData )
-        {
+              if ( data.metaData )
+              {
 
-            var dataElement    = data.metaData.dx;
-            var names          = data.metaData.names;
-            var rows           = data.rows;
+                  var dataElement    = data.metaData.dx;
+                  var names          = data.metaData.names;
+                  var rows           = data.rows;
 
-            angular.forEach(dataElement,function(elementValue,elementIndex){
+                  angular.forEach(dataElement,function(elementValue,elementIndex){
 
-                angular.forEach(output,function(valueOutput,indexOutput){
-                    angular.forEach(rows,function(valueRow,indexRow){
+                      angular.forEach(output,function(valueOutput,indexOutput){
+                          angular.forEach(rows,function(valueRow,indexRow){
 
-                        if(indexOutput==rows[indexRow][1]){
-                            if(elementValue==rows[indexRow][0]){
-                                output[indexOutput][names[elementValue]] = rows[indexRow][2];
-                            }
-                        }
-                    });
-                });
+                              if(indexOutput==rows[indexRow][1]){
+                                  if(elementValue==rows[indexRow][0]){
+                                      output[indexOutput][names[elementValue]] = rows[indexRow][2];
+                                  }
+                              }
+                          });
+                      });
 
-            });
+                  });
 
 
-        }
+              }
 
             return output;
         }
@@ -273,6 +273,11 @@
         return dataService;
     }
 
+    dataService.getDataObject = function(data){
+      
+      return data.data;
+    }
+
 
     function pushChildrens(treeData,singleFileArray){
 
@@ -299,7 +304,7 @@
 
     function handleError(error) {
         return function () {
-            return { success: false, message: error };
+            return error;
         };
     }
 

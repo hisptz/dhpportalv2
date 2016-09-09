@@ -9,12 +9,15 @@
     homeController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService','pendingRequestsService'];
     function homeController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,profileService,utilityService,portalService,chartService,olData,olHelpers,mapService,pendingRequestsService) {
 
+        $scope.isError = [];
+
         if ( $routeParams.parentUid )
         {
             $rootScope.showBackButton = true;
         }else{
             $rootScope.showBackButton = false;
         }
+
 
 
         $rootScope.updateDataContainers = function(){
@@ -36,38 +39,60 @@
         $scope.getDHPResources = function(organisationUnit,year){
             dataService.getPopulationData(organisationUnit,year).then(function(data){
                 $scope.population = {};
+                $scope.population = dataService.createPopulationObject(dataService.getDataObject(data));
 
-                $scope.population = dataService.createPopulationObject(data);
+                if ( data.statusText !=="OK" ) {
+                  $scope.isError['population'] = true;
+                }else{
+                  $scope.isError['population'] = false;
+                }
 
             },function(response){
-                console.log();
+                $scope.isError['population'] = true;
             });
 
-            //// get automated dhis indicators
+            // get automated dhis indicators
             dataService.getAutomatedIndicator(organisationUnit,year).then(function(data){
 
-                $scope.fromDHIS = dataService.assembleDataFromDHIS(data,year);
+                $scope.fromDHIS = dataService.assembleDataFromDHIS(dataService.getDataObject(data),year);
+
+                if ( data.statusText !=="OK" ) {
+                  $scope.isError['automated'] = true;
+                }else{
+                    $scope.isError['automated'] = false;
+                  }
 
             },function(response){
-                console.warn("failed to pull automated indicators failed to pull");
-
+                $scope.isError['automated'] = true;
             });
 
 
-            dataService.getIndicatorTopTenMortality(organisationUnit,year).then(function(results){
+            dataService.getIndicatorTopTenMortality(organisationUnit,year).then(function(data){
 
-                $scope.toptenCauses = dataService.refineTopTenMoltalityIndicators(results,year);
+                $scope.toptenCauses = dataService.refineTopTenMoltalityIndicators(dataService.getDataObject(data),year);
+                if ( data.statusText !=="OK" ) {
+                  $scope.isError['toptenMortality'] = true;
+                }else{
+                    $scope.isError['toptenMortality'] = false;
+                  }
+
             },function(response){
-                console.warn("failed to load top ten indicators");
+                $scope.isError['toptenMortality'] = true;
             });
 
 
-            dataService.getIndicatorTopTenAdmissions(organisationUnit,year).then(function(results){
+            dataService.getIndicatorTopTenAdmissions(organisationUnit,year).then(function(data){
 
 
-                $scope.toptenAdmission = dataService.refineTopTenAdmissionIndicators(results,year);
+                $scope.toptenAdmission = dataService.refineTopTenAdmissionIndicators(dataService.getDataObject(data),year);
+                if ( data.statusText !=="OK" ) {
+                  $scope.isError['toptenAdmission'] = true;
+                }else{
+                    $scope.isError['toptenAdmission'] = false;
+                  }
+
             },function(response){
-                console.warn("failed to load top ten indicators");
+                $scope.isError['toptenAdmission'] = true;
             });
 
 
