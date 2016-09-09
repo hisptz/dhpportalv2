@@ -52,7 +52,15 @@
             scope.$watch('tableData',function(value){
 
                 if ( value ) {
-                    console.log(scope.tableData);
+                  var count = scope.tableData.length;
+                  angular.forEach(scope.tableData, function(value,index){
+                    console.log(index,value);
+                    if (count == index+1 ){
+                      console.log('last',scope.tableData);
+                    }
+
+                  })
+
                 }
 
 
