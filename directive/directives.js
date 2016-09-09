@@ -61,7 +61,7 @@
                     }
 
                     if (count == index+1 && counter == count ){
-                        scope.showAlertBox = false;
+                        scope.showAlertBox = true;
 
                     }
 
