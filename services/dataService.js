@@ -177,7 +177,7 @@
         }
 
         dataService.formatDataForTree  =  function(files,organisationUnitTree) {
-
+                    console.log('files',files);
                     var treeData = [{name:organisationUnitTree[0].name,children:null}];
                        var regions = [];
                        var regionsArray = [];
@@ -192,21 +192,21 @@
                         }
 
                       }
+                      console.log('fileArray',fileArray);
+                      for (var r = 0;r<regions.length;r++) {
 
-                         for (var r = 0;r<regions.length;r++) {
 
-
-                    for (var i = 2;i<files.length;i++) {
-                       var fileArray = files[i].split('_');
-                         if (regions[r] == fileArray[1]) {
-                             regionsArray[r].children.push({name:fileArray[2]+" profile",url:'uploads/'+files[i]});
-                         }
-                        }
+                          for (var i = 2;i<files.length;i++) {
+                             var fileArray = files[i].split('_');
+                               if (regions[r] == fileArray[1]) {
+                                   regionsArray[r].children.push({name:fileArray[2]+" profile",url:'uploads/'+files[i]});
+                               }
+                              }
 
                       }
-
+                    console.log('regionsArray',regionsArray);
                     treeData[0].children  = regionsArray;
-                    console.log(treeData);
+                    console.log('treeData',treeData);
                   return treeData;
          }
 
