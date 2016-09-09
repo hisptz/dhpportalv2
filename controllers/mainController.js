@@ -6,8 +6,8 @@
         })
         .controller('mainController', mainController);
 
-    mainController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','chartService','olData','olHelpers','mapService','pendingRequestsService'];
-    function mainController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,portalService,utilityService,portalService,chartService,olData,olHelpers,mapService,pendingRequestsService) {
+    mainController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','chartService','mapService','pendingRequestsService'];
+    function mainController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,portalService,utilityService,portalService,chartService,mapService,pendingRequestsService) {
         var main  = this;
         var date = new Date();
         var checker = 0;
