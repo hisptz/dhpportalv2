@@ -27,10 +27,10 @@ assets/libs/materialize/css/materialize.min.css
 assets/libs/materialize/js/jquery-2.1.4.min.js
 assets/libs/materialize/js/materialize.min.js
 assets/libs/jqueryui/js/jquery-ui-1.10.4.custom.js
-assets/Highcharts/js/modules/data.js
-assets/Highcharts/js/modules/exporting.js
-assets/Highcharts/js/highcharts-more.js
-assets/Highcharts/js/highcharts.src.js
+//assets/Highcharts/js/modules/data.js
+//assets/Highcharts/js/modules/exporting.js
+//assets/Highcharts/js/highcharts-more.js
+//assets/Highcharts/js/highcharts.src.js
 assets/js/angular-resource.js
 assets/js/angular-route.js
 assets/libs/pace/pace.min.js
@@ -49,8 +49,8 @@ bower_components/angular-openlayers-directive/dist/angular-openlayers-directive.
 bower_components/angular-sanitize/angular-sanitize.min.js
 bower_components/openlayers3/build/ol.js
 bower_components/angular-datatables/dist/angular-datatables.min.js
-bower_components/highcharts-ng/src/highcharts-custom.js
-bower_components/highcharts-ng/src/highcharts-ng.js
+///bower_components/highcharts-ng/src/highcharts-custom.js
+//bower_components/highcharts-ng/src/highcharts-ng.js
 bower_components/angular-sanitize/angular-sanitize.min.js
 bower_components/ng-file-upload/ng-file-upload.min.js
 bower_components/ng-file-upload/ng-file-upload-shim.min.js
@@ -61,9 +61,9 @@ bower_components/angular-multi-select-tree/dist/angular-multi-select-tree-0.1.0.
 bower_components/angular-multi-select-tree/dist/angular-multi-select-tree-0.1.0.tpl.js
 services/dhis-highchart-angular-service.js
 assets/spinkit/angular-spinkit.min.js
-bower_components/openlayers3/build/ol.js
-bower_components/angular-openlayers-directive/dist/angular-openlayers-directive.js
-https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.3/mapbox-gl.js
+//bower_components/openlayers3/build/ol.js
+//bower_components/angular-openlayers-directive/dist/angular-openlayers-directive.js
+//https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.3/mapbox-gl.js
 
 assets/js/routes.js
 controllers/mainController.js
@@ -77,6 +77,3 @@ services/mapService.js
 directive/directives.js
 services/dataService.js
 filters/filters.js
-
-
-

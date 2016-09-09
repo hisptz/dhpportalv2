@@ -274,7 +274,7 @@
     }
 
     dataService.getDataObject = function(data){
-      
+
       return data.data;
     }
 

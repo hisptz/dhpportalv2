@@ -39,7 +39,7 @@
         $scope.getDHPResources = function(organisationUnit,year){
             dataService.getPopulationData(organisationUnit,year).then(function(data){
                 $scope.population = {};
-                $scope.population = dataService.createPopulationObject(dataService.getDataObject(data));
+                $scope.population = dataService.createPopulationObject(data.data);
 
                 if ( data.statusText !=="OK" ) {
                   $scope.isError['population'] = true;
@@ -54,7 +54,7 @@
             // get automated dhis indicators
             dataService.getAutomatedIndicator(organisationUnit,year).then(function(data){
 
-                $scope.fromDHIS = dataService.assembleDataFromDHIS(dataService.getDataObject(data),year);
+                $scope.fromDHIS = dataService.assembleDataFromDHIS(data.data,year);
 
                 if ( data.statusText !=="OK" ) {
                   $scope.isError['automated'] = true;
@@ -69,7 +69,7 @@
 
             dataService.getIndicatorTopTenMortality(organisationUnit,year).then(function(data){
 
-                $scope.toptenCauses = dataService.refineTopTenMoltalityIndicators(dataService.getDataObject(data),year);
+                $scope.toptenCauses = dataService.refineTopTenMoltalityIndicators(data.data,year);
                 if ( data.statusText !=="OK" ) {
                   $scope.isError['toptenMortality'] = true;
                 }else{
@@ -84,7 +84,7 @@
             dataService.getIndicatorTopTenAdmissions(organisationUnit,year).then(function(data){
 
 
-                $scope.toptenAdmission = dataService.refineTopTenAdmissionIndicators(dataService.getDataObject(data),year);
+                $scope.toptenAdmission = dataService.refineTopTenAdmissionIndicators(data.data,year);
                 if ( data.statusText !=="OK" ) {
                   $scope.isError['toptenAdmission'] = true;
                 }else{
