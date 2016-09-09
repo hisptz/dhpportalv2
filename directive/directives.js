@@ -62,7 +62,7 @@
                   var counter = 0;
                   var index = 0;
                   var count = size(scope.tableData);
-                  angular.forEach(scope.tableData, function(value,index){
+                  angular.forEach(scope.tableData, function(value,indexx){
 
                     index++;
                     if ( size(value) == 0 ) {
