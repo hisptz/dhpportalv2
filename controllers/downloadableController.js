@@ -13,6 +13,7 @@ angular.module("dhpportal")
       }
 
       $rootScope.updateDataContainers = function(){
+        $scope.dataForTheTree = null;
             if ( $routeParams.parentUid != $rootScope.selectedOrgUnit )
             {
                 window.location.href = "#/home/downloadable/"+$rootScope.selectedOrgUnit+"/"+$scope.selectedYear;
