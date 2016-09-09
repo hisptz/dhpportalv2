@@ -192,7 +192,7 @@
                         }
 
                       }
-                      console.log('fileArray',fileArray);
+
                       for (var r = 0;r<regions.length;r++) {
 
 
@@ -204,9 +204,7 @@
                               }
 
                       }
-                    console.log('regionsArray',regionsArray);
                     treeData[0].children  = regionsArray;
-                    console.log('treeData',treeData);
                   return treeData;
          }
 

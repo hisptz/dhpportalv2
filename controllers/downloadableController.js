@@ -20,7 +20,7 @@ angular.module("dhpportal")
 
               $scope.treeOptions = {
                   nodeChildren: "children",
-                  dirSelectable: true,
+                  dirSelectable: false,
                   injectClasses: {
                       ul: "a1",
                       li: "a2",
