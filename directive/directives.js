@@ -52,11 +52,17 @@
             scope.$watch('tableData',function(value){
 
                 if ( value ) {
+                  var counter = 0;
                   var count = scope.tableData.length;
                   angular.forEach(scope.tableData, function(value,index){
-                    console.log(index,value);
-                    if (count == index+1 ){
-                      console.log('last',scope.tableData);
+
+                    if ( value.length == 0 ) {
+                      counter++;
+                    }
+
+                    if (count == index+1 && counter == count ){
+                        scope.showAlertBox = false;
+
                     }
 
                   })
