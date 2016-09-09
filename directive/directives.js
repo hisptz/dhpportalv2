@@ -69,7 +69,7 @@
                       counter++;
                     }
 
-                    if (count == index+1 && counter == count ){
+                    if (count == index && counter == count ){
                         scope.showAlertBox = true;console.log("THIS HAS EMPTY DATA");
                     }
 
