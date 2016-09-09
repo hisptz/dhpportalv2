@@ -178,7 +178,7 @@
 
         dataService.formatDataForTree  =  function(files,organisationUnitTree) {
 
-                    var treeData = {name:organisationUnitTree[0].name,children:null};
+                    var treeData = [{name:organisationUnitTree[0].name,children:null}];
                        var regions = [];
                        var regionsArray = [];
 
@@ -205,7 +205,7 @@
 
                       }
 
-                    treeData.children  = regionsArray;
+                    treeData[0].children  = regionsArray;
                   return treeData;
          }
 
