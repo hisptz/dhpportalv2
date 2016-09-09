@@ -37,6 +37,7 @@
         }
 
         $scope.getDHPResources = function(organisationUnit,year){
+          $scope.fromDHIS = null;$scope.population = null;
             dataService.getPopulationData(organisationUnit,year).then(function(data){
                 $scope.population = {};
                 $scope.population = dataService.createPopulationObject(data.data);
