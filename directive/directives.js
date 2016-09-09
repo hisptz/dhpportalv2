@@ -68,9 +68,11 @@
                     if ( size(value) == 0 ) {
                       counter++;
                     }
-                    console.log(count,index,counter,size(value));
+                    // console.log(count,index,counter,size(value));
                     if (count == index && counter == count ){
-                        scope.showAlertBox = true;console.log("THIS HAS EMPTY DATA");
+                        scope.showAlertBox = true;
+                    }else{
+                        scope.showAlertBox = false;
                     }
 
                   })
