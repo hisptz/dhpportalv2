@@ -57,7 +57,7 @@
             }
 
             scope.$watch('tableData',function(value){
-
+                scope.showAlertBox = false;
                 if ( value ) {
                   var counter = 0;
                   var index = 0;
