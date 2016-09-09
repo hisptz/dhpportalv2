@@ -176,9 +176,37 @@
             return output;
         }
 
-        dataService.formatDataForTree  =  function(fileResponse,organisationUnitTree) {
+        dataService.getSelectedFromCriterial = function(selectedUid,organisationUnitTree){
+          var selectedOrganisationUnit = [];
+                angular.forEach(organisationUnitTree, function(value,Index){
+                  if (value.id==selectedUid){
+                    selectedOrganisationUnit.push(value);
+                    if (value.children){
+                      dataService.getSelectedFromCriterial(selectedUid,value.children);
+                    }
+                  }else{
+                    if (value.children){
+                      dataService.getSelectedFromCriterial(selectedUid,value.children);
+                    }
+                  }
+                })
+          return selectedOrganisationUnit;
+        }
+
+        function getChildren(parent){
+          if (parent.children){
+            parent.children;
+          }
+        }
+
+        dataService.formatDataForTree  =  function(fileResponse,organisationUnitTree,selectedUid) {
+
                     var files = fileResponse.data;
                     var treeData = [{name:organisationUnitTree[0].name,children:null}];
+                    var selectedOrganisationUnit = dataService.getSelectedFromCriterial(selectedUid,organisationUnitTree);
+
+                    console.log('selectedOrganisationUnit',selectedOrganisationUnit);
+
                        var regions = [];
                        var regionsArray = [];
 

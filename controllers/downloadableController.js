@@ -13,7 +13,7 @@ angular.module("dhpportal")
       }
 
       $rootScope.updateDataContainers = function(){
-        $scope.dataForTheTree = null;
+
             if ( $routeParams.parentUid != $rootScope.selectedOrgUnit )
             {
                 window.location.href = "#/home/downloadable/"+$rootScope.selectedOrgUnit+"/"+$scope.selectedYear;
@@ -35,7 +35,7 @@ angular.module("dhpportal")
               }
 
               dataService.loadAllFiles().then(function(files){
-                $scope.dataForTheTree = dataService.formatDataForTree(files,$scope.$parent.organisationUnitTree);
+                $scope.dataForTheTree = dataService.formatDataForTree(files,$scope.$parent.organisationUnitTree,$routeParams.parentUid);
               },function(failure){
 
               })
