@@ -179,6 +179,7 @@
         dataService.getSelectedFromCriterial = function(selectedUid,organisationUnitTree){
           var selectedOrganisationUnit = [];
                 angular.forEach(organisationUnitTree, function(value,Index){
+                  console.log(value.id,selectedUid);
                   if (value.id==selectedUid){
                     selectedOrganisationUnit.push(value);
                     if (value.children){
