@@ -206,6 +206,7 @@
                       }
 
                     treeData[0].children  = regionsArray;
+                    console.log(treeData);
                   return treeData;
          }
 
