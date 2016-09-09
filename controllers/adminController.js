@@ -15,8 +15,8 @@
         })
         .controller('adminController', adminController);
 
-    adminController.$inject   = ['$scope','$rootScope','$cookies', '$http','$q','$timeout', 'olData','olHelpers','shared','profileService','Upload','utilityService'];
-    function adminController($scope,$rootScope,$cookies, $http,$timeout,$q, olData,olHelpers,shared,profileService,Upload,utilityService) {
+    adminController.$inject   = ['$scope','$rootScope','$cookies', '$http','$q','$timeout','shared','profileService','Upload','utilityService'];
+    function adminController($scope,$rootScope,$cookies, $http,$timeout,$q,shared,profileService,Upload,utilityService) {
         var admin = this;
         var date = new Date();
         admin.current_year = date.getFullYear();
@@ -375,5 +375,3 @@
         * */
     }
 })()
-
-

@@ -54,9 +54,7 @@ controllers/mainController.js
 controllers/mapController.js
 controllers/adminController.js
 services/portalService.js
-services/chartService.js
 services/service.js
-services/tableService.js
 services/mapService.js
 directive/directives.js
 services/dataService.js
