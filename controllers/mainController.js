@@ -11,7 +11,23 @@
         var main  = this;
         var date = new Date();
         var checker = 0;
+        $scope.loginForm = true;
 
+        if ( localStorage.getItem('currentUser') ) {
+          $scope.currentLogedUser = localStorage.getItem('currentUser');
+          $scope.loginForm = false;
+          $scope.isLoading = false;
+          console.log('hideSelectionCriteria',localStorage.getItem('hideSelectionCriteria'));
+          // var currentUrl = $location.path();
+          // if ( currentUrl.indexOf('admin')>=0 )
+          // {
+          //   $scope.hideSelectionCriteria = true;
+          // }else{
+          //   $scope.hideSelectionCriteria = false;
+          // }
+
+
+        }
 
 
         $rootScope.selectedYear = date.getFullYear();
@@ -25,6 +41,7 @@
 
 
         $scope.admin = function(){
+          localStorage.setItem('hideSelectionCriteria',true);
             window.location.href = "#/admin";
         }
 
@@ -119,12 +136,31 @@
         }
 
 
+        $scope.loginToDHIS = function( username, password) {
+          $scope.isLoading = true;
+          utilityService.login(username,password).then(function(success){
+            $http.get(utilityService.baseDHIS+'/api/me.json').then(function(user){
+              $scope.loginForm = false;
+              $scope.isLoading = false;
+              $scope.currentLogedUser = user.data.displayName;
+              localStorage.setItem('currentUser',user.data.displayName);
+            })
+
+          });
+
+        }
+
+        $scope.userLogout = function(){
+          $scope.currentLogedUser = null;
+          localStorage.removeItem('currentUser');
+        }
+
         $scope.periods	=	portalService.getPeriod();// the beggining of the period
 
 
 
 
-        $scope.loadOrganisationUnit();
+        // $scope.loadOrganisationUnit();
 
 
 

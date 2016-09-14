@@ -34,8 +34,8 @@
 <div>
     <div class="col s12 m12 l12">
         <div class="col s12 z-depth-1" style="background-color:#ffffff;">
-            <div class="section grey lighten-5 " >
-                <div class="input-field col s12 m3 l3 orgDropdown grey lighten-5"  >
+            <div class="section  lighten-5 " >
+                <div class="input-field col s12 m3 l3 orgDropdown  lighten-5"  >
                     <multi-select-tree data-input-model="organisationUnitTree" multi-select="true"
                                        data-output-model="selectedItems" data-default-label="Organisation Units"
                                        data-callback="selectedCallback(item, selectedItems)"
@@ -47,7 +47,7 @@
                     <img ng-if="!organisationUnitTree" src="assets/img/preloader.gif" style="height:15px;width:45px;">
                 </div>
 
-                <div class="input-field col s12 m1 l1 grey lighten-5" >
+                <div class="input-field col s12 m1 l1  lighten-5" >
 
                     <select ng-change="selectPeriod(selectedYear)" ng-model="selectedYear"  material-select watch>
                         <option ng-selected="selectedYear" value="{{selectedYear}}">{{selectedYear}}</option>
@@ -56,15 +56,34 @@
                     <label>Period</label>
                 </div>
                 &nbsp;
-                <div class="input-field col s12 m1 l1 grey lighten-5" >
+                <div class="input-field col s12 m1 l1  lighten-5" >
 
                     <a class="waves-effect waves-light bootstrap-button bootstrap-button-default" type="button" ng-click="updateDataContainers()">Update</a>
                 </div>
 
-                <div class="input-field col s12 m7 l7 orgDropdown grey lighten-5"  >
-                    <ul class="right hide-on-med-and-down">
+                <div class="input-field col s12 m7 l7 orgDropdown  lighten-5"  >
+                    <ul class="right hide-on-med-and-down" style="text-align:right;">
                         <li ng-if="currentLogedUser"><a ><i class="fa fa-user "></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a ng-click="userLogout()" style="cursor: pointer;">Logout</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="cursor: pointer;" ng-click="admin()"><i class="fa fa-cog"></i>&nbsp;Settings</a></li>
-                        <li ng-if="!currentLogedUser"><a modal href="#login_modal" >Login</a></li>
+                        <li ng-if="!currentLogedUser && !loginForm"><a modal href="#login_modal" >Login</a></li>
+                        <li ng-if="loginForm">
+                          <div ng-if="!isLoading" style="margin-top:-25px;margin-right:-160px;">
+                            <div class="input-field col s4 m3 l3">
+                                <input ng-model="username" id="username" type="text" class="validate">
+                                <label for="username">DHIS2 Username</label>
+                              </div>
+                              <div class="input-field col s4 m3 l3">
+                                <input ng-model="password" id="last_name" type="password" class="validate">
+                                <label for="last_name">DHIS2 Password</label>
+                              </div>
+                              <div class="input-field col s4 m1 l1">
+                                <a style="cursor:pointer;" ng-click="loginToDHIS(username,password)">login</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div ng-if="isLoading" style="margin-top:-25px;float:right;">
+                            <img src="assets/img/ajax-loader.gif"></img>
+                          </div>
+                        </li>
                     </ul>
                 </div>
             </div>

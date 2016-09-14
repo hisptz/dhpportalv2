@@ -9,8 +9,7 @@
     homeController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','pendingRequestsService'];
     function homeController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,profileService,utilityService,portalService,pendingRequestsService) {
 
-        $scope.isError = [];
-
+        $scope.isError = [];        
         if ( $routeParams.parentUid )
         {
             $rootScope.showBackButton = true;

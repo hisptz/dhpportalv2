@@ -15,8 +15,8 @@
         })
         .controller('adminController', adminController);
 
-    adminController.$inject   = ['$scope','$rootScope','$cookies', '$http','$q','$timeout','shared','profileService','Upload','utilityService'];
-    function adminController($scope,$rootScope,$cookies, $http,$timeout,$q,shared,profileService,Upload,utilityService) {
+    adminController.$inject   = ['$scope','$rootScope','$cookies', '$http','$q','$timeout','profileService','Upload','utilityService'];
+    function adminController($scope,$rootScope,$cookies, $http,$timeout,$q,profileService,Upload,utilityService) {
         var admin = this;
         var date = new Date();
         admin.current_year = date.getFullYear();
@@ -43,8 +43,10 @@
         admin.pdffile = null;
         admin.profile = {};
 
-        if(!$scope.$parent.currentLogedUser){
+        if (!$scope.$parent.currentLogedUser) {
             window.location.href="#home";
+        } else {
+            $scope.$parent.hideSelectionCriteria = true;
         }
         /**
         * THE BEGINNING OF THE FUNCTION THAT HANDLES ADMIN PAGE FUNCTIONALITY OF PORTAL
@@ -67,6 +69,7 @@
         }
 
         admin.home = function(){
+            localStorage.setItem('hideSelectionCriteria',false);
             window.location.href = "#/home";
         }
 
@@ -349,7 +352,11 @@
         }
 
         utilityService.loadOrganisationUnits().then(function(data){
+
+          if ( data.organisationUnits && data.organisationUnits.length>0 ) {
             admin.regions = utilityService.modifyOrgUnits(data.organisationUnits[0].children);
+          }
+
         });
         //
         $scope.$watch("admin.selectedOrgUnitList",function(newValue,oldValue){
