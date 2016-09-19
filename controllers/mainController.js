@@ -11,7 +11,7 @@
         var main  = this;
         var date = new Date();
         var checker = 0;
-        $scope.loginForm = true;
+        $scope.loginForm = false;
 
         if ( localStorage.getItem('currentUser') ) {
           $scope.currentLogedUser = localStorage.getItem('currentUser');
