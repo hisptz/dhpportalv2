@@ -64,7 +64,7 @@
                 <div class="input-field col s12 m7 l7 orgDropdown  lighten-5"  >
                     <ul class="right hide-on-med-and-down" style="text-align:right;">
                         <li ng-if="currentLogedUser"><a ><i class="fa fa-user "></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a ng-click="userLogout()" style="cursor: pointer;">Logout</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="cursor: pointer;" ng-click="admin()"><i class="fa fa-cog"></i>&nbsp;Settings</a></li>
-                        <li ng-if="!currentLogedUser && !loginForm"><a style="cursor:pointer;" >Login</a></li>
+                        <li ng-if="!currentLogedUser && !loginForm"><a style="cursor:pointer;" ng-click="showLoginForm()" >Login</a></li>
                         <li ng-if="loginForm && !isLoading">
                           <div  style="margin-top:-25px;margin-right:-160px;">
                             <div class="input-field col s4 m3 l3">

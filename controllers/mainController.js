@@ -12,20 +12,16 @@
         var date = new Date();
         var checker = 0;
         $scope.loginForm = false;
+        $scope.isLoading = true;
+
+        $scope.showLoginForm = function(){
+            $scope.loginForm = true;
+        }
 
         if ( localStorage.getItem('currentUser') ) {
           $scope.currentLogedUser = localStorage.getItem('currentUser');
           $scope.loginForm = false;
           $scope.isLoading = false;
-          console.log('hideSelectionCriteria',localStorage.getItem('hideSelectionCriteria'));
-          // var currentUrl = $location.path();
-          // if ( currentUrl.indexOf('admin')>=0 )
-          // {
-          //   $scope.hideSelectionCriteria = true;
-          // }else{
-          //   $scope.hideSelectionCriteria = false;
-          // }
-
 
         }
 
