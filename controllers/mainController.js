@@ -155,9 +155,4 @@
 
 
 
-
-        // $scope.loadOrganisationUnit();
-
-
-
     }
