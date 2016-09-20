@@ -77,7 +77,7 @@
         admin.showDistricts = function(district){
 
             var districts = JSON.parse(district);
-            if ( districts.children )
+            if ( districts && districts.children )
             {
                 admin.districts = districts.children;
             }
@@ -112,6 +112,7 @@
 
 
         admin.saveProfile = function(form,pdf_file,orgUnit){
+
             admin.editProfileForm = false;
             admin.addProfileForm = true;
             admin.list = false;
@@ -132,32 +133,35 @@
             }else{
                 profileService.saveProfile(payload).then(function(data){
                     admin.showProgress = false;
-                    if(data=="UPLOAD_FAILED"){
+                    if(data=="UPLOAD_FAILED")
+                    {
                         admin.loadingUpload = false;
                         admin.message = "upload failed";
                         admin.message_class = "failed";
                     }
 
-                    if(data=="UPLOAD_SUCCESS"){
+                    if(data=="UPLOAD_SUCCESS")
+                    {
                         admin.loadingUpload = false;
                         admin.showList();
                         admin.message = "uploaded successful";
                         admin.message_class = "success";
                     }
 
-                    if(data=="FILE_EXIST_ERROR"){
+                    if(data=="FILE_EXIST_ERROR")
+                    {
                         admin.loadingUpload = false;
                         admin.message = "file exist";
                         admin.message_class = "failed";
                     }
 
-                    if(data=="INVALID_TYPE_ERROR"){
+                    if(data=="INVALID_TYPE_ERROR")
+                    {
                         admin.message = "file is not pdf";
                         admin.message_class = "failed";
                     }
 
                 },function(response){
-                    console.log("NETWORK ERROR");
                     admin.loadingUpload = false;
                     admin.message = "Upload failed: internal server error";
                     admin.message_class = "failed";
@@ -177,6 +181,7 @@
             admin.editedOrgUnit = properties.district;
             admin.editedYear = properties.year;
         }
+
         admin.cancelUpdate = function(){
             admin.editProfileForm = false;
             admin.addProfileForm = false;
@@ -291,7 +296,8 @@
             admin.addProfileForm = false;
             admin.previewcsv = false;
             $rootScope.failureMessage = null;
-                admin.saveProfile(form,admin.pdffile,admin.selectedCSVEntryDistrict);
+
+            admin.saveProfile(form,admin.pdffile,admin.selectedCSVEntryDistrict);
 
             form.org_unit_selected = admin.selectedCSVEntryDistrict;
 
