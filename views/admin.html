@@ -44,6 +44,7 @@
 
                             <div class="row">
                                 <label >* Organisation Unit (District)</label>
+                                {{admin.districts}}
                                 <div class="input-field col  s12 m12">
                                     <select  name="org_unit" ng-model="admin.selectedCSVEntryDistrict" material-select watch  required="required">
                                         <option ng-repeat="distr in admin.districts" value="{{distr.id}}">{{distr.name}}</option>

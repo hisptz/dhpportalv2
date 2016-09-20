@@ -75,7 +75,7 @@
 
 
         admin.showDistricts = function(district){
-            console.log(district)
+
             admin.districts = [];
             var districts = JSON.parse(district);
             if ( districts.children )
