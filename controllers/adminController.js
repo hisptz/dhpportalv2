@@ -75,7 +75,7 @@
 
 
         admin.showDistricts = function(district){
-
+            console.log(district)
             admin.districts = [];
             var districts = JSON.parse(district);
             if ( districts.children )
@@ -90,7 +90,6 @@
             if(typeof(newValue) !=="undefined"){
                 admin.showDistricts(newValue);
                 admin.selectedOrgUnitToDisplay = JSON.parse(newValue).value;
-                //admin.drawTable(admin.selectedPeriod,admin.selectedOrgUnitToDisplay);
             }
         });
 
@@ -104,13 +103,11 @@
             if(typeof(newValue) !=="undefined"){
                 admin.selectedOrgUnitToDisplay = JSON.parse(admin.selectedOrgUnitRegion).value+" -> "+newValue.split("_")[1];
                 var district = getDirstrictName(admin.selectedOrgUnitToDisplay);
-                //admin.drawTable(admin.selectedPeriod,district);
             }
         });
 
         $scope.$watch("admin.selectedPeriod",function(newValue,oldValue){
             if(typeof(newValue) !=="undefined"){
-                //admin.drawTable(newValue,admin.selectedOrgUnitToDisplay);
             }
         });
 
@@ -130,7 +127,7 @@
 
             });
 
-            var payload = {file_name:form.org_unit_selected+"_"+form.form_period+".pdf",file_object:pdf_file};
+            var payload = {file_name:"MOH - Tanzania_"+form.org_unit_selected+"_"+form.form_period+".pdf",file_object:pdf_file};
             if(!admin.selectedEntryDistrict&&!form.form_period){
 
             }else{
