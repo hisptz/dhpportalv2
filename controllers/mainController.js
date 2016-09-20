@@ -12,9 +12,10 @@
         var date = new Date();
         var checker = 0;
         $scope.loginForm = false;
-        $scope.isLoading = true;
+        $scope.isLoading = false;
 
         $scope.showLoginForm = function(){
+            console.log($scope.loginForm);
             $scope.loginForm = true;
         }
 
