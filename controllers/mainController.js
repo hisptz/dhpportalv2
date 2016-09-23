@@ -156,4 +156,9 @@
 
 
 
+
+         $scope.loadOrganisationUnit();
+
+
+
     }
