@@ -121,12 +121,15 @@
 
             if ( orgunitNumber != selectedItems.length  )
             {
-                $rootScope.orgUnitNames	=	portalService.getSelectedOrgUnitNames(selectedItems,$scope.organisationUnitTree);// the beggining of the period
-                $rootScope.selectedOrgUnit	=	portalService.getSelectedOrgUnit(selectedItems,$scope.organisationUnitTree);// the beggining of the period
-                $rootScope.selectionLevel = portalService.getSelectedOrgUnitLevel(selectedItems,$scope.organisationUnitTree);
-                $rootScope.treeClassess = portalService.getApproppiateTreeClass(selectedItems,$scope.organisationUnitTree);
-                $rootScope.loginClassess = portalService.getApproppiateLoginClass(selectedItems,$scope.organisationUnitTree);
+              
+                $rootScope.orgUnitNames      =	portalService.getSelectedOrgUnitNames(selectedItems,$scope.organisationUnitTree);// the beggining of the period
+                $rootScope.selectedOrgUnit   =	portalService.getSelectedOrgUnit(selectedItems,$scope.organisationUnitTree);// the beggining of the period
+                $rootScope.selectionLevel    =  portalService.getSelectedOrgUnitLevel(selectedItems,$scope.organisationUnitTree);
+                $rootScope.treeClassess      =  portalService.getApproppiateTreeClass(selectedItems,$scope.organisationUnitTree);
+                $rootScope.loginClassess     =  portalService.getApproppiateLoginClass(selectedItems,$scope.organisationUnitTree);
+
                 localStorage.setItem('orgUnitNumber',selectedItems.length);
+
             }else{
 
 

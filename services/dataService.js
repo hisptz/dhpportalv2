@@ -32,7 +32,7 @@
         }
 
 
-        dataService.getPopulationData            = function(orgunit,period){
+        dataService.getPopulationData  = function(orgunit,period){
             return getDataFromAnalytics(dataService.baseDHIS+"api/analytics.json?dimension=Cow9nZikDgD:FfN1mqXvpR7;HKU7NijIEIH;LBipXEMD6mq;aZcKJ9XxvaF;h8JRv8POdfy;p1b4SYcdjJw&dimension=dx:ykShMtNgDB1&dimension=hENn80Fmmlf:mtUMlCLFTTz;syxWmui9UMq&filter=ou:"+orgunit+"&filter=pe:"+period);
         }
 
@@ -44,6 +44,7 @@
             return getDataFromAnalytics(therIndicatorUrlYear);
 
         }
+
         dataService.getIndicatorTopTenAdmissions = function(orgunit,period){
 
             var periods     = utilityService.getConsecutivePeriods(period);
@@ -184,7 +185,7 @@
 
         function getChildren(selectedUid,organisationUnitTree){
           angular.forEach(organisationUnitTree, function(value,Index){
-            console.log(value.id,selectedUid);
+
             if (value.id==selectedUid){
               dataService.selectedOrganisationUnit.push(value);
               if (value.children){
@@ -198,13 +199,11 @@
           })
         }
 
-        dataService.formatDataForTree  =  function(fileResponse,organisationUnitTree,selectedUid) {
+        dataService.formatDataForTree  =  function(fileResponse,organisationUnitTree,selectedUid,period) {
 
-                    var files = fileResponse.data;
+                    var files = fileSanitation(fileResponse.data,period);
                     var treeData = [{name:organisationUnitTree[0].name,children:null}];
                     var selectedOrganisationUnit = dataService.getSelectedFromCriterial(selectedUid,organisationUnitTree);
-
-                    console.log('selectedOrganisationUnit',selectedOrganisationUnit);
 
                        var regions = [];
                        var regionsArray = [];
@@ -231,11 +230,12 @@
                               }
 
                       }
+
                     treeData[0].children  = regionsArray;
                   return treeData;
          }
 
-        dataService.assembleDataFromDHIS         = function(data,year){
+        dataService.assembleDataFromDHIS = function(data,year){
             var periodString = utilityService.getConsecutivePeriods(year);
             var output = [];
             var periods = periodString.split(';');
@@ -244,9 +244,8 @@
                 output[periodValue] = {};
             });
 
-
-              if ( data.metaData )
-              {
+            if ( data.metaData )
+            {
 
                   var dataElement    = data.metaData.dx;
                   var names          = data.metaData.names;
@@ -272,7 +271,6 @@
 
             return output;
         }
-
 
         dataService.loadAllFiles = function(){
             var url = '/dhpportal/server/process.php?list_files=1';
@@ -320,7 +318,17 @@
       return treeData;
     }
 
+    function fileSanitation(files,period){
+        var filesArray = [];
+      angular.forEach(files,function(file){
+         if (file.indexOf(period)>=0){
+           filesArray.push(file);
+         }
+      });
 
+      return filesArray;
+
+    }
 
     // private functions
 
