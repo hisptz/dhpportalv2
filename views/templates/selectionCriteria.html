@@ -30,17 +30,23 @@
     .bootstrap-button:hover{
         background-color: #c5dbec!important;
     }
+    .tree-control{
+      margin-top: -10px;
+
+    }
 </style>
 <div>
     <div class="col s12 m12 l12">
         <div class="col s12 z-depth-1" style="background-color:#ffffff;">
             <div class="section  lighten-5 " >
-                <div class="input-field col s12 m3 l3 orgDropdown  lighten-5"  >
+                <div class="input-field col s12 {{treeClassess}} orgDropdown  lighten-5"  >
+                  <label style="position:relative!important;top: -0.8rem!important;left:0rem!important;font-size:1rem!important;">Administrative Level</label>
                     <multi-select-tree data-input-model="organisationUnitTree" multi-select="true"
                                        data-output-model="selectedItems" data-default-label="Organisation Units"
                                        data-callback="selectedCallback(item, selectedItems)"
                                        data-select-only-leafs="false"
                                        data-switch-view="false"
+
                     >
 
                     </multi-select-tree>
@@ -53,15 +59,15 @@
                         <option ng-selected="selectedYear" value="{{selectedYear}}">{{selectedYear}}</option>
                         <option ng-repeat="period in periods"  ng-if="selectedYear!=period.name">{{period.name}}</option>
                     </select>
-                    <label>Period</label>
+                    <label style="font-size:1rem!important;">Period</label>
                 </div>
                 &nbsp;
-                <div class="input-field col s12 m1 l1  lighten-5" >
+                <div class="input-field col s12 m1 l1  lighten-5" style="text-align:right;">
 
-                    <a class="waves-effect waves-light bootstrap-button bootstrap-button-default" type="button" ng-click="updateDataContainers()">Update</a>
+                    <a class="waves-effect waves-light bootstrap-button bootstrap-button-default" style="top:15px;"  type="button" ng-click="updateDataContainers()">Update</a>
                 </div>
 
-                <div class="input-field col s12 m7 l7 orgDropdown  lighten-5"  >
+                <div class="input-field col s12 {{loginClassess}} orgDropdown  lighten-5"  >
                     <ul class="right hide-on-med-and-down" style="text-align:right;">
                         <li ng-if="currentLogedUser"><a ><i class="fa fa-user "></i>&nbsp;&nbsp;: {{currentLogedUser}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a ng-click="userLogout()" style="cursor: pointer;">Logout</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="cursor: pointer;" ng-click="admin()"><i class="fa fa-cog"></i>&nbsp;Settings</a></li>
                         <li ng-if="!currentLogedUser && !loginForm"><a style="cursor:pointer;" ng-click="showLoginForm()" >Login</a></li>
@@ -91,15 +97,17 @@
 
     </div>
     <div class="col s12 m12 l12" >
-        <div class="col s2 m2 l2" >
+        <div class="col s8 m8 l8" >
             <br/>
             <a  title="back to home"  href="#/home" ng-if="!showBackButton" >Home</a>
             &nbsp;|&nbsp;
+            <a  style=>Map</a>
+            &nbsp;|&nbsp;
             <a  title="downloadable files" href="#/home/downloadable/{{selectedOrgUnit}}/{{selectedYear}}">Profiles</a>
         </div>
-        <div class="col s8 m8 l8" >
+        <div class="col s2 m2 l2" >
             <br/>
-            <p class="center" style="text-align:left;">Health Profile : {{ orgUnitNames }} - {{ selectedYear }}</p>
+            <!--<p class="center" style="text-align:left;">Health Profile : {{ orgUnitNames }} - {{ selectedYear }}</p>-->
         </div>
     </div>
 </div>

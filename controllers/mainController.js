@@ -13,6 +13,8 @@
         var checker = 0;
         $scope.loginForm = false;
         $scope.isLoading = false;
+        $rootScope.treeClassess = "m2 l2";
+        $rootScope.loginClassess = "m7 l7"
 
         $scope.showLoginForm = function(){
             console.log($scope.loginForm);
@@ -95,7 +97,7 @@
                     // callback for organisation unit selection from tree
                     var monitor = 0;
 
-                    $scope.updateDataContainers();
+                    // $scope.updateDataContainers();
 
                 },function(status){
 
@@ -121,7 +123,9 @@
             {
                 $rootScope.orgUnitNames	=	portalService.getSelectedOrgUnitNames(selectedItems,$scope.organisationUnitTree);// the beggining of the period
                 $rootScope.selectedOrgUnit	=	portalService.getSelectedOrgUnit(selectedItems,$scope.organisationUnitTree);// the beggining of the period
-
+                $rootScope.selectionLevel = portalService.getSelectedOrgUnitLevel(selectedItems,$scope.organisationUnitTree);
+                $rootScope.treeClassess = portalService.getApproppiateTreeClass(selectedItems,$scope.organisationUnitTree);
+                $rootScope.loginClassess = portalService.getApproppiateLoginClass(selectedItems,$scope.organisationUnitTree);
                 localStorage.setItem('orgUnitNumber',selectedItems.length);
             }else{
 

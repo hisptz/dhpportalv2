@@ -86,7 +86,7 @@
 
                 $scope.toptenAdmission = dataService.refineTopTenAdmissionIndicators(data.data,year);
                 if ( data.statusText !=="OK" ) {
-                  $scope.isError['toptenAdmission'] = true;
+                    $scope.isError['toptenAdmission'] = true;
                 }else{
                     $scope.isError['toptenAdmission'] = false;
                   }
