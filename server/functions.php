@@ -1,9 +1,9 @@
 <?php
-session_start(); 
+session_start();
 include_once('functions.php');
 
-class DhpFile { 
-        
+class DhpFile {
+
         public static $directional_image="iVBORw0KGgoAAAANSUhEUgAAAfMAAABeCAIAAAC4mGqYAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA";
         public static $dir = "../uploads/";
         ///public static $filePath = "home/dhis/tomcat-main/ROOT/webapps/dhpportal/";
@@ -12,7 +12,7 @@ class DhpFile {
 		/**
 		 *  Delete file function
 		 * */
-		 
+
 		public static function deleteFile($file_path){
 
 		if (!unlink(DhpFile::$dir."/".$file_path))
@@ -23,13 +23,13 @@ class DhpFile {
 		  {
 		  return true;
 		  }
-		
+
 		}
-		
+
 		/**
-		 *  File Uploads function 
+		 *  File Uploads function
 		 * */
-		 
+
 		public static function uploadFile($file_path,$target_file){
 
 		if (move_uploaded_file($file_path, $target_file)) {
@@ -37,15 +37,15 @@ class DhpFile {
 			} else {
             return false;
 			}
-					
-		
-		} 
-		
-		
+
+
+		}
+
+
 		/**
 		 *  This function process Uploads for DHIS
 		 * */
-		 
+
 		public static function processUploadsForDHIS($target_file,$period,$orgUnit,$category,$attributeoptioncombo,$names,$uids){
 			$csv_file = $filePath."downloads/datavalueset.csv";
 			$json_object = [];
@@ -93,28 +93,30 @@ class DhpFile {
 				DhpFile::saveDataToCSVFile('report_container',$json_object,$available_fields,$period,$available_fields,$dataelements,$orgUnit,$category,$attributeoptioncombo);
 				return DhpFile::send_CSV_To_Dhis($csv_file);
 //					return $json_object;
-					
+
 		}
 
 
     public static function contains($substring, $string) {
                     $pos = strripos($string, $substring);
 
-                    if($pos === false) {
+        if($pos === false)
+        {
                         // string needle NOT found in haystack
-                        return false;
-                    }
-                    else {
+                return false;
+        }
+        else
+        {
                         // string needle found in haystack
-                        return true;
-                    }
+                return true;
+        }
 
-                }
-		
+    }
+
 		/**
-		 *  This function creates temporary database table 
+		 *  This function creates temporary database table
 		 * */
-		 
+
 		public static function saveDataToCSVFile($table_name,$json_object,$available_fields,$period,$names,$uids,$orgUnit,$category,$attributeoptioncombo){
 			$csv_file = $filePath."downloads/datavalueset.csv";
 			$query_string = "";
@@ -125,7 +127,7 @@ class DhpFile {
 					if (array_key_exists($field, $json_value)) {
 						$csv_array[$field] = $json_value[$field];
 						}else{
-							
+
 							}
 				}
 				}
@@ -135,23 +137,23 @@ class DhpFile {
 			}
             clearstatcache();
 			$file = fopen($csv_file,"w");
-			
+
 			$countTitle = 0;
 			$Headers = array('dataelement','period','orgunit','categoryoptioncombo','attributeoptioncombo','value');//,'storedby','lastupdated','comment','followup');
 
 			$dataelements = json_decode($uids);
-				
+
 			$colCount = count($Headers);
 			$headers = "";
 			foreach ($Headers as $key => $line){
 				$countTitle++;
 				$headers.=$line;
 				if($countTitle==$colCount){
-					
+
 					}else{
 						$headers.=",";
 						}
-						  
+
 			}
 			fputcsv($file,explode(',',$headers));
 
@@ -162,49 +164,49 @@ class DhpFile {
 			foreach ($csv_array as $key => $line){
 				$colCounter = 0;
 				foreach ($Headers as $key => $line2){
-					
-					
+
+
 					if($colCounter==0){
 						$rowsValues.=$dataelements[$countRound];
 						}
-						
+
 					if($colCounter==1){
 						$rowsValues.=$period;
 						}
-						
+
 					if($colCounter==2){
 						$rowsValues.=$orgUnit;
 						}
-						
+
 					if($colCounter==3){
 						$rowsValues.=$category;
 						}
-						
+
 					if($colCounter==4){
 						$rowsValues.=$attributeoptioncombo;
 						}
-						
+
 					if($colCounter==5){
 						$rowsValues.=$line;
 						}
-						
+
 					if($colCounter==6){
 						$rowsValues.="Admin";
 						}
-						
+
 					if($colCounter==7){
 						$rowsValues.="2015-11-10T07:12:31.774+0000";
 						}
-						
+
 					if($colCounter==8){
 						$rowsValues.="Uploaded From DHP Portal";
 						}
-						
+
 					if($colCounter==9){
 						$rowsValues.="FALSE";
 						}
-						
-						
+
+
 						$colCounter++;
 					if($colCounter>=$colCount){
 						fputcsv($file,explode(',',$rowsValues));
@@ -214,42 +216,42 @@ class DhpFile {
 						}else{
 						$rowsValues.=",";
 							}
-					
+
 					}
-						  
+
 			}
-			
+
 			fclose($file);
             chmod($csv_file, 0777);
 				return $csv_file;
-			
-			}
-		
-		/**
-		 *  This function creates temporary database table 
-		 * */
-		 
-		public static function createTemporalyTable($table_name,$available_fields){
-			}
-		
-		/**
-		 *  Drop temporary database table 
-		 * */
-		 
-		public static function dropTemporalyTable($table_name){
 
 			}
-		
+
+		/**
+		 *  This function creates temporary database table
+		 * */
+
+		public static function createTemporalyTable($table_name,$available_fields){
+			}
+
+		/**
+		 *  Drop temporary database table
+		 * */
+
+		public static function dropTemporalyTable($table_name){
+
+		}
+
 		public static function queryTheDatabase($table_name,$csv_file){
-				
+
 				$json_object = [];
 				$file_handle = fopen($csv_file, 'r');
 				while (!feof($file_handle) ) {
 					$line_of_text[] = fgetcsv($file_handle);
 				}
 				fclose($file_handle);
-				
-				
+
+
 				$file_extension = "";
 				$file_name = "";
 				$count = 0;
@@ -257,11 +259,11 @@ class DhpFile {
 				{
 					return json_encode($value[0]);
 				}
-					
-				
-				
-				
-				
+
+
+
+
+
 			}
 
 		public static function send_CSV_To_Dhis($csv_file){
@@ -281,7 +283,7 @@ class DhpFile {
 
         return $file_system;
     }
-} 
+}
 
 $dhp = new DhpFile;
 ?>

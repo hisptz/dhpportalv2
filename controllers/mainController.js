@@ -17,7 +17,6 @@
         $rootScope.loginClassess = "m7 l7"
 
         $scope.showLoginForm = function(){
-            console.log($scope.loginForm);
             $scope.loginForm = true;
         }
 
@@ -97,7 +96,7 @@
                     // callback for organisation unit selection from tree
                     var monitor = 0;
 
-                    // $scope.updateDataContainers();
+                    $scope.updateDataContainers();
 
                 },function(status){
 
@@ -121,7 +120,7 @@
 
             if ( orgunitNumber != selectedItems.length  )
             {
-              
+
                 $rootScope.orgUnitNames      =	portalService.getSelectedOrgUnitNames(selectedItems,$scope.organisationUnitTree);// the beggining of the period
                 $rootScope.selectedOrgUnit   =	portalService.getSelectedOrgUnit(selectedItems,$scope.organisationUnitTree);// the beggining of the period
                 $rootScope.selectionLevel    =  portalService.getSelectedOrgUnitLevel(selectedItems,$scope.organisationUnitTree);
@@ -137,6 +136,23 @@
             }
 
 
+        }
+
+        $rootScope.viewMap = false;
+        $rootScope.tableCardView = "s12 m12 l12";
+        $rootScope.mapCardView   = "";
+
+        $scope.loadMapView = function(){
+          $rootScope.tableCardView = "s8 m8 l8";
+          $rootScope.mapCardView = "s4 m4 l4";
+          $rootScope.viewMap = true;
+        }
+
+
+        $scope.hideMapView = function(){
+          $rootScope.viewMap = false;
+          $rootScope.tableCardView = "s12 m12 l12";
+          $rootScope.mapCardView   = "";
         }
 
 

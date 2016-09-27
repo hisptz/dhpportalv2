@@ -92,28 +92,24 @@
       }
     }
     function printHtml(){
-        var printSection = document.getElementById('previewProfile');
-
-        // if there is no printing section, create one
-        if (!printSection) {
-            printSection = document.createElement('div');
-            printSection.id = 'previewProfile';
-            document.body.appendChild(printSection);
-        }
-
-        function printElement(elem) {
-            // clones the element you want to print
-            var domClone = elem.cloneNode(true);
-            printSection.appendChild(domClone);
-        }
 
         return {
             link: function (scope, element, attrs) {
-                element.on('click', function () {
+
+              var printSection = document.getElementById(attrs.printElementId);
+
+              // if there is no printing section, create one
+              if (!printSection) {
+                  printSection = document.createElement('div');
+                  printSection.id = attrs.printElementId;
+                  document.body.appendChild(printSection);
+
+              }
+
+              element.on('click', function () {
 
                     var elemToPrint = document.getElementById(attrs.printElementId);
                     if (elemToPrint) {
-                        printElement(elemToPrint);
                         window.print();
                     }
                 });

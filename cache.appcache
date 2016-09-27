@@ -25,8 +25,8 @@ bower_components/datatables/media/js/jquery.dataTables.js
 bower_components/angular/angular.min.js
 bower_components/angular-materialize/css/style.css
 bower_components/angular-materialize/src/angular-materialize.js
-bower_components/angular-openlayers-directive/css/markers.css
-bower_components/angular-openlayers-directive/css/openlayers.css
+bower_components/leaflet/leaflet.css
+bower_components/leaflet/leaflet.js
 bower_components/angular-sanitize/angular-sanitize.min.js
 bower_components/angular-datatables/dist/angular-datatables.min.js
 bower_components/angular-sanitize/angular-sanitize.min.js

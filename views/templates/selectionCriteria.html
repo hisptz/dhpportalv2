@@ -99,9 +99,9 @@
     <div class="col s12 m12 l12" >
         <div class="col s8 m8 l8" >
             <br/>
-            <a  title="back to home"  href="#/home" ng-if="!showBackButton" >Home</a>
+            <a  title="back to home"  href="#/home" ng-if="!showBackButton" ng-click="hideMapView()" >Home</a>
             &nbsp;|&nbsp;
-            <a  style=>Map</a>
+            <a title="health profile coverage map" style="cursor:pointer;" ng-click="loadMapView()">Map</a>
             &nbsp;|&nbsp;
             <a  title="downloadable files" href="#/home/downloadable/{{selectedOrgUnit}}/{{selectedYear}}">Profiles</a>
         </div>

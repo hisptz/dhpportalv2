@@ -54,7 +54,6 @@
         text-align: center;
         z-index: 100;
     }
-
     .infopop {
         background-color: #fff;
         border: 2px #444 solid;
@@ -75,7 +74,6 @@
         text-align: center;
         z-index: 100;
     }
-
     .infoh:before {
         /*border-top: 6px solid transparent;*/
         /*border-bottom: 6px solid transparent;*/
@@ -86,20 +84,16 @@
         /*left: -8px;*/
         /*top: 20px;*/
     }
-
     tr td{
         text-align:center;
         padding:2px;
     }
-
     tr td b{
         text-align:right!important;
     }
-
     td.header_style{
         text-align: left;
     }
-
     .not_found{
         height:100%;
         /*margin-bottom: 50px;*/
@@ -108,152 +102,37 @@
         height:568px;
 
     }
-
     .success{
         color: green!important;
         font-weight: bolder!important;
         background-color: #00bfa5!important;
     }
-
     .failed{
         color: red;
         font-weight: bolder!important;
         background-color: #bf360c!important;
     }
 </style>
+
 <div class="col s12 m12 l12" style="margin-top: -20px;"ng-controller="homeController" >
-        <div ng-if="mapCard" class="col s12 m12 l4"  >
-            <div class="card z-depth-2 white lighten-5 large">
-                <div class="card-image waves-effect waves-block waves-light" style="overflow: scroll">
-                    <div style="width: 100%" >
-                        <p ng-if="!dashboardObject.map.layers" class="center" style="text-align: center;">
-                            <img src="assets/img/preloader.gif" style="height:30px;width:90px;margin-top: 50%;margin-left: 50%">
-                        </p>
-                        <div ng-show="dashboardObject.displayMap" >
-                            <openlayers ng-if="dashboardObject.map.layers" ol-center="dashboardObject.map.Africa" ol-defaults="dashboardObject.map.defaults" custom-layers="true"  height="400px" >
-                                <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in dashboardObject.map.layers"></ol-layer>
-                            </openlayers>
-                            <div id="districtboxz"   class="infoh district " ng-if="dashboardObject.map.layers">
-                                <table >
-                                    <tr><td style="background-color: #2D9630">&nbsp;</td><td style="text-align: left;">Uploaded</td><td  style="text-align: left;">{{submitted}}</td></tr>
-                                    <tr><td style="background-color: #F93030;">&nbsp;</td><td style="text-align: left;">Not Uploaded</td><td style="text-align: left;">{{notsubmitted}}</td></tr>
-                                    <tr ng-if="selectedDistrictHover"><td colspan="3"><br/>{{selectedDistrictHover.name}}</td></tr>
-                                </table>
-
-                            </div>
-
-                        </div>
-
-
-                        <div style="width: 100%" ng-if="dashboardObject.displayChart">
-                            <highchart ng-if="dashboardObject.chart.chartObject" config="dashboardObject.chart.chartObject"></highchart>
-                        </div>
-                        <div style="width: 100%" ng-if="dashboardObject.displayTable" >
-                            <!--<p ng-if="dashboardObject.table.loading" class="center"><img src="assets/img/preloader.gif" style="height:30px;width:90px;margin-top: 50%;margin-left: 50%">-->
-                            <table ng-if="dashboardObject.table.tableObject" class="bordered striped centered" id="jinsi">
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Submitted District Health Profile - {{selectedYear}}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr data-ng-repeat="column in dashboardObject.table.tableObject">
-                                    <td>{{ $index+1 }}</td>
-                                    <td style="text-align: left;">{{ column.name }}</td>
-                                    <td><a href="{{column.url}}" target="_blank"><img style="width:30px!important;" src="assets/img/download.png"> </a></td>
-                                </tr>
-                                </tbody>
-                                <p ng-if="!dashboardObject.table.tableObject" style="text-align: center;color:#cccccc;font-weight:bold;">No PDF profiles</p>
-                            </table>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="card-content">
-                    <!--<span class="card-title activator grey-text text-darken-4">{{ card.title }}<i class="material-icons mdi-navigation-more-vert right"></i></span>-->
-                    <p>
-                        <a ng-click="showMaps()" target="_blank"  title="Display Map" class="btn-floating btn-small waves-effect waves-light teal darken-2" style="padding-top: 5px;padding-left: 8px"><img src="assets/img/map.jpg" style="height: 20px;width: 20px"/></i></a>
-                        <a ng-click="showCharts()" target="_blank"  title="Display Chart" class="btn-floating btn-small waves-effect waves-light teal darken-2" style="padding-top: 5px;padding-left: 8px"><img src="assets/img/pie.png" style="height: 20px;width: 20px"/></i></a>
-                        <a ng-click="showTables()" target="_blank"  title="DHP Profiles" class="waves-effect waves-light btn teal darken-2 ng-isolate-scope right" >DHP Profiles</a>
-
+        <div ng-controller="mapController">
+              <div ng-if="viewMap" class="col {{mapCardView}}"  >
+                  <div class="card z-depth-2 white lighten-5 large">
+                    <br>
+                    <p style="text-align:right;">
+                    <a style="text-align: right;cursor: pointer;" print-html print-element-id="mapBody">
+                      <i class="material-icons dp48">print</i>
+                    </a>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">{{ card.title }}<i class="material-icons right">close</i></span>
-                    <p class="flow-text">{{ card.description }}</p>
-                    <table class="bordered">
-                        <tr><td>Indicator Type</td><td>{{card.indicatorType}}</td></tr>
-                        <tr><td>Numerator</td><td>{{card.numerator}}</td></tr>
-                        <tr><td>Denominator</td><td>{{card.denominator}}</td></tr>
-                    </table>
-                </div>
-            </div>
 
-            <!--Model object for the card-->
-            <div id="link_left_panel" class="modal" style="border-radius: 10px;width: 90%;max-height: 100%">
-                <div class="modal-content">
-                    <h4 style="text-align: center"></h4>
-                    <div style="width: 100%">
-                        <div style="width: 100%" >
-
-                            <div ng-show="dashboardObject.displayMap">
-                                <p ng-if="!dashboardObject.map.layers" class="center" style="text-align: center;">
-                                    <img src="assets/img/preloader.gif" style="height:30px;width:90px">
-                                </p>
-
-                                <openlayers ng-if="dashboardObject.map.layers" ol-center="dashboardObject.map.Africa" ol-defaults="dashboardObject.map.defaults" custom-layers="true"  height="400px" >
-                                    <ol-layer ol-layer-properties="layer" name="test" ng-repeat="layer in dashboardObject.map.layers"></ol-layer>
-                                </openlayers>
-                                <div id="districtboxz"   class="infoh district " ng-if="dashboardObject.map.layers">
-                                    <table >
-                                        <tr><td style="background-color: #2D9630">&nbsp;</td><td style="text-align: left;">Uploaded</td><td  style="text-align: left;">{{submitted}}</td></tr>
-                                        <tr><td style="background-color: #F93030;">&nbsp;</td><td style="text-align: left;">Not Uploaded</td><td style="text-align: left;">{{notsubmitted}}</td></tr>
-                                        <tr ng-if="selectedDistrictHover"><td colspan="3"><br/>{{selectedDistrictHover.name}}</td></tr>
-                                    </table>
-
-                                </div>
-
-                            </div>
-                            <div style="width: 100%" ng-if="dashboardObject.displayChart">
-                                <p ng-if="!dashboardObject.chart.chartObject" class="center" style="text-align: center;">
-                                    <img src="assets/img/preloader.gif" style="height:30px;width:90px">
-                                </p>
-                                <highchart ng-if="dashboardObject.chart.chartObject" config="dashboardObject.chart.chartObject"></highchart>
-                            </div>
-                            <div style="width: 100%" ng-if="dashboardObject.displayTable" >
-                                <p ng-if="!dashboardObject.table.tableObject" class="center" style="text-align: center;">
-                                    <img src="assets/img/preloader.gif" style="height:30px;width:90px">
-                                </p>
-
-                                <table ng-if="dashboardObject.table.tableObject" class="bordered striped centered" id="jinsi">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Submitted District Health Profile - {{selectedYear}}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr data-ng-repeat="column in dashboardObject.table.tableObject">
-                                        <td>{{ $index+1 }}</td>
-                                        <td style="text-align: left;">{{ column.name }}</td>
-                                        <td><a href="{{column.url}}" target="_blank"><img style="width:30px!important;" src="assets/img/download.png"> </a></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
+                    <div id="mapBody">
+                      <leaflet lf-center="centeredCoordinate" geojson="geojson" defaults="defaults" width="100%" height="480px"></leaflet>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button class=" modal-action modal-close waves-effect waves-green btn-flat">Close</button>
-                </div>
-            </div>
-            <!--end of model object-->
+                  </div>
+              </div>
         </div>
-        <div class="col s12 m12 {{tableCardView}}" >
+        <div class="col {{tableCardView}}" >
             <div class="card z-depth-2 white lighten-5 large">
                 <br><p style="text-align:right;">
                 <a style="text-align: right;cursor: pointer;" print-html print-element-id="previewProfile"><i class="material-icons dp48">print</i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1006,4 +885,4 @@
             <br/>
 
         </div>
-    </div>
+</div>
