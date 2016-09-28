@@ -17,18 +17,18 @@
             $rootScope.showBackButton = false;
         }
 
-        
+
 
 
 
         $rootScope.updateDataContainers = function(){
             $scope.selectedYear = $scope.selectedYearBuffer;
-          var pendingReqiests = pendingRequestsService.get();
+            var pendingReqiests = pendingRequestsService.get();
 
             pendingRequestsService.cancelAll();
 
             if ( $scope.selectedOrgUnit ) {
-                $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
+                // $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
             }
             else
             {

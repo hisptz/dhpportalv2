@@ -221,3 +221,81 @@ angular.module("dhpportal")
 
         return portalService;
     })
+   .service('mapService',function(){
+      var mapService = {}
+
+      mapService.getParentPloygon = function(organisationUnits){
+        var feature = {
+                        type: "Feature",
+                        properties: {
+                          name:organisationUnits[0].name
+                        },
+                        geometry: {
+                          type: "MultiPolygon",
+                          coordinates: eval(organisationUnits[0].coordinates)
+                        }
+                    };
+        return feature;
+      }
+
+      mapService.getOtherPolygons = function(geoJsonObject,selectedItems){
+
+                angular.forEach(selectedItems,function(item){
+
+                    var feature = {
+                                    type: "Feature",
+                                    properties: {
+                                      name:item.name
+                                    },
+                                    geometry: {
+                                      type: "MultiPolygon",
+                                      coordinates: eval(item.coordinates)
+                                    }
+                                };
+
+                  geoJsonObject.data['features'].push(feature);
+
+                  if ( item.children )
+                  {
+                    angular.forEach(item.children,function(childItem){console.log(childItem);
+
+                      if ( childItem.coordinates )
+                      {
+                          var feature = {
+                                          type: "Feature",
+                                          properties: {
+                                            name:childItem.name
+                                          },
+                                          geometry: {
+                                            type: "MultiPolygon",
+                                            coordinates: eval(childItem.coordinates)
+                                            ,style: {
+                                              fillColor: "green",
+                                              weight: 2,
+                                              opacity: 1,
+                                              color: '#cccccc',
+                                              fillOpacity: 0.7
+                                            }
+                                          }
+                                      };
+
+                        geoJsonObject.data['features'].push(feature);
+                      }
+
+                    });
+                  }
+
+
+                })
+
+                return geoJsonObject;
+      }
+      mapService.getColor = function(selectedItems)
+      {
+
+        return "#FE4C4C";
+        return "green";
+      }
+
+      return mapService;
+   })

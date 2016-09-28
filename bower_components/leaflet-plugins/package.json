@@ -1,0 +1,106 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "leaflet-plugins",
+        "scope": null,
+        "escapedName": "leaflet-plugins",
+        "name": "leaflet-plugins",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/leonard/angular-feeds"
+    ]
+  ],
+  "_from": "leaflet-plugins@latest",
+  "_id": "leaflet-plugins@1.9.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/leaflet-plugins",
+  "_nodeVersion": "5.12.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/leaflet-plugins-1.9.3.tgz_1473936030077_0.5102200040128082"
+  },
+  "_npmUser": {
+    "name": "b_b",
+    "email": "brunobergot@gmail.com"
+  },
+  "_npmVersion": "3.8.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "leaflet-plugins",
+    "scope": null,
+    "escapedName": "leaflet-plugins",
+    "name": "leaflet-plugins",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/leaflet-plugins/-/leaflet-plugins-1.9.3.tgz",
+  "_shasum": "c33dfc6faff72779b26c7b4284331839536aa795",
+  "_shrinkwrap": null,
+  "_spec": "leaflet-plugins",
+  "_where": "/home/leonard/angular-feeds",
+  "author": {
+    "name": "Pavel Shramov"
+  },
+  "bugs": {
+    "url": "https://github.com/shramov/leaflet-plugins/issues"
+  },
+  "contributors": [
+    {
+      "name": "Bruno Bergot",
+      "email": "bruno@eliaz.fr"
+    }
+  ],
+  "dependencies": {},
+  "description": "Miscellaneous plugins for Leaflet library for services that need to display route information and need satellite imagery from different providers",
+  "devDependencies": {
+    "eslint": "2.3.0",
+    "tap": "^6.3.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "c33dfc6faff72779b26c7b4284331839536aa795",
+    "tarball": "https://registry.npmjs.org/leaflet-plugins/-/leaflet-plugins-1.9.3.tgz"
+  },
+  "gitHead": "f1e3b9872a0db493b3571bab93f53ed8352f6d4a",
+  "homepage": "https://github.com/shramov/leaflet-plugins#readme",
+  "keywords": [
+    "leaflet",
+    "plugins",
+    "map",
+    "google",
+    "bing",
+    "yandex",
+    "kml",
+    "gpx"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "lushchick",
+      "email": "a.lushchick@gmail.com"
+    },
+    {
+      "name": "b_b",
+      "email": "brunobergot@gmail.com"
+    }
+  ],
+  "name": "leaflet-plugins",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shramov/leaflet-plugins.git"
+  },
+  "scripts": {
+    "test": "tap control/test/*.js && eslint --config .eslintrc control/* layer/*"
+  },
+  "version": "1.9.3"
+}

@@ -6,28 +6,42 @@
         })
         .controller('mapController', mapController);
 
-    mapController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','pendingRequestsService','leafletData'];
-    function mapController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,portalService,utilityService,pendingRequestsService,leafletData) {
+    mapController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','pendingRequestsService','mapService','leafletData'];
+    function mapController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,portalService,utilityService,pendingRequestsService,mapService,leafletData) {
+      $rootScope.updateMap = function(selectedItems,selectedYear){
 
-      $rootScope.updateDataContainers = function(){
-          $scope.selectedYear = $scope.selectedYearBuffer;
-        var pendingReqiests = pendingRequestsService.get();
+          var pendingReqiests = pendingRequestsService.get();
 
           pendingRequestsService.cancelAll();
 
-          if ( $scope.selectedOrgUnit ) {
-            console.log($scope.selectedItems);
+          if ( selectedItems ) {
+
             angular.extend($scope, {
                    centeredCoordinate: {
                        lat: -5.79,
                        lng: 36.32,
-                       zoom: 5
+                       zoom: 6
                    },
-                   geojson : getGeoJson($scope.selectedItems),
-                   defaults: {
-                        scrollWheelZoom: false
+                   geojson : getGeoJson(selectedItems),
+                    legend: {
+                         position: 'bottomleft',
+                         colors: [ 'green','red' ],
+                         labels: [ 'Submitted','Not&nbsp;Submitted' ]
+                     },
+                      events: {
+                          map: {
+                              enable: ['click'],
+                              logic: 'emit'
+                          }
+                      },
+                      defaults: {
+                           scrollWheelZoom: false
                     }
                });
+
+               $scope.$on('leafletDirectiveGeoJson.click', function(event){
+                  console.log(event);
+              });
 
 
                leafletData.getMap().then(function(map) {
@@ -49,49 +63,40 @@
           {
 
           }
-
       }
+
 
       function getGeoJson(selectedItems) {
 
-      var geoJsonObject = {
+        var geoJsonObject = {
                      data:{
-                       "type": "FeatureCollection",
-                       "features": [
+                       type: "FeatureCollection",
+                       features: [
                        ]
-                     },style: {
-                        fillColor: "green",
-                        weight: 2,
-                        opacity: 1,
-                        color: 'white',
-                        dashArray: '3',
-                        fillOpacity: 0.7
+                     }
+                     ,style: {
+                          fillColor:mapService.getColor(selectedItems),
+                          weight: 2,
+                          opacity: 1,
+                          color: 'white',
+                          fillOpacity: 0.7
+                      },
+                     layers: {
+                          baselayers: {
+                              googleHybrid: {
+                                  name: 'Google Hybrid',
+                                  layerType: 'HYBRID',
+                                  type: 'google'
+                              }
+                          }
                       }
                     }
-                    
-        angular.forEach(selectedItems,function(item){
 
-          var feature = {
-                          "type": "Feature",
-                          "properties": {},
-                          "geometry": {
-                            "type": "Polygon",
-                            "coordinates": eval(item.coordinates)
-                          },
-                          "style": {
-                            "fillColor": "green",
-                            "weight": 2,
-                            "opacity": 1,
-                            "color": 'black',
-                            "fillOpacity": 0.7
-                          }
-                      };
-
-        geoJsonObject.data.features.push(feature);
-
-        })
+          geoJsonObject = mapService.getOtherPolygons(geoJsonObject,selectedItems);
 
         return geoJsonObject;
       }
+
+
 
     }

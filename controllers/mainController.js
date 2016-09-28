@@ -97,6 +97,7 @@
                     var monitor = 0;
 
                     $scope.updateDataContainers();
+                    $scope.updateMap($scope.selectedItems,$scope.selectedYear);
 
                 },function(status){
 
