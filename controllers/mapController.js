@@ -72,7 +72,7 @@
 
       function renderMap(selectedItems,selectedYear){
                     $scope.submitted = 0;
-                    $scope.total = selectedItems.children.length;
+                    $scope.total = selectedItems[0].children.length;
                     angular.extend($scope, {
                            centeredCoordinate: {
                                lat: -5.79,
@@ -112,6 +112,7 @@
                                              if ( typeof feature.properties.hasProfile != 'undefined' ){
 
                                                 if ( feature.properties.hasProfile == true ){
+                                                  $scope.submitted+=1;
                                                   return {
                                                       fillColor: "green",
                                                       weight: 2,
