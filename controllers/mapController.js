@@ -71,7 +71,8 @@
       }
 
       function renderMap(selectedItems,selectedYear){
-
+                    $scope.submitted = 0;
+                    $scope.total = selectedItems.children.length;
                     angular.extend($scope, {
                            centeredCoordinate: {
                                lat: -5.79,
@@ -82,7 +83,7 @@
                             legend: {
                                  position: 'bottomleft',
                                  colors: [ 'green','red' ],
-                                 labels: [ 'Submitted','Not&nbsp;Submitted' ]
+                                 labels: [ 'Submitted&nbsp;('+$scope.submitted+')','Not&nbsp;Submitted&nbsp;('+($scope.total-$scope.submitted)+')' ]
                              },
                               events: {
                                   map: {
