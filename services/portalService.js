@@ -240,10 +240,10 @@ angular.module("dhpportal")
 
       function checkForProfile(item){
         var returnValue = false;
-        var filesFromLocalStorage = eval('('+localStorage.getItem("files_")+')');
+        var filesFromLocalStorage = localStorage.getItem("files_");
           if ( item.name.indexOf('MOH') >= 0 )
           {
-
+            returnValue = false;
           }else{
             var childrenOrgUnit = item.name.split(" ");
 
