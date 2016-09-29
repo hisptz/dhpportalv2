@@ -16,7 +16,7 @@
           pendingRequestsService.cancelAll();
 
           if ( selectedItems ) {
-            var filesFromLocalStorage = localStorage.getItem("files_",JSON.stringify(files));
+            var filesFromLocalStorage = localStorage.getItem("files_");
             if ( filesFromLocalStorage ) {
                   $scope.mapIsLoading = false;
                   renderMap();

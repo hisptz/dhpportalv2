@@ -236,7 +236,7 @@
          }
         dataService.formatDataForMap = function(fileResponse,period) {
           var files = fileSanitation(fileResponse.data,period);
-          localStorage.setItem("files_",files);
+          localStorage.setItem("files_",JSON.stringify(files));
         }
         dataService.assembleDataFromDHIS = function(data,year){
             var periodString = utilityService.getConsecutivePeriods(year);
