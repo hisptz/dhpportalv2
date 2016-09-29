@@ -246,7 +246,7 @@ angular.module("dhpportal")
             returnValue = false;
           }else{
             var childrenOrgUnit = item.name.split(" ");
-            console.log(item);
+            console.log(childrenOrgUnit);
             console.log(filesFromLocalStorage);
             filesFromLocalStorage = filesFromLocalStorage.split(",");
             if ( childrenOrgUnit[1] == "Region" ) {
