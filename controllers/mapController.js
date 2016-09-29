@@ -19,12 +19,12 @@
             var filesFromLocalStorage = localStorage.getItem("files_");
             if ( filesFromLocalStorage ) {
                   $scope.mapIsLoading = false;
-                  renderMap();
+                  renderMap(selectedItems,selectedYear);
             }else{
               dataService.loadAllFiles().then(function(files){
                   dataService.formatDataForMap(files,selectedYear);
                   $scope.mapIsLoading = false;
-                  renderMap();
+                  renderMap(selectedItems,selectedYear);
               });
             }
 
@@ -70,7 +70,7 @@
         return geoJsonObject;
       }
 
-      function renderMap(){
+      function renderMap(selectedItems,selectedYear){
 
                     angular.extend($scope, {
                            centeredCoordinate: {
