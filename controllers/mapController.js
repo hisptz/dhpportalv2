@@ -98,8 +98,16 @@
 
 
                        leafletData.getMap().then(function(map) {
+                                     function onEachFeature (feature, layer){
+                                               layer.on({
+                                               click: function(e){
+                                                 console.log(e);
+                                               }
+                                                });
 
-                        L.geoJson($scope.geojson.data.features, {
+                                           console.log(feature);
+                                     }
+                                      L.geoJson($scope.geojson.data.features, {
                                            style: function(feature) {
 
                                              if ( typeof feature.properties.hasProfile != 'undefined' ){
@@ -140,17 +148,11 @@
                                       //      }
                                       //  }
                                       //  map.fitBounds(latlngs);
-                                   });
+
+
+                    });
 
       }
 
-      function onEachFeature (feature, layer){
-                layer.on({
-                mouseover: highlightFeature,
-                mouseout: resetHighlight,
-                click: zoomToFeature
-            });
 
-            console.log(feature);
-      }
     }
