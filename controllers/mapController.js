@@ -133,6 +133,11 @@
                                            }
                                        }).addTo(map);
 
+
+                                       map.on('click',function (e) {
+                                         console.log(e);
+                                        });
+
                                        var latlngs = [];
                                        for (var i in $scope.geojson.data.features[0].geometry.coordinates) {
                                            var coord = $scope.geojson.data.features[0].geometry.coordinates[i];
