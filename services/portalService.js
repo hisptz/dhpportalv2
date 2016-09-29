@@ -246,10 +246,12 @@ angular.module("dhpportal")
             returnValue = false;
           }else{
             var childrenOrgUnit = item.name.split(" ");
-            console.log(childrenOrgUnit);
-            console.log(filesFromLocalStorage);
+
             filesFromLocalStorage = filesFromLocalStorage.split(",");
             if ( childrenOrgUnit[1] == "Region" ) {
+              console.log("REGION");
+              console.log(childrenOrgUnit);
+              console.log(filesFromLocalStorage);
               angular.forEach(filesFromLocalStorage,function(files){
                  if ( files.indexOf('MOH - Tanzania_'+childrenOrgUnit[0]) >= 0 )
                  {
@@ -259,8 +261,11 @@ angular.module("dhpportal")
 
               })
             }
-
+            else
             if ( childrenOrgUnit[1] == "District" || childrenOrgUnit[1] == "Municipal" || childrenOrgUnit[1] == "Town") {
+              console.log("DISTRICT");
+              console.log(childrenOrgUnit);
+              console.log(filesFromLocalStorage);
               angular.forEach(filesFromLocalStorage,function(files){
                  if ( files.indexOf(childrenOrgUnit[0]+"_"+childrenOrgUnit[1]) >= 0 )
                  {
