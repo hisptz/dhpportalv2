@@ -239,11 +239,42 @@ angular.module("dhpportal")
       }
 
       function checkForProfile(item){
-          console.log(item);
-        return true;
+        var returnValue = false;
+        var filesFromLocalStorage = eval('('+localStorage.getItem("files_")+')');
+          if ( item.name.indexOf('MOH') >= 0 )
+          {
+
+          }else{
+            var childrenOrgUnit = item.name.split(" ");
+
+            if ( childrenOrgUnit[1] == "Region" ) {
+              angular.forEach(filesFromLocalStorage,function(files){
+                 if ( files.indexOf('MOH - Tanzania_'+childrenOrgUnit[0]) >= 0 )
+                 {
+                   returnValue = true;
+                   return;
+                 }
+
+              })
+            }
+
+            if ( childrenOrgUnit[1] == "District" || childrenOrgUnit[1] == "Municipal") {
+              angular.forEach(filesFromLocalStorage,function(files){
+                 if ( files.indexOf(childrenOrgUnit[0]+"_"+childrenOrgUnit[1]) >= 0 )
+                 {
+                   returnValue = true;
+                   return;
+                 }
+
+              })
+            }
+
+          }
+
+        return returnValue;
       }
       mapService.getOtherPolygons = function(geoJsonObject,selectedItems){
-                
+
                 angular.forEach(selectedItems,function(item){
 
                     var feature = {

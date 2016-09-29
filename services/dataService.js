@@ -234,7 +234,10 @@
                     treeData[0].children  = regionsArray;
                   return treeData;
          }
-
+        dataService.formatDataForMap = function(fileResponse,period) {
+          var files = fileSanitation(fileResponse.data,period);
+          localStorage.setItem("files_",files);
+        }
         dataService.assembleDataFromDHIS = function(data,year){
             var periodString = utilityService.getConsecutivePeriods(year);
             var output = [];
