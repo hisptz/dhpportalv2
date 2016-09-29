@@ -247,7 +247,8 @@ angular.module("dhpportal")
           }else{
             var childrenOrgUnit = item.name.split(" ");
             console.log(item);
-            console.log(files);
+            console.log(filesFromLocalStorage);
+            filesFromLocalStorage = filesFromLocalStorage.split(",");
             if ( childrenOrgUnit[1] == "Region" ) {
               angular.forEach(filesFromLocalStorage,function(files){
                  if ( files.indexOf('MOH - Tanzania_'+childrenOrgUnit[0]) >= 0 )
