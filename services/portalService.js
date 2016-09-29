@@ -260,7 +260,7 @@ angular.module("dhpportal")
               })
             }
 
-            if ( childrenOrgUnit[1] == "District" || childrenOrgUnit[1] == "Municipal") {
+            if ( childrenOrgUnit[1] == "District" || childrenOrgUnit[1] == "Municipal" || childrenOrgUnit[1] == "Town") {
               angular.forEach(filesFromLocalStorage,function(files){
                  if ( files.indexOf(childrenOrgUnit[0]+"_"+childrenOrgUnit[1]) >= 0 )
                  {
