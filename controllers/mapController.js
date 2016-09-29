@@ -97,16 +97,9 @@
                        });
 
 
-                       $scope.$on('leafletDirectiveGeoJson.click', function(event){
-                          console.log(event);
-                      });
-
-
                        leafletData.getMap().then(function(map) {
 
-
-
-                                        L.geoJson($scope.geojson.data.features, {
+                        L.geoJson($scope.geojson.data.features, {
                                            style: function(feature) {
 
                                              if ( typeof feature.properties.hasProfile != 'undefined' ){
@@ -132,27 +125,32 @@
 
                                              }
 
-                                           }
+                                           },onEachFeature: onEachFeature
                                        }).addTo(map);
 
 
-                                       map.on('click',function (e) {
-                                         console.log(e);
-                                        });
-
-                                       var latlngs = [];
-                                       for (var i in $scope.geojson.data.features[0].geometry.coordinates) {
-                                           var coord = $scope.geojson.data.features[0].geometry.coordinates[i];
-                                           for (var j in coord) {
-                                               var points = coord[j];
-                                               for (var k in points) {
-                                                   latlngs.push(L.GeoJSON.coordsToLatLng(points[k]));
-                                               }
-                                           }
-                                       }
-                                       map.fitBounds(latlngs);
+                                      //  var latlngs = [];
+                                      //  for (var i in $scope.geojson.data.features[0].geometry.coordinates) {
+                                      //      var coord = $scope.geojson.data.features[0].geometry.coordinates[i];
+                                      //      for (var j in coord) {
+                                      //          var points = coord[j];
+                                      //          for (var k in points) {
+                                      //              latlngs.push(L.GeoJSON.coordsToLatLng(points[k]));
+                                      //          }
+                                      //      }
+                                      //  }
+                                      //  map.fitBounds(latlngs);
                                    });
 
       }
 
+      function onEachFeature (feature, layer){
+                layer.on({
+                mouseover: highlightFeature,
+                mouseout: resetHighlight,
+                click: zoomToFeature
+            });
+
+            console.log(feature);
+      }
     }
