@@ -67,7 +67,9 @@
                     </p>
 
                     <div id="mapBody">
-                      <leaflet lf-center="centeredCoordinate" geojson="geojson" defaults="defaults" legend="legend" event-broadcast="events"  width="100%" height="480px"></leaflet>
+                      <leaflet ng-if="!mapIsLoading" lf-center="centeredCoordinate" geojson="geojson" defaults="defaults" legend="legend" event-broadcast="events"  width="100%" height="480px"></leaflet>
+                      <img ng-if="mapIsLoading" src="assets/img/preloader.gif" style="height:15px;width:45px;float:center;" class="ng-scope">
+
                     </div>
                   </div>
               </div>
