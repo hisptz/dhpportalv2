@@ -128,14 +128,6 @@
                                                   }
                                                 }
 
-                                             }else{
-                                               return {
-                                                   fillColor: "white",
-                                                   weight: 2,
-                                                   opacity: 1,
-                                                   color: '#cccccc',
-                                                   fillOpacity: 0.7
-                                               }
                                              }
 
                                            }
