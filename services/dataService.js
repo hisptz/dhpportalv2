@@ -235,7 +235,10 @@
                   return treeData;
          }
         dataService.formatDataForMap = function(fileResponse,period) {
-          var files = fileSanitation(fileResponse.data,period).split(",");
+
+          var files = fileSanitation(fileResponse.data,period);
+          files = files.split(",");
+          
           localStorage.setItem("files_",files);
         }
         dataService.assembleDataFromDHIS = function(data,year){
