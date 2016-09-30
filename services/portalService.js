@@ -344,7 +344,7 @@ var counter = 0;
   return custome_mesage;
 }
 
-mapService.checkStatistics = function(selectedItems,feature.properties.name,selectedYear,files)
+mapService.checkStatistics = function(selectedItems,feature_name,selectedYear,files)
 {
     var custome_mesage = false;
 
