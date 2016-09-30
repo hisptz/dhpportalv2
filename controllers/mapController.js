@@ -31,7 +31,7 @@
       }
 
 
-      function getGeoJson(selectedItems) {
+      function getGeoJson(selectedItems,files) {
 
         var geoJsonObject = {
                      data:{
