@@ -16,7 +16,7 @@ if(isset($_GET["file"])) { $test_variable = "for upload";
 
     $uploadOk = 0;
   }else{
-			
+
 	if($fileType != "pdf") {
 		echo "INVALID_TYPE_ERROR";
 		$uploadOk = 0;
@@ -26,10 +26,9 @@ if(isset($_GET["file"])) { $test_variable = "for upload";
 		   }else{
            echo "UPLOAD_FAILED";
         }
-
 		}
-			
-			
+
+
   }
 
 }
