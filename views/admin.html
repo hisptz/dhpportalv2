@@ -39,6 +39,8 @@
                                     <select  name="org_unit" ng-model="admin.selectedEntryRegion" material-select watch  required="required">
                                         <option ng-repeat="org in admin.regions" value="{{org}}">{{org.value}}</option>
                                     </select>
+                                    <img ng-if="!admin.regions" src="assets/img/preloader.gif" style="height:15px;width:45px;" >
+
                                 </div>
                             </div>
 
@@ -49,6 +51,7 @@
                                     <select  name="org_unit" ng-model="admin.selectedCSVEntryDistrict" material-select watch  required="required">
                                         <option ng-repeat="distr in admin.districts" value="{{distr.id}}">{{distr.name}}</option>
                                     </select>
+                                    <img ng-if="!admin.districts" src="assets/img/preloader.gif" style="height:15px;width:45px;" >
                                 </div>
                             </div>
                             <div class="row">
@@ -119,4 +122,3 @@
 
     </div>
 </div>
-

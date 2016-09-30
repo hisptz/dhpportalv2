@@ -36,7 +36,6 @@
         admin.selectedOrgUnitToDisplay = admin.tanzania;
         admin.selectedPeriod = admin.current_year;
         admin.periodCriteria = admin.current_year;
-        admin.regions = [];
         admin.districts = [];
         admin.districtsOnly = [];
         admin.csvfile = null;
