@@ -238,19 +238,17 @@ angular.module("dhpportal")
         return feature;
       }
 
-      function checkForProfile(item){
+      function checkForProfile(item,filesArray){
         var returnValue = false;
-        var filesFromLocalStorage = localStorage.getItem("files_");
           if ( item.name.indexOf('MOH') >= 0 )
           {
             returnValue = false;
           }else{
             var childrenOrgUnit = item.name.split(" ");
 
-            filesFromLocalStorage = filesFromLocalStorage.split(",");
             if ( childrenOrgUnit[1] == "Region" ) {
 
-              angular.forEach(filesFromLocalStorage,function(files){
+              angular.forEach(filesArray,function(files){
                  if ( files.indexOf('MOH - Tanzania_'+childrenOrgUnit[0]) >= 0 )
                  {
                    returnValue = true;
@@ -261,8 +259,8 @@ angular.module("dhpportal")
             }
             else
             if ( childrenOrgUnit[1] == "District" || childrenOrgUnit[1] == "Municipal" || childrenOrgUnit[1] == "Town") {
-              
-              angular.forEach(filesFromLocalStorage,function(files){
+
+              angular.forEach(filesArray,function(files){
                  if ( files.indexOf(childrenOrgUnit[0]) >= 0 )
                  {
                    returnValue = true;
@@ -275,7 +273,7 @@ angular.module("dhpportal")
 
         return returnValue;
       }
-      mapService.getOtherPolygons = function(geoJsonObject,selectedItems){
+      mapService.getOtherPolygons = function(geoJsonObject,selectedItems,files){
 
                 angular.forEach(selectedItems,function(item){
 
@@ -283,7 +281,7 @@ angular.module("dhpportal")
                                     type: "Feature",
                                     properties: {
                                       name:item.name,
-                                      hasProfile:checkForProfile(item)
+                                      hasProfile:checkForProfile(item,files)
                                     },
                                     geometry: {
                                       type: "MultiPolygon",
@@ -304,7 +302,7 @@ angular.module("dhpportal")
                                           type: "Feature",
                                           properties: {
                                             name:childItem.name,
-                                            hasProfile:checkForProfile(childItem)
+                                            hasProfile:checkForProfile(childItem,files)
                                           },
                                           geometry: {
                                             type: "MultiPolygon",

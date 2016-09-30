@@ -237,9 +237,8 @@
         dataService.formatDataForMap = function(fileResponse,period) {
 
           var files = fileSanitation(fileResponse.data,period);
-          files = files.split(",");
-          
-          localStorage.setItem("files_",files);
+          return files;
+
         }
         dataService.assembleDataFromDHIS = function(data,year){
             var periodString = utilityService.getConsecutivePeriods(year);

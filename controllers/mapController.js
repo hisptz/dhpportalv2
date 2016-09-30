@@ -18,9 +18,9 @@
           if ( selectedItems ) {
 
               dataService.loadAllFiles().then(function(files){
-                  dataService.formatDataForMap(files,selectedYear);
+                  var files = dataService.formatDataForMap(files,selectedYear);
                   $scope.mapIsLoading = false;
-                  renderMap(selectedItems,selectedYear);
+                  renderMap(selectedItems,selectedYear,files);
               });
 
           }
@@ -57,12 +57,12 @@
                     }
 
 
-          geoJsonObject = mapService.getOtherPolygons(geoJsonObject,selectedItems);
+          geoJsonObject = mapService.getOtherPolygons(geoJsonObject,selectedItems,files);
 
         return geoJsonObject;
       }
 
-      function renderMap(selectedItems,selectedYear){
+      function renderMap(selectedItems,selectedYear,files){
                     $scope.submitted = 0;
                     $scope.total = selectedItems[0].children.length;
                     angular.extend($scope, {
@@ -71,7 +71,7 @@
                                lng: 36.32,
                                zoom: 6
                            },
-                           geojson : getGeoJson(selectedItems),
+                           geojson : getGeoJson(selectedItems,files),
                             legend: {
                                  position: 'bottomleft',
                                  colors: [ 'green','red' ],
