@@ -18,8 +18,9 @@
         }
 
 
-
-
+        $rootScope.upDateProfileView = function(selectedYear){
+          console.log(selectedYear);
+        }
 
         $rootScope.updateDataContainers = function(){
             $scope.selectedYear = $scope.selectedYearBuffer;

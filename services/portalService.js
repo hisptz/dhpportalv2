@@ -343,5 +343,37 @@ var counter = 0;
     })
   return custome_mesage;
 }
+
+mapService.checkStatistics = function(selectedItems,feature.properties.name,selectedYear,files)
+{
+    var custome_mesage = false;
+
+    if (files.length==0) {
+      return custome_mesage;
+    }
+
+    var counter = 0;
+    var counterCouncil = 0;
+
+    angular.forEach(files,function(filez){
+
+        if (feature_name.indexOf("Region")>=0 && filez.indexOf(feature_name.replace(" Region",""))>=0){
+          counter++;
+        }
+
+        if ( feature_name.indexOf("Council")>=0 && filez.indexOf(feature_name)>=0 )
+        {
+          counterCouncil++;
+        }
+
+    })
+
+    if ( counterCouncil > 0 || counter > 0 )
+    {
+      custome_mesage = true;
+    }
+
+    return custome_mesage;
+}
       return mapService;
    })

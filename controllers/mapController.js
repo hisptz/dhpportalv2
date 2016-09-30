@@ -100,6 +100,7 @@
                                               },
                                               click: function(e){
                                                 $scope.currentFeatureTitle = feature.properties.name+" "+mapService.getStatistics(selectedItems,feature.properties.name,selectedYear,files);
+                                                $scope.submitted = mapService.checkStatistics(selectedItems,feature.properties.name,selectedYear,files);
                                                  map.fitBounds(e.target.getBounds());
                                               },
 

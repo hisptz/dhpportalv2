@@ -68,7 +68,7 @@
 
                     <div id="mapBody">
                         <div ng-if="currentFeatureTitle" style="position:absolute;z-index:1000;margin-top:20px;padding:5px;background-color:black;margin-left:80px;border:solid 1px #ccccc;border-radius:2px;color:white;font-weight:bold;">
-                          <span>{{currentFeatureTitle}}</span>
+                          <span>{{currentFeatureTitle}} &nbsp; &nbsp;<a style="font-weight:bolder;color:green;cursor:pointer;" ng-if="submitted" ng-click="upDateProfileView(selectedYear)">VIEW</a></span>
                         </div>
                         <span style="font-size:10px;color:green;font-weight:bolder;">click on map to view details</span>
                       <leaflet ng-if="!mapIsLoading" lf-center="centeredCoordinate" geojson="geojson" defaults="defaults" legend="legend" event-broadcast="events"  width="100%" height="480px"></leaflet>
