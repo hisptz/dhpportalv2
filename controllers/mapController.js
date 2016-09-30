@@ -16,20 +16,12 @@
           pendingRequestsService.cancelAll();
 
           if ( selectedItems ) {
-            var filesFromLocalStorage = localStorage.getItem("files_");
-            if ( filesFromLocalStorage ) {
-                  $scope.mapIsLoading = false;
-                  renderMap(selectedItems,selectedYear);
-            }else{
+
               dataService.loadAllFiles().then(function(files){
                   dataService.formatDataForMap(files,selectedYear);
                   $scope.mapIsLoading = false;
                   renderMap(selectedItems,selectedYear);
               });
-            }
-
-
-
 
           }
           else
@@ -101,7 +93,7 @@
                                      function onEachFeature (feature, layer){
                                                layer.on({
                                                click: function(e){
-                                                 map.fitBounds(e.target.getBounds());                                                 
+                                                 map.fitBounds(e.target.getBounds());
                                                 }
                                               });
 
