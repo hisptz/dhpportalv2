@@ -100,7 +100,7 @@
                                               },
                                               click: function(e){
                                                 $scope.currentFeatureTitle = feature.properties.name+" "+mapService.getStatistics(selectedItems,feature.properties.name,selectedYear,files);
-                                                 map.flyToBounds(e.target.getBounds());
+                                                 map.fitBounds(e.target.getBounds());
                                               },
 
                                           });
