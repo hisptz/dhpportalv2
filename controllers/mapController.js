@@ -91,11 +91,19 @@
 
                        leafletData.getMap().then(function(map) {
                                      function onEachFeature (feature, layer){
-                                               layer.on({
-                                               click: function(e){
-                                                 map.fitBounds(e.target.getBounds());
-                                                }
-                                              });
+                                          layer.on({
+                                              mouseout:function(e){
+                                                  $scope.currentFeatureTitle = false;
+                                              },
+                                              mouseover:function(e){
+                                                  $scope.currentFeatureTitle = feature.properties.name+" "+mapService.getStatistics(selectedItems,feature.properties.name,selectedYear,files);
+                                              },
+                                              click: function(e){
+                                                $scope.currentFeatureTitle = feature.properties.name+" "+mapService.getStatistics(selectedItems,feature.properties.name,selectedYear,files);
+                                                 map.flyToBounds(e.target.getBounds());
+                                              },
+
+                                          });
 
                                      }
 

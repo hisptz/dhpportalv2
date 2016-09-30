@@ -59,14 +59,18 @@
               <div ng-if="viewMap" class="col {{mapCardView}}"  >
                   <div class="card z-depth-2 white lighten-5 large">
                     <br>
-                    <p style="text-align:right;">
-                    <a style="text-align: right;cursor: pointer;" print-html print-element-id="mapBody">
-                      <i class="material-icons dp48">print</i>
-                    </a>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </p>
+                    <div  class="row">
+                      <div class="col s12 m12 l12">
+                        <span style="font-size:15px;">{{orgUnitNames | uppercase}} , {{selectionLevel | uppercase}} HEALTH PROFILE SUBMISSION {{selectedYear}}</span>
+                      </div>
+
+                    </div>
 
                     <div id="mapBody">
+                        <div ng-if="currentFeatureTitle" style="position:absolute;z-index:1000;margin-top:20px;padding:5px;background-color:black;margin-left:80px;border:solid 1px #ccccc;border-radius:2px;color:white;font-weight:bold;">
+                          <span>{{currentFeatureTitle}}</span>
+                        </div>
+                        <span style="font-size:10px;color:green;font-weight:bolder;">click on map to view details</span>
                       <leaflet ng-if="!mapIsLoading" lf-center="centeredCoordinate" geojson="geojson" defaults="defaults" legend="legend" event-broadcast="events"  width="100%" height="480px"></leaflet>
                       <img ng-if="mapIsLoading" src="assets/img/preloader.gif" style="height:15px;width:45px;margin-left: 50%;" class="ng-scope">
 
