@@ -126,7 +126,7 @@
 
             });
 
-            var payload = {file_name:"MOH - Tanzania_"+form.org_unit_selected+"_"+form.form_period+".pdf",file_object:pdf_file};
+            var payload = {file_name:"MOH - Tanzania_"+form.region_selected+"_"+form.org_unit_selected+"_"+form.form_period+".pdf",file_object:pdf_file};
             if(!admin.selectedEntryDistrict&&!form.form_period){
 
             }else{
@@ -258,8 +258,7 @@
         }
 
         admin.uploadProfileToDHIS = function(form){
-
-
+          angular.extend(form,{region_selected:eval("("+admin.selectedEntryRegion+")").value.replace(" Region","")});
 
             $rootScope.failureMessage = null;
             admin.message = null;
@@ -301,14 +300,14 @@
             form.org_unit_selected = admin.selectedCSVEntryDistrict;
 
             var dataElementNames = localStorage.getItem('dataElementsNames');//["DHP_Acknowledgements_Acknowledgements_Field", "DHP_DataSourcesCollecctionAnalysisMethods_DataSourcesCollecctionAnalysisMethods", "DHP_Demographics_FacilityDistributionImage", "DHP_Demographics_Female1", "DHP_Demographics_Female2", "DHP_Demographics_Female3", "DHP_Demographics_Female4", "DHP_Demographics_Female5", "DHP_Demographics_Female6", "DHP_Demographics_Male1", "DHP_Demographics_Male2", "DHP_Demographics_Male3", "DHP_Demographics_Male4", "DHP_Demographics_Male5", "DHP_Demographics_Male6", "DHP_Demographics_Year1", "DHP_Demographics_Year2", "DHP_Demographics_Year3", "DHP_Education_Education", "DHP_Executive_Executive_Field", "DHP_FacilityDistribution_FacilityDistribution", "DHP_Foreword_Foreword_Field", "DHP_General_GeneralOPDAttendanceProgress", "DHP_General_GeneralOPDAttendanceTarget", "DHP_General_GeneralOPDAttendanceYear1", "DHP_General_GeneralOPDAttendanceYear2", "DHP_General_GeneralOPDAttendanceYear3", "DHP_Geography_Geography", "DHP_Maternal_MaternalNCHealthInfantMortalityProgress", "DHP_Maternal_MaternalNCHealthInfantMortalityTarget", "DHP_Maternal_MaternalNCHealthLowBWProgress", "DHP_Maternal_MaternalNCHealthLowBWTarget", "DHP_Maternal_MaternalNCHealthLowBWYear1", "DHP_Maternal_MaternalNCHealthLowBWYear2", "DHP_Maternal_MaternalNCHealthLowBWYear3", "DHP_Maternal_MaternalNCHealthNeonatalMortalityProgress", "DHP_Maternal_MaternalNCHealthNeonatalMortalityTarget", "DHP_Maternal_MaternalNCHealthNeonatalMortalityYear1", "DHP_Maternal_MaternalNCHealthNeonatalMortalityYear2", "DHP_Maternal_MaternalNCHealthNeonatalMortalityYear3", "DHP_Maternal_MaternalNCHealthUnder5MortalityTarget", "DHP_Maternal_MaternalNCHealthUnder5MortalityYear1", "DHP_Maternal_MaternalNCHealthUnder5MortalityYear2", "DHP_Maternal_MaternalNCHealthUnder5MortalityYear3", "DHP_Maternal_MaternalNCHealthUnder5MortalityYearProgress", "DHP_MissionAndVision_MissionAndVision", "DHP_Morbidity_MorbidityHIVAIDSTarget", "DHP_Morbidity_MorbidityHIVAIDSYear1", "DHP_Morbidity_MorbidityIncidenceOfMalariaProgress", "DHP_Morbidity_MorbidityIncidenceOfMalariaTarget", "DHP_Morbidity_MorbidityIncidenceOfMalariaYear1", "DHP_Morbidity_MorbidityIncidenceOfMalariaYear2", "DHP_Morbidity_MorbidityIncidenceOfMalariaYear3", "DHP_Morbidity_MorbidityTopTenAdmissionYear1", "DHP_Morbidity_MorbidityTopTenAdmissionYear2", "DHP_Morbidity_MorbidityTopTenAdmissionYear3", "DHP_Morbidity_MortalityTopTenDeathYear2", "DHP_Mortality_MortalityTopTenDeathYear1", "DHP_Mortality_MortalityTopTenDeathYear2", "DHP_Mortality_MortalityTopTenDeathYear3", "DHP_Population_Population", "DHP_Seal_Seal", "DHP_StructureOfDistrict_StructureOfDistrict", "DHP_TransportationAndCommunication_TransportationAndCommunication"];//localStorage.getItem('dataElementsNames');
-            var dataElementUids = localStorage.getItem('dataElementsUids');//["FDy14LpsTYe","pJzkVoPSnUZ","ZVxkbmmsVaj","a3KTj2U3qvL","Mb5oqaqrlEO","yEQ4pUa4MiE","khpsCb4CIYO","b3MDBc5qVwA","pimD9Vu6yzP","cO13bJmbwcm","JGUAedwTS7d","VIPWPCH888c","kFUWBguaZH2","W24P1amkarT","NlFp3YFxAVj","qArNNjNQAU3","y2MB317ssba","YsIoPcj149W","dMzcFEjCjEc","vT4W7eesj8V","oqe9RQV64iZ","GIH7HwWycec","xUrTxNMdhwZ","MyAjPcTegFP","waYaK9vNvqv","pPugLQdSVz7","kkp0SNYElja","Dwn3OG3lYcD","IyYYHTT74Qg","rywiKuhcXhi","Pcly4O4zwMP","vYOcXPnPkwG","Fw0Oi3mnCxq","O9JWxhhhpUL","hUDp8nEM9Xu","cHDQiQJRc3q","QeIvaNVBt7L","C0sro0yymAc","i10R7abb5e7","r18DK7WrGqq","ah6hNUZbKGw","rJGgyqtOFqS","wYxHjV46Aam","D0rd3jqvJhj","TgG1AVvdY6N","KvXiDDLbX4E","YOXye8N0kG7","sdBEFTUgED5","oG4bnfukOXH","sbf2nYVcjcz","Z9NTYlGv5xq","FsdeelM8RBt","QfeqQeCDTYp","i6g11NJiXp5","R40i7n5fP73","n7Nol8M8dki","P1WyuyEjfrt","kLSuPxhQZ83","IrjePU1LBSM","BiBYNFnGQF5","wOltvKZerkP","ye0OQ2p6BAK","HCUJj0e2Wbu","c2ff00Brm16"];//localStorage.getItem('dataElementsUids');
+            var dataElementUids  = localStorage.getItem('dataElementsUids');//["FDy14LpsTYe","pJzkVoPSnUZ","ZVxkbmmsVaj","a3KTj2U3qvL","Mb5oqaqrlEO","yEQ4pUa4MiE","khpsCb4CIYO","b3MDBc5qVwA","pimD9Vu6yzP","cO13bJmbwcm","JGUAedwTS7d","VIPWPCH888c","kFUWBguaZH2","W24P1amkarT","NlFp3YFxAVj","qArNNjNQAU3","y2MB317ssba","YsIoPcj149W","dMzcFEjCjEc","vT4W7eesj8V","oqe9RQV64iZ","GIH7HwWycec","xUrTxNMdhwZ","MyAjPcTegFP","waYaK9vNvqv","pPugLQdSVz7","kkp0SNYElja","Dwn3OG3lYcD","IyYYHTT74Qg","rywiKuhcXhi","Pcly4O4zwMP","vYOcXPnPkwG","Fw0Oi3mnCxq","O9JWxhhhpUL","hUDp8nEM9Xu","cHDQiQJRc3q","QeIvaNVBt7L","C0sro0yymAc","i10R7abb5e7","r18DK7WrGqq","ah6hNUZbKGw","rJGgyqtOFqS","wYxHjV46Aam","D0rd3jqvJhj","TgG1AVvdY6N","KvXiDDLbX4E","YOXye8N0kG7","sdBEFTUgED5","oG4bnfukOXH","sbf2nYVcjcz","Z9NTYlGv5xq","FsdeelM8RBt","QfeqQeCDTYp","i6g11NJiXp5","R40i7n5fP73","n7Nol8M8dki","P1WyuyEjfrt","kLSuPxhQZ83","IrjePU1LBSM","BiBYNFnGQF5","wOltvKZerkP","ye0OQ2p6BAK","HCUJj0e2Wbu","c2ff00Brm16"];//localStorage.getItem('dataElementsUids');
 
             var payload = {file_name:"dataset.csv",file_object:admin.csvfile,orgunit:admin.selectedCSVEntryDistrict,period:form.form_period,names:JSON.stringify(dataElementNames),uids:JSON.stringify(dataElementUids)};
             if(!admin.selectedCSVEntryDistrict&&!form.form_period){
 
             }else{
                 profileService.uploadCSVProfile(payload).then(function(data){
-                    console.log(data);
+
                     admin.showProgress = false;
                     if(data=="UPLOAD_FAILED"){
                         admin.loadingUpload = false;

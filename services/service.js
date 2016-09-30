@@ -178,7 +178,7 @@
 
 
         profile.completeDataset  = function(orgunit,period,successCallback){
-    var completenessUrl = profile.baseDHIS+"api/completeDataSetRegistrations?ds=Pc2t6Tq5era&pe="+period+"&ou="+orgunit;
+          var completenessUrl = profile.baseDHIS+"api/completeDataSetRegistrations?ds=Pc2t6Tq5era&pe="+period+"&ou="+orgunit;
             $http({
                 method: 'POST',
                 url: completenessUrl,
@@ -186,7 +186,7 @@
                 cache: true,
                 ifModified: true
             }).success(successCallback);
-}
+        }
 
         profile.modifyOrgUnits   = function(rawOrgUnits){
             var Regions = [];
