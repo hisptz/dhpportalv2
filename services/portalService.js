@@ -322,14 +322,13 @@ angular.module("dhpportal")
                 return geoJsonObject;
       }
 
-mapService.getStatistics = function(selectedItems,feature_name,selectedYear,files){
-  var custome_mesage = "";
-  console.log(selectedItems);
-  console.log(files);
+      mapService.getStatistics = function(selectedItems,feature_name,selectedYear,files){
+    var custome_mesage = "";
+
     if (files.length==0){
       custome_mesage = " (No submission) "+selectedYear;
     }
-var counter = 0;
+    var counter = 0;
     angular.forEach(files,function(filez){
         if (feature_name.indexOf("Region")>=0 && filez.indexOf(feature_name.replace(" Region",""))>=0){
           counter++;
@@ -343,37 +342,62 @@ var counter = 0;
     })
   return custome_mesage;
 }
+      mapService.getSubmissionStatistics = function(selectedItems,selectedYear,files){
+        var statistics = {total:0,submitted:0};
 
-mapService.checkStatistics = function(selectedItems,feature_name,selectedYear,files)
-{
-    var custome_mesage = false;
+        statistics = getTotalDistricts(selectedItems,selectedYear,files,statistics);
 
-    if (files.length==0) {
-      return custome_mesage;
-    }
+        return statistics;
+      }
 
-    var counter = 0;
-    var counterCouncil = 0;
+      function getTotalDistricts(selectedItems,selectedYear,files,statistics){
+        angular.forEach(selectedItems,function(childSelected){
+          if ( childSelected.name.indexOf('Council') >= 0 ){
+            statistics.total++;
+             angular.forEach(files,function(file){
+               if ( file.indexOf(childSelected.name+"_"+selectedYear)>=0 )
+               {
+                 statistics.submitted++;
+               }
+             })
 
-    angular.forEach(files,function(filez){
+          }else{
+          statistics = getTotalDistricts(childSelected.children,selectedYear,files,statistics)
+          }
+        })
+        return statistics;
+      }
 
-        if (feature_name.indexOf("Region")>=0 && filez.indexOf(feature_name.replace(" Region",""))>=0){
-          counter++;
+      mapService.checkStatistics = function(selectedItems,feature_name,selectedYear,files)
+      {
+          var custome_mesage = false;
+
+          if (files.length==0) {
+            return custome_mesage;
+          }
+
+          var counter = 0;
+          var counterCouncil = 0;
+
+          angular.forEach(files,function(filez){
+
+              if (feature_name.indexOf("Region")>=0 && filez.indexOf(feature_name.replace(" Region",""))>=0){
+                counter++;
+              }
+
+              if ( feature_name.indexOf("Council")>=0 && filez.indexOf(feature_name)>=0 )
+              {
+                counterCouncil++;
+              }
+
+          })
+
+          if ( counterCouncil > 0 || counter > 0 )
+          {
+            custome_mesage = true;
+          }
+
+          return custome_mesage;
         }
-
-        if ( feature_name.indexOf("Council")>=0 && filez.indexOf(feature_name)>=0 )
-        {
-          counterCouncil++;
-        }
-
-    })
-
-    if ( counterCouncil > 0 || counter > 0 )
-    {
-      custome_mesage = true;
-    }
-
-    return custome_mesage;
-}
       return mapService;
    })

@@ -69,8 +69,11 @@
       }
 
       function renderMap(selectedItems,selectedYear,files){
-                    $scope.submitted = 0;
-                    $scope.total = selectedItems[0].children.length;
+                    var statistics = mapService.getSubmissionStatistics(selectedItems,selectedYear,files);
+                    $scope.submitted     = statistics.submitted;
+                    $scope.notSubmitted  = statistics.total - statistics.submitted;
+                    $scope.total         = statistics.total;
+
                     angular.extend($scope, {
                            centeredCoordinate: {
                                lat: -5.79,
@@ -81,7 +84,7 @@
                             legend: {
                                  position: 'bottomleft',
                                  colors: [ 'green','red' ],
-                                 labels: [ 'Submitted&nbsp;('+$scope.submitted+')','Not&nbsp;Submitted&nbsp;('+($scope.total-$scope.submitted)+')' ]
+                                 labels: [ 'Submitted&nbsp;('+$scope.submitted+')','Not&nbsp;Submitted&nbsp;('+$scope.notSubmitted+')' ]
                              },
                               events: {
                                   map: {
