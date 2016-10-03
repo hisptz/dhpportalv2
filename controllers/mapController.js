@@ -9,6 +9,8 @@
     mapController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','pendingRequestsService','mapService','leafletData'];
     function mapController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,portalService,utilityService,pendingRequestsService,mapService,leafletData) {
       $scope.mapIsLoading = true;
+      $scope.isDistrict = false;
+      $scope.files = null;
       $rootScope.updateMap = function(selectedItems,selectedYear){
         $scope.mapIsLoading = true;
           var pendingReqiests = pendingRequestsService.get();
@@ -30,6 +32,10 @@
           }
       }
 
+
+      $rootScope.getPDFProfileView = function(district_name,selectedYear){
+          return dataService.getPdfProfile($scope.files,district_name,selectedYear);
+      }
 
       function getGeoJson(selectedItems,files) {
 
@@ -96,11 +102,15 @@
                                                   $scope.currentFeatureTitle = false;
                                               },
                                               mouseover:function(e){
+                                                  if ( feature.properties.name.indexOf('Council') >= 0 ) { $scope.isDistrict = true; $scope.district_name = feature.properties.name; } else { $scope.isDistrict = false; }
                                                   $scope.currentFeatureTitle = feature.properties.name+" "+mapService.getStatistics(selectedItems,feature.properties.name,selectedYear,files);
+                                                  $scope.files = files;
                                               },
                                               click: function(e){
+                                                if ( feature.properties.name.indexOf('Council') >= 0 ) { $scope.isDistrict = true; $scope.district_name = feature.properties.name; } else { $scope.isDistrict = false; }
                                                 $scope.currentFeatureTitle = feature.properties.name+" "+mapService.getStatistics(selectedItems,feature.properties.name,selectedYear,files);
                                                 $scope.submitted = mapService.checkStatistics(selectedItems,feature.properties.name,selectedYear,files);
+                                                $scope.files = files;
                                                  map.fitBounds(e.target.getBounds());
                                               },
 

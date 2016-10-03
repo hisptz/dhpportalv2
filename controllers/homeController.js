@@ -18,9 +18,17 @@
         }
 
 
-        $rootScope.upDateProfileView = function(selectedYear){
-          console.log(selectedYear);
+        $rootScope.upDateProfileView = function(selectedItems,selectedYear){
+          // angular.forEach(selectedItems,function(item){
+          //     if (item.children) {
+          //       angular.forEach(item.children,function(childItem){
+          //           if (childItem.name == )
+          //       })
+          //     }
+          // });
+          // console.log(selectedYear);
         }
+
 
         $rootScope.updateDataContainers = function(){
             $scope.selectedYear = $scope.selectedYearBuffer;

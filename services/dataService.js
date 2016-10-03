@@ -299,6 +299,19 @@
                 return data;
         }
 
+        dataService.getPdfProfile = function(files,district_name,selectedYear){
+          var url = "";
+          angular.forEach(files , function(availableFile){
+              if ( availableFile.indexOf(district_name+"_"+selectedYear) >= 0 )
+              {
+                url = availableFile;
+              }
+          });
+
+          return url;
+
+        }
+
         return dataService;
     }
 
