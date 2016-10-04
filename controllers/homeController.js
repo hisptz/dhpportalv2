@@ -30,7 +30,7 @@
             pendingRequestsService.cancelAll();
 
             if ( $scope.selectedOrgUnit ) {
-                // $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
+                $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
             }
             else
             {
