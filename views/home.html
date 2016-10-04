@@ -69,7 +69,7 @@
                     <div id="mapBody">
                         <div ng-if="currentFeatureTitle" style="position:absolute;z-index:1000;margin-top:20px;padding:5px;background-color:black;margin-left:80px;border:solid 1px #ccccc;border-radius:2px;color:white;font-weight:bold;">
                           <span>
-                            {{currentFeatureTitle}}
+                            {{currentFeatureTitle}} {{organisationUnitTree}}
                              &nbsp; &nbsp;
                              <a style="font-weight:bolder;color:green;cursor:pointer;" ng-if="submitted" ng-click="mapDeepView(feature,selectedYear)">VIEW</a> |
                              <a style="font-weight:bolder;color:green;cursor:pointer;" ng-if="submitted && isDistrict" target="_blank" href="uploads/{{getPDFProfileView(district_name,selectedYear)}}">PDF</a>
