@@ -180,7 +180,6 @@
 
         $scope.mapDeepView = function(feature,selectedYear){
           $scope.organisationUnitTree = utilityService.setSelectedItem(feature,$scope.organisationUnitTree);
-          console.log($scope.organisationUnitTree);
           $rootScope.upDateProfileView(feature,selectedYear);
 
         }
