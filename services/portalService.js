@@ -323,25 +323,25 @@ angular.module("dhpportal")
       }
 
       mapService.getStatistics = function(selectedItems,feature_name,selectedYear,files){
-    var custome_mesage = "";
+          var custome_mesage = "";
 
-    if (files.length==0){
-      custome_mesage = " (No submission) "+selectedYear;
-    }
-    var counter = 0;
-    angular.forEach(files,function(filez){
-        if (feature_name.indexOf("Region")>=0 && filez.indexOf(feature_name.replace(" Region",""))>=0){
-          counter++;
-          custome_mesage = " ( "+counter+" District Submitted ) "+selectedYear;
-        }
+          if (files.length==0){
+            custome_mesage = " (No submission) "+selectedYear;
+          }
+          var counter = 0;
+          angular.forEach(files,function(filez){
+              if (feature_name.indexOf("Region")>=0 && filez.indexOf(feature_name.replace(" Region",""))>=0){
+                counter++;
+                custome_mesage = " ( "+counter+" District Submitted ) "+selectedYear;
+              }
 
-        if ( feature_name.indexOf("Council")>=0 && filez.indexOf(feature_name)>=0 )
-        {
-          custome_mesage = " Submitted "+selectedYear;
-        }
-    })
-  return custome_mesage;
-}
+              if ( feature_name.indexOf("Council")>=0 && filez.indexOf(feature_name)>=0 )
+              {
+                custome_mesage = " Submitted "+selectedYear;
+              }
+          })
+        return custome_mesage;
+      }
       mapService.getSubmissionStatistics = function(selectedItems,selectedYear,files){
         var statistics = {total:0,submitted:0};
 
