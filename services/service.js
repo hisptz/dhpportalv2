@@ -268,7 +268,7 @@
           var feature_name = feature.name;
 
           organisationUnitTree = setSelected (feature_name,organisationUnitTree);
-
+            console.log(organisationUnitTree)
           return organisationUnitTree;
 
         }
@@ -277,14 +277,16 @@
 
     function setSelected (feature_name,organisationUnitTree){
       angular.forEach( organisationUnitTree,function(childOrganisationUnit,childIndex){
-        console.log(childOrganisationUnit);
           if ( childOrganisationUnit.name == feature_name )
           {
-            console.log(childOrganisationUnit);
-            organisationUnitTree[childIndex].selected = true;
+            organisationUnitTree[childIndex].isActive = true;
           }else{
-            organisationUnitTree[childIndex].selected = false;
-            organisationUnitTree = setSelected (feature_name,organisationUnitTree[childIndex].children);
+
+              if ( organisationUnitTree[childIndex] ){console.log(organisationUnitTree[childIndex].isActive);}
+
+              if( organisationUnitTree[childIndex]) {organisationUnitTree = setSelected (feature_name,organisationUnitTree[childIndex].children);}
+
+
           }
       } )
 

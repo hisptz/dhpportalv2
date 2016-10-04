@@ -19,7 +19,7 @@
 
 
         $rootScope.upDateProfileView = function(selectedItem,selectedYear){
-          console.log("FROM HOME CONTROLLER",selectedItem,selectedYear);
+          
         }
 
 
