@@ -291,16 +291,24 @@
           {
 
             if (typeof organisationUnitTree[childIndex].isActive == "undefined"){
-                angular.extend(organisationUnitTree[childIndex],{isActive:true});
-                organisationUnitTree[childIndex].isActive = true;
+              angular.extend(organisationUnitTree[childIndex],{isExpanded:false});
+              angular.extend(organisationUnitTree[childIndex],{isFiltered:false});
+              angular.extend(organisationUnitTree[childIndex],{isActive:true});
+              angular.extend(organisationUnitTree[childIndex],{selected:true});
             }else{
-                organisationUnitTree[childIndex].isActive = true;
+              organisationUnitTree[childIndex].isActive = false;
+              organisationUnitTree[childIndex].isFiltered = false;
+              organisationUnitTree[childIndex].isActive = true;
+              organisationUnitTree[childIndex].selected = true;
             }
                 return;
           }else{
 
               if ( organisationUnitTree[childIndex] && typeof organisationUnitTree[childIndex].isActive != "undefined" ){
-                  organisationUnitTree[childIndex].isActive = false;
+                organisationUnitTree[childIndex].isActive = false;
+                organisationUnitTree[childIndex].isFiltered = false;
+                organisationUnitTree[childIndex].isActive = false;
+                organisationUnitTree[childIndex].selected = false;
                   }
 
               if( organisationUnitTree[childIndex]) {organisationUnitTree[childIndex].children = setSelected (feature_name,organisationUnitTree[childIndex].children);}
@@ -313,7 +321,7 @@
     }
 
     function getSelected(feature_name,organisationUnitTree){
-
+      var selected = null;
       angular.forEach( organisationUnitTree,function(childOrganisationUnit,childIndex){
           if ( childOrganisationUnit.name == feature_name )
           {
@@ -326,25 +334,33 @@
                 angular.extend(organisationUnitTree[childIndex],{selected:true});
 
             }else{
+                organisationUnitTree[childIndex].isActive = false;
+                organisationUnitTree[childIndex].isFiltered = false;
                 organisationUnitTree[childIndex].isActive = true;
+                organisationUnitTree[childIndex].selected = true;
             }
+
+            selected = organisationUnitTree[childIndex];
                 return;
 
           }
           else
           {
 
-              // if ( organisationUnitTree[childIndex] && typeof organisationUnitTree[childIndex].isActive != "undefined" ){
-              //     organisationUnitTree[childIndex].isActive = false;
-              //     }
-              //
-              // if( organisationUnitTree[childIndex]) {organisationUnitTree[childIndex].children = setSelected (feature_name,organisationUnitTree[childIndex].children);}
+              if ( organisationUnitTree[childIndex] && typeof organisationUnitTree[childIndex].isActive != "undefined" ){
+                organisationUnitTree[childIndex].isActive = false;
+                organisationUnitTree[childIndex].isFiltered = false;
+                organisationUnitTree[childIndex].isActive = false;
+                organisationUnitTree[childIndex].selected = false;
+                  }
+
+              if( organisationUnitTree[childIndex]) {organisationUnitTree[childIndex].children = setSelected (feature_name,organisationUnitTree[childIndex].children);}
 
 
           }
       } )
 
-      return organisationUnitTree;
+      return selected;
 
     }
 
