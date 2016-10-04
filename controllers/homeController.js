@@ -8,7 +8,7 @@
 
     homeController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','pendingRequestsService'];
     function homeController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,profileService,utilityService,portalService,pendingRequestsService) {
-
+        $scope
         $scope.isError = [];
         if ( $routeParams.parentUid )
         {
@@ -19,14 +19,7 @@
 
 
         $rootScope.upDateProfileView = function(selectedItems,selectedYear){
-          // angular.forEach(selectedItems,function(item){
-          //     if (item.children) {
-          //       angular.forEach(item.children,function(childItem){
-          //           if (childItem.name == )
-          //       })
-          //     }
-          // });
-          // console.log(selectedYear);
+          console.log(selectedItem,selectedYear);
         }
 
 
@@ -37,7 +30,7 @@
             pendingRequestsService.cancelAll();
 
             if ( $scope.selectedOrgUnit ) {
-                $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
+                // $scope.getDHPResources($scope.selectedOrgUnit,$scope.selectedYear);
             }
             else
             {

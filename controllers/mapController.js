@@ -31,7 +31,7 @@
 
           }
       }
-
+      
 
       $rootScope.getPDFProfileView = function(district_name,selectedYear){
           return dataService.getPdfProfile($scope.files,district_name,selectedYear);
@@ -108,10 +108,12 @@
                                                   if ( feature.properties.name.indexOf('Council') >= 0 ) { $scope.isDistrict = true; $scope.district_name = feature.properties.name; } else { $scope.isDistrict = false; }
                                                   $scope.currentFeatureTitle = feature.properties.name+" "+mapService.getStatistics(selectedItems,feature.properties.name,selectedYear,files);
                                                   $scope.files = files;
+                                                  $scope.feature = feature.properties;
                                               },
                                               click: function(e){
                                                 if ( feature.properties.name.indexOf('Council') >= 0 ) { $scope.isDistrict = true; $scope.district_name = feature.properties.name; } else { $scope.isDistrict = false; }
                                                 $scope.currentFeatureTitle = feature.properties.name+" "+mapService.getStatistics(selectedItems,feature.properties.name,selectedYear,files);
+                                                $scope.feature = feature.properties;
                                                 $scope.submitted = mapService.checkStatistics(selectedItems,feature.properties.name,selectedYear,files);
                                                 $scope.files = files;
                                                  map.fitBounds(e.target.getBounds());

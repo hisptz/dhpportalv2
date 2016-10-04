@@ -70,7 +70,7 @@
                         <div ng-if="currentFeatureTitle" style="position:absolute;z-index:1000;margin-top:20px;padding:5px;background-color:black;margin-left:80px;border:solid 1px #ccccc;border-radius:2px;color:white;font-weight:bold;">
                           <span>{{currentFeatureTitle}}
                              &nbsp; &nbsp;
-                             <a style="font-weight:bolder;color:green;cursor:pointer;" ng-if="submitted" ng-click="upDateProfileView(selectedItems,selectedYear)">VIEW</a> |
+                             <a style="font-weight:bolder;color:green;cursor:pointer;" ng-if="submitted" ng-click="upDateProfileView(feature_name,selectedYear)">VIEW</a> |
                              <a style="font-weight:bolder;color:green;cursor:pointer;" ng-if="submitted && isDistrict" target="_blank" href="uploads/{{getPDFProfileView(district_name,selectedYear)}}">PDF</a>
                            </span>
                         </div>
@@ -218,9 +218,7 @@
                         <br/>
                         <p style="text-align: center;" class="titleForPrint" > {{orgUnitNames | uppercase}} , {{selectionLevel | uppercase}} HEALTH PROFILE RESULTS TABLE</p>
                         <div class="row profile-pages" style="color:#000000;">
-                            <!--<p class="secondary_header">Table 0-1. {{selectedYear}} DHP Results Summary Table</p>-->
                             <br/>
-
                             <alert-panel table-data="population" table-name='"Population"' error-check="isError['population']" error-text="{{error_message}}"></alert-panel>
 
                             <div style="margin-left:50%;">
