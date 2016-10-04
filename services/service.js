@@ -267,15 +267,25 @@
         {
           var feature_name = feature.name;
 
-          organisationUnitTree = setSelected (feature_name,organisationUnitTree);
+          organisationUnitTree = setSelected(feature_name,organisationUnitTree);
 
           return organisationUnitTree;
 
         }
 
+        profile.getSelectedItem = function(feature,organisationUnitTree)
+        {
+          var feature_name = feature.name;
+
+          selectedItem = getSelected(feature_name,organisationUnitTree);
+
+          return selectedItem;
+
+        }
+
     }
 
-    function setSelected (feature_name,organisationUnitTree){
+    function setSelected(feature_name,organisationUnitTree){
       angular.forEach( organisationUnitTree,function(childOrganisationUnit,childIndex){
           if ( childOrganisationUnit.name == feature_name )
           {
@@ -300,6 +310,42 @@
       } )
 
       return organisationUnitTree;
+    }
+
+    function getSelected(feature_name,organisationUnitTree){
+
+      angular.forEach( organisationUnitTree,function(childOrganisationUnit,childIndex){
+          if ( childOrganisationUnit.name == feature_name )
+          {
+
+            if (typeof organisationUnitTree[childIndex].isActive == "undefined"){
+
+                angular.extend(organisationUnitTree[childIndex],{isExpanded:false});
+                angular.extend(organisationUnitTree[childIndex],{isFiltered:false});
+                angular.extend(organisationUnitTree[childIndex],{isActive:true});
+                angular.extend(organisationUnitTree[childIndex],{selected:true});
+
+            }else{
+                organisationUnitTree[childIndex].isActive = true;
+            }
+                return;
+
+          }
+          else
+          {
+
+              // if ( organisationUnitTree[childIndex] && typeof organisationUnitTree[childIndex].isActive != "undefined" ){
+              //     organisationUnitTree[childIndex].isActive = false;
+              //     }
+              //
+              // if( organisationUnitTree[childIndex]) {organisationUnitTree[childIndex].children = setSelected (feature_name,organisationUnitTree[childIndex].children);}
+
+
+          }
+      } )
+
+      return organisationUnitTree;
+
     }
 
 
