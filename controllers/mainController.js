@@ -179,7 +179,7 @@
         $scope.periods	=	portalService.getPeriod();// the beggining of the period
 
         $scope.mapDeepView = function(feature,selectedYear){
-          $scope.organisationUnitTree = utilityService.setSelectedItem(feature,$scope.organisationUnitTree);
+          $scope.drawOrgUnitTree(utilityService.setSelectedItem(feature,$scope.organisationUnitTree));
           $rootScope.upDateProfileView(feature,selectedYear);
 
         }
