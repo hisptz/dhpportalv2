@@ -19,7 +19,7 @@
 
 
         $rootScope.upDateProfileView = function(selectedItem,selectedYear){
-          console.log(selectedItem,selectedYear);
+          console.log(organisationUnitTree,selectedItem,selectedYear);
         }
 
 
