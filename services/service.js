@@ -282,7 +282,7 @@
             organisationUnitTree[childIndex].selected = true;
           }else{
             organisationUnitTree[childIndex].selected = false;
-            organisationUnitTree = setSelected (feature_name,organisationUnitTree.children);
+            organisationUnitTree = setSelected (feature_name,organisationUnitTree[childIndex].children);
           }
       } )
 
