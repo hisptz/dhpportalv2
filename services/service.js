@@ -263,6 +263,30 @@
             window.location.href = "#/home";
         }
 
+        profile.setSelectedItem = function(feature,organisationUnitTree)
+        {
+          var feature_name = feature.name;
+
+          organisationUnitTree = setSelected (feature_name,organisationUnitTree);
+
+          return organisationUnitTree;
+
+        }
+
+    }
+
+    function setSelected (feature_name,organisationUnitTree){
+      angular.forEach( organisationUnitTree,function(childOrganisationUnit,childIndex){
+          if ( childOrganisationUnit.name == feature_name )
+          {
+            organisationUnitTree[childIndex].selected = true;
+          }else{
+            organisationUnitTree[childIndex].selected = false;
+            organisationUnitTree = setSelected (feature_name,organisationUnitTree.children);
+          }
+      } )
+
+      return organisationUnitTree;
     }
 
 
