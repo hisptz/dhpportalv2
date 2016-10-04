@@ -18,7 +18,7 @@
         }
 
 
-        $rootScope.upDateProfileView = function(selectedItems,selectedYear){
+        $rootScope.upDateProfileView = function(selectedItem,selectedYear){
           console.log(selectedItem,selectedYear);
         }
 
