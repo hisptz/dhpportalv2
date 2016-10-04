@@ -277,8 +277,10 @@
 
     function setSelected (feature_name,organisationUnitTree){
       angular.forEach( organisationUnitTree,function(childOrganisationUnit,childIndex){
+        console.log(childOrganisationUnit);
           if ( childOrganisationUnit.name == feature_name )
           {
+            console.log(childOrganisationUnit);
             organisationUnitTree[childIndex].selected = true;
           }else{
             organisationUnitTree[childIndex].selected = false;
