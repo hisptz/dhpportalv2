@@ -8,7 +8,7 @@
 
     homeController.$inject   = ['$scope','$rootScope','$cookies','$filter','$http','$timeout','$interval','$location','$routeParams','dataService','profileService','utilityService','portalService','pendingRequestsService'];
     function homeController($scope,$rootScope,$cookies,$filter,$http,$timeout,$interval,$location,$routeParams,dataService,profileService,utilityService,portalService,pendingRequestsService) {
-        $scope
+
         $scope.isError = [];
         if ( $routeParams.parentUid )
         {
@@ -19,7 +19,7 @@
 
 
         $rootScope.upDateProfileView = function(selectedItem,selectedYear){
-          console.log($rootScope.organisationUnitTree,selectedItem,selectedYear);
+          console.log("FROM HOME CONTROLLER",selectedItem,selectedYear);
         }
 
 
