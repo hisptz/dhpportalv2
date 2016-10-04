@@ -267,8 +267,8 @@
         {
           var feature_name = feature.name;
 
-          console.log(setSelected (feature_name,organisationUnitTree));
-          
+          organisationUnitTree = setSelected (feature_name,organisationUnitTree);
+
           return organisationUnitTree;
 
         }
@@ -286,13 +286,14 @@
             }else{
                 organisationUnitTree[childIndex].isActive = true;
             }
-
-            console.log(organisationUnitTree[childIndex])
+                return;
           }else{
 
-              if ( organisationUnitTree[childIndex] ){console.log(organisationUnitTree[childIndex].isActive);}
+              if ( organisationUnitTree[childIndex] && typeof organisationUnitTree[childIndex].isActive != "undefined" ){
+                  organisationUnitTree[childIndex].isActive = false;
+                  }
 
-              if( organisationUnitTree[childIndex]) {organisationUnitTree = setSelected (feature_name,organisationUnitTree[childIndex].children);}
+              if( organisationUnitTree[childIndex]) {organisationUnitTree[childIndex].children = setSelected (feature_name,organisationUnitTree[childIndex].children);}
 
 
           }
