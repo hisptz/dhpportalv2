@@ -61,8 +61,8 @@
   "dependencies": {},
   "description": "Miscellaneous plugins for Leaflet library for services that need to display route information and need satellite imagery from different providers",
   "devDependencies": {
-    "eslint": "2.3.0",
-    "tap": "^6.3.2"
+    "eslint": "5.16.0",
+    "tap": "^12.6.3"
   },
   "directories": {},
   "dist": {
