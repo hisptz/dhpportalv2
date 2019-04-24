@@ -1,0 +1,15 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "bower_components/angular-animate/package.json",
+        "bower_components/angular-materialize/package.json",
+        "bower_components/angular-sanitize/package.json",
+        "bower_components/angular/package.json",
+        "bower_components/highcharts-ng/package.json",
+        "bower_components/leaflet-plugins/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
